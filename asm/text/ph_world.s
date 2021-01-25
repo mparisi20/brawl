@@ -1,0 +1,65 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global phWorld$7__ct
+phWorld$7__ct:
+/* 8009A048 0008FDC8  3C 80 80 45 */	lis r4, lbl_80454AE0@ha
+/* 8009A04C 0008FDCC  38 00 00 00 */	li r0, 0
+/* 8009A050 0008FDD0  38 84 4A E0 */	addi r4, r4, lbl_80454AE0@l
+/* 8009A054 0008FDD4  90 03 00 04 */	stw r0, 4(r3)
+/* 8009A058 0008FDD8  90 83 00 00 */	stw r4, 0(r3)
+/* 8009A05C 0008FDDC  4E 80 00 20 */	blr 
+
+.global phWorld$7__dt
+phWorld$7__dt:
+/* 8009A060 0008FDE0  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8009A064 0008FDE4  7C 08 02 A6 */	mflr r0
+/* 8009A068 0008FDE8  2C 03 00 00 */	cmpwi r3, 0
+/* 8009A06C 0008FDEC  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8009A070 0008FDF0  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8009A074 0008FDF4  7C 7F 1B 78 */	mr r31, r3
+/* 8009A078 0008FDF8  41 82 00 10 */	beq lbl_8009A088
+/* 8009A07C 0008FDFC  2C 04 00 00 */	cmpwi r4, 0
+/* 8009A080 0008FE00  40 81 00 08 */	ble lbl_8009A088
+/* 8009A084 0008FE04  4B F7 28 45 */	bl __dl
+lbl_8009A088:
+/* 8009A088 0008FE08  7F E3 FB 78 */	mr r3, r31
+/* 8009A08C 0008FE0C  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8009A090 0008FE10  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8009A094 0008FE14  7C 08 03 A6 */	mtlr r0
+/* 8009A098 0008FE18  38 21 00 10 */	addi r1, r1, 0x10
+/* 8009A09C 0008FE1C  4E 80 00 20 */	blr 
+
+.global hkWorldCinfo$7__dt
+hkWorldCinfo$7__dt:
+/* 8009A0A0 0008FE20  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8009A0A4 0008FE24  7C 08 02 A6 */	mflr r0
+/* 8009A0A8 0008FE28  2C 03 00 00 */	cmpwi r3, 0
+/* 8009A0AC 0008FE2C  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8009A0B0 0008FE30  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8009A0B4 0008FE34  7C 7F 1B 78 */	mr r31, r3
+/* 8009A0B8 0008FE38  41 82 00 2C */	beq lbl_8009A0E4
+/* 8009A0BC 0008FE3C  2C 04 00 00 */	cmpwi r4, 0
+/* 8009A0C0 0008FE40  40 81 00 24 */	ble lbl_8009A0E4
+/* 8009A0C4 0008FE44  80 6D CA 98 */	lwz r3, lbl_805A0EB8-_SDA_BASE_(r13)
+/* 8009A0C8 0008FE48  7F E4 FB 78 */	mr r4, r31
+/* 8009A0CC 0008FE4C  A0 BF 00 04 */	lhz r5, 4(r31)
+/* 8009A0D0 0008FE50  38 C0 00 13 */	li r6, 0x13
+/* 8009A0D4 0008FE54  81 83 00 00 */	lwz r12, 0(r3)
+/* 8009A0D8 0008FE58  81 8C 00 1C */	lwz r12, 0x1c(r12)
+/* 8009A0DC 0008FE5C  7D 89 03 A6 */	mtctr r12
+/* 8009A0E0 0008FE60  4E 80 04 21 */	bctrl 
+lbl_8009A0E4:
+/* 8009A0E4 0008FE64  7F E3 FB 78 */	mr r3, r31
+/* 8009A0E8 0008FE68  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8009A0EC 0008FE6C  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8009A0F0 0008FE70  7C 08 03 A6 */	mtlr r0
+/* 8009A0F4 0008FE74  38 21 00 10 */	addi r1, r1, 0x10
+/* 8009A0F8 0008FE78  4E 80 00 20 */	blr 
+
+.global phWorld$7stepTime
+phWorld$7stepTime:
+/* 8009A0FC 0008FE7C  80 63 00 04 */	lwz r3, 4(r3)
+/* 8009A100 0008FE80  48 25 46 18 */	b hkWorld$7stepDeltaTime
+

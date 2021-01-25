@@ -1,0 +1,48 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global DVDSetAutoFatalMessaging
+DVDSetAutoFatalMessaging:
+/* 801FC454 001F21D4  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801FC458 001F21D8  7C 08 02 A6 */	mflr r0
+/* 801FC45C 001F21DC  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801FC460 001F21E0  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801FC464 001F21E4  7C 7F 1B 78 */	mr r31, r3
+/* 801FC468 001F21E8  4B FE 0A A9 */	bl OSDisableInterrupts
+/* 801FC46C 001F21EC  80 AD C5 88 */	lwz r5, lbl_805A09A8-_SDA_BASE_(r13)
+/* 801FC470 001F21F0  2C 1F 00 00 */	cmpwi r31, 0
+/* 801FC474 001F21F4  38 80 00 00 */	li r4, 0
+/* 801FC478 001F21F8  7C 05 00 D0 */	neg r0, r5
+/* 801FC47C 001F21FC  7C 00 2B 78 */	or r0, r0, r5
+/* 801FC480 001F2200  54 1F 0F FE */	srwi r31, r0, 0x1f
+/* 801FC484 001F2204  41 82 00 0C */	beq lbl_801FC490
+/* 801FC488 001F2208  3C 80 80 20 */	lis r4, func_801FC3A0@ha
+/* 801FC48C 001F220C  38 84 C3 A0 */	addi r4, r4, func_801FC3A0@l
+lbl_801FC490:
+/* 801FC490 001F2210  90 8D C5 88 */	stw r4, lbl_805A09A8-_SDA_BASE_(r13)
+/* 801FC494 001F2214  4B FE 0A A5 */	bl OSRestoreInterrupts
+/* 801FC498 001F2218  7F E3 FB 78 */	mr r3, r31
+/* 801FC49C 001F221C  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801FC4A0 001F2220  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801FC4A4 001F2224  7C 08 03 A6 */	mtlr r0
+/* 801FC4A8 001F2228  38 21 00 10 */	addi r1, r1, 0x10
+/* 801FC4AC 001F222C  4E 80 00 20 */	blr 
+
+.global __DVDGetAutoFatalMessaging
+__DVDGetAutoFatalMessaging:
+/* 801FC4B0 001F2230  80 6D C5 88 */	lwz r3, lbl_805A09A8-_SDA_BASE_(r13)
+/* 801FC4B4 001F2234  7C 03 00 D0 */	neg r0, r3
+/* 801FC4B8 001F2238  7C 00 1B 78 */	or r0, r0, r3
+/* 801FC4BC 001F223C  54 03 0F FE */	srwi r3, r0, 0x1f
+/* 801FC4C0 001F2240  4E 80 00 20 */	blr 
+
+.global __DVDPrintFatalMessage
+__DVDPrintFatalMessage:
+/* 801FC4C4 001F2244  81 8D C5 88 */	lwz r12, lbl_805A09A8-_SDA_BASE_(r13)
+/* 801FC4C8 001F2248  2C 0C 00 00 */	cmpwi r12, 0
+/* 801FC4CC 001F224C  4D 82 00 20 */	beqlr 
+/* 801FC4D0 001F2250  7D 89 03 A6 */	mtctr r12
+/* 801FC4D4 001F2254  4E 80 04 20 */	bctr 
+/* 801FC4D8 001F2258  4E 80 00 20 */	blr 
+

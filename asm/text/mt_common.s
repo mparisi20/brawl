@@ -1,0 +1,52 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global mtSqrtf
+mtSqrtf:
+/* 8003DB08 00033888  C0 02 83 D8 */	lfs f0, lbl_805A16F8-_SDA2_BASE_(r2)
+/* 8003DB0C 0003388C  FC 01 00 40 */	fcmpo cr0, f1, f0
+/* 8003DB10 00033890  40 81 00 40 */	ble lbl_8003DB50
+/* 8003DB14 00033894  FC 40 08 34 */	frsqrte f2, f1
+/* 8003DB18 00033898  C0 82 83 DC */	lfs f4, lbl_805A16FC-_SDA2_BASE_(r2)
+/* 8003DB1C 0003389C  C0 62 83 E0 */	lfs f3, lbl_805A1700-_SDA2_BASE_(r2)
+/* 8003DB20 000338A0  EC 02 00 B2 */	fmuls f0, f2, f2
+/* 8003DB24 000338A4  EC 44 00 B2 */	fmuls f2, f4, f2
+/* 8003DB28 000338A8  EC 01 00 32 */	fmuls f0, f1, f0
+/* 8003DB2C 000338AC  EC 03 00 28 */	fsubs f0, f3, f0
+/* 8003DB30 000338B0  EC 42 00 32 */	fmuls f2, f2, f0
+/* 8003DB34 000338B4  EC 02 00 B2 */	fmuls f0, f2, f2
+/* 8003DB38 000338B8  EC 44 00 B2 */	fmuls f2, f4, f2
+/* 8003DB3C 000338BC  EC 01 00 32 */	fmuls f0, f1, f0
+/* 8003DB40 000338C0  EC 03 00 28 */	fsubs f0, f3, f0
+/* 8003DB44 000338C4  EC 42 00 32 */	fmuls f2, f2, f0
+/* 8003DB48 000338C8  EC 22 00 72 */	fmuls f1, f2, f1
+/* 8003DB4C 000338CC  4E 80 00 20 */	blr 
+lbl_8003DB50:
+/* 8003DB50 000338D0  FC 20 00 90 */	fmr f1, f0
+/* 8003DB54 000338D4  4E 80 00 20 */	blr 
+
+.global rsqrtf
+rsqrtf:
+/* 8003DB58 000338D8  C0 02 83 E4 */	lfs f0, lbl_805A1704-_SDA2_BASE_(r2)
+/* 8003DB5C 000338DC  FC 01 00 40 */	fcmpo cr0, f1, f0
+/* 8003DB60 000338E0  40 80 00 0C */	bge lbl_8003DB6C
+/* 8003DB64 000338E4  C0 22 83 D8 */	lfs f1, lbl_805A16F8-_SDA2_BASE_(r2)
+/* 8003DB68 000338E8  4E 80 00 20 */	blr 
+lbl_8003DB6C:
+/* 8003DB6C 000338EC  FC 40 08 34 */	frsqrte f2, f1
+/* 8003DB70 000338F0  C0 82 83 DC */	lfs f4, lbl_805A16FC-_SDA2_BASE_(r2)
+/* 8003DB74 000338F4  C0 62 83 E0 */	lfs f3, lbl_805A1700-_SDA2_BASE_(r2)
+/* 8003DB78 000338F8  EC 02 00 B2 */	fmuls f0, f2, f2
+/* 8003DB7C 000338FC  EC 44 00 B2 */	fmuls f2, f4, f2
+/* 8003DB80 00033900  EC 01 00 32 */	fmuls f0, f1, f0
+/* 8003DB84 00033904  EC 03 00 28 */	fsubs f0, f3, f0
+/* 8003DB88 00033908  EC 42 00 32 */	fmuls f2, f2, f0
+/* 8003DB8C 0003390C  EC 02 00 B2 */	fmuls f0, f2, f2
+/* 8003DB90 00033910  EC 44 00 B2 */	fmuls f2, f4, f2
+/* 8003DB94 00033914  EC 01 00 32 */	fmuls f0, f1, f0
+/* 8003DB98 00033918  EC 03 00 28 */	fsubs f0, f3, f0
+/* 8003DB9C 0003391C  EC 42 00 32 */	fmuls f2, f2, f0
+/* 8003DBA0 00033920  FC 20 10 90 */	fmr f1, f2
+/* 8003DBA4 00033924  4E 80 00 20 */	blr 
+

@@ -1,0 +1,29 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global gfJpegEncodeWork$7run
+gfJpegEncodeWork$7run:
+/* 8003CD14 00032A94  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8003CD18 00032A98  7C 08 02 A6 */	mflr r0
+/* 8003CD1C 00032A9C  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8003CD20 00032AA0  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8003CD24 00032AA4  7C 9F 23 78 */	mr r31, r4
+/* 8003CD28 00032AA8  38 8D 82 BC */	addi r4, r13, lbl_8059C6DC-_SDA_BASE_
+/* 8003CD2C 00032AAC  93 C1 00 08 */	stw r30, 8(r1)
+/* 8003CD30 00032AB0  7C 7E 1B 78 */	mr r30, r3
+/* 8003CD34 00032AB4  7F E3 FB 78 */	mr r3, r31
+/* 8003CD38 00032AB8  48 3B D5 49 */	bl strcpy
+/* 8003CD3C 00032ABC  3C 80 80 42 */	lis r4, lbl_80423560@ha
+/* 8003CD40 00032AC0  57 C0 10 3A */	slwi r0, r30, 2
+/* 8003CD44 00032AC4  38 84 35 60 */	addi r4, r4, lbl_80423560@l
+/* 8003CD48 00032AC8  7F E3 FB 78 */	mr r3, r31
+/* 8003CD4C 00032ACC  7C 84 00 2E */	lwzx r4, r4, r0
+/* 8003CD50 00032AD0  48 3B D6 35 */	bl strcat
+/* 8003CD54 00032AD4  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8003CD58 00032AD8  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8003CD5C 00032ADC  83 C1 00 08 */	lwz r30, 8(r1)
+/* 8003CD60 00032AE0  7C 08 03 A6 */	mtlr r0
+/* 8003CD64 00032AE4  38 21 00 10 */	addi r1, r1, 0x10
+/* 8003CD68 00032AE8  4E 80 00 20 */	blr 
+

@@ -1,0 +1,313 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global gt2CreateSocket
+gt2CreateSocket:
+/* 80374878 0036A5F8  39 00 00 00 */	li r8, 0
+/* 8037487C 0036A5FC  48 00 35 60 */	b gti2CreateSocket
+
+.global gt2CloseSocket
+gt2CloseSocket:
+/* 80374880 0036A600  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 80374884 0036A604  7C 08 02 A6 */	mflr r0
+/* 80374888 0036A608  3C 80 80 37 */	lis r4, gti2CloseAllConnectionsHardMap@ha
+/* 8037488C 0036A60C  38 A0 00 00 */	li r5, 0
+/* 80374890 0036A610  90 01 00 14 */	stw r0, 0x14(r1)
+/* 80374894 0036A614  38 84 4B C8 */	addi r4, r4, gti2CloseAllConnectionsHardMap@l
+/* 80374898 0036A618  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8037489C 0036A61C  7C 7F 1B 78 */	mr r31, r3
+/* 803748A0 0036A620  80 63 00 0C */	lwz r3, 0xc(r3)
+/* 803748A4 0036A624  4B FE 69 C1 */	bl TableMapSafe
+/* 803748A8 0036A628  7F E3 FB 78 */	mr r3, r31
+/* 803748AC 0036A62C  48 00 37 6D */	bl gti2CloseSocket
+/* 803748B0 0036A630  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 803748B4 0036A634  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 803748B8 0036A638  7C 08 03 A6 */	mtlr r0
+/* 803748BC 0036A63C  38 21 00 10 */	addi r1, r1, 0x10
+/* 803748C0 0036A640  4E 80 00 20 */	blr 
+
+.global gt2Think
+gt2Think:
+/* 803748C4 0036A644  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 803748C8 0036A648  7C 08 02 A6 */	mflr r0
+/* 803748CC 0036A64C  90 01 00 14 */	stw r0, 0x14(r1)
+/* 803748D0 0036A650  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 803748D4 0036A654  7C 7F 1B 78 */	mr r31, r3
+/* 803748D8 0036A658  48 00 25 1D */	bl gti2ReceiveMessages
+/* 803748DC 0036A65C  2C 03 00 00 */	cmpwi r3, 0
+/* 803748E0 0036A660  41 82 00 1C */	beq lbl_803748FC
+/* 803748E4 0036A664  7F E3 FB 78 */	mr r3, r31
+/* 803748E8 0036A668  48 00 3E 15 */	bl gti2SocketConnectionsThink
+/* 803748EC 0036A66C  2C 03 00 00 */	cmpwi r3, 0
+/* 803748F0 0036A670  41 82 00 0C */	beq lbl_803748FC
+/* 803748F4 0036A674  7F E3 FB 78 */	mr r3, r31
+/* 803748F8 0036A678  48 00 3E 51 */	bl gti2FreeClosedConnections
+lbl_803748FC:
+/* 803748FC 0036A67C  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 80374900 0036A680  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 80374904 0036A684  7C 08 03 A6 */	mtlr r0
+/* 80374908 0036A688  38 21 00 10 */	addi r1, r1, 0x10
+/* 8037490C 0036A68C  4E 80 00 20 */	blr 
+
+.global gt2Listen
+gt2Listen:
+/* 80374910 0036A690  48 00 37 6C */	b gti2Listen
+
+.global gt2Accept
+gt2Accept:
+/* 80374914 0036A694  4B FF FA 0C */	b gti2AcceptConnection
+
+.global gt2Reject
+gt2Reject:
+/* 80374918 0036A698  4B FF FA AC */	b gti2RejectConnection
+
+.global gt2Connect
+gt2Connect:
+/* 8037491C 0036A69C  94 21 FF C0 */	stwu r1, -0x40(r1)
+/* 80374920 0036A6A0  7C 08 02 A6 */	mflr r0
+/* 80374924 0036A6A4  90 01 00 44 */	stw r0, 0x44(r1)
+/* 80374928 0036A6A8  39 61 00 40 */	addi r11, r1, 0x40
+/* 8037492C 0036A6AC  48 07 C9 ED */	bl _savegpr_25
+/* 80374930 0036A6B0  7C 7E 1B 78 */	mr r30, r3
+/* 80374934 0036A6B4  7C 9F 23 78 */	mr r31, r4
+/* 80374938 0036A6B8  7C A3 2B 78 */	mr r3, r5
+/* 8037493C 0036A6BC  7C D9 33 78 */	mr r25, r6
+/* 80374940 0036A6C0  7C FA 3B 78 */	mr r26, r7
+/* 80374944 0036A6C4  7D 1D 43 78 */	mr r29, r8
+/* 80374948 0036A6C8  7D 3C 4B 78 */	mr r28, r9
+/* 8037494C 0036A6CC  7D 5B 53 78 */	mr r27, r10
+/* 80374950 0036A6D0  38 81 00 0C */	addi r4, r1, 0xc
+/* 80374954 0036A6D4  38 A1 00 08 */	addi r5, r1, 8
+/* 80374958 0036A6D8  48 00 40 55 */	bl gt2StringToAddress
+/* 8037495C 0036A6DC  2C 03 00 00 */	cmpwi r3, 0
+/* 80374960 0036A6E0  41 82 00 1C */	beq lbl_8037497C
+/* 80374964 0036A6E4  80 61 00 0C */	lwz r3, 0xc(r1)
+/* 80374968 0036A6E8  2C 03 00 00 */	cmpwi r3, 0
+/* 8037496C 0036A6EC  41 82 00 10 */	beq lbl_8037497C
+/* 80374970 0036A6F0  A0 01 00 08 */	lhz r0, 8(r1)
+/* 80374974 0036A6F4  2C 00 00 00 */	cmpwi r0, 0
+/* 80374978 0036A6F8  40 82 00 0C */	bne lbl_80374984
+lbl_8037497C:
+/* 8037497C 0036A6FC  38 60 00 04 */	li r3, 4
+/* 80374980 0036A700  48 00 01 2C */	b lbl_80374AAC
+lbl_80374984:
+/* 80374984 0036A704  48 03 31 71 */	bl SONtoHl
+/* 80374988 0036A708  54 63 00 04 */	rlwinm r3, r3, 0, 0, 2
+/* 8037498C 0036A70C  3C 03 20 00 */	addis r0, r3, 0x2000
+/* 80374990 0036A710  28 00 00 00 */	cmplwi r0, 0
+/* 80374994 0036A714  40 82 00 0C */	bne lbl_803749A0
+/* 80374998 0036A718  38 60 00 04 */	li r3, 4
+/* 8037499C 0036A71C  48 00 01 10 */	b lbl_80374AAC
+lbl_803749A0:
+/* 803749A0 0036A720  80 A1 00 0C */	lwz r5, 0xc(r1)
+/* 803749A4 0036A724  7F C3 F3 78 */	mr r3, r30
+/* 803749A8 0036A728  A0 C1 00 08 */	lhz r6, 8(r1)
+/* 803749AC 0036A72C  38 81 00 10 */	addi r4, r1, 0x10
+/* 803749B0 0036A730  4B FF F7 F5 */	bl gti2NewOutgoingConnection
+/* 803749B4 0036A734  2C 03 00 00 */	cmpwi r3, 0
+/* 803749B8 0036A738  41 82 00 08 */	beq lbl_803749C0
+/* 803749BC 0036A73C  48 00 00 F0 */	b lbl_80374AAC
+lbl_803749C0:
+/* 803749C0 0036A740  80 61 00 10 */	lwz r3, 0x10(r1)
+/* 803749C4 0036A744  7F 24 CB 78 */	mr r4, r25
+/* 803749C8 0036A748  7F 45 D3 78 */	mr r5, r26
+/* 803749CC 0036A74C  7F 86 E3 78 */	mr r6, r28
+/* 803749D0 0036A750  93 A3 00 20 */	stw r29, 0x20(r3)
+/* 803749D4 0036A754  80 61 00 10 */	lwz r3, 0x10(r1)
+/* 803749D8 0036A758  4B FF F8 75 */	bl gti2StartConnectionAttempt
+/* 803749DC 0036A75C  2C 03 00 00 */	cmpwi r3, 0
+/* 803749E0 0036A760  7C 7C 1B 78 */	mr r28, r3
+/* 803749E4 0036A764  41 82 00 14 */	beq lbl_803749F8
+/* 803749E8 0036A768  80 61 00 10 */	lwz r3, 0x10(r1)
+/* 803749EC 0036A76C  48 00 39 0D */	bl gti2FreeSocketConnection
+/* 803749F0 0036A770  7F 83 E3 78 */	mr r3, r28
+/* 803749F4 0036A774  48 00 00 B8 */	b lbl_80374AAC
+lbl_803749F8:
+/* 803749F8 0036A778  2C 1B 00 00 */	cmpwi r27, 0
+/* 803749FC 0036A77C  40 82 00 1C */	bne lbl_80374A18
+/* 80374A00 0036A780  2C 1F 00 00 */	cmpwi r31, 0
+/* 80374A04 0036A784  41 82 00 0C */	beq lbl_80374A10
+/* 80374A08 0036A788  80 01 00 10 */	lwz r0, 0x10(r1)
+/* 80374A0C 0036A78C  90 1F 00 00 */	stw r0, 0(r31)
+lbl_80374A10:
+/* 80374A10 0036A790  38 60 00 00 */	li r3, 0
+/* 80374A14 0036A794  48 00 00 98 */	b lbl_80374AAC
+lbl_80374A18:
+/* 80374A18 0036A798  80 81 00 10 */	lwz r4, 0x10(r1)
+/* 80374A1C 0036A79C  3B 80 00 05 */	li r28, 5
+/* 80374A20 0036A7A0  3B A0 00 00 */	li r29, 0
+/* 80374A24 0036A7A4  80 64 00 24 */	lwz r3, 0x24(r4)
+/* 80374A28 0036A7A8  38 03 00 01 */	addi r0, r3, 1
+/* 80374A2C 0036A7AC  90 04 00 24 */	stw r0, 0x24(r4)
+lbl_80374A30:
+/* 80374A30 0036A7B0  7F C3 F3 78 */	mr r3, r30
+/* 80374A34 0036A7B4  48 00 23 C1 */	bl gti2ReceiveMessages
+/* 80374A38 0036A7B8  2C 03 00 00 */	cmpwi r3, 0
+/* 80374A3C 0036A7BC  41 82 00 1C */	beq lbl_80374A58
+/* 80374A40 0036A7C0  7F C3 F3 78 */	mr r3, r30
+/* 80374A44 0036A7C4  48 00 3C B9 */	bl gti2SocketConnectionsThink
+/* 80374A48 0036A7C8  2C 03 00 00 */	cmpwi r3, 0
+/* 80374A4C 0036A7CC  41 82 00 0C */	beq lbl_80374A58
+/* 80374A50 0036A7D0  7F C3 F3 78 */	mr r3, r30
+/* 80374A54 0036A7D4  48 00 3C F5 */	bl gti2FreeClosedConnections
+lbl_80374A58:
+/* 80374A58 0036A7D8  80 61 00 10 */	lwz r3, 0x10(r1)
+/* 80374A5C 0036A7DC  80 03 00 0C */	lwz r0, 0xc(r3)
+/* 80374A60 0036A7E0  7C 03 FE 70 */	srawi r3, r0, 0x1f
+/* 80374A64 0036A7E4  7C 1C 00 10 */	subfc r0, r28, r0
+/* 80374A68 0036A7E8  7F 63 E9 15 */	adde. r27, r3, r29
+/* 80374A6C 0036A7EC  40 82 00 0C */	bne lbl_80374A78
+/* 80374A70 0036A7F0  38 60 00 01 */	li r3, 1
+/* 80374A74 0036A7F4  4B FE 8D 01 */	bl msleep
+lbl_80374A78:
+/* 80374A78 0036A7F8  2C 1B 00 00 */	cmpwi r27, 0
+/* 80374A7C 0036A7FC  41 82 FF B4 */	beq lbl_80374A30
+/* 80374A80 0036A800  80 81 00 10 */	lwz r4, 0x10(r1)
+/* 80374A84 0036A804  80 64 00 24 */	lwz r3, 0x24(r4)
+/* 80374A88 0036A808  38 03 FF FF */	addi r0, r3, -1
+/* 80374A8C 0036A80C  90 04 00 24 */	stw r0, 0x24(r4)
+/* 80374A90 0036A810  80 61 00 10 */	lwz r3, 0x10(r1)
+/* 80374A94 0036A814  80 03 00 0C */	lwz r0, 0xc(r3)
+/* 80374A98 0036A818  2C 00 00 05 */	cmpwi r0, 5
+/* 80374A9C 0036A81C  40 82 00 08 */	bne lbl_80374AA4
+/* 80374AA0 0036A820  90 7F 00 00 */	stw r3, 0(r31)
+lbl_80374AA4:
+/* 80374AA4 0036A824  80 61 00 10 */	lwz r3, 0x10(r1)
+/* 80374AA8 0036A828  80 63 00 18 */	lwz r3, 0x18(r3)
+lbl_80374AAC:
+/* 80374AAC 0036A82C  39 61 00 40 */	addi r11, r1, 0x40
+/* 80374AB0 0036A830  48 07 C8 B5 */	bl _restgpr_25
+/* 80374AB4 0036A834  80 01 00 44 */	lwz r0, 0x44(r1)
+/* 80374AB8 0036A838  7C 08 03 A6 */	mtlr r0
+/* 80374ABC 0036A83C  38 21 00 40 */	addi r1, r1, 0x40
+/* 80374AC0 0036A840  4E 80 00 20 */	blr 
+
+.global gt2Send
+gt2Send:
+/* 80374AC4 0036A844  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 80374AC8 0036A848  7C 08 02 A6 */	mflr r0
+/* 80374ACC 0036A84C  90 01 00 24 */	stw r0, 0x24(r1)
+/* 80374AD0 0036A850  93 E1 00 1C */	stw r31, 0x1c(r1)
+/* 80374AD4 0036A854  7C DF 33 78 */	mr r31, r6
+/* 80374AD8 0036A858  93 C1 00 18 */	stw r30, 0x18(r1)
+/* 80374ADC 0036A85C  7C 7E 1B 78 */	mr r30, r3
+/* 80374AE0 0036A860  90 81 00 08 */	stw r4, 8(r1)
+/* 80374AE4 0036A864  90 A1 00 0C */	stw r5, 0xc(r1)
+/* 80374AE8 0036A868  80 03 00 0C */	lwz r0, 0xc(r3)
+/* 80374AEC 0036A86C  2C 00 00 05 */	cmpwi r0, 5
+/* 80374AF0 0036A870  41 82 00 0C */	beq lbl_80374AFC
+/* 80374AF4 0036A874  38 60 00 08 */	li r3, 8
+/* 80374AF8 0036A878  48 00 00 B0 */	b lbl_80374BA8
+lbl_80374AFC:
+/* 80374AFC 0036A87C  38 61 00 08 */	addi r3, r1, 8
+/* 80374B00 0036A880  38 81 00 0C */	addi r4, r1, 0xc
+/* 80374B04 0036A884  48 00 40 4D */	bl gti2MessageCheck
+/* 80374B08 0036A888  2C 1F 00 00 */	cmpwi r31, 0
+/* 80374B0C 0036A88C  41 82 00 48 */	beq lbl_80374B54
+/* 80374B10 0036A890  80 7E 00 08 */	lwz r3, 8(r30)
+/* 80374B14 0036A894  80 03 00 40 */	lwz r0, 0x40(r3)
+/* 80374B18 0036A898  2C 00 00 02 */	cmpwi r0, 2
+/* 80374B1C 0036A89C  40 82 00 38 */	bne lbl_80374B54
+/* 80374B20 0036A8A0  80 81 00 08 */	lwz r4, 8(r1)
+/* 80374B24 0036A8A4  38 61 00 10 */	addi r3, r1, 0x10
+/* 80374B28 0036A8A8  38 A0 00 02 */	li r5, 2
+/* 80374B2C 0036A8AC  4B C8 F8 0D */	bl func_80004338
+/* 80374B30 0036A8B0  80 7E 00 08 */	lwz r3, 8(r30)
+/* 80374B34 0036A8B4  A0 81 00 10 */	lhz r4, 0x10(r1)
+/* 80374B38 0036A8B8  80 03 00 44 */	lwz r0, 0x44(r3)
+/* 80374B3C 0036A8BC  80 61 00 0C */	lwz r3, 0xc(r1)
+/* 80374B40 0036A8C0  7C 04 02 14 */	add r0, r4, r0
+/* 80374B44 0036A8C4  7C 03 00 00 */	cmpw r3, r0
+/* 80374B48 0036A8C8  41 82 00 0C */	beq lbl_80374B54
+/* 80374B4C 0036A8CC  38 60 00 09 */	li r3, 9
+/* 80374B50 0036A8D0  48 00 00 58 */	b lbl_80374BA8
+lbl_80374B54:
+/* 80374B54 0036A8D4  80 7E 00 98 */	lwz r3, 0x98(r30)
+/* 80374B58 0036A8D8  4B FE 5A 39 */	bl ArrayLength
+/* 80374B5C 0036A8DC  2C 03 00 00 */	cmpwi r3, 0
+/* 80374B60 0036A8E0  41 82 00 24 */	beq lbl_80374B84
+/* 80374B64 0036A8E4  80 A1 00 08 */	lwz r5, 8(r1)
+/* 80374B68 0036A8E8  7F C3 F3 78 */	mr r3, r30
+/* 80374B6C 0036A8EC  80 C1 00 0C */	lwz r6, 0xc(r1)
+/* 80374B70 0036A8F0  7F E7 FB 78 */	mr r7, r31
+/* 80374B74 0036A8F4  38 80 00 00 */	li r4, 0
+/* 80374B78 0036A8F8  4B FF F2 55 */	bl gti2SendFilterCallback
+/* 80374B7C 0036A8FC  38 60 00 00 */	li r3, 0
+/* 80374B80 0036A900  48 00 00 28 */	b lbl_80374BA8
+lbl_80374B84:
+/* 80374B84 0036A904  80 81 00 08 */	lwz r4, 8(r1)
+/* 80374B88 0036A908  7F C3 F3 78 */	mr r3, r30
+/* 80374B8C 0036A90C  80 A1 00 0C */	lwz r5, 0xc(r1)
+/* 80374B90 0036A910  7F E6 FB 78 */	mr r6, r31
+/* 80374B94 0036A914  48 00 30 B1 */	bl gti2Send
+/* 80374B98 0036A918  2C 03 00 00 */	cmpwi r3, 0
+/* 80374B9C 0036A91C  38 60 00 0A */	li r3, 0xa
+/* 80374BA0 0036A920  41 82 00 08 */	beq lbl_80374BA8
+/* 80374BA4 0036A924  38 60 00 00 */	li r3, 0
+lbl_80374BA8:
+/* 80374BA8 0036A928  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 80374BAC 0036A92C  83 E1 00 1C */	lwz r31, 0x1c(r1)
+/* 80374BB0 0036A930  83 C1 00 18 */	lwz r30, 0x18(r1)
+/* 80374BB4 0036A934  7C 08 03 A6 */	mtlr r0
+/* 80374BB8 0036A938  38 21 00 20 */	addi r1, r1, 0x20
+/* 80374BBC 0036A93C  4E 80 00 20 */	blr 
+
+.global gt2CloseConnectionHard
+gt2CloseConnectionHard:
+/* 80374BC0 0036A940  38 80 00 01 */	li r4, 1
+/* 80374BC4 0036A944  4B FF FB 0C */	b gti2CloseConnection
+
+.global gti2CloseAllConnectionsHardMap
+gti2CloseAllConnectionsHardMap:
+/* 80374BC8 0036A948  80 63 00 00 */	lwz r3, 0(r3)
+/* 80374BCC 0036A94C  38 80 00 01 */	li r4, 1
+/* 80374BD0 0036A950  4B FF FB 00 */	b gti2CloseConnection
+
+.global gt2CloseAllConnectionsHard
+gt2CloseAllConnectionsHard:
+/* 80374BD4 0036A954  3C 80 80 37 */	lis r4, gti2CloseAllConnectionsHardMap@ha
+/* 80374BD8 0036A958  80 63 00 0C */	lwz r3, 0xc(r3)
+/* 80374BDC 0036A95C  38 84 4B C8 */	addi r4, r4, gti2CloseAllConnectionsHardMap@l
+/* 80374BE0 0036A960  38 A0 00 00 */	li r5, 0
+/* 80374BE4 0036A964  4B FE 66 80 */	b TableMapSafe
+
+.global gt2GetLocalPort
+gt2GetLocalPort:
+/* 80374BE8 0036A968  A0 63 00 08 */	lhz r3, 8(r3)
+/* 80374BEC 0036A96C  4E 80 00 20 */	blr 
+
+.global gt2GetIncomingBufferFreeSpace
+gt2GetIncomingBufferFreeSpace:
+/* 80374BF0 0036A970  80 83 00 4C */	lwz r4, 0x4c(r3)
+/* 80374BF4 0036A974  80 03 00 48 */	lwz r0, 0x48(r3)
+/* 80374BF8 0036A978  7C 64 00 50 */	subf r3, r4, r0
+/* 80374BFC 0036A97C  4E 80 00 20 */	blr 
+
+.global gt2GetOutgoingBufferFreeSpace
+gt2GetOutgoingBufferFreeSpace:
+/* 80374C00 0036A980  80 83 00 58 */	lwz r4, 0x58(r3)
+/* 80374C04 0036A984  80 03 00 54 */	lwz r0, 0x54(r3)
+/* 80374C08 0036A988  7C 64 00 50 */	subf r3, r4, r0
+/* 80374C0C 0036A98C  4E 80 00 20 */	blr 
+
+.global gt2GetSocketSOCKET
+gt2GetSocketSOCKET:
+/* 80374C10 0036A990  80 63 00 00 */	lwz r3, 0(r3)
+/* 80374C14 0036A994  4E 80 00 20 */	blr 
+
+.global gt2SetUnrecognizedMessageCallback
+gt2SetUnrecognizedMessageCallback:
+/* 80374C18 0036A998  90 83 00 30 */	stw r4, 0x30(r3)
+/* 80374C1C 0036A99C  4E 80 00 20 */	blr 
+
+.global gt2SetConnectionData
+gt2SetConnectionData:
+/* 80374C20 0036A9A0  90 83 00 40 */	stw r4, 0x40(r3)
+/* 80374C24 0036A9A4  4E 80 00 20 */	blr 
+
+.global gt2GetConnectionData
+gt2GetConnectionData:
+/* 80374C28 0036A9A8  80 63 00 40 */	lwz r3, 0x40(r3)
+/* 80374C2C 0036A9AC  4E 80 00 20 */	blr 
+

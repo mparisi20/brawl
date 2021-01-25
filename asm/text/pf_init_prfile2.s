@@ -1,0 +1,24 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global VFipf2_init_prfile2
+VFipf2_init_prfile2:
+/* 803C2D74 003B8AF4  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 803C2D78 003B8AF8  7C 08 02 A6 */	mflr r0
+/* 803C2D7C 003B8AFC  90 01 00 14 */	stw r0, 0x14(r1)
+/* 803C2D80 003B8B00  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 803C2D84 003B8B04  4B FF 6E 41 */	bl VFiPFFATFS_initializeFATFS
+/* 803C2D88 003B8B08  2C 03 00 00 */	cmpwi r3, 0
+/* 803C2D8C 003B8B0C  7C 7F 1B 78 */	mr r31, r3
+/* 803C2D90 003B8B10  40 82 00 08 */	bne lbl_803C2D98
+/* 803C2D94 003B8B14  48 00 00 FD */	bl VFiPFSYS_initializeSYS
+lbl_803C2D98:
+/* 803C2D98 003B8B18  7F E3 FB 78 */	mr r3, r31
+/* 803C2D9C 003B8B1C  4B FF FB 71 */	bl VFiPFAPI_convertReturnValue
+/* 803C2DA0 003B8B20  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 803C2DA4 003B8B24  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 803C2DA8 003B8B28  7C 08 03 A6 */	mtlr r0
+/* 803C2DAC 003B8B2C  38 21 00 10 */	addi r1, r1, 0x10
+/* 803C2DB0 003B8B30  4E 80 00 20 */	blr 
+

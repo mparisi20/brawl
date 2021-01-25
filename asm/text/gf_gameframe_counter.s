@@ -1,0 +1,94 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global gfGameFrameCounter$7reset
+gfGameFrameCounter$7reset:
+/* 800241B4 00019F34  38 00 00 00 */	li r0, 0
+/* 800241B8 00019F38  38 80 FF FF */	li r4, -1
+/* 800241BC 00019F3C  90 83 00 00 */	stw r4, 0(r3)
+/* 800241C0 00019F40  90 03 00 04 */	stw r0, 4(r3)
+/* 800241C4 00019F44  90 03 00 08 */	stw r0, 8(r3)
+/* 800241C8 00019F48  4E 80 00 20 */	blr 
+
+.global gfGameFrameCounter$7start
+gfGameFrameCounter$7start:
+/* 800241CC 00019F4C  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 800241D0 00019F50  7C 08 02 A6 */	mflr r0
+/* 800241D4 00019F54  90 01 00 14 */	stw r0, 0x14(r1)
+/* 800241D8 00019F58  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 800241DC 00019F5C  7C 7F 1B 78 */	mr r31, r3
+/* 800241E0 00019F60  80 83 00 00 */	lwz r4, 0(r3)
+/* 800241E4 00019F64  3C 04 00 01 */	addis r0, r4, 1
+/* 800241E8 00019F68  28 00 FF FF */	cmplwi r0, 0xffff
+/* 800241EC 00019F6C  40 82 00 18 */	bne lbl_80024204
+/* 800241F0 00019F70  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
+/* 800241F4 00019F74  48 02 A6 A1 */	bl GameGlobal$7getGameFrame
+/* 800241F8 00019F78  48 3C D0 01 */	bl __cvt_fp2unsigned
+/* 800241FC 00019F7C  90 7F 00 00 */	stw r3, 0(r31)
+/* 80024200 00019F80  48 00 00 2C */	b lbl_8002422C
+lbl_80024204:
+/* 80024204 00019F84  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
+/* 80024208 00019F88  48 02 A6 8D */	bl GameGlobal$7getGameFrame
+/* 8002420C 00019F8C  48 3C CF ED */	bl __cvt_fp2unsigned
+/* 80024210 00019F90  80 9F 00 04 */	lwz r4, 4(r31)
+/* 80024214 00019F94  38 00 00 00 */	li r0, 0
+/* 80024218 00019F98  80 BF 00 08 */	lwz r5, 8(r31)
+/* 8002421C 00019F9C  7C 64 18 50 */	subf r3, r4, r3
+/* 80024220 00019FA0  90 1F 00 04 */	stw r0, 4(r31)
+/* 80024224 00019FA4  7C 05 1A 14 */	add r0, r5, r3
+/* 80024228 00019FA8  90 1F 00 08 */	stw r0, 8(r31)
+lbl_8002422C:
+/* 8002422C 00019FAC  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 80024230 00019FB0  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 80024234 00019FB4  7C 08 03 A6 */	mtlr r0
+/* 80024238 00019FB8  38 21 00 10 */	addi r1, r1, 0x10
+/* 8002423C 00019FBC  4E 80 00 20 */	blr 
+
+.global gfGameFrameCounter$7stop
+gfGameFrameCounter$7stop:
+/* 80024240 00019FC0  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 80024244 00019FC4  7C 08 02 A6 */	mflr r0
+/* 80024248 00019FC8  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8002424C 00019FCC  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 80024250 00019FD0  7C 7F 1B 78 */	mr r31, r3
+/* 80024254 00019FD4  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
+/* 80024258 00019FD8  48 02 A6 3D */	bl GameGlobal$7getGameFrame
+/* 8002425C 00019FDC  48 3C CF 9D */	bl __cvt_fp2unsigned
+/* 80024260 00019FE0  90 7F 00 04 */	stw r3, 4(r31)
+/* 80024264 00019FE4  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 80024268 00019FE8  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8002426C 00019FEC  7C 08 03 A6 */	mtlr r0
+/* 80024270 00019FF0  38 21 00 10 */	addi r1, r1, 0x10
+/* 80024274 00019FF4  4E 80 00 20 */	blr 
+
+.global gfGameFrameCounter$7getCounter
+gfGameFrameCounter$7getCounter:
+/* 80024278 00019FF8  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8002427C 00019FFC  7C 08 02 A6 */	mflr r0
+/* 80024280 0001A000  90 01 00 14 */	stw r0, 0x14(r1)
+/* 80024284 0001A004  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 80024288 0001A008  7C 7F 1B 78 */	mr r31, r3
+/* 8002428C 0001A00C  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
+/* 80024290 0001A010  48 02 A6 05 */	bl GameGlobal$7getGameFrame
+/* 80024294 0001A014  48 3C CF 65 */	bl __cvt_fp2unsigned
+/* 80024298 0001A018  80 9F 00 04 */	lwz r4, 4(r31)
+/* 8002429C 0001A01C  2C 04 00 00 */	cmpwi r4, 0
+/* 800242A0 0001A020  41 82 00 18 */	beq lbl_800242B8
+/* 800242A4 0001A024  80 1F 00 00 */	lwz r0, 0(r31)
+/* 800242A8 0001A028  80 7F 00 08 */	lwz r3, 8(r31)
+/* 800242AC 0001A02C  7C 00 20 50 */	subf r0, r0, r4
+/* 800242B0 0001A030  7C 63 00 50 */	subf r3, r3, r0
+/* 800242B4 0001A034  48 00 00 14 */	b lbl_800242C8
+lbl_800242B8:
+/* 800242B8 0001A038  80 1F 00 00 */	lwz r0, 0(r31)
+/* 800242BC 0001A03C  80 9F 00 08 */	lwz r4, 8(r31)
+/* 800242C0 0001A040  7C 00 18 50 */	subf r0, r0, r3
+/* 800242C4 0001A044  7C 64 00 50 */	subf r3, r4, r0
+lbl_800242C8:
+/* 800242C8 0001A048  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 800242CC 0001A04C  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 800242D0 0001A050  7C 08 03 A6 */	mtlr r0
+/* 800242D4 0001A054  38 21 00 10 */	addi r1, r1, 0x10
+/* 800242D8 0001A058  4E 80 00 20 */	blr 
+

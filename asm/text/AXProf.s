@@ -1,0 +1,24 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global __AXGetCurrentProfile
+__AXGetCurrentProfile:
+/* 802025D4 001F8354  80 0D C7 28 */	lwz r0, lbl_805A0B48-_SDA_BASE_(r13)
+/* 802025D8 001F8358  2C 00 00 00 */	cmpwi r0, 0
+/* 802025DC 001F835C  41 82 00 30 */	beq lbl_8020260C
+/* 802025E0 001F8360  80 AD C7 2C */	lwz r5, lbl_805A0B4C-_SDA_BASE_(r13)
+/* 802025E4 001F8364  80 6D C7 30 */	lwz r3, lbl_805A0B50-_SDA_BASE_(r13)
+/* 802025E8 001F8368  38 85 00 01 */	addi r4, r5, 1
+/* 802025EC 001F836C  80 CD C7 34 */	lwz r6, lbl_805A0B54-_SDA_BASE_(r13)
+/* 802025F0 001F8370  7C 04 1B 96 */	divwu r0, r4, r3
+/* 802025F4 001F8374  7C 00 19 D6 */	mullw r0, r0, r3
+/* 802025F8 001F8378  1C 65 00 38 */	mulli r3, r5, 0x38
+/* 802025FC 001F837C  7C 00 20 50 */	subf r0, r0, r4
+/* 80202600 001F8380  90 0D C7 2C */	stw r0, lbl_805A0B4C-_SDA_BASE_(r13)
+/* 80202604 001F8384  7C 66 1A 14 */	add r3, r6, r3
+/* 80202608 001F8388  4E 80 00 20 */	blr 
+lbl_8020260C:
+/* 8020260C 001F838C  38 60 00 00 */	li r3, 0
+/* 80202610 001F8390  4E 80 00 20 */	blr 
+

@@ -1,0 +1,631 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global gfTask$7__ct
+gfTask$7__ct:
+/* 8002D8B8 00023638  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 8002D8BC 0002363C  7C 08 02 A6 */	mflr r0
+/* 8002D8C0 00023640  90 01 00 24 */	stw r0, 0x24(r1)
+/* 8002D8C4 00023644  39 61 00 20 */	addi r11, r1, 0x20
+/* 8002D8C8 00023648  48 3C 3A 55 */	bl _savegpr_26
+/* 8002D8CC 0002364C  88 03 00 2C */	lbz r0, 0x2c(r3)
+/* 8002D8D0 00023650  39 80 00 00 */	li r12, 0
+/* 8002D8D4 00023654  3F E0 80 42 */	lis r31, lbl_80422F08@ha
+/* 8002D8D8 00023658  3D 20 00 01 */	lis r9, 0x0000FFFF@ha
+/* 8002D8DC 0002365C  60 00 00 40 */	ori r0, r0, 0x40
+/* 8002D8E0 00023660  39 40 00 04 */	li r10, 4
+/* 8002D8E4 00023664  54 00 06 F2 */	rlwinm r0, r0, 0, 0x1b, 0x19
+/* 8002D8E8 00023668  3B FF 2F 08 */	addi r31, r31, lbl_80422F08@l
+/* 8002D8EC 0002366C  54 0B 07 76 */	rlwinm r11, r0, 0, 0x1d, 0x1b
+/* 8002D8F0 00023670  93 E3 00 3C */	stw r31, 0x3c(r3)
+/* 8002D8F4 00023674  38 09 FF FF */	addi r0, r9, 0x0000FFFF@l
+/* 8002D8F8 00023678  7C 9A 23 78 */	mr r26, r4
+/* 8002D8FC 0002367C  61 69 00 06 */	ori r9, r11, 6
+/* 8002D900 00023680  91 83 00 04 */	stw r12, 4(r3)
+/* 8002D904 00023684  55 29 00 3C */	rlwinm r9, r9, 0, 0, 0x1e
+/* 8002D908 00023688  7C 7F 1B 78 */	mr r31, r3
+/* 8002D90C 0002368C  99 23 00 2C */	stb r9, 0x2c(r3)
+/* 8002D910 00023690  7C BB 2B 78 */	mr r27, r5
+/* 8002D914 00023694  7C DC 33 78 */	mr r28, r6
+/* 8002D918 00023698  7C FD 3B 78 */	mr r29, r7
+/* 8002D91C 0002369C  80 83 00 2C */	lwz r4, 0x2c(r3)
+/* 8002D920 000236A0  51 44 7A 60 */	rlwimi r4, r10, 0xf, 9, 0x10
+/* 8002D924 000236A4  91 83 00 08 */	stw r12, 8(r3)
+/* 8002D928 000236A8  7D 1E 43 78 */	mr r30, r8
+/* 8002D92C 000236AC  91 83 00 0C */	stw r12, 0xc(r3)
+/* 8002D930 000236B0  91 83 00 10 */	stw r12, 0x10(r3)
+/* 8002D934 000236B4  91 83 00 14 */	stw r12, 0x14(r3)
+/* 8002D938 000236B8  91 83 00 18 */	stw r12, 0x18(r3)
+/* 8002D93C 000236BC  91 83 00 1C */	stw r12, 0x1c(r3)
+/* 8002D940 000236C0  91 83 00 20 */	stw r12, 0x20(r3)
+/* 8002D944 000236C4  91 83 00 24 */	stw r12, 0x24(r3)
+/* 8002D948 000236C8  90 83 00 2C */	stw r4, 0x2c(r3)
+/* 8002D94C 000236CC  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002D950 000236D0  B1 83 00 34 */	sth r12, 0x34(r3)
+/* 8002D954 000236D4  91 83 00 38 */	stw r12, 0x38(r3)
+/* 8002D958 000236D8  4B FD EF 4D */	bl srSystemGetDebugLevel
+/* 8002D95C 000236DC  2C 03 00 03 */	cmpwi r3, 3
+/* 8002D960 000236E0  41 81 00 10 */	bgt lbl_8002D970
+/* 8002D964 000236E4  88 1F 00 2C */	lbz r0, 0x2c(r31)
+/* 8002D968 000236E8  60 00 00 08 */	ori r0, r0, 8
+/* 8002D96C 000236EC  98 1F 00 2C */	stb r0, 0x2c(r31)
+lbl_8002D970:
+/* 8002D970 000236F0  80 6D 82 48 */	lwz r3, lbl_8059C668-_SDA_BASE_(r13)
+/* 8002D974 000236F4  38 03 00 01 */	addi r0, r3, 1
+/* 8002D978 000236F8  90 0D 82 48 */	stw r0, lbl_8059C668-_SDA_BASE_(r13)
+/* 8002D97C 000236FC  80 1F 00 2C */	lwz r0, 0x2c(r31)
+/* 8002D980 00023700  53 60 3C 70 */	rlwimi r0, r27, 7, 0x11, 0x18
+/* 8002D984 00023704  90 7F 00 28 */	stw r3, 0x28(r31)
+/* 8002D988 00023708  90 1F 00 2C */	stw r0, 0x2c(r31)
+/* 8002D98C 0002370C  88 1F 00 2C */	lbz r0, 0x2c(r31)
+/* 8002D990 00023710  93 5F 00 00 */	stw r26, 0(r31)
+/* 8002D994 00023714  60 00 00 40 */	ori r0, r0, 0x40
+/* 8002D998 00023718  9B 9F 00 30 */	stb r28, 0x30(r31)
+/* 8002D99C 0002371C  9B BF 00 31 */	stb r29, 0x31(r31)
+/* 8002D9A0 00023720  98 1F 00 2C */	stb r0, 0x2c(r31)
+/* 8002D9A4 00023724  48 00 09 69 */	bl gfTaskScheduler$7getInstance
+/* 8002D9A8 00023728  7F E4 FB 78 */	mr r4, r31
+/* 8002D9AC 0002372C  48 00 14 C5 */	bl gfTaskScheduler$7registTask
+/* 8002D9B0 00023730  2C 1E 00 00 */	cmpwi r30, 0
+/* 8002D9B4 00023734  41 82 00 3C */	beq lbl_8002D9F0
+/* 8002D9B8 00023738  80 1F 00 2C */	lwz r0, 0x2c(r31)
+/* 8002D9BC 0002373C  38 60 00 02 */	li r3, 2
+/* 8002D9C0 00023740  50 60 7A 60 */	rlwimi r0, r3, 0xf, 9, 0x10
+/* 8002D9C4 00023744  90 1F 00 2C */	stw r0, 0x2c(r31)
+/* 8002D9C8 00023748  88 1F 00 2C */	lbz r0, 0x2c(r31)
+/* 8002D9CC 0002374C  54 00 07 FF */	clrlwi. r0, r0, 0x1f
+/* 8002D9D0 00023750  40 82 00 30 */	bne lbl_8002DA00
+/* 8002D9D4 00023754  48 00 09 39 */	bl gfTaskScheduler$7getInstance
+/* 8002D9D8 00023758  7F E4 FB 78 */	mr r4, r31
+/* 8002D9DC 0002375C  48 00 13 55 */	bl gfTaskScheduler$7link
+/* 8002D9E0 00023760  88 1F 00 2C */	lbz r0, 0x2c(r31)
+/* 8002D9E4 00023764  60 00 00 01 */	ori r0, r0, 1
+/* 8002D9E8 00023768  98 1F 00 2C */	stb r0, 0x2c(r31)
+/* 8002D9EC 0002376C  48 00 00 14 */	b lbl_8002DA00
+lbl_8002D9F0:
+/* 8002D9F0 00023770  80 1F 00 2C */	lwz r0, 0x2c(r31)
+/* 8002D9F4 00023774  38 60 00 04 */	li r3, 4
+/* 8002D9F8 00023778  50 60 7A 60 */	rlwimi r0, r3, 0xf, 9, 0x10
+/* 8002D9FC 0002377C  90 1F 00 2C */	stw r0, 0x2c(r31)
+lbl_8002DA00:
+/* 8002DA00 00023780  39 61 00 20 */	addi r11, r1, 0x20
+/* 8002DA04 00023784  7F E3 FB 78 */	mr r3, r31
+/* 8002DA08 00023788  48 3C 39 61 */	bl _restgpr_26
+/* 8002DA0C 0002378C  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 8002DA10 00023790  7C 08 03 A6 */	mtlr r0
+/* 8002DA14 00023794  38 21 00 20 */	addi r1, r1, 0x20
+/* 8002DA18 00023798  4E 80 00 20 */	blr 
+
+.global gfTask$7__dt
+gfTask$7__dt:
+/* 8002DA1C 0002379C  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 8002DA20 000237A0  7C 08 02 A6 */	mflr r0
+/* 8002DA24 000237A4  2C 03 00 00 */	cmpwi r3, 0
+/* 8002DA28 000237A8  90 01 00 24 */	stw r0, 0x24(r1)
+/* 8002DA2C 000237AC  93 E1 00 1C */	stw r31, 0x1c(r1)
+/* 8002DA30 000237B0  93 C1 00 18 */	stw r30, 0x18(r1)
+/* 8002DA34 000237B4  7C 9E 23 78 */	mr r30, r4
+/* 8002DA38 000237B8  93 A1 00 14 */	stw r29, 0x14(r1)
+/* 8002DA3C 000237BC  7C 7D 1B 78 */	mr r29, r3
+/* 8002DA40 000237C0  41 82 00 C0 */	beq lbl_8002DB00
+/* 8002DA44 000237C4  83 E3 00 38 */	lwz r31, 0x38(r3)
+/* 8002DA48 000237C8  3C 80 80 42 */	lis r4, lbl_80422F08@ha
+/* 8002DA4C 000237CC  38 84 2F 08 */	addi r4, r4, lbl_80422F08@l
+/* 8002DA50 000237D0  2C 1F 00 00 */	cmpwi r31, 0
+/* 8002DA54 000237D4  90 83 00 3C */	stw r4, 0x3c(r3)
+/* 8002DA58 000237D8  41 82 00 40 */	beq lbl_8002DA98
+/* 8002DA5C 000237DC  81 9F 00 04 */	lwz r12, 4(r31)
+/* 8002DA60 000237E0  7F E3 FB 78 */	mr r3, r31
+/* 8002DA64 000237E4  81 8C 00 08 */	lwz r12, 8(r12)
+/* 8002DA68 000237E8  7D 89 03 A6 */	mtctr r12
+/* 8002DA6C 000237EC  4E 80 04 21 */	bctrl 
+/* 8002DA70 000237F0  83 FF 00 00 */	lwz r31, 0(r31)
+/* 8002DA74 000237F4  48 00 00 1C */	b lbl_8002DA90
+lbl_8002DA78:
+/* 8002DA78 000237F8  81 9F 00 04 */	lwz r12, 4(r31)
+/* 8002DA7C 000237FC  7F E3 FB 78 */	mr r3, r31
+/* 8002DA80 00023800  81 8C 00 08 */	lwz r12, 8(r12)
+/* 8002DA84 00023804  7D 89 03 A6 */	mtctr r12
+/* 8002DA88 00023808  4E 80 04 21 */	bctrl 
+/* 8002DA8C 0002380C  83 FF 00 00 */	lwz r31, 0(r31)
+lbl_8002DA90:
+/* 8002DA90 00023810  2C 1F 00 00 */	cmpwi r31, 0
+/* 8002DA94 00023814  40 82 FF E4 */	bne lbl_8002DA78
+lbl_8002DA98:
+/* 8002DA98 00023818  48 00 08 75 */	bl gfTaskScheduler$7getInstance
+/* 8002DA9C 0002381C  7F A4 EB 78 */	mr r4, r29
+/* 8002DAA0 00023820  48 00 14 15 */	bl gfTaskScheduler$7isRegist
+/* 8002DAA4 00023824  2C 03 00 00 */	cmpwi r3, 0
+/* 8002DAA8 00023828  41 82 00 38 */	beq lbl_8002DAE0
+/* 8002DAAC 0002382C  80 1D 00 2C */	lwz r0, 0x2c(r29)
+/* 8002DAB0 00023830  38 60 00 03 */	li r3, 3
+/* 8002DAB4 00023834  50 60 7A 60 */	rlwimi r0, r3, 0xf, 9, 0x10
+/* 8002DAB8 00023838  90 1D 00 2C */	stw r0, 0x2c(r29)
+/* 8002DABC 0002383C  88 1D 00 2C */	lbz r0, 0x2c(r29)
+/* 8002DAC0 00023840  54 00 07 FF */	clrlwi. r0, r0, 0x1f
+/* 8002DAC4 00023844  41 82 00 10 */	beq lbl_8002DAD4
+/* 8002DAC8 00023848  48 00 08 45 */	bl gfTaskScheduler$7getInstance
+/* 8002DACC 0002384C  7F A4 EB 78 */	mr r4, r29
+/* 8002DAD0 00023850  48 00 11 3D */	bl gfTaskScheduler$7unlink
+lbl_8002DAD4:
+/* 8002DAD4 00023854  48 00 08 39 */	bl gfTaskScheduler$7getInstance
+/* 8002DAD8 00023858  7F A4 EB 78 */	mr r4, r29
+/* 8002DADC 0002385C  48 00 10 59 */	bl gfTaskScheduler$7removeFromSuspendList
+lbl_8002DAE0:
+/* 8002DAE0 00023860  80 1D 00 2C */	lwz r0, 0x2c(r29)
+/* 8002DAE4 00023864  38 60 00 05 */	li r3, 5
+/* 8002DAE8 00023868  50 60 7A 60 */	rlwimi r0, r3, 0xf, 9, 0x10
+/* 8002DAEC 0002386C  2C 1E 00 00 */	cmpwi r30, 0
+/* 8002DAF0 00023870  90 1D 00 2C */	stw r0, 0x2c(r29)
+/* 8002DAF4 00023874  40 81 00 0C */	ble lbl_8002DB00
+/* 8002DAF8 00023878  7F A3 EB 78 */	mr r3, r29
+/* 8002DAFC 0002387C  4B FD ED CD */	bl __dl
+lbl_8002DB00:
+/* 8002DB00 00023880  83 E1 00 1C */	lwz r31, 0x1c(r1)
+/* 8002DB04 00023884  7F A3 EB 78 */	mr r3, r29
+/* 8002DB08 00023888  83 C1 00 18 */	lwz r30, 0x18(r1)
+/* 8002DB0C 0002388C  83 A1 00 14 */	lwz r29, 0x14(r1)
+/* 8002DB10 00023890  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 8002DB14 00023894  7C 08 03 A6 */	mtlr r0
+/* 8002DB18 00023898  38 21 00 20 */	addi r1, r1, 0x20
+/* 8002DB1C 0002389C  4E 80 00 20 */	blr 
+
+.global gfTask$7updateId
+gfTask$7updateId:
+/* 8002DB20 000238A0  80 8D 82 4C */	lwz r4, lbl_8059C66C-_SDA_BASE_(r13)
+/* 8002DB24 000238A4  38 04 00 01 */	addi r0, r4, 1
+/* 8002DB28 000238A8  64 84 80 00 */	oris r4, r4, 0x8000
+/* 8002DB2C 000238AC  90 0D 82 4C */	stw r0, lbl_8059C66C-_SDA_BASE_(r13)
+/* 8002DB30 000238B0  90 83 00 28 */	stw r4, 0x28(r3)
+/* 8002DB34 000238B4  4E 80 00 20 */	blr 
+
+.global gfTask$7link
+gfTask$7link:
+/* 8002DB38 000238B8  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8002DB3C 000238BC  7C 08 02 A6 */	mflr r0
+/* 8002DB40 000238C0  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8002DB44 000238C4  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8002DB48 000238C8  7C 9F 23 78 */	mr r31, r4
+/* 8002DB4C 000238CC  93 C1 00 08 */	stw r30, 8(r1)
+/* 8002DB50 000238D0  7C 7E 1B 78 */	mr r30, r3
+/* 8002DB54 000238D4  88 03 00 2C */	lbz r0, 0x2c(r3)
+/* 8002DB58 000238D8  54 00 07 FF */	clrlwi. r0, r0, 0x1f
+/* 8002DB5C 000238DC  40 82 00 34 */	bne lbl_8002DB90
+/* 8002DB60 000238E0  48 00 07 AD */	bl gfTaskScheduler$7getInstance
+/* 8002DB64 000238E4  7F C4 F3 78 */	mr r4, r30
+/* 8002DB68 000238E8  48 00 11 C9 */	bl gfTaskScheduler$7link
+/* 8002DB6C 000238EC  88 1E 00 2C */	lbz r0, 0x2c(r30)
+/* 8002DB70 000238F0  2C 1F 00 00 */	cmpwi r31, 0
+/* 8002DB74 000238F4  60 00 00 01 */	ori r0, r0, 1
+/* 8002DB78 000238F8  98 1E 00 2C */	stb r0, 0x2c(r30)
+/* 8002DB7C 000238FC  41 82 00 14 */	beq lbl_8002DB90
+/* 8002DB80 00023900  80 1E 00 2C */	lwz r0, 0x2c(r30)
+/* 8002DB84 00023904  38 60 00 01 */	li r3, 1
+/* 8002DB88 00023908  50 60 7A 60 */	rlwimi r0, r3, 0xf, 9, 0x10
+/* 8002DB8C 0002390C  90 1E 00 2C */	stw r0, 0x2c(r30)
+lbl_8002DB90:
+/* 8002DB90 00023910  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8002DB94 00023914  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8002DB98 00023918  83 C1 00 08 */	lwz r30, 8(r1)
+/* 8002DB9C 0002391C  7C 08 03 A6 */	mtlr r0
+/* 8002DBA0 00023920  38 21 00 10 */	addi r1, r1, 0x10
+/* 8002DBA4 00023924  4E 80 00 20 */	blr 
+
+.global gfTask$7unlink
+gfTask$7unlink:
+/* 8002DBA8 00023928  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8002DBAC 0002392C  7C 08 02 A6 */	mflr r0
+/* 8002DBB0 00023930  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8002DBB4 00023934  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8002DBB8 00023938  7C 7F 1B 78 */	mr r31, r3
+/* 8002DBBC 0002393C  88 03 00 2C */	lbz r0, 0x2c(r3)
+/* 8002DBC0 00023940  54 00 07 FF */	clrlwi. r0, r0, 0x1f
+/* 8002DBC4 00023944  41 82 00 40 */	beq lbl_8002DC04
+/* 8002DBC8 00023948  48 00 07 45 */	bl gfTaskScheduler$7getInstance
+/* 8002DBCC 0002394C  7F E4 FB 78 */	mr r4, r31
+/* 8002DBD0 00023950  48 00 10 3D */	bl gfTaskScheduler$7unlink
+/* 8002DBD4 00023954  48 00 07 39 */	bl gfTaskScheduler$7getInstance
+/* 8002DBD8 00023958  A0 A3 00 04 */	lhz r5, 4(r3)
+/* 8002DBDC 0002395C  38 80 00 00 */	li r4, 0
+/* 8002DBE0 00023960  38 05 FF FF */	addi r0, r5, -1
+/* 8002DBE4 00023964  B0 03 00 04 */	sth r0, 4(r3)
+/* 8002DBE8 00023968  88 1F 00 2C */	lbz r0, 0x2c(r31)
+/* 8002DBEC 0002396C  90 9F 00 0C */	stw r4, 0xc(r31)
+/* 8002DBF0 00023970  54 00 00 3C */	rlwinm r0, r0, 0, 0, 0x1e
+/* 8002DBF4 00023974  90 9F 00 10 */	stw r4, 0x10(r31)
+/* 8002DBF8 00023978  90 9F 00 14 */	stw r4, 0x14(r31)
+/* 8002DBFC 0002397C  90 9F 00 18 */	stw r4, 0x18(r31)
+/* 8002DC00 00023980  98 1F 00 2C */	stb r0, 0x2c(r31)
+lbl_8002DC04:
+/* 8002DC04 00023984  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8002DC08 00023988  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8002DC0C 0002398C  7C 08 03 A6 */	mtlr r0
+/* 8002DC10 00023990  38 21 00 10 */	addi r1, r1, 0x10
+/* 8002DC14 00023994  4E 80 00 20 */	blr 
+
+.global gfTask$7setPaused
+gfTask$7setPaused:
+/* 8002DC18 00023998  2C 04 00 00 */	cmpwi r4, 0
+/* 8002DC1C 0002399C  41 82 00 14 */	beq lbl_8002DC30
+/* 8002DC20 000239A0  3C 80 00 01 */	lis r4, 0x00008000@ha
+/* 8002DC24 000239A4  38 04 80 00 */	addi r0, r4, 0x00008000@l
+/* 8002DC28 000239A8  B0 03 00 34 */	sth r0, 0x34(r3)
+/* 8002DC2C 000239AC  4E 80 00 20 */	blr 
+lbl_8002DC30:
+/* 8002DC30 000239B0  A0 03 00 34 */	lhz r0, 0x34(r3)
+/* 8002DC34 000239B4  54 00 04 7E */	clrlwi r0, r0, 0x11
+/* 8002DC38 000239B8  B0 03 00 34 */	sth r0, 0x34(r3)
+/* 8002DC3C 000239BC  4E 80 00 20 */	blr 
+
+.global gfTask$7getTask
+gfTask$7getTask:
+/* 8002DC40 000239C0  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8002DC44 000239C4  7C 08 02 A6 */	mflr r0
+/* 8002DC48 000239C8  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8002DC4C 000239CC  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8002DC50 000239D0  7C 7F 1B 78 */	mr r31, r3
+/* 8002DC54 000239D4  48 00 06 B9 */	bl gfTaskScheduler$7getInstance
+/* 8002DC58 000239D8  7F E4 FB 78 */	mr r4, r31
+/* 8002DC5C 000239DC  48 00 13 4D */	bl gfTaskScheduler$7getTask_591
+/* 8002DC60 000239E0  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8002DC64 000239E4  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8002DC68 000239E8  7C 08 03 A6 */	mtlr r0
+/* 8002DC6C 000239EC  38 21 00 10 */	addi r1, r1, 0x10
+/* 8002DC70 000239F0  4E 80 00 20 */	blr 
+
+.global gfTask$7process
+gfTask$7process:
+/* 8002DC74 000239F4  2C 04 00 08 */	cmpwi r4, 8
+/* 8002DC78 000239F8  40 80 00 A4 */	bge lbl_8002DD1C
+/* 8002DC7C 000239FC  28 04 00 07 */	cmplwi r4, 7
+/* 8002DC80 00023A00  4D 81 00 20 */	bgtlr 
+/* 8002DC84 00023A04  3C A0 80 42 */	lis r5, lbl_80422EE8@ha
+/* 8002DC88 00023A08  54 80 10 3A */	slwi r0, r4, 2
+/* 8002DC8C 00023A0C  38 A5 2E E8 */	addi r5, r5, lbl_80422EE8@l
+/* 8002DC90 00023A10  7C A5 00 2E */	lwzx r5, r5, r0
+/* 8002DC94 00023A14  7C A9 03 A6 */	mtctr r5
+/* 8002DC98 00023A18  4E 80 04 20 */	bctr 
+/* 8002DC9C 00023A1C  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DCA0 00023A20  81 8C 00 08 */	lwz r12, 8(r12)
+/* 8002DCA4 00023A24  7D 89 03 A6 */	mtctr r12
+/* 8002DCA8 00023A28  4E 80 04 20 */	bctr 
+/* 8002DCAC 00023A2C  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DCB0 00023A30  81 8C 00 0C */	lwz r12, 0xc(r12)
+/* 8002DCB4 00023A34  7D 89 03 A6 */	mtctr r12
+/* 8002DCB8 00023A38  4E 80 04 20 */	bctr 
+/* 8002DCBC 00023A3C  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DCC0 00023A40  81 8C 00 10 */	lwz r12, 0x10(r12)
+/* 8002DCC4 00023A44  7D 89 03 A6 */	mtctr r12
+/* 8002DCC8 00023A48  4E 80 04 20 */	bctr 
+/* 8002DCCC 00023A4C  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DCD0 00023A50  81 8C 00 14 */	lwz r12, 0x14(r12)
+/* 8002DCD4 00023A54  7D 89 03 A6 */	mtctr r12
+/* 8002DCD8 00023A58  4E 80 04 20 */	bctr 
+/* 8002DCDC 00023A5C  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DCE0 00023A60  81 8C 00 18 */	lwz r12, 0x18(r12)
+/* 8002DCE4 00023A64  7D 89 03 A6 */	mtctr r12
+/* 8002DCE8 00023A68  4E 80 04 20 */	bctr 
+/* 8002DCEC 00023A6C  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DCF0 00023A70  81 8C 00 1C */	lwz r12, 0x1c(r12)
+/* 8002DCF4 00023A74  7D 89 03 A6 */	mtctr r12
+/* 8002DCF8 00023A78  4E 80 04 20 */	bctr 
+/* 8002DCFC 00023A7C  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DD00 00023A80  81 8C 00 20 */	lwz r12, 0x20(r12)
+/* 8002DD04 00023A84  7D 89 03 A6 */	mtctr r12
+/* 8002DD08 00023A88  4E 80 04 20 */	bctr 
+/* 8002DD0C 00023A8C  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DD10 00023A90  81 8C 00 24 */	lwz r12, 0x24(r12)
+/* 8002DD14 00023A94  7D 89 03 A6 */	mtctr r12
+/* 8002DD18 00023A98  4E 80 04 20 */	bctr 
+lbl_8002DD1C:
+/* 8002DD1C 00023A9C  38 04 FF F8 */	addi r0, r4, -8
+/* 8002DD20 00023AA0  28 00 00 07 */	cmplwi r0, 7
+/* 8002DD24 00023AA4  4D 81 00 20 */	bgtlr 
+/* 8002DD28 00023AA8  3C 80 80 42 */	lis r4, lbl_80422EC8@ha
+/* 8002DD2C 00023AAC  54 00 10 3A */	slwi r0, r0, 2
+/* 8002DD30 00023AB0  38 84 2E C8 */	addi r4, r4, lbl_80422EC8@l
+/* 8002DD34 00023AB4  7C 84 00 2E */	lwzx r4, r4, r0
+/* 8002DD38 00023AB8  7C 89 03 A6 */	mtctr r4
+/* 8002DD3C 00023ABC  4E 80 04 20 */	bctr 
+/* 8002DD40 00023AC0  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DD44 00023AC4  81 8C 00 28 */	lwz r12, 0x28(r12)
+/* 8002DD48 00023AC8  7D 89 03 A6 */	mtctr r12
+/* 8002DD4C 00023ACC  4E 80 04 20 */	bctr 
+/* 8002DD50 00023AD0  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DD54 00023AD4  81 8C 00 2C */	lwz r12, 0x2c(r12)
+/* 8002DD58 00023AD8  7D 89 03 A6 */	mtctr r12
+/* 8002DD5C 00023ADC  4E 80 04 20 */	bctr 
+/* 8002DD60 00023AE0  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DD64 00023AE4  81 8C 00 30 */	lwz r12, 0x30(r12)
+/* 8002DD68 00023AE8  7D 89 03 A6 */	mtctr r12
+/* 8002DD6C 00023AEC  4E 80 04 20 */	bctr 
+/* 8002DD70 00023AF0  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DD74 00023AF4  81 8C 00 34 */	lwz r12, 0x34(r12)
+/* 8002DD78 00023AF8  7D 89 03 A6 */	mtctr r12
+/* 8002DD7C 00023AFC  4E 80 04 20 */	bctr 
+/* 8002DD80 00023B00  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DD84 00023B04  81 8C 00 38 */	lwz r12, 0x38(r12)
+/* 8002DD88 00023B08  7D 89 03 A6 */	mtctr r12
+/* 8002DD8C 00023B0C  4E 80 04 20 */	bctr 
+/* 8002DD90 00023B10  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DD94 00023B14  81 8C 00 3C */	lwz r12, 0x3c(r12)
+/* 8002DD98 00023B18  7D 89 03 A6 */	mtctr r12
+/* 8002DD9C 00023B1C  4E 80 04 20 */	bctr 
+/* 8002DDA0 00023B20  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DDA4 00023B24  81 8C 00 40 */	lwz r12, 0x40(r12)
+/* 8002DDA8 00023B28  7D 89 03 A6 */	mtctr r12
+/* 8002DDAC 00023B2C  4E 80 04 20 */	bctr 
+/* 8002DDB0 00023B30  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DDB4 00023B34  81 8C 00 44 */	lwz r12, 0x44(r12)
+/* 8002DDB8 00023B38  7D 89 03 A6 */	mtctr r12
+/* 8002DDBC 00023B3C  4E 80 04 20 */	bctr 
+/* 8002DDC0 00023B40  4E 80 00 20 */	blr 
+
+.global gfTask$7init
+gfTask$7init:
+/* 8002DDC4 00023B44  4E 80 00 20 */	blr 
+
+.global gfTask$7processDefault
+gfTask$7processDefault:
+/* 8002DDC8 00023B48  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DDCC 00023B4C  54 00 04 3C */	rlwinm r0, r0, 0, 0x10, 0x1e
+/* 8002DDD0 00023B50  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DDD4 00023B54  4E 80 00 20 */	blr 
+
+.global gfTask$7processBegin
+gfTask$7processBegin:
+/* 8002DDD8 00023B58  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DDDC 00023B5C  54 00 07 FA */	rlwinm r0, r0, 0, 0x1f, 0x1d
+/* 8002DDE0 00023B60  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DDE4 00023B64  4E 80 00 20 */	blr 
+
+.global gfTask$7processAnim
+gfTask$7processAnim:
+/* 8002DDE8 00023B68  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DDEC 00023B6C  54 00 07 B8 */	rlwinm r0, r0, 0, 0x1e, 0x1c
+/* 8002DDF0 00023B70  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DDF4 00023B74  4E 80 00 20 */	blr 
+
+.global gfTask$7processUpdate
+gfTask$7processUpdate:
+/* 8002DDF8 00023B78  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DDFC 00023B7C  54 00 07 76 */	rlwinm r0, r0, 0, 0x1d, 0x1b
+/* 8002DE00 00023B80  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE04 00023B84  4E 80 00 20 */	blr 
+
+.global gfTask$7processPreMapCorrection
+gfTask$7processPreMapCorrection:
+/* 8002DE08 00023B88  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE0C 00023B8C  54 00 07 34 */	rlwinm r0, r0, 0, 0x1c, 0x1a
+/* 8002DE10 00023B90  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE14 00023B94  4E 80 00 20 */	blr 
+
+.global gfTask$7processMapCorrection
+gfTask$7processMapCorrection:
+/* 8002DE18 00023B98  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE1C 00023B9C  54 00 06 F2 */	rlwinm r0, r0, 0, 0x1b, 0x19
+/* 8002DE20 00023BA0  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE24 00023BA4  4E 80 00 20 */	blr 
+
+.global gfTask$7processFixPosition
+gfTask$7processFixPosition:
+/* 8002DE28 00023BA8  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE2C 00023BAC  54 00 06 B0 */	rlwinm r0, r0, 0, 0x1a, 0x18
+/* 8002DE30 00023BB0  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE34 00023BB4  4E 80 00 20 */	blr 
+
+.global gfTask$7processPreCollision
+gfTask$7processPreCollision:
+/* 8002DE38 00023BB8  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE3C 00023BBC  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
+/* 8002DE40 00023BC0  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE44 00023BC4  4E 80 00 20 */	blr 
+
+.global gfTask$7processCollision
+gfTask$7processCollision:
+/* 8002DE48 00023BC8  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE4C 00023BCC  54 00 06 2C */	rlwinm r0, r0, 0, 0x18, 0x16
+/* 8002DE50 00023BD0  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE54 00023BD4  4E 80 00 20 */	blr 
+
+.global gfTask$7processCatch
+gfTask$7processCatch:
+/* 8002DE58 00023BD8  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE5C 00023BDC  54 00 05 EA */	rlwinm r0, r0, 0, 0x17, 0x15
+/* 8002DE60 00023BE0  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE64 00023BE4  4E 80 00 20 */	blr 
+
+.global gfTask$7processHit
+gfTask$7processHit:
+/* 8002DE68 00023BE8  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE6C 00023BEC  54 00 05 A8 */	rlwinm r0, r0, 0, 0x16, 0x14
+/* 8002DE70 00023BF0  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE74 00023BF4  4E 80 00 20 */	blr 
+
+.global gfTask$7processCamera
+gfTask$7processCamera:
+/* 8002DE78 00023BF8  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE7C 00023BFC  54 00 05 66 */	rlwinm r0, r0, 0, 0x15, 0x13
+/* 8002DE80 00023C00  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE84 00023C04  4E 80 00 20 */	blr 
+
+.global gfTask$7processFixCamera
+gfTask$7processFixCamera:
+/* 8002DE88 00023C08  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE8C 00023C0C  54 00 05 24 */	rlwinm r0, r0, 0, 0x14, 0x12
+/* 8002DE90 00023C10  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DE94 00023C14  4E 80 00 20 */	blr 
+
+.global gfTask$7processEffect
+gfTask$7processEffect:
+/* 8002DE98 00023C18  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DE9C 00023C1C  54 00 04 E2 */	rlwinm r0, r0, 0, 0x13, 0x11
+/* 8002DEA0 00023C20  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DEA4 00023C24  4E 80 00 20 */	blr 
+
+.global gfTask$7processGameProc
+gfTask$7processGameProc:
+/* 8002DEA8 00023C28  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DEAC 00023C2C  54 00 04 A0 */	rlwinm r0, r0, 0, 0x12, 0x10
+/* 8002DEB0 00023C30  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DEB4 00023C34  4E 80 00 20 */	blr 
+
+.global gfTask$7processEnd
+gfTask$7processEnd:
+/* 8002DEB8 00023C38  A0 03 00 32 */	lhz r0, 0x32(r3)
+/* 8002DEBC 00023C3C  54 00 04 7E */	clrlwi r0, r0, 0x11
+/* 8002DEC0 00023C40  B0 03 00 32 */	sth r0, 0x32(r3)
+/* 8002DEC4 00023C44  4E 80 00 20 */	blr 
+
+.global gfTask$7renderPre
+gfTask$7renderPre:
+/* 8002DEC8 00023C48  4E 80 00 20 */	blr 
+
+.global gfTask$7renderOpa
+gfTask$7renderOpa:
+/* 8002DECC 00023C4C  4E 80 00 20 */	blr 
+
+.global gfTask$7renderXlu
+gfTask$7renderXlu:
+/* 8002DED0 00023C50  4E 80 00 20 */	blr 
+
+.global gfTask$7processDebug
+gfTask$7processDebug:
+/* 8002DED4 00023C54  4E 80 00 20 */	blr 
+
+.global gfTask$7renderDebug
+gfTask$7renderDebug:
+/* 8002DED8 00023C58  4E 80 00 20 */	blr 
+
+.global gfTask$7render
+gfTask$7render:
+/* 8002DEDC 00023C5C  2C 04 00 01 */	cmpwi r4, 1
+/* 8002DEE0 00023C60  41 82 00 30 */	beq lbl_8002DF10
+/* 8002DEE4 00023C64  40 80 00 10 */	bge lbl_8002DEF4
+/* 8002DEE8 00023C68  2C 04 00 00 */	cmpwi r4, 0
+/* 8002DEEC 00023C6C  40 80 00 14 */	bge lbl_8002DF00
+/* 8002DEF0 00023C70  4E 80 00 20 */	blr 
+lbl_8002DEF4:
+/* 8002DEF4 00023C74  2C 04 00 03 */	cmpwi r4, 3
+/* 8002DEF8 00023C78  4C 80 00 20 */	bgelr 
+/* 8002DEFC 00023C7C  48 00 00 24 */	b lbl_8002DF20
+lbl_8002DF00:
+/* 8002DF00 00023C80  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DF04 00023C84  81 8C 00 48 */	lwz r12, 0x48(r12)
+/* 8002DF08 00023C88  7D 89 03 A6 */	mtctr r12
+/* 8002DF0C 00023C8C  4E 80 04 20 */	bctr 
+lbl_8002DF10:
+/* 8002DF10 00023C90  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DF14 00023C94  81 8C 00 4C */	lwz r12, 0x4c(r12)
+/* 8002DF18 00023C98  7D 89 03 A6 */	mtctr r12
+/* 8002DF1C 00023C9C  4E 80 04 20 */	bctr 
+lbl_8002DF20:
+/* 8002DF20 00023CA0  81 83 00 3C */	lwz r12, 0x3c(r3)
+/* 8002DF24 00023CA4  81 8C 00 50 */	lwz r12, 0x50(r12)
+/* 8002DF28 00023CA8  7D 89 03 A6 */	mtctr r12
+/* 8002DF2C 00023CAC  4E 80 04 20 */	bctr 
+/* 8002DF30 00023CB0  4E 80 00 20 */	blr 
+
+.global gfTask$7exit
+gfTask$7exit:
+/* 8002DF34 00023CB4  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 8002DF38 00023CB8  7C 08 02 A6 */	mflr r0
+/* 8002DF3C 00023CBC  90 01 00 24 */	stw r0, 0x24(r1)
+/* 8002DF40 00023CC0  93 E1 00 1C */	stw r31, 0x1c(r1)
+/* 8002DF44 00023CC4  93 C1 00 18 */	stw r30, 0x18(r1)
+/* 8002DF48 00023CC8  93 A1 00 14 */	stw r29, 0x14(r1)
+/* 8002DF4C 00023CCC  93 81 00 10 */	stw r28, 0x10(r1)
+/* 8002DF50 00023CD0  80 83 00 2C */	lwz r4, 0x2c(r3)
+/* 8002DF54 00023CD4  54 80 48 10 */	rlwinm r0, r4, 9, 0, 8
+/* 8002DF58 00023CD8  7C 00 C6 70 */	srawi r0, r0, 0x18
+/* 8002DF5C 00023CDC  2C 00 00 03 */	cmpwi r0, 3
+/* 8002DF60 00023CE0  41 82 01 1C */	beq lbl_8002E07C
+/* 8002DF64 00023CE4  3B C0 00 03 */	li r30, 3
+/* 8002DF68 00023CE8  83 E3 00 20 */	lwz r31, 0x20(r3)
+/* 8002DF6C 00023CEC  53 C4 7A 60 */	rlwimi r4, r30, 0xf, 9, 0x10
+/* 8002DF70 00023CF0  90 83 00 2C */	stw r4, 0x2c(r3)
+/* 8002DF74 00023CF4  88 03 00 2C */	lbz r0, 0x2c(r3)
+/* 8002DF78 00023CF8  54 00 06 B0 */	rlwinm r0, r0, 0, 0x1a, 0x18
+/* 8002DF7C 00023CFC  98 03 00 2C */	stb r0, 0x2c(r3)
+/* 8002DF80 00023D00  48 00 00 D0 */	b lbl_8002E050
+lbl_8002DF84:
+/* 8002DF84 00023D04  80 7F 00 2C */	lwz r3, 0x2c(r31)
+/* 8002DF88 00023D08  54 60 48 10 */	rlwinm r0, r3, 9, 0, 8
+/* 8002DF8C 00023D0C  7C 00 C6 70 */	srawi r0, r0, 0x18
+/* 8002DF90 00023D10  2C 00 00 03 */	cmpwi r0, 3
+/* 8002DF94 00023D14  41 82 00 B8 */	beq lbl_8002E04C
+/* 8002DF98 00023D18  53 C3 7A 60 */	rlwimi r3, r30, 0xf, 9, 0x10
+/* 8002DF9C 00023D1C  90 7F 00 2C */	stw r3, 0x2c(r31)
+/* 8002DFA0 00023D20  88 1F 00 2C */	lbz r0, 0x2c(r31)
+/* 8002DFA4 00023D24  54 00 06 B0 */	rlwinm r0, r0, 0, 0x1a, 0x18
+/* 8002DFA8 00023D28  98 1F 00 2C */	stb r0, 0x2c(r31)
+/* 8002DFAC 00023D2C  83 BF 00 20 */	lwz r29, 0x20(r31)
+/* 8002DFB0 00023D30  48 00 00 70 */	b lbl_8002E020
+lbl_8002DFB4:
+/* 8002DFB4 00023D34  80 7D 00 2C */	lwz r3, 0x2c(r29)
+/* 8002DFB8 00023D38  54 60 48 10 */	rlwinm r0, r3, 9, 0, 8
+/* 8002DFBC 00023D3C  7C 00 C6 70 */	srawi r0, r0, 0x18
+/* 8002DFC0 00023D40  2C 00 00 03 */	cmpwi r0, 3
+/* 8002DFC4 00023D44  41 82 00 58 */	beq lbl_8002E01C
+/* 8002DFC8 00023D48  53 C3 7A 60 */	rlwimi r3, r30, 0xf, 9, 0x10
+/* 8002DFCC 00023D4C  90 7D 00 2C */	stw r3, 0x2c(r29)
+/* 8002DFD0 00023D50  88 1D 00 2C */	lbz r0, 0x2c(r29)
+/* 8002DFD4 00023D54  54 00 06 B0 */	rlwinm r0, r0, 0, 0x1a, 0x18
+/* 8002DFD8 00023D58  98 1D 00 2C */	stb r0, 0x2c(r29)
+/* 8002DFDC 00023D5C  83 9D 00 20 */	lwz r28, 0x20(r29)
+/* 8002DFE0 00023D60  48 00 00 10 */	b lbl_8002DFF0
+lbl_8002DFE4:
+/* 8002DFE4 00023D64  7F 83 E3 78 */	mr r3, r28
+/* 8002DFE8 00023D68  4B FF FF 4D */	bl gfTask$7exit
+/* 8002DFEC 00023D6C  83 9C 00 24 */	lwz r28, 0x24(r28)
+lbl_8002DFF0:
+/* 8002DFF0 00023D70  2C 1C 00 00 */	cmpwi r28, 0
+/* 8002DFF4 00023D74  40 82 FF F0 */	bne lbl_8002DFE4
+/* 8002DFF8 00023D78  48 00 03 15 */	bl gfTaskScheduler$7getInstance
+/* 8002DFFC 00023D7C  80 03 00 00 */	lwz r0, 0(r3)
+/* 8002E000 00023D80  7C 00 C6 70 */	srawi r0, r0, 0x18
+/* 8002E004 00023D84  2C 00 00 04 */	cmpwi r0, 4
+/* 8002E008 00023D88  40 82 00 14 */	bne lbl_8002E01C
+/* 8002E00C 00023D8C  48 00 03 01 */	bl gfTaskScheduler$7getInstance
+/* 8002E010 00023D90  88 03 00 02 */	lbz r0, 2(r3)
+/* 8002E014 00023D94  60 00 00 80 */	ori r0, r0, 0x80
+/* 8002E018 00023D98  98 03 00 02 */	stb r0, 2(r3)
+lbl_8002E01C:
+/* 8002E01C 00023D9C  83 BD 00 24 */	lwz r29, 0x24(r29)
+lbl_8002E020:
+/* 8002E020 00023DA0  2C 1D 00 00 */	cmpwi r29, 0
+/* 8002E024 00023DA4  40 82 FF 90 */	bne lbl_8002DFB4
+/* 8002E028 00023DA8  48 00 02 E5 */	bl gfTaskScheduler$7getInstance
+/* 8002E02C 00023DAC  80 03 00 00 */	lwz r0, 0(r3)
+/* 8002E030 00023DB0  7C 00 C6 70 */	srawi r0, r0, 0x18
+/* 8002E034 00023DB4  2C 00 00 04 */	cmpwi r0, 4
+/* 8002E038 00023DB8  40 82 00 14 */	bne lbl_8002E04C
+/* 8002E03C 00023DBC  48 00 02 D1 */	bl gfTaskScheduler$7getInstance
+/* 8002E040 00023DC0  88 03 00 02 */	lbz r0, 2(r3)
+/* 8002E044 00023DC4  60 00 00 80 */	ori r0, r0, 0x80
+/* 8002E048 00023DC8  98 03 00 02 */	stb r0, 2(r3)
+lbl_8002E04C:
+/* 8002E04C 00023DCC  83 FF 00 24 */	lwz r31, 0x24(r31)
+lbl_8002E050:
+/* 8002E050 00023DD0  2C 1F 00 00 */	cmpwi r31, 0
+/* 8002E054 00023DD4  40 82 FF 30 */	bne lbl_8002DF84
+/* 8002E058 00023DD8  48 00 02 B5 */	bl gfTaskScheduler$7getInstance
+/* 8002E05C 00023DDC  80 03 00 00 */	lwz r0, 0(r3)
+/* 8002E060 00023DE0  7C 00 C6 70 */	srawi r0, r0, 0x18
+/* 8002E064 00023DE4  2C 00 00 04 */	cmpwi r0, 4
+/* 8002E068 00023DE8  40 82 00 14 */	bne lbl_8002E07C
+/* 8002E06C 00023DEC  48 00 02 A1 */	bl gfTaskScheduler$7getInstance
+/* 8002E070 00023DF0  88 03 00 02 */	lbz r0, 2(r3)
+/* 8002E074 00023DF4  60 00 00 80 */	ori r0, r0, 0x80
+/* 8002E078 00023DF8  98 03 00 02 */	stb r0, 2(r3)
+lbl_8002E07C:
+/* 8002E07C 00023DFC  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 8002E080 00023E00  83 E1 00 1C */	lwz r31, 0x1c(r1)
+/* 8002E084 00023E04  83 C1 00 18 */	lwz r30, 0x18(r1)
+/* 8002E088 00023E08  83 A1 00 14 */	lwz r29, 0x14(r1)
+/* 8002E08C 00023E0C  83 81 00 10 */	lwz r28, 0x10(r1)
+/* 8002E090 00023E10  7C 08 03 A6 */	mtlr r0
+/* 8002E094 00023E14  38 21 00 20 */	addi r1, r1, 0x20
+/* 8002E098 00023E18  4E 80 00 20 */	blr 
+

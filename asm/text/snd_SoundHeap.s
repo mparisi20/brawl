@@ -1,0 +1,211 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global nw4r3snd9SoundHeapFv$7__ct
+nw4r3snd9SoundHeapFv$7__ct:
+/* 801CA838 001C05B8  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801CA83C 001C05BC  7C 08 02 A6 */	mflr r0
+/* 801CA840 001C05C0  3C 80 80 46 */	lis r4, lbl_80466BD8@ha
+/* 801CA844 001C05C4  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801CA848 001C05C8  38 84 6B D8 */	addi r4, r4, lbl_80466BD8@l
+/* 801CA84C 001C05CC  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801CA850 001C05D0  7C 7F 1B 78 */	mr r31, r3
+/* 801CA854 001C05D4  90 83 00 00 */	stw r4, 0(r3)
+/* 801CA858 001C05D8  38 63 00 1C */	addi r3, r3, 0x1c
+/* 801CA85C 001C05DC  4B FF 4E 3D */	bl nw4r3snd6detail9FrameHeapFv$7__ct
+/* 801CA860 001C05E0  38 7F 00 04 */	addi r3, r31, 4
+/* 801CA864 001C05E4  48 01 43 19 */	bl OSInitMutex
+/* 801CA868 001C05E8  7F E3 FB 78 */	mr r3, r31
+/* 801CA86C 001C05EC  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801CA870 001C05F0  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801CA874 001C05F4  7C 08 03 A6 */	mtlr r0
+/* 801CA878 001C05F8  38 21 00 10 */	addi r1, r1, 0x10
+/* 801CA87C 001C05FC  4E 80 00 20 */	blr 
+
+.global nw4r3snd9SoundHeapFv$7__dt
+nw4r3snd9SoundHeapFv$7__dt:
+/* 801CA880 001C0600  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801CA884 001C0604  7C 08 02 A6 */	mflr r0
+/* 801CA888 001C0608  2C 03 00 00 */	cmpwi r3, 0
+/* 801CA88C 001C060C  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801CA890 001C0610  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801CA894 001C0614  7C 9F 23 78 */	mr r31, r4
+/* 801CA898 001C0618  93 C1 00 08 */	stw r30, 8(r1)
+/* 801CA89C 001C061C  7C 7E 1B 78 */	mr r30, r3
+/* 801CA8A0 001C0620  41 82 00 34 */	beq lbl_801CA8D4
+/* 801CA8A4 001C0624  3C 80 80 46 */	lis r4, lbl_80466BD8@ha
+/* 801CA8A8 001C0628  38 84 6B D8 */	addi r4, r4, lbl_80466BD8@l
+/* 801CA8AC 001C062C  90 83 00 00 */	stw r4, 0(r3)
+/* 801CA8B0 001C0630  38 63 00 1C */	addi r3, r3, 0x1c
+/* 801CA8B4 001C0634  4B FF 50 B9 */	bl nw4r3snd6detail9FrameHeapFv$7Destroy
+/* 801CA8B8 001C0638  38 7E 00 1C */	addi r3, r30, 0x1c
+/* 801CA8BC 001C063C  38 80 FF FF */	li r4, -1
+/* 801CA8C0 001C0640  4B FF 4D FD */	bl nw4r3snd6detail9FrameHeapFv$7__dt
+/* 801CA8C4 001C0644  2C 1F 00 00 */	cmpwi r31, 0
+/* 801CA8C8 001C0648  40 81 00 0C */	ble lbl_801CA8D4
+/* 801CA8CC 001C064C  7F C3 F3 78 */	mr r3, r30
+/* 801CA8D0 001C0650  4B E4 1F F9 */	bl __dl
+lbl_801CA8D4:
+/* 801CA8D4 001C0654  7F C3 F3 78 */	mr r3, r30
+/* 801CA8D8 001C0658  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801CA8DC 001C065C  83 C1 00 08 */	lwz r30, 8(r1)
+/* 801CA8E0 001C0660  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801CA8E4 001C0664  7C 08 03 A6 */	mtlr r0
+/* 801CA8E8 001C0668  38 21 00 10 */	addi r1, r1, 0x10
+/* 801CA8EC 001C066C  4E 80 00 20 */	blr 
+
+.global nw4r3snd9SoundHeapFPvUl$7Create
+nw4r3snd9SoundHeapFPvUl$7Create:
+/* 801CA8F0 001C0670  38 63 00 1C */	addi r3, r3, 0x1c
+/* 801CA8F4 001C0674  4B FF 4E DC */	b nw4r3snd6detail9FrameHeapFPvUl$7Create
+
+.global nw4r3snd9SoundHeapFv$7Destroy
+nw4r3snd9SoundHeapFv$7Destroy:
+/* 801CA8F8 001C0678  38 63 00 1C */	addi r3, r3, 0x1c
+/* 801CA8FC 001C067C  4B FF 50 70 */	b nw4r3snd6detail9FrameHeapFv$7Destroy
+
+.global nw4r3snd9SoundHeapFUl$7Alloc
+nw4r3snd9SoundHeapFUl$7Alloc:
+/* 801CA900 001C0680  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 801CA904 001C0684  7C 08 02 A6 */	mflr r0
+/* 801CA908 001C0688  90 01 00 24 */	stw r0, 0x24(r1)
+/* 801CA90C 001C068C  93 E1 00 1C */	stw r31, 0x1c(r1)
+/* 801CA910 001C0690  3B E3 00 04 */	addi r31, r3, 4
+/* 801CA914 001C0694  93 C1 00 18 */	stw r30, 0x18(r1)
+/* 801CA918 001C0698  7C 9E 23 78 */	mr r30, r4
+/* 801CA91C 001C069C  93 A1 00 14 */	stw r29, 0x14(r1)
+/* 801CA920 001C06A0  7C 7D 1B 78 */	mr r29, r3
+/* 801CA924 001C06A4  7F E3 FB 78 */	mr r3, r31
+/* 801CA928 001C06A8  48 01 42 8D */	bl OSLockMutex
+/* 801CA92C 001C06AC  3C A0 80 1D */	lis r5, nw4r3snd9SoundHeapFPvUlPv$7DisposeCallbackFunc@ha
+/* 801CA930 001C06B0  7F C4 F3 78 */	mr r4, r30
+/* 801CA934 001C06B4  38 7D 00 1C */	addi r3, r29, 0x1c
+/* 801CA938 001C06B8  38 C0 00 00 */	li r6, 0
+/* 801CA93C 001C06BC  38 A5 AA 9C */	addi r5, r5, nw4r3snd9SoundHeapFPvUlPv$7DisposeCallbackFunc@l
+/* 801CA940 001C06C0  4B FF 52 49 */	bl nw4r3snd6detail9FrameHeapFUlPFPvUlPv_vPv$7Alloc
+/* 801CA944 001C06C4  7C 7E 1B 78 */	mr r30, r3
+/* 801CA948 001C06C8  7F E3 FB 78 */	mr r3, r31
+/* 801CA94C 001C06CC  48 01 43 45 */	bl OSUnlockMutex
+/* 801CA950 001C06D0  7F C3 F3 78 */	mr r3, r30
+/* 801CA954 001C06D4  83 E1 00 1C */	lwz r31, 0x1c(r1)
+/* 801CA958 001C06D8  83 C1 00 18 */	lwz r30, 0x18(r1)
+/* 801CA95C 001C06DC  83 A1 00 14 */	lwz r29, 0x14(r1)
+/* 801CA960 001C06E0  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 801CA964 001C06E4  7C 08 03 A6 */	mtlr r0
+/* 801CA968 001C06E8  38 21 00 20 */	addi r1, r1, 0x20
+/* 801CA96C 001C06EC  4E 80 00 20 */	blr 
+
+.global nw4r3snd9SoundHeapFv$7Clear
+nw4r3snd9SoundHeapFv$7Clear:
+/* 801CA970 001C06F0  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801CA974 001C06F4  7C 08 02 A6 */	mflr r0
+/* 801CA978 001C06F8  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801CA97C 001C06FC  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801CA980 001C0700  3B E3 00 04 */	addi r31, r3, 4
+/* 801CA984 001C0704  93 C1 00 08 */	stw r30, 8(r1)
+/* 801CA988 001C0708  7C 7E 1B 78 */	mr r30, r3
+/* 801CA98C 001C070C  7F E3 FB 78 */	mr r3, r31
+/* 801CA990 001C0710  48 01 42 25 */	bl OSLockMutex
+/* 801CA994 001C0714  48 00 19 51 */	bl nw4r3snd6detail11SoundThreadFv$7GetInstance
+/* 801CA998 001C0718  38 63 03 54 */	addi r3, r3, 0x354
+/* 801CA99C 001C071C  48 01 42 19 */	bl OSLockMutex
+/* 801CA9A0 001C0720  38 7E 00 1C */	addi r3, r30, 0x1c
+/* 801CA9A4 001C0724  4B FF 50 B9 */	bl nw4r3snd6detail9FrameHeapFv$7Clear
+/* 801CA9A8 001C0728  48 00 19 3D */	bl nw4r3snd6detail11SoundThreadFv$7GetInstance
+/* 801CA9AC 001C072C  38 63 03 54 */	addi r3, r3, 0x354
+/* 801CA9B0 001C0730  48 01 42 E1 */	bl OSUnlockMutex
+/* 801CA9B4 001C0734  7F E3 FB 78 */	mr r3, r31
+/* 801CA9B8 001C0738  48 01 42 D9 */	bl OSUnlockMutex
+/* 801CA9BC 001C073C  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801CA9C0 001C0740  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801CA9C4 001C0744  83 C1 00 08 */	lwz r30, 8(r1)
+/* 801CA9C8 001C0748  7C 08 03 A6 */	mtlr r0
+/* 801CA9CC 001C074C  38 21 00 10 */	addi r1, r1, 0x10
+/* 801CA9D0 001C0750  4E 80 00 20 */	blr 
+
+.global nw4r3snd9SoundHeapFv$7SaveState
+nw4r3snd9SoundHeapFv$7SaveState:
+/* 801CA9D4 001C0754  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801CA9D8 001C0758  7C 08 02 A6 */	mflr r0
+/* 801CA9DC 001C075C  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801CA9E0 001C0760  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801CA9E4 001C0764  3B E3 00 04 */	addi r31, r3, 4
+/* 801CA9E8 001C0768  93 C1 00 08 */	stw r30, 8(r1)
+/* 801CA9EC 001C076C  7C 7E 1B 78 */	mr r30, r3
+/* 801CA9F0 001C0770  7F E3 FB 78 */	mr r3, r31
+/* 801CA9F4 001C0774  48 01 41 C1 */	bl OSLockMutex
+/* 801CA9F8 001C0778  38 7E 00 1C */	addi r3, r30, 0x1c
+/* 801CA9FC 001C077C  4B FF 52 31 */	bl nw4r3snd6detail9FrameHeapFv$7SaveState
+/* 801CAA00 001C0780  7C 7E 1B 78 */	mr r30, r3
+/* 801CAA04 001C0784  7F E3 FB 78 */	mr r3, r31
+/* 801CAA08 001C0788  48 01 42 89 */	bl OSUnlockMutex
+/* 801CAA0C 001C078C  7F C3 F3 78 */	mr r3, r30
+/* 801CAA10 001C0790  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801CAA14 001C0794  83 C1 00 08 */	lwz r30, 8(r1)
+/* 801CAA18 001C0798  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801CAA1C 001C079C  7C 08 03 A6 */	mtlr r0
+/* 801CAA20 001C07A0  38 21 00 10 */	addi r1, r1, 0x10
+/* 801CAA24 001C07A4  4E 80 00 20 */	blr 
+
+.global nw4r3snd9SoundHeapFi$7LoadState
+nw4r3snd9SoundHeapFi$7LoadState:
+/* 801CAA28 001C07A8  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 801CAA2C 001C07AC  7C 08 02 A6 */	mflr r0
+/* 801CAA30 001C07B0  90 01 00 24 */	stw r0, 0x24(r1)
+/* 801CAA34 001C07B4  93 E1 00 1C */	stw r31, 0x1c(r1)
+/* 801CAA38 001C07B8  3B E3 00 04 */	addi r31, r3, 4
+/* 801CAA3C 001C07BC  93 C1 00 18 */	stw r30, 0x18(r1)
+/* 801CAA40 001C07C0  7C 9E 23 78 */	mr r30, r4
+/* 801CAA44 001C07C4  93 A1 00 14 */	stw r29, 0x14(r1)
+/* 801CAA48 001C07C8  7C 7D 1B 78 */	mr r29, r3
+/* 801CAA4C 001C07CC  7F E3 FB 78 */	mr r3, r31
+/* 801CAA50 001C07D0  48 01 41 65 */	bl OSLockMutex
+/* 801CAA54 001C07D4  48 00 18 91 */	bl nw4r3snd6detail11SoundThreadFv$7GetInstance
+/* 801CAA58 001C07D8  38 63 03 54 */	addi r3, r3, 0x354
+/* 801CAA5C 001C07DC  48 01 41 59 */	bl OSLockMutex
+/* 801CAA60 001C07E0  7F C4 F3 78 */	mr r4, r30
+/* 801CAA64 001C07E4  38 7D 00 1C */	addi r3, r29, 0x1c
+/* 801CAA68 001C07E8  4B FF 52 91 */	bl nw4r3snd6detail9FrameHeapFi$7LoadState
+/* 801CAA6C 001C07EC  48 00 18 79 */	bl nw4r3snd6detail11SoundThreadFv$7GetInstance
+/* 801CAA70 001C07F0  38 63 03 54 */	addi r3, r3, 0x354
+/* 801CAA74 001C07F4  48 01 42 1D */	bl OSUnlockMutex
+/* 801CAA78 001C07F8  7F E3 FB 78 */	mr r3, r31
+/* 801CAA7C 001C07FC  48 01 42 15 */	bl OSUnlockMutex
+/* 801CAA80 001C0800  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 801CAA84 001C0804  83 E1 00 1C */	lwz r31, 0x1c(r1)
+/* 801CAA88 001C0808  83 C1 00 18 */	lwz r30, 0x18(r1)
+/* 801CAA8C 001C080C  83 A1 00 14 */	lwz r29, 0x14(r1)
+/* 801CAA90 001C0810  7C 08 03 A6 */	mtlr r0
+/* 801CAA94 001C0814  38 21 00 20 */	addi r1, r1, 0x20
+/* 801CAA98 001C0818  4E 80 00 20 */	blr 
+
+.global nw4r3snd9SoundHeapFPvUlPv$7DisposeCallbackFunc
+nw4r3snd9SoundHeapFPvUlPv$7DisposeCallbackFunc:
+/* 801CAA9C 001C081C  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 801CAAA0 001C0820  7C 08 02 A6 */	mflr r0
+/* 801CAAA4 001C0824  90 01 00 24 */	stw r0, 0x24(r1)
+/* 801CAAA8 001C0828  93 E1 00 1C */	stw r31, 0x1c(r1)
+/* 801CAAAC 001C082C  7C BF 2B 78 */	mr r31, r5
+/* 801CAAB0 001C0830  93 C1 00 18 */	stw r30, 0x18(r1)
+/* 801CAAB4 001C0834  7C 9E 23 78 */	mr r30, r4
+/* 801CAAB8 001C0838  93 A1 00 14 */	stw r29, 0x14(r1)
+/* 801CAABC 001C083C  7C 7D 1B 78 */	mr r29, r3
+/* 801CAAC0 001C0840  4B FF 3C FD */	bl nw4r3snd6detail22DisposeCallbackManagerFv$7GetInstance
+/* 801CAAC4 001C0844  7F A4 EB 78 */	mr r4, r29
+/* 801CAAC8 001C0848  7F C5 F3 78 */	mr r5, r30
+/* 801CAACC 001C084C  7F E6 FB 78 */	mr r6, r31
+/* 801CAAD0 001C0850  4B FF 3E 05 */	bl nw4r3snd6detail22DisposeCallbackManagerFPvUl$7Dispose
+/* 801CAAD4 001C0854  4B FF 3C E9 */	bl nw4r3snd6detail22DisposeCallbackManagerFv$7GetInstance
+/* 801CAAD8 001C0858  7F A4 EB 78 */	mr r4, r29
+/* 801CAADC 001C085C  7F C5 F3 78 */	mr r5, r30
+/* 801CAAE0 001C0860  7F E6 FB 78 */	mr r6, r31
+/* 801CAAE4 001C0864  4B FF 3F 2D */	bl nw4r3snd6detail22DisposeCallbackManagerFPvUl$7DisposeWave
+/* 801CAAE8 001C0868  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 801CAAEC 001C086C  83 E1 00 1C */	lwz r31, 0x1c(r1)
+/* 801CAAF0 001C0870  83 C1 00 18 */	lwz r30, 0x18(r1)
+/* 801CAAF4 001C0874  83 A1 00 14 */	lwz r29, 0x14(r1)
+/* 801CAAF8 001C0878  7C 08 03 A6 */	mtlr r0
+/* 801CAAFC 001C087C  38 21 00 20 */	addi r1, r1, 0x20
+/* 801CAB00 001C0880  4E 80 00 20 */	blr 
+

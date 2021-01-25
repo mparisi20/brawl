@@ -1,0 +1,39 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global wcslen
+wcslen:
+/* 803FC7C8 003F2548  38 83 FF FE */	addi r4, r3, -2
+/* 803FC7CC 003F254C  38 60 FF FF */	li r3, -1
+lbl_803FC7D0:
+/* 803FC7D0 003F2550  A4 04 00 02 */	lhzu r0, 2(r4)
+/* 803FC7D4 003F2554  38 63 00 01 */	addi r3, r3, 1
+/* 803FC7D8 003F2558  2C 00 00 00 */	cmpwi r0, 0
+/* 803FC7DC 003F255C  40 82 FF F4 */	bne lbl_803FC7D0
+/* 803FC7E0 003F2560  4E 80 00 20 */	blr 
+
+.global wcsncpy
+wcsncpy:
+/* 803FC7E4 003F2564  38 84 FF FE */	addi r4, r4, -2
+/* 803FC7E8 003F2568  38 C3 FF FE */	addi r6, r3, -2
+/* 803FC7EC 003F256C  38 A5 00 01 */	addi r5, r5, 1
+/* 803FC7F0 003F2570  48 00 00 2C */	b lbl_803FC81C
+lbl_803FC7F4:
+/* 803FC7F4 003F2574  A4 04 00 02 */	lhzu r0, 2(r4)
+/* 803FC7F8 003F2578  2C 00 00 00 */	cmpwi r0, 0
+/* 803FC7FC 003F257C  B4 06 00 02 */	sthu r0, 2(r6)
+/* 803FC800 003F2580  40 82 00 1C */	bne lbl_803FC81C
+/* 803FC804 003F2584  38 00 00 00 */	li r0, 0
+/* 803FC808 003F2588  48 00 00 08 */	b lbl_803FC810
+lbl_803FC80C:
+/* 803FC80C 003F258C  B4 06 00 02 */	sthu r0, 2(r6)
+lbl_803FC810:
+/* 803FC810 003F2590  34 A5 FF FF */	addic. r5, r5, -1
+/* 803FC814 003F2594  40 82 FF F8 */	bne lbl_803FC80C
+/* 803FC818 003F2598  4E 80 00 20 */	blr 
+lbl_803FC81C:
+/* 803FC81C 003F259C  34 A5 FF FF */	addic. r5, r5, -1
+/* 803FC820 003F25A0  40 82 FF D4 */	bne lbl_803FC7F4
+/* 803FC824 003F25A4  4E 80 00 20 */	blr 
+

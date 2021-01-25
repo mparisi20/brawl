@@ -1,0 +1,48 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global usr_put_initialize
+usr_put_initialize:
+/* 80401C50 003F79D0  4E 80 00 20 */	blr 
+
+.global usr_puts_serial
+usr_puts_serial:
+/* 80401C54 003F79D4  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 80401C58 003F79D8  7C 08 02 A6 */	mflr r0
+/* 80401C5C 003F79DC  90 01 00 24 */	stw r0, 0x24(r1)
+/* 80401C60 003F79E0  93 E1 00 1C */	stw r31, 0x1c(r1)
+/* 80401C64 003F79E4  3B E0 00 00 */	li r31, 0
+/* 80401C68 003F79E8  93 C1 00 18 */	stw r30, 0x18(r1)
+/* 80401C6C 003F79EC  93 A1 00 14 */	stw r29, 0x14(r1)
+/* 80401C70 003F79F0  7C 7D 1B 78 */	mr r29, r3
+/* 80401C74 003F79F4  38 60 00 00 */	li r3, 0
+/* 80401C78 003F79F8  48 00 00 30 */	b lbl_80401CA8
+lbl_80401C7C:
+/* 80401C7C 003F79FC  48 00 12 75 */	bl GetTRKConnected
+/* 80401C80 003F7A00  9B C1 00 08 */	stb r30, 8(r1)
+/* 80401C84 003F7A04  7C 7E 1B 78 */	mr r30, r3
+/* 80401C88 003F7A08  38 60 00 00 */	li r3, 0
+/* 80401C8C 003F7A0C  9B E1 00 09 */	stb r31, 9(r1)
+/* 80401C90 003F7A10  48 00 12 55 */	bl SetTRKConnected
+/* 80401C94 003F7A14  38 61 00 08 */	addi r3, r1, 8
+/* 80401C98 003F7A18  4B DD 69 69 */	bl OSReport
+/* 80401C9C 003F7A1C  7F C3 F3 78 */	mr r3, r30
+/* 80401CA0 003F7A20  48 00 12 45 */	bl SetTRKConnected
+/* 80401CA4 003F7A24  38 60 00 00 */	li r3, 0
+lbl_80401CA8:
+/* 80401CA8 003F7A28  2C 03 00 00 */	cmpwi r3, 0
+/* 80401CAC 003F7A2C  40 82 00 14 */	bne lbl_80401CC0
+/* 80401CB0 003F7A30  88 1D 00 00 */	lbz r0, 0(r29)
+/* 80401CB4 003F7A34  3B BD 00 01 */	addi r29, r29, 1
+/* 80401CB8 003F7A38  7C 1E 07 75 */	extsb. r30, r0
+/* 80401CBC 003F7A3C  40 82 FF C0 */	bne lbl_80401C7C
+lbl_80401CC0:
+/* 80401CC0 003F7A40  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 80401CC4 003F7A44  83 E1 00 1C */	lwz r31, 0x1c(r1)
+/* 80401CC8 003F7A48  83 C1 00 18 */	lwz r30, 0x18(r1)
+/* 80401CCC 003F7A4C  83 A1 00 14 */	lwz r29, 0x14(r1)
+/* 80401CD0 003F7A50  7C 08 03 A6 */	mtlr r0
+/* 80401CD4 003F7A54  38 21 00 20 */	addi r1, r1, 0x20
+/* 80401CD8 003F7A58  4E 80 00 20 */	blr 
+

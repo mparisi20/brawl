@@ -1,0 +1,127 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global cmMenuFixedController$7__ct
+cmMenuFixedController$7__ct:
+/* 800A68C0 0009C640  88 03 00 08 */	lbz r0, 8(r3)
+/* 800A68C4 0009C644  3C 80 80 45 */	lis r4, lbl_80454ED8@ha
+/* 800A68C8 0009C648  C0 02 8D 30 */	lfs f0, lbl_805A2050-_SDA2_BASE_(r2)
+/* 800A68CC 0009C64C  38 84 4E D8 */	addi r4, r4, lbl_80454ED8@l
+/* 800A68D0 0009C650  C0 42 8D 28 */	lfs f2, lbl_805A2048-_SDA2_BASE_(r2)
+/* 800A68D4 0009C654  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
+/* 800A68D8 0009C658  C0 22 8D 2C */	lfs f1, lbl_805A204C-_SDA2_BASE_(r2)
+/* 800A68DC 0009C65C  38 A0 00 00 */	li r5, 0
+/* 800A68E0 0009C660  90 A3 00 00 */	stw r5, 0(r3)
+/* 800A68E4 0009C664  90 83 00 04 */	stw r4, 4(r3)
+/* 800A68E8 0009C668  D0 43 00 0C */	stfs f2, 0xc(r3)
+/* 800A68EC 0009C66C  D0 23 00 1C */	stfs f1, 0x1c(r3)
+/* 800A68F0 0009C670  98 03 00 08 */	stb r0, 8(r3)
+/* 800A68F4 0009C674  D0 03 00 10 */	stfs f0, 0x10(r3)
+/* 800A68F8 0009C678  D0 03 00 14 */	stfs f0, 0x14(r3)
+/* 800A68FC 0009C67C  D0 03 00 18 */	stfs f0, 0x18(r3)
+/* 800A6900 0009C680  4E 80 00 20 */	blr 
+
+.global cmMenuFixedController$7storeDefault
+cmMenuFixedController$7storeDefault:
+/* 800A6904 0009C684  80 83 00 00 */	lwz r4, 0(r3)
+/* 800A6908 0009C688  88 03 00 08 */	lbz r0, 8(r3)
+/* 800A690C 0009C68C  C0 04 00 CC */	lfs f0, 0xcc(r4)
+/* 800A6910 0009C690  60 00 00 80 */	ori r0, r0, 0x80
+/* 800A6914 0009C694  D0 03 00 0C */	stfs f0, 0xc(r3)
+/* 800A6918 0009C698  C0 04 00 60 */	lfs f0, 0x60(r4)
+/* 800A691C 0009C69C  D0 03 00 10 */	stfs f0, 0x10(r3)
+/* 800A6920 0009C6A0  C0 04 00 64 */	lfs f0, 0x64(r4)
+/* 800A6924 0009C6A4  D0 03 00 14 */	stfs f0, 0x14(r3)
+/* 800A6928 0009C6A8  C0 04 00 68 */	lfs f0, 0x68(r4)
+/* 800A692C 0009C6AC  D0 03 00 18 */	stfs f0, 0x18(r3)
+/* 800A6930 0009C6B0  C0 04 00 D0 */	lfs f0, 0xd0(r4)
+/* 800A6934 0009C6B4  D0 03 00 1C */	stfs f0, 0x1c(r3)
+/* 800A6938 0009C6B8  98 03 00 08 */	stb r0, 8(r3)
+/* 800A693C 0009C6BC  4E 80 00 20 */	blr 
+
+.global cmMenuFixedController$7init
+cmMenuFixedController$7init:
+/* 800A6940 0009C6C0  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 800A6944 0009C6C4  C0 02 8D 30 */	lfs f0, lbl_805A2050-_SDA2_BASE_(r2)
+/* 800A6948 0009C6C8  80 A3 00 00 */	lwz r5, 0(r3)
+/* 800A694C 0009C6CC  C0 23 00 0C */	lfs f1, 0xc(r3)
+/* 800A6950 0009C6D0  D0 01 00 08 */	stfs f0, 8(r1)
+/* 800A6954 0009C6D4  D0 25 00 CC */	stfs f1, 0xcc(r5)
+/* 800A6958 0009C6D8  A0 05 00 FA */	lhz r0, 0xfa(r5)
+/* 800A695C 0009C6DC  D0 01 00 0C */	stfs f0, 0xc(r1)
+/* 800A6960 0009C6E0  60 04 00 80 */	ori r4, r0, 0x80
+/* 800A6964 0009C6E4  60 00 00 82 */	ori r0, r0, 0x82
+/* 800A6968 0009C6E8  B0 85 00 FA */	sth r4, 0xfa(r5)
+/* 800A696C 0009C6EC  C0 23 00 10 */	lfs f1, 0x10(r3)
+/* 800A6970 0009C6F0  D0 25 00 60 */	stfs f1, 0x60(r5)
+/* 800A6974 0009C6F4  C0 23 00 14 */	lfs f1, 0x14(r3)
+/* 800A6978 0009C6F8  D0 25 00 64 */	stfs f1, 0x64(r5)
+/* 800A697C 0009C6FC  C0 23 00 18 */	lfs f1, 0x18(r3)
+/* 800A6980 0009C700  D0 25 00 68 */	stfs f1, 0x68(r5)
+/* 800A6984 0009C704  B0 05 00 FA */	sth r0, 0xfa(r5)
+/* 800A6988 0009C708  60 00 00 40 */	ori r0, r0, 0x40
+/* 800A698C 0009C70C  C0 23 00 1C */	lfs f1, 0x1c(r3)
+/* 800A6990 0009C710  D0 25 00 D0 */	stfs f1, 0xd0(r5)
+/* 800A6994 0009C714  D0 05 00 C0 */	stfs f0, 0xc0(r5)
+/* 800A6998 0009C718  D0 05 00 C4 */	stfs f0, 0xc4(r5)
+/* 800A699C 0009C71C  D0 05 00 C8 */	stfs f0, 0xc8(r5)
+/* 800A69A0 0009C720  B0 05 00 FA */	sth r0, 0xfa(r5)
+/* 800A69A4 0009C724  38 21 00 10 */	addi r1, r1, 0x10
+/* 800A69A8 0009C728  4E 80 00 20 */	blr 
+
+.global cmMenuFixedController$7update
+cmMenuFixedController$7update:
+/* 800A69AC 0009C72C  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 800A69B0 0009C730  7C 08 02 A6 */	mflr r0
+/* 800A69B4 0009C734  90 01 00 14 */	stw r0, 0x14(r1)
+/* 800A69B8 0009C738  88 83 00 08 */	lbz r4, 8(r3)
+/* 800A69BC 0009C73C  80 E3 00 00 */	lwz r7, 0(r3)
+/* 800A69C0 0009C740  54 80 CF FF */	rlwinm. r0, r4, 0x19, 0x1f, 0x1f
+/* 800A69C4 0009C744  40 82 00 34 */	bne lbl_800A69F8
+/* 800A69C8 0009C748  C0 07 00 CC */	lfs f0, 0xcc(r7)
+/* 800A69CC 0009C74C  60 80 00 80 */	ori r0, r4, 0x80
+/* 800A69D0 0009C750  D0 03 00 0C */	stfs f0, 0xc(r3)
+/* 800A69D4 0009C754  C0 07 00 60 */	lfs f0, 0x60(r7)
+/* 800A69D8 0009C758  D0 03 00 10 */	stfs f0, 0x10(r3)
+/* 800A69DC 0009C75C  C0 07 00 64 */	lfs f0, 0x64(r7)
+/* 800A69E0 0009C760  D0 03 00 14 */	stfs f0, 0x14(r3)
+/* 800A69E4 0009C764  C0 07 00 68 */	lfs f0, 0x68(r7)
+/* 800A69E8 0009C768  D0 03 00 18 */	stfs f0, 0x18(r3)
+/* 800A69EC 0009C76C  C0 07 00 D0 */	lfs f0, 0xd0(r7)
+/* 800A69F0 0009C770  D0 03 00 1C */	stfs f0, 0x1c(r3)
+/* 800A69F4 0009C774  98 03 00 08 */	stb r0, 8(r3)
+lbl_800A69F8:
+/* 800A69F8 0009C778  80 C3 00 00 */	lwz r6, 0(r3)
+/* 800A69FC 0009C77C  38 00 00 E1 */	li r0, 0xe1
+/* 800A6A00 0009C780  C0 23 00 0C */	lfs f1, 0xc(r3)
+/* 800A6A04 0009C784  C0 02 8D 30 */	lfs f0, lbl_805A2050-_SDA2_BASE_(r2)
+/* 800A6A08 0009C788  D0 26 00 CC */	stfs f1, 0xcc(r6)
+/* 800A6A0C 0009C78C  A0 86 00 FA */	lhz r4, 0xfa(r6)
+/* 800A6A10 0009C790  D0 01 00 08 */	stfs f0, 8(r1)
+/* 800A6A14 0009C794  60 85 00 80 */	ori r5, r4, 0x80
+/* 800A6A18 0009C798  60 84 00 82 */	ori r4, r4, 0x82
+/* 800A6A1C 0009C79C  B0 A6 00 FA */	sth r5, 0xfa(r6)
+/* 800A6A20 0009C7A0  C0 23 00 10 */	lfs f1, 0x10(r3)
+/* 800A6A24 0009C7A4  D0 01 00 0C */	stfs f0, 0xc(r1)
+/* 800A6A28 0009C7A8  D0 26 00 60 */	stfs f1, 0x60(r6)
+/* 800A6A2C 0009C7AC  C0 23 00 14 */	lfs f1, 0x14(r3)
+/* 800A6A30 0009C7B0  D0 26 00 64 */	stfs f1, 0x64(r6)
+/* 800A6A34 0009C7B4  C0 23 00 18 */	lfs f1, 0x18(r3)
+/* 800A6A38 0009C7B8  D0 26 00 68 */	stfs f1, 0x68(r6)
+/* 800A6A3C 0009C7BC  B0 86 00 FA */	sth r4, 0xfa(r6)
+/* 800A6A40 0009C7C0  60 84 00 40 */	ori r4, r4, 0x40
+/* 800A6A44 0009C7C4  C0 23 00 1C */	lfs f1, 0x1c(r3)
+/* 800A6A48 0009C7C8  7C E3 3B 78 */	mr r3, r7
+/* 800A6A4C 0009C7CC  D0 26 00 D0 */	stfs f1, 0xd0(r6)
+/* 800A6A50 0009C7D0  D0 06 00 C0 */	stfs f0, 0xc0(r6)
+/* 800A6A54 0009C7D4  D0 06 00 C4 */	stfs f0, 0xc4(r6)
+/* 800A6A58 0009C7D8  D0 06 00 C8 */	stfs f0, 0xc8(r6)
+/* 800A6A5C 0009C7DC  B0 86 00 FA */	sth r4, 0xfa(r6)
+/* 800A6A60 0009C7E0  B0 07 00 F8 */	sth r0, 0xf8(r7)
+/* 800A6A64 0009C7E4  4B F7 1D 15 */	bl gfCamera$7calc
+/* 800A6A68 0009C7E8  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 800A6A6C 0009C7EC  7C 08 03 A6 */	mtlr r0
+/* 800A6A70 0009C7F0  38 21 00 10 */	addi r1, r1, 0x10
+/* 800A6A74 0009C7F4  4E 80 00 20 */	blr 
+

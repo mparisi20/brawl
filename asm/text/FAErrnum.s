@@ -1,0 +1,25 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global FAErrnum
+FAErrnum:
+/* 803EBE4C 003E1BCC  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 803EBE50 003E1BD0  7C 08 02 A6 */	mflr r0
+/* 803EBE54 003E1BD4  90 01 00 14 */	stw r0, 0x14(r1)
+/* 803EBE58 003E1BD8  4B FF F7 A5 */	bl pf2_errnum
+/* 803EBE5C 003E1BDC  2C 03 00 05 */	cmpwi r3, 5
+/* 803EBE60 003E1BE0  40 82 00 0C */	bne lbl_803EBE6C
+/* 803EBE64 003E1BE4  38 60 00 05 */	li r3, 5
+/* 803EBE68 003E1BE8  48 00 00 14 */	b lbl_803EBE7C
+lbl_803EBE6C:
+/* 803EBE6C 003E1BEC  7C 60 00 34 */	cntlzw r0, r3
+/* 803EBE70 003E1BF0  54 00 DF FE */	rlwinm r0, r0, 0x1b, 0x1f, 0x1f
+/* 803EBE74 003E1BF4  7C 00 00 D0 */	neg r0, r0
+/* 803EBE78 003E1BF8  7C 63 00 78 */	andc r3, r3, r0
+lbl_803EBE7C:
+/* 803EBE7C 003E1BFC  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 803EBE80 003E1C00  7C 08 03 A6 */	mtlr r0
+/* 803EBE84 003E1C04  38 21 00 10 */	addi r1, r1, 0x10
+/* 803EBE88 003E1C08  4E 80 00 20 */	blr 
+

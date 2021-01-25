@@ -1,0 +1,258 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global hkSimpleContactConstraintAtomUtil$7allocateAtom
+hkSimpleContactConstraintAtomUtil$7allocateAtom:
+/* 802DA104 002CFE84  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 802DA108 002CFE88  7C 08 02 A6 */	mflr r0
+/* 802DA10C 002CFE8C  1C 83 00 34 */	mulli r4, r3, 0x34
+/* 802DA110 002CFE90  38 A0 00 04 */	li r5, 4
+/* 802DA114 002CFE94  90 01 00 14 */	stw r0, 0x14(r1)
+/* 802DA118 002CFE98  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 802DA11C 002CFE9C  38 04 00 3F */	addi r0, r4, 0x3f
+/* 802DA120 002CFEA0  54 1F 00 36 */	rlwinm r31, r0, 0, 0, 0x1b
+/* 802DA124 002CFEA4  93 C1 00 08 */	stw r30, 8(r1)
+/* 802DA128 002CFEA8  7C 7E 1B 78 */	mr r30, r3
+/* 802DA12C 002CFEAC  7F E4 FB 78 */	mr r4, r31
+/* 802DA130 002CFEB0  80 6D CA A8 */	lwz r3, lbl_805A0EC8-_SDA_BASE_(r13)
+/* 802DA134 002CFEB4  4B FA 48 ED */	bl hkThreadMemory$7allocateChunk
+/* 802DA138 002CFEB8  38 A0 00 00 */	li r5, 0
+/* 802DA13C 002CFEBC  38 80 00 03 */	li r4, 3
+/* 802DA140 002CFEC0  B0 A3 00 08 */	sth r5, 8(r3)
+/* 802DA144 002CFEC4  38 00 00 16 */	li r0, 0x16
+/* 802DA148 002CFEC8  B0 83 00 0A */	sth r4, 0xa(r3)
+/* 802DA14C 002CFECC  90 A3 00 0C */	stw r5, 0xc(r3)
+/* 802DA150 002CFED0  90 A3 00 10 */	stw r5, 0x10(r3)
+/* 802DA154 002CFED4  90 A3 00 14 */	stw r5, 0x14(r3)
+/* 802DA158 002CFED8  90 A3 00 18 */	stw r5, 0x18(r3)
+/* 802DA15C 002CFEDC  90 A3 00 1C */	stw r5, 0x1c(r3)
+/* 802DA160 002CFEE0  90 A3 00 20 */	stw r5, 0x20(r3)
+/* 802DA164 002CFEE4  90 A3 00 24 */	stw r5, 0x24(r3)
+/* 802DA168 002CFEE8  B0 03 00 00 */	sth r0, 0(r3)
+/* 802DA16C 002CFEEC  B3 E3 00 02 */	sth r31, 2(r3)
+/* 802DA170 002CFEF0  B0 A3 00 04 */	sth r5, 4(r3)
+/* 802DA174 002CFEF4  B3 C3 00 06 */	sth r30, 6(r3)
+/* 802DA178 002CFEF8  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 802DA17C 002CFEFC  83 C1 00 08 */	lwz r30, 8(r1)
+/* 802DA180 002CFF00  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 802DA184 002CFF04  7C 08 03 A6 */	mtlr r0
+/* 802DA188 002CFF08  38 21 00 10 */	addi r1, r1, 0x10
+/* 802DA18C 002CFF0C  4E 80 00 20 */	blr 
+
+.global hkSimpleContactConstraintAtomUtil$7copyContents
+hkSimpleContactConstraintAtomUtil$7copyContents:
+/* 802DA190 002CFF10  A0 E4 00 08 */	lhz r7, 8(r4)
+/* 802DA194 002CFF14  38 04 00 37 */	addi r0, r4, 0x37
+/* 802DA198 002CFF18  A0 A3 00 06 */	lhz r5, 6(r3)
+/* 802DA19C 002CFF1C  38 C3 00 37 */	addi r6, r3, 0x37
+/* 802DA1A0 002CFF20  B0 E3 00 08 */	sth r7, 8(r3)
+/* 802DA1A4 002CFF24  54 08 00 36 */	rlwinm r8, r0, 0, 0, 0x1b
+/* 802DA1A8 002CFF28  54 C6 00 36 */	rlwinm r6, r6, 0, 0, 0x1b
+/* 802DA1AC 002CFF2C  54 A5 28 34 */	slwi r5, r5, 5
+/* 802DA1B0 002CFF30  A0 04 00 0A */	lhz r0, 0xa(r4)
+/* 802DA1B4 002CFF34  7C E6 2A 14 */	add r7, r6, r5
+/* 802DA1B8 002CFF38  39 40 00 00 */	li r10, 0
+/* 802DA1BC 002CFF3C  B0 03 00 0A */	sth r0, 0xa(r3)
+/* 802DA1C0 002CFF40  80 A4 00 0C */	lwz r5, 0xc(r4)
+/* 802DA1C4 002CFF44  80 04 00 10 */	lwz r0, 0x10(r4)
+/* 802DA1C8 002CFF48  90 A3 00 0C */	stw r5, 0xc(r3)
+/* 802DA1CC 002CFF4C  90 03 00 10 */	stw r0, 0x10(r3)
+/* 802DA1D0 002CFF50  80 A4 00 14 */	lwz r5, 0x14(r4)
+/* 802DA1D4 002CFF54  80 04 00 18 */	lwz r0, 0x18(r4)
+/* 802DA1D8 002CFF58  90 A3 00 14 */	stw r5, 0x14(r3)
+/* 802DA1DC 002CFF5C  90 03 00 18 */	stw r0, 0x18(r3)
+/* 802DA1E0 002CFF60  80 A4 00 1C */	lwz r5, 0x1c(r4)
+/* 802DA1E4 002CFF64  80 04 00 20 */	lwz r0, 0x20(r4)
+/* 802DA1E8 002CFF68  90 A3 00 1C */	stw r5, 0x1c(r3)
+/* 802DA1EC 002CFF6C  90 03 00 20 */	stw r0, 0x20(r3)
+/* 802DA1F0 002CFF70  80 04 00 24 */	lwz r0, 0x24(r4)
+/* 802DA1F4 002CFF74  90 03 00 24 */	stw r0, 0x24(r3)
+/* 802DA1F8 002CFF78  A0 04 00 04 */	lhz r0, 4(r4)
+/* 802DA1FC 002CFF7C  B0 03 00 04 */	sth r0, 4(r3)
+/* 802DA200 002CFF80  A0 04 00 06 */	lhz r0, 6(r4)
+/* 802DA204 002CFF84  54 00 28 34 */	slwi r0, r0, 5
+/* 802DA208 002CFF88  7D 28 02 14 */	add r9, r8, r0
+/* 802DA20C 002CFF8C  48 00 00 98 */	b lbl_802DA2A4
+lbl_802DA210:
+/* 802DA210 002CFF90  C0 08 00 00 */	lfs f0, 0(r8)
+/* 802DA214 002CFF94  7C C3 33 78 */	mr r3, r6
+/* 802DA218 002CFF98  7D 05 43 78 */	mr r5, r8
+/* 802DA21C 002CFF9C  39 08 00 20 */	addi r8, r8, 0x20
+/* 802DA220 002CFFA0  D0 03 00 00 */	stfs f0, 0(r3)
+/* 802DA224 002CFFA4  38 C6 00 20 */	addi r6, r6, 0x20
+/* 802DA228 002CFFA8  39 4A 00 01 */	addi r10, r10, 1
+/* 802DA22C 002CFFAC  C0 05 00 04 */	lfs f0, 4(r5)
+/* 802DA230 002CFFB0  D0 03 00 04 */	stfs f0, 4(r3)
+/* 802DA234 002CFFB4  C0 05 00 08 */	lfs f0, 8(r5)
+/* 802DA238 002CFFB8  D0 03 00 08 */	stfs f0, 8(r3)
+/* 802DA23C 002CFFBC  C0 05 00 0C */	lfs f0, 0xc(r5)
+/* 802DA240 002CFFC0  D0 03 00 0C */	stfs f0, 0xc(r3)
+/* 802DA244 002CFFC4  C0 05 00 10 */	lfs f0, 0x10(r5)
+/* 802DA248 002CFFC8  D0 03 00 10 */	stfs f0, 0x10(r3)
+/* 802DA24C 002CFFCC  C0 05 00 14 */	lfs f0, 0x14(r5)
+/* 802DA250 002CFFD0  D0 03 00 14 */	stfs f0, 0x14(r3)
+/* 802DA254 002CFFD4  C0 05 00 18 */	lfs f0, 0x18(r5)
+/* 802DA258 002CFFD8  D0 03 00 18 */	stfs f0, 0x18(r3)
+/* 802DA25C 002CFFDC  C0 05 00 1C */	lfs f0, 0x1c(r5)
+/* 802DA260 002CFFE0  D0 03 00 1C */	stfs f0, 0x1c(r3)
+/* 802DA264 002CFFE4  C0 09 00 00 */	lfs f0, 0(r9)
+/* 802DA268 002CFFE8  D0 07 00 00 */	stfs f0, 0(r7)
+/* 802DA26C 002CFFEC  C0 09 00 04 */	lfs f0, 4(r9)
+/* 802DA270 002CFFF0  D0 07 00 04 */	stfs f0, 4(r7)
+/* 802DA274 002CFFF4  80 09 00 08 */	lwz r0, 8(r9)
+/* 802DA278 002CFFF8  90 07 00 08 */	stw r0, 8(r7)
+/* 802DA27C 002CFFFC  A0 09 00 0C */	lhz r0, 0xc(r9)
+/* 802DA280 002D0000  B0 07 00 0C */	sth r0, 0xc(r7)
+/* 802DA284 002D0004  88 09 00 0E */	lbz r0, 0xe(r9)
+/* 802DA288 002D0008  98 07 00 0E */	stb r0, 0xe(r7)
+/* 802DA28C 002D000C  88 09 00 0F */	lbz r0, 0xf(r9)
+/* 802DA290 002D0010  98 07 00 0F */	stb r0, 0xf(r7)
+/* 802DA294 002D0014  C0 09 00 10 */	lfs f0, 0x10(r9)
+/* 802DA298 002D0018  39 29 00 14 */	addi r9, r9, 0x14
+/* 802DA29C 002D001C  D0 07 00 10 */	stfs f0, 0x10(r7)
+/* 802DA2A0 002D0020  38 E7 00 14 */	addi r7, r7, 0x14
+lbl_802DA2A4:
+/* 802DA2A4 002D0024  A0 04 00 04 */	lhz r0, 4(r4)
+/* 802DA2A8 002D0028  7C 0A 00 00 */	cmpw r10, r0
+/* 802DA2AC 002D002C  41 80 FF 64 */	blt lbl_802DA210
+/* 802DA2B0 002D0030  4E 80 00 20 */	blr 
+
+.global hkSimpleContactConstraintAtomUtil$7deallocateAtom
+hkSimpleContactConstraintAtomUtil$7deallocateAtom:
+/* 802DA2B4 002D0034  7C 64 1B 78 */	mr r4, r3
+/* 802DA2B8 002D0038  80 6D CA A8 */	lwz r3, lbl_805A0EC8-_SDA_BASE_(r13)
+/* 802DA2BC 002D003C  A0 A4 00 02 */	lhz r5, 2(r4)
+/* 802DA2C0 002D0040  38 C0 00 04 */	li r6, 4
+/* 802DA2C4 002D0044  4B FA 47 F8 */	b hkThreadMemory$7deallocateChunk
+
+.global hkSimpleContactConstraintAtomUtil$7expandOne
+hkSimpleContactConstraintAtomUtil$7expandOne:
+/* 802DA2C8 002D0048  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 802DA2CC 002D004C  7C 08 02 A6 */	mflr r0
+/* 802DA2D0 002D0050  90 01 00 14 */	stw r0, 0x14(r1)
+/* 802DA2D4 002D0054  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 802DA2D8 002D0058  93 C1 00 08 */	stw r30, 8(r1)
+/* 802DA2DC 002D005C  7C 7E 1B 78 */	mr r30, r3
+/* 802DA2E0 002D0060  7F DF F3 78 */	mr r31, r30
+/* 802DA2E4 002D0064  A0 83 00 04 */	lhz r4, 4(r3)
+/* 802DA2E8 002D0068  A0 03 00 06 */	lhz r0, 6(r3)
+/* 802DA2EC 002D006C  38 A4 00 01 */	addi r5, r4, 1
+/* 802DA2F0 002D0070  54 A4 04 3E */	clrlwi r4, r5, 0x10
+/* 802DA2F4 002D0074  B0 A3 00 04 */	sth r5, 4(r3)
+/* 802DA2F8 002D0078  7C 04 00 40 */	cmplw r4, r0
+/* 802DA2FC 002D007C  40 81 00 20 */	ble lbl_802DA31C
+/* 802DA300 002D0080  54 A3 0B FC */	rlwinm r3, r5, 1, 0xf, 0x1e
+/* 802DA304 002D0084  4B FF FE 01 */	bl hkSimpleContactConstraintAtomUtil$7allocateAtom
+/* 802DA308 002D0088  7C 7F 1B 78 */	mr r31, r3
+/* 802DA30C 002D008C  7F C4 F3 78 */	mr r4, r30
+/* 802DA310 002D0090  4B FF FE 81 */	bl hkSimpleContactConstraintAtomUtil$7copyContents
+/* 802DA314 002D0094  7F C3 F3 78 */	mr r3, r30
+/* 802DA318 002D0098  4B FF FF 9D */	bl hkSimpleContactConstraintAtomUtil$7deallocateAtom
+lbl_802DA31C:
+/* 802DA31C 002D009C  A0 7F 00 04 */	lhz r3, 4(r31)
+/* 802DA320 002D00A0  38 1F 00 37 */	addi r0, r31, 0x37
+/* 802DA324 002D00A4  54 06 00 36 */	rlwinm r6, r0, 0, 0, 0x1b
+/* 802DA328 002D00A8  A0 BF 00 06 */	lhz r5, 6(r31)
+/* 802DA32C 002D00AC  38 03 FF FF */	addi r0, r3, -1
+/* 802DA330 002D00B0  38 80 00 00 */	li r4, 0
+/* 802DA334 002D00B4  1C 60 00 14 */	mulli r3, r0, 0x14
+/* 802DA338 002D00B8  54 A0 28 34 */	slwi r0, r5, 5
+/* 802DA33C 002D00BC  38 A0 00 14 */	li r5, 0x14
+/* 802DA340 002D00C0  7C 06 02 14 */	add r0, r6, r0
+/* 802DA344 002D00C4  7C 63 02 14 */	add r3, r3, r0
+/* 802DA348 002D00C8  4B FA 7A 1D */	bl hkString$7memSet
+/* 802DA34C 002D00CC  7F E3 FB 78 */	mr r3, r31
+/* 802DA350 002D00D0  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 802DA354 002D00D4  83 C1 00 08 */	lwz r30, 8(r1)
+/* 802DA358 002D00D8  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 802DA35C 002D00DC  7C 08 03 A6 */	mtlr r0
+/* 802DA360 002D00E0  38 21 00 10 */	addi r1, r1, 0x10
+/* 802DA364 002D00E4  4E 80 00 20 */	blr 
+
+.global hkSimpleContactConstraintAtomUtil$7removeAtAndCopy
+hkSimpleContactConstraintAtomUtil$7removeAtAndCopy:
+/* 802DA368 002D00E8  A0 E3 00 04 */	lhz r7, 4(r3)
+/* 802DA36C 002D00EC  38 C3 00 37 */	addi r6, r3, 0x37
+/* 802DA370 002D00F0  A0 A3 00 06 */	lhz r5, 6(r3)
+/* 802DA374 002D00F4  1C 04 00 14 */	mulli r0, r4, 0x14
+/* 802DA378 002D00F8  38 E7 FF FF */	addi r7, r7, -1
+/* 802DA37C 002D00FC  B0 E3 00 04 */	sth r7, 4(r3)
+/* 802DA380 002D0100  54 C7 00 36 */	rlwinm r7, r6, 0, 0, 0x1b
+/* 802DA384 002D0104  54 A6 28 34 */	slwi r6, r5, 5
+/* 802DA388 002D0108  54 85 28 34 */	slwi r5, r4, 5
+/* 802DA38C 002D010C  7C C7 32 14 */	add r6, r7, r6
+/* 802DA390 002D0110  7C A7 2A 14 */	add r5, r7, r5
+/* 802DA394 002D0114  7C C6 02 14 */	add r6, r6, r0
+/* 802DA398 002D0118  48 00 00 88 */	b lbl_802DA420
+lbl_802DA39C:
+/* 802DA39C 002D011C  C0 05 00 20 */	lfs f0, 0x20(r5)
+/* 802DA3A0 002D0120  38 84 00 01 */	addi r4, r4, 1
+/* 802DA3A4 002D0124  D0 05 00 00 */	stfs f0, 0(r5)
+/* 802DA3A8 002D0128  C0 05 00 24 */	lfs f0, 0x24(r5)
+/* 802DA3AC 002D012C  D0 05 00 04 */	stfs f0, 4(r5)
+/* 802DA3B0 002D0130  C0 05 00 28 */	lfs f0, 0x28(r5)
+/* 802DA3B4 002D0134  D0 05 00 08 */	stfs f0, 8(r5)
+/* 802DA3B8 002D0138  C0 05 00 2C */	lfs f0, 0x2c(r5)
+/* 802DA3BC 002D013C  D0 05 00 0C */	stfs f0, 0xc(r5)
+/* 802DA3C0 002D0140  C0 05 00 30 */	lfs f0, 0x30(r5)
+/* 802DA3C4 002D0144  D0 05 00 10 */	stfs f0, 0x10(r5)
+/* 802DA3C8 002D0148  C0 05 00 34 */	lfs f0, 0x34(r5)
+/* 802DA3CC 002D014C  D0 05 00 14 */	stfs f0, 0x14(r5)
+/* 802DA3D0 002D0150  C0 05 00 38 */	lfs f0, 0x38(r5)
+/* 802DA3D4 002D0154  D0 05 00 18 */	stfs f0, 0x18(r5)
+/* 802DA3D8 002D0158  C0 05 00 3C */	lfs f0, 0x3c(r5)
+/* 802DA3DC 002D015C  D0 05 00 1C */	stfs f0, 0x1c(r5)
+/* 802DA3E0 002D0160  38 A5 00 20 */	addi r5, r5, 0x20
+/* 802DA3E4 002D0164  C0 06 00 14 */	lfs f0, 0x14(r6)
+/* 802DA3E8 002D0168  D0 06 00 00 */	stfs f0, 0(r6)
+/* 802DA3EC 002D016C  C0 06 00 18 */	lfs f0, 0x18(r6)
+/* 802DA3F0 002D0170  D0 06 00 04 */	stfs f0, 4(r6)
+/* 802DA3F4 002D0174  80 06 00 1C */	lwz r0, 0x1c(r6)
+/* 802DA3F8 002D0178  90 06 00 08 */	stw r0, 8(r6)
+/* 802DA3FC 002D017C  A0 06 00 20 */	lhz r0, 0x20(r6)
+/* 802DA400 002D0180  B0 06 00 0C */	sth r0, 0xc(r6)
+/* 802DA404 002D0184  88 06 00 22 */	lbz r0, 0x22(r6)
+/* 802DA408 002D0188  98 06 00 0E */	stb r0, 0xe(r6)
+/* 802DA40C 002D018C  88 06 00 23 */	lbz r0, 0x23(r6)
+/* 802DA410 002D0190  98 06 00 0F */	stb r0, 0xf(r6)
+/* 802DA414 002D0194  C0 06 00 24 */	lfs f0, 0x24(r6)
+/* 802DA418 002D0198  D0 06 00 10 */	stfs f0, 0x10(r6)
+/* 802DA41C 002D019C  38 C6 00 14 */	addi r6, r6, 0x14
+lbl_802DA420:
+/* 802DA420 002D01A0  A0 03 00 04 */	lhz r0, 4(r3)
+/* 802DA424 002D01A4  7C 04 00 00 */	cmpw r4, r0
+/* 802DA428 002D01A8  41 80 FF 74 */	blt lbl_802DA39C
+/* 802DA42C 002D01AC  4E 80 00 20 */	blr 
+
+.global hkSimpleContactConstraintAtomUtil$7optimizeCapacity
+hkSimpleContactConstraintAtomUtil$7optimizeCapacity:
+/* 802DA430 002D01B0  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 802DA434 002D01B4  7C 08 02 A6 */	mflr r0
+/* 802DA438 002D01B8  90 01 00 14 */	stw r0, 0x14(r1)
+/* 802DA43C 002D01BC  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 802DA440 002D01C0  93 C1 00 08 */	stw r30, 8(r1)
+/* 802DA444 002D01C4  7C 7E 1B 78 */	mr r30, r3
+/* 802DA448 002D01C8  7F DF F3 78 */	mr r31, r30
+/* 802DA44C 002D01CC  A0 03 00 04 */	lhz r0, 4(r3)
+/* 802DA450 002D01D0  A0 63 00 06 */	lhz r3, 6(r3)
+/* 802DA454 002D01D4  7C 00 22 14 */	add r0, r0, r4
+/* 802DA458 002D01D8  54 00 08 3C */	slwi r0, r0, 1
+/* 802DA45C 002D01DC  7C 00 18 00 */	cmpw r0, r3
+/* 802DA460 002D01E0  41 81 00 20 */	bgt lbl_802DA480
+/* 802DA464 002D01E4  54 63 FC 7E */	rlwinm r3, r3, 0x1f, 0x11, 0x1f
+/* 802DA468 002D01E8  4B FF FC 9D */	bl hkSimpleContactConstraintAtomUtil$7allocateAtom
+/* 802DA46C 002D01EC  7C 7F 1B 78 */	mr r31, r3
+/* 802DA470 002D01F0  7F C4 F3 78 */	mr r4, r30
+/* 802DA474 002D01F4  4B FF FD 1D */	bl hkSimpleContactConstraintAtomUtil$7copyContents
+/* 802DA478 002D01F8  7F C3 F3 78 */	mr r3, r30
+/* 802DA47C 002D01FC  4B FF FE 39 */	bl hkSimpleContactConstraintAtomUtil$7deallocateAtom
+lbl_802DA480:
+/* 802DA480 002D0200  7F E3 FB 78 */	mr r3, r31
+/* 802DA484 002D0204  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 802DA488 002D0208  83 C1 00 08 */	lwz r30, 8(r1)
+/* 802DA48C 002D020C  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 802DA490 002D0210  7C 08 03 A6 */	mtlr r0
+/* 802DA494 002D0214  38 21 00 10 */	addi r1, r1, 0x10
+/* 802DA498 002D0218  4E 80 00 20 */	blr 
+

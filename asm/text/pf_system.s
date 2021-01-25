@@ -1,0 +1,43 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global VFiPFSYS_initializeSYS
+VFiPFSYS_initializeSYS:
+/* 803C2E90 003B8C10  4E 80 00 20 */	blr 
+
+.global VFiPFSYS_GetCurrentContextID
+VFiPFSYS_GetCurrentContextID:
+/* 803C2E94 003B8C14  38 00 00 00 */	li r0, 0
+/* 803C2E98 003B8C18  90 03 00 00 */	stw r0, 0(r3)
+/* 803C2E9C 003B8C1C  38 60 00 00 */	li r3, 0
+/* 803C2EA0 003B8C20  4E 80 00 20 */	blr 
+
+.global VFiPFSYS_TimeStamp
+VFiPFSYS_TimeStamp:
+/* 803C2EA4 003B8C24  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 803C2EA8 003B8C28  7C 08 02 A6 */	mflr r0
+/* 803C2EAC 003B8C2C  38 A0 00 04 */	li r5, 4
+/* 803C2EB0 003B8C30  90 01 00 14 */	stw r0, 0x14(r1)
+/* 803C2EB4 003B8C34  38 00 07 D0 */	li r0, 0x7d0
+/* 803C2EB8 003B8C38  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 803C2EBC 003B8C3C  3B E0 00 01 */	li r31, 1
+/* 803C2EC0 003B8C40  93 C1 00 08 */	stw r30, 8(r1)
+/* 803C2EC4 003B8C44  7C 9E 23 78 */	mr r30, r4
+/* 803C2EC8 003B8C48  B0 03 00 00 */	sth r0, 0(r3)
+/* 803C2ECC 003B8C4C  38 00 00 00 */	li r0, 0
+/* 803C2ED0 003B8C50  B0 A3 00 02 */	sth r5, 2(r3)
+/* 803C2ED4 003B8C54  B3 E3 00 04 */	sth r31, 4(r3)
+/* 803C2ED8 003B8C58  B0 04 00 00 */	sth r0, 0(r4)
+/* 803C2EDC 003B8C5C  B0 04 00 02 */	sth r0, 2(r4)
+/* 803C2EE0 003B8C60  B0 04 00 04 */	sth r0, 4(r4)
+/* 803C2EE4 003B8C64  B3 E4 00 06 */	sth r31, 6(r4)
+/* 803C2EE8 003B8C68  48 00 44 31 */	bl dTM_GetNowTime
+/* 803C2EEC 003B8C6C  B3 FE 00 06 */	sth r31, 6(r30)
+/* 803C2EF0 003B8C70  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 803C2EF4 003B8C74  83 C1 00 08 */	lwz r30, 8(r1)
+/* 803C2EF8 003B8C78  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 803C2EFC 003B8C7C  7C 08 03 A6 */	mtlr r0
+/* 803C2F00 003B8C80  38 21 00 10 */	addi r1, r1, 0x10
+/* 803C2F04 003B8C84  4E 80 00 20 */	blr 
+

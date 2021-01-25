@@ -1,0 +1,44 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global nw4r3snd6detail13SeqFileReaderFPCv$7__ct
+nw4r3snd6detail13SeqFileReaderFPCv$7__ct:
+/* 801C2E84 001B8C04  80 A4 00 00 */	lwz r5, 0(r4)
+/* 801C2E88 001B8C08  38 C0 00 00 */	li r6, 0
+/* 801C2E8C 001B8C0C  90 C3 00 00 */	stw r6, 0(r3)
+/* 801C2E90 001B8C10  3C 05 AD AD */	addis r0, r5, 0xadad
+/* 801C2E94 001B8C14  28 00 45 51 */	cmplwi r0, 0x4551
+/* 801C2E98 001B8C18  90 C3 00 04 */	stw r6, 4(r3)
+/* 801C2E9C 001B8C1C  41 82 00 0C */	beq lbl_801C2EA8
+/* 801C2EA0 001B8C20  38 00 00 00 */	li r0, 0
+/* 801C2EA4 001B8C24  48 00 00 30 */	b lbl_801C2ED4
+lbl_801C2EA8:
+/* 801C2EA8 001B8C28  A0 C4 00 06 */	lhz r6, 6(r4)
+/* 801C2EAC 001B8C2C  28 06 01 00 */	cmplwi r6, 0x100
+/* 801C2EB0 001B8C30  40 80 00 0C */	bge lbl_801C2EBC
+/* 801C2EB4 001B8C34  38 00 00 00 */	li r0, 0
+/* 801C2EB8 001B8C38  48 00 00 1C */	b lbl_801C2ED4
+lbl_801C2EBC:
+/* 801C2EBC 001B8C3C  20 06 01 00 */	subfic r0, r6, 0x100
+/* 801C2EC0 001B8C40  38 A0 01 00 */	li r5, 0x100
+/* 801C2EC4 001B8C44  7C A5 33 38 */	orc r5, r5, r6
+/* 801C2EC8 001B8C48  54 00 F8 7E */	srwi r0, r0, 1
+/* 801C2ECC 001B8C4C  7C 00 28 50 */	subf r0, r0, r5
+/* 801C2ED0 001B8C50  54 00 0F FE */	srwi r0, r0, 0x1f
+lbl_801C2ED4:
+/* 801C2ED4 001B8C54  2C 00 00 00 */	cmpwi r0, 0
+/* 801C2ED8 001B8C58  4D 82 00 20 */	beqlr 
+/* 801C2EDC 001B8C5C  80 04 00 10 */	lwz r0, 0x10(r4)
+/* 801C2EE0 001B8C60  90 83 00 00 */	stw r4, 0(r3)
+/* 801C2EE4 001B8C64  7C 00 22 14 */	add r0, r0, r4
+/* 801C2EE8 001B8C68  90 03 00 04 */	stw r0, 4(r3)
+/* 801C2EEC 001B8C6C  4E 80 00 20 */	blr 
+
+.global nw4r3snd6detail13SeqFileReaderCFv$7GetBaseAddress
+nw4r3snd6detail13SeqFileReaderCFv$7GetBaseAddress:
+/* 801C2EF0 001B8C70  80 63 00 04 */	lwz r3, 4(r3)
+/* 801C2EF4 001B8C74  80 03 00 08 */	lwz r0, 8(r3)
+/* 801C2EF8 001B8C78  7C 60 1A 14 */	add r3, r0, r3
+/* 801C2EFC 001B8C7C  4E 80 00 20 */	blr 
+

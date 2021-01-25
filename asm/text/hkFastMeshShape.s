@@ -1,0 +1,284 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global finishLoadedObjecthkFastMeshShape
+finishLoadedObjecthkFastMeshShape:
+/* 802D46F4 002CA474  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 802D46F8 002CA478  7C 08 02 A6 */	mflr r0
+/* 802D46FC 002CA47C  2C 03 00 00 */	cmpwi r3, 0
+/* 802D4700 002CA480  90 01 00 24 */	stw r0, 0x24(r1)
+/* 802D4704 002CA484  38 00 00 01 */	li r0, 1
+/* 802D4708 002CA488  93 E1 00 1C */	stw r31, 0x1c(r1)
+/* 802D470C 002CA48C  7C 7F 1B 78 */	mr r31, r3
+/* 802D4710 002CA490  41 82 00 24 */	beq lbl_802D4734
+/* 802D4714 002CA494  90 01 00 08 */	stw r0, 8(r1)
+/* 802D4718 002CA498  38 81 00 08 */	addi r4, r1, 8
+/* 802D471C 002CA49C  48 00 0B 69 */	bl hkMeshShape$7__ct
+/* 802D4720 002CA4A0  3C 60 80 48 */	lis r3, lbl_80487588@ha
+/* 802D4724 002CA4A4  38 63 75 88 */	addi r3, r3, lbl_80487588@l
+/* 802D4728 002CA4A8  38 03 00 28 */	addi r0, r3, 0x28
+/* 802D472C 002CA4AC  90 7F 00 00 */	stw r3, 0(r31)
+/* 802D4730 002CA4B0  90 1F 00 0C */	stw r0, 0xc(r31)
+lbl_802D4734:
+/* 802D4734 002CA4B4  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 802D4738 002CA4B8  83 E1 00 1C */	lwz r31, 0x1c(r1)
+/* 802D473C 002CA4BC  7C 08 03 A6 */	mtlr r0
+/* 802D4740 002CA4C0  38 21 00 20 */	addi r1, r1, 0x20
+/* 802D4744 002CA4C4  4E 80 00 20 */	blr 
+
+.global hkMeshShape$7__dt
+hkMeshShape$7__dt:
+/* 802D4748 002CA4C8  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 802D474C 002CA4CC  7C 08 02 A6 */	mflr r0
+/* 802D4750 002CA4D0  2C 03 00 00 */	cmpwi r3, 0
+/* 802D4754 002CA4D4  90 01 00 14 */	stw r0, 0x14(r1)
+/* 802D4758 002CA4D8  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 802D475C 002CA4DC  7C 9F 23 78 */	mr r31, r4
+/* 802D4760 002CA4E0  93 C1 00 08 */	stw r30, 8(r1)
+/* 802D4764 002CA4E4  7C 7E 1B 78 */	mr r30, r3
+/* 802D4768 002CA4E8  41 82 00 5C */	beq lbl_802D47C4
+/* 802D476C 002CA4EC  34 03 00 34 */	addic. r0, r3, 0x34
+/* 802D4770 002CA4F0  41 82 00 2C */	beq lbl_802D479C
+/* 802D4774 002CA4F4  80 03 00 3C */	lwz r0, 0x3c(r3)
+/* 802D4778 002CA4F8  54 00 00 01 */	rlwinm. r0, r0, 0, 0, 0
+/* 802D477C 002CA4FC  40 82 00 20 */	bne lbl_802D479C
+/* 802D4780 002CA500  80 1E 00 3C */	lwz r0, 0x3c(r30)
+/* 802D4784 002CA504  38 C0 00 15 */	li r6, 0x15
+/* 802D4788 002CA508  80 6D CA A8 */	lwz r3, lbl_805A0EC8-_SDA_BASE_(r13)
+/* 802D478C 002CA50C  54 00 00 BE */	clrlwi r0, r0, 2
+/* 802D4790 002CA510  80 9E 00 34 */	lwz r4, 0x34(r30)
+/* 802D4794 002CA514  1C A0 00 30 */	mulli r5, r0, 0x30
+/* 802D4798 002CA518  4B FA A3 25 */	bl hkThreadMemory$7deallocateChunk
+lbl_802D479C:
+/* 802D479C 002CA51C  2C 1F 00 00 */	cmpwi r31, 0
+/* 802D47A0 002CA520  40 81 00 24 */	ble lbl_802D47C4
+/* 802D47A4 002CA524  80 6D CA 98 */	lwz r3, lbl_805A0EB8-_SDA_BASE_(r13)
+/* 802D47A8 002CA528  7F C4 F3 78 */	mr r4, r30
+/* 802D47AC 002CA52C  A0 BE 00 04 */	lhz r5, 4(r30)
+/* 802D47B0 002CA530  38 C0 00 25 */	li r6, 0x25
+/* 802D47B4 002CA534  81 83 00 00 */	lwz r12, 0(r3)
+/* 802D47B8 002CA538  81 8C 00 1C */	lwz r12, 0x1c(r12)
+/* 802D47BC 002CA53C  7D 89 03 A6 */	mtctr r12
+/* 802D47C0 002CA540  4E 80 04 21 */	bctrl 
+lbl_802D47C4:
+/* 802D47C4 002CA544  7F C3 F3 78 */	mr r3, r30
+/* 802D47C8 002CA548  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 802D47CC 002CA54C  83 C1 00 08 */	lwz r30, 8(r1)
+/* 802D47D0 002CA550  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 802D47D4 002CA554  7C 08 03 A6 */	mtlr r0
+/* 802D47D8 002CA558  38 21 00 10 */	addi r1, r1, 0x10
+/* 802D47DC 002CA55C  4E 80 00 20 */	blr 
+
+.global cleanupLoadedObjecthkFastMeshShape
+cleanupLoadedObjecthkFastMeshShape:
+/* 802D47E0 002CA560  81 83 00 00 */	lwz r12, 0(r3)
+/* 802D47E4 002CA564  38 80 FF FF */	li r4, -1
+/* 802D47E8 002CA568  81 8C 00 08 */	lwz r12, 8(r12)
+/* 802D47EC 002CA56C  7D 89 03 A6 */	mtctr r12
+/* 802D47F0 002CA570  4E 80 04 20 */	bctr 
+
+.global hkFastMeshShape$7__dt
+hkFastMeshShape$7__dt:
+/* 802D47F4 002CA574  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 802D47F8 002CA578  7C 08 02 A6 */	mflr r0
+/* 802D47FC 002CA57C  2C 03 00 00 */	cmpwi r3, 0
+/* 802D4800 002CA580  90 01 00 14 */	stw r0, 0x14(r1)
+/* 802D4804 002CA584  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 802D4808 002CA588  7C 9F 23 78 */	mr r31, r4
+/* 802D480C 002CA58C  93 C1 00 08 */	stw r30, 8(r1)
+/* 802D4810 002CA590  7C 7E 1B 78 */	mr r30, r3
+/* 802D4814 002CA594  41 82 00 60 */	beq lbl_802D4874
+/* 802D4818 002CA598  41 82 00 34 */	beq lbl_802D484C
+/* 802D481C 002CA59C  34 03 00 34 */	addic. r0, r3, 0x34
+/* 802D4820 002CA5A0  41 82 00 2C */	beq lbl_802D484C
+/* 802D4824 002CA5A4  80 03 00 3C */	lwz r0, 0x3c(r3)
+/* 802D4828 002CA5A8  54 00 00 01 */	rlwinm. r0, r0, 0, 0, 0
+/* 802D482C 002CA5AC  40 82 00 20 */	bne lbl_802D484C
+/* 802D4830 002CA5B0  80 1E 00 3C */	lwz r0, 0x3c(r30)
+/* 802D4834 002CA5B4  38 C0 00 15 */	li r6, 0x15
+/* 802D4838 002CA5B8  80 6D CA A8 */	lwz r3, lbl_805A0EC8-_SDA_BASE_(r13)
+/* 802D483C 002CA5BC  54 00 00 BE */	clrlwi r0, r0, 2
+/* 802D4840 002CA5C0  80 9E 00 34 */	lwz r4, 0x34(r30)
+/* 802D4844 002CA5C4  1C A0 00 30 */	mulli r5, r0, 0x30
+/* 802D4848 002CA5C8  4B FA A2 75 */	bl hkThreadMemory$7deallocateChunk
+lbl_802D484C:
+/* 802D484C 002CA5CC  2C 1F 00 00 */	cmpwi r31, 0
+/* 802D4850 002CA5D0  40 81 00 24 */	ble lbl_802D4874
+/* 802D4854 002CA5D4  80 6D CA 98 */	lwz r3, lbl_805A0EB8-_SDA_BASE_(r13)
+/* 802D4858 002CA5D8  7F C4 F3 78 */	mr r4, r30
+/* 802D485C 002CA5DC  A0 BE 00 04 */	lhz r5, 4(r30)
+/* 802D4860 002CA5E0  38 C0 00 25 */	li r6, 0x25
+/* 802D4864 002CA5E4  81 83 00 00 */	lwz r12, 0(r3)
+/* 802D4868 002CA5E8  81 8C 00 1C */	lwz r12, 0x1c(r12)
+/* 802D486C 002CA5EC  7D 89 03 A6 */	mtctr r12
+/* 802D4870 002CA5F0  4E 80 04 21 */	bctrl 
+lbl_802D4874:
+/* 802D4874 002CA5F4  7F C3 F3 78 */	mr r3, r30
+/* 802D4878 002CA5F8  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 802D487C 002CA5FC  83 C1 00 08 */	lwz r30, 8(r1)
+/* 802D4880 002CA600  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 802D4884 002CA604  7C 08 03 A6 */	mtlr r0
+/* 802D4888 002CA608  38 21 00 10 */	addi r1, r1, 0x10
+/* 802D488C 002CA60C  4E 80 00 20 */	blr 
+
+.global getVtablehkFastMeshShape
+getVtablehkFastMeshShape:
+/* 802D4890 002CA610  54 2B 07 3E */	clrlwi r11, r1, 0x1c
+/* 802D4894 002CA614  7C 2C 0B 78 */	mr r12, r1
+/* 802D4898 002CA618  21 6B FF 90 */	subfic r11, r11, -112
+/* 802D489C 002CA61C  7C 21 59 6E */	stwux r1, r1, r11
+/* 802D48A0 002CA620  7C 08 02 A6 */	mflr r0
+/* 802D48A4 002CA624  34 61 00 20 */	addic. r3, r1, 0x20
+/* 802D48A8 002CA628  90 0C 00 04 */	stw r0, 4(r12)
+/* 802D48AC 002CA62C  38 00 00 00 */	li r0, 0
+/* 802D48B0 002CA630  41 82 00 24 */	beq lbl_802D48D4
+/* 802D48B4 002CA634  90 01 00 10 */	stw r0, 0x10(r1)
+/* 802D48B8 002CA638  38 81 00 10 */	addi r4, r1, 0x10
+/* 802D48BC 002CA63C  48 00 09 C9 */	bl hkMeshShape$7__ct
+/* 802D48C0 002CA640  3C 60 80 48 */	lis r3, lbl_80487588@ha
+/* 802D48C4 002CA644  38 63 75 88 */	addi r3, r3, lbl_80487588@l
+/* 802D48C8 002CA648  38 03 00 28 */	addi r0, r3, 0x28
+/* 802D48CC 002CA64C  90 61 00 20 */	stw r3, 0x20(r1)
+/* 802D48D0 002CA650  90 01 00 2C */	stw r0, 0x2c(r1)
+lbl_802D48D4:
+/* 802D48D4 002CA654  80 61 00 20 */	lwz r3, 0x20(r1)
+/* 802D48D8 002CA658  81 41 00 00 */	lwz r10, 0(r1)
+/* 802D48DC 002CA65C  80 0A 00 04 */	lwz r0, 4(r10)
+/* 802D48E0 002CA660  7C 08 03 A6 */	mtlr r0
+/* 802D48E4 002CA664  7D 41 53 78 */	mr r1, r10
+/* 802D48E8 002CA668  4E 80 00 20 */	blr 
+
+.global hkFastMeshShape$7getChildShape
+hkFastMeshShape$7getChildShape:
+/* 802D48EC 002CA66C  81 03 00 34 */	lwz r8, 0x34(r3)
+/* 802D48F0 002CA670  2C 05 00 00 */	cmpwi r5, 0
+/* 802D48F4 002CA674  80 08 00 14 */	lwz r0, 0x14(r8)
+/* 802D48F8 002CA678  80 C8 00 0C */	lwz r6, 0xc(r8)
+/* 802D48FC 002CA67C  7C 00 21 D6 */	mullw r0, r0, r4
+/* 802D4900 002CA680  80 E8 00 04 */	lwz r7, 4(r8)
+/* 802D4904 002CA684  81 68 00 00 */	lwz r11, 0(r8)
+/* 802D4908 002CA688  7D 06 02 14 */	add r8, r6, r0
+/* 802D490C 002CA68C  7C C6 02 2E */	lhzx r6, r6, r0
+/* 802D4910 002CA690  A0 88 00 02 */	lhz r4, 2(r8)
+/* 802D4914 002CA694  A0 08 00 04 */	lhz r0, 4(r8)
+/* 802D4918 002CA698  7C C7 31 D6 */	mullw r6, r7, r6
+/* 802D491C 002CA69C  7C 87 21 D6 */	mullw r4, r7, r4
+/* 802D4920 002CA6A0  7D 2B 32 14 */	add r9, r11, r6
+/* 802D4924 002CA6A4  7C 07 01 D6 */	mullw r0, r7, r0
+/* 802D4928 002CA6A8  7D 4B 22 14 */	add r10, r11, r4
+/* 802D492C 002CA6AC  7D 6B 02 14 */	add r11, r11, r0
+/* 802D4930 002CA6B0  41 82 00 4C */	beq lbl_802D497C
+/* 802D4934 002CA6B4  C0 03 00 40 */	lfs f0, 0x40(r3)
+/* 802D4938 002CA6B8  3C 80 80 48 */	lis r4, lbl_804875E0@ha
+/* 802D493C 002CA6BC  38 84 75 E0 */	addi r4, r4, lbl_804875E0@l
+/* 802D4940 002CA6C0  3C E0 80 45 */	lis r7, lbl_80454AB0@ha
+/* 802D4944 002CA6C4  90 85 00 00 */	stw r4, 0(r5)
+/* 802D4948 002CA6C8  38 E7 4A B0 */	addi r7, r7, lbl_80454AB0@l
+/* 802D494C 002CA6CC  3C C0 80 48 */	lis r6, lbl_80487448@ha
+/* 802D4950 002CA6D0  3C 80 80 48 */	lis r4, lbl_80487828@ha
+/* 802D4954 002CA6D4  90 E5 00 00 */	stw r7, 0(r5)
+/* 802D4958 002CA6D8  38 C6 74 48 */	addi r6, r6, lbl_80487448@l
+/* 802D495C 002CA6DC  39 00 00 01 */	li r8, 1
+/* 802D4960 002CA6E0  38 00 00 00 */	li r0, 0
+/* 802D4964 002CA6E4  90 C5 00 00 */	stw r6, 0(r5)
+/* 802D4968 002CA6E8  38 84 78 28 */	addi r4, r4, lbl_80487828@l
+/* 802D496C 002CA6EC  B1 05 00 06 */	sth r8, 6(r5)
+/* 802D4970 002CA6F0  90 05 00 08 */	stw r0, 8(r5)
+/* 802D4974 002CA6F4  D0 05 00 0C */	stfs f0, 0xc(r5)
+/* 802D4978 002CA6F8  90 85 00 00 */	stw r4, 0(r5)
+lbl_802D497C:
+/* 802D497C 002CA6FC  C0 29 00 00 */	lfs f1, 0(r9)
+/* 802D4980 002CA700  C0 03 00 20 */	lfs f0, 0x20(r3)
+/* 802D4984 002CA704  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D4988 002CA708  D0 05 00 10 */	stfs f0, 0x10(r5)
+/* 802D498C 002CA70C  C0 29 00 04 */	lfs f1, 4(r9)
+/* 802D4990 002CA710  C0 03 00 24 */	lfs f0, 0x24(r3)
+/* 802D4994 002CA714  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D4998 002CA718  D0 05 00 14 */	stfs f0, 0x14(r5)
+/* 802D499C 002CA71C  C0 29 00 08 */	lfs f1, 8(r9)
+/* 802D49A0 002CA720  C0 03 00 28 */	lfs f0, 0x28(r3)
+/* 802D49A4 002CA724  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D49A8 002CA728  D0 05 00 18 */	stfs f0, 0x18(r5)
+/* 802D49AC 002CA72C  C0 29 00 0C */	lfs f1, 0xc(r9)
+/* 802D49B0 002CA730  C0 03 00 2C */	lfs f0, 0x2c(r3)
+/* 802D49B4 002CA734  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D49B8 002CA738  D0 05 00 1C */	stfs f0, 0x1c(r5)
+/* 802D49BC 002CA73C  C0 2A 00 00 */	lfs f1, 0(r10)
+/* 802D49C0 002CA740  C0 03 00 20 */	lfs f0, 0x20(r3)
+/* 802D49C4 002CA744  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D49C8 002CA748  D0 05 00 20 */	stfs f0, 0x20(r5)
+/* 802D49CC 002CA74C  C0 2A 00 04 */	lfs f1, 4(r10)
+/* 802D49D0 002CA750  C0 03 00 24 */	lfs f0, 0x24(r3)
+/* 802D49D4 002CA754  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D49D8 002CA758  D0 05 00 24 */	stfs f0, 0x24(r5)
+/* 802D49DC 002CA75C  C0 2A 00 08 */	lfs f1, 8(r10)
+/* 802D49E0 002CA760  C0 03 00 28 */	lfs f0, 0x28(r3)
+/* 802D49E4 002CA764  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D49E8 002CA768  D0 05 00 28 */	stfs f0, 0x28(r5)
+/* 802D49EC 002CA76C  C0 2A 00 0C */	lfs f1, 0xc(r10)
+/* 802D49F0 002CA770  C0 03 00 2C */	lfs f0, 0x2c(r3)
+/* 802D49F4 002CA774  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D49F8 002CA778  D0 05 00 2C */	stfs f0, 0x2c(r5)
+/* 802D49FC 002CA77C  C0 2B 00 00 */	lfs f1, 0(r11)
+/* 802D4A00 002CA780  C0 03 00 20 */	lfs f0, 0x20(r3)
+/* 802D4A04 002CA784  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D4A08 002CA788  D0 05 00 30 */	stfs f0, 0x30(r5)
+/* 802D4A0C 002CA78C  C0 2B 00 04 */	lfs f1, 4(r11)
+/* 802D4A10 002CA790  C0 03 00 24 */	lfs f0, 0x24(r3)
+/* 802D4A14 002CA794  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D4A18 002CA798  D0 05 00 34 */	stfs f0, 0x34(r5)
+/* 802D4A1C 002CA79C  C0 2B 00 08 */	lfs f1, 8(r11)
+/* 802D4A20 002CA7A0  C0 03 00 28 */	lfs f0, 0x28(r3)
+/* 802D4A24 002CA7A4  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D4A28 002CA7A8  D0 05 00 38 */	stfs f0, 0x38(r5)
+/* 802D4A2C 002CA7AC  C0 03 00 2C */	lfs f0, 0x2c(r3)
+/* 802D4A30 002CA7B0  7C A3 2B 78 */	mr r3, r5
+/* 802D4A34 002CA7B4  C0 2B 00 0C */	lfs f1, 0xc(r11)
+/* 802D4A38 002CA7B8  EC 01 00 32 */	fmuls f0, f1, f0
+/* 802D4A3C 002CA7BC  D0 05 00 3C */	stfs f0, 0x3c(r5)
+/* 802D4A40 002CA7C0  4E 80 00 20 */	blr 
+
+.global __sinit_$3hkFastMeshShape_cpp
+__sinit_$3hkFastMeshShape_cpp:
+/* 802D4A44 002CA7C4  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 802D4A48 002CA7C8  7C 08 02 A6 */	mflr r0
+/* 802D4A4C 002CA7CC  90 01 00 14 */	stw r0, 0x14(r1)
+/* 802D4A50 002CA7D0  4B FF FE 41 */	bl getVtablehkFastMeshShape
+/* 802D4A54 002CA7D4  3D 00 80 41 */	lis r8, lbl_804109A8@ha
+/* 802D4A58 002CA7D8  3C E0 80 53 */	lis r7, lbl_80532820@ha
+/* 802D4A5C 002CA7DC  3C C0 80 2D */	lis r6, finishLoadedObjecthkFastMeshShape@ha
+/* 802D4A60 002CA7E0  3C 80 80 2D */	lis r4, cleanupLoadedObjecthkFastMeshShape@ha
+/* 802D4A64 002CA7E4  39 08 09 A8 */	addi r8, r8, lbl_804109A8@l
+/* 802D4A68 002CA7E8  38 A7 28 20 */	addi r5, r7, lbl_80532820@l
+/* 802D4A6C 002CA7EC  38 C6 46 F4 */	addi r6, r6, finishLoadedObjecthkFastMeshShape@l
+/* 802D4A70 002CA7F0  38 84 47 E0 */	addi r4, r4, cleanupLoadedObjecthkFastMeshShape@l
+/* 802D4A74 002CA7F4  91 07 28 20 */	stw r8, 0x2820(r7)
+/* 802D4A78 002CA7F8  90 C5 00 04 */	stw r6, 4(r5)
+/* 802D4A7C 002CA7FC  90 85 00 08 */	stw r4, 8(r5)
+/* 802D4A80 002CA800  90 65 00 0C */	stw r3, 0xc(r5)
+/* 802D4A84 002CA804  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 802D4A88 002CA808  7C 08 03 A6 */	mtlr r0
+/* 802D4A8C 002CA80C  38 21 00 10 */	addi r1, r1, 0x10
+/* 802D4A90 002CA810  4E 80 00 20 */	blr 
+
+.global hkFastMeshShape$7$212$2getChildShape
+hkFastMeshShape$7$212$2getChildShape:
+/* 802D4A94 002CA814  38 63 FF F4 */	addi r3, r3, -12
+/* 802D4A98 002CA818  4B FF FE 54 */	b hkFastMeshShape$7getChildShape
+
+.global hkMeshShape$7$212$2getNextKey
+hkMeshShape$7$212$2getNextKey:
+/* 802D4A9C 002CA81C  38 63 FF F4 */	addi r3, r3, -12
+/* 802D4AA0 002CA820  48 00 09 04 */	b hkMeshShape$7getNextKey
+
+.global hkMeshShape$7$212$2getFirstKey
+hkMeshShape$7$212$2getFirstKey:
+/* 802D4AA4 002CA824  38 63 FF F4 */	addi r3, r3, -12
+/* 802D4AA8 002CA828  48 00 08 54 */	b hkMeshShape$7getFirstKey
+
+.global hkFastMeshShape$7$212$2
+hkFastMeshShape$7$212$2:
+/* 802D4AAC 002CA82C  38 63 FF F4 */	addi r3, r3, -12
+/* 802D4AB0 002CA830  4B FF FD 44 */	b hkFastMeshShape$7__dt
+

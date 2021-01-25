@@ -1,0 +1,44 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global PFSYS_initializeSYS
+PFSYS_initializeSYS:
+/* 803EBBD8 003E1958  4E 80 00 20 */	blr 
+
+.global PFSYS_GetCurrentContextID
+PFSYS_GetCurrentContextID:
+/* 803EBBDC 003E195C  48 00 06 A0 */	b pfk_get_task_id
+
+.global PFSYS_TimeStamp
+PFSYS_TimeStamp:
+/* 803EBBE0 003E1960  94 21 FF C0 */	stwu r1, -0x40(r1)
+/* 803EBBE4 003E1964  7C 08 02 A6 */	mflr r0
+/* 803EBBE8 003E1968  90 01 00 44 */	stw r0, 0x44(r1)
+/* 803EBBEC 003E196C  93 E1 00 3C */	stw r31, 0x3c(r1)
+/* 803EBBF0 003E1970  7C 9F 23 78 */	mr r31, r4
+/* 803EBBF4 003E1974  93 C1 00 38 */	stw r30, 0x38(r1)
+/* 803EBBF8 003E1978  7C 7E 1B 78 */	mr r30, r3
+/* 803EBBFC 003E197C  4B DF 5F 39 */	bl OSGetTime
+/* 803EBC00 003E1980  38 A1 00 08 */	addi r5, r1, 8
+/* 803EBC04 003E1984  4B DF 61 7D */	bl OSTicksToCalendarTime
+/* 803EBC08 003E1988  80 01 00 1C */	lwz r0, 0x1c(r1)
+/* 803EBC0C 003E198C  90 1E 00 00 */	stw r0, 0(r30)
+/* 803EBC10 003E1990  80 61 00 18 */	lwz r3, 0x18(r1)
+/* 803EBC14 003E1994  38 03 00 01 */	addi r0, r3, 1
+/* 803EBC18 003E1998  90 1E 00 04 */	stw r0, 4(r30)
+/* 803EBC1C 003E199C  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 803EBC20 003E19A0  90 1E 00 08 */	stw r0, 8(r30)
+/* 803EBC24 003E19A4  80 01 00 10 */	lwz r0, 0x10(r1)
+/* 803EBC28 003E19A8  90 1F 00 00 */	stw r0, 0(r31)
+/* 803EBC2C 003E19AC  80 01 00 0C */	lwz r0, 0xc(r1)
+/* 803EBC30 003E19B0  90 1F 00 04 */	stw r0, 4(r31)
+/* 803EBC34 003E19B4  80 01 00 08 */	lwz r0, 8(r1)
+/* 803EBC38 003E19B8  90 1F 00 08 */	stw r0, 8(r31)
+/* 803EBC3C 003E19BC  83 E1 00 3C */	lwz r31, 0x3c(r1)
+/* 803EBC40 003E19C0  83 C1 00 38 */	lwz r30, 0x38(r1)
+/* 803EBC44 003E19C4  80 01 00 44 */	lwz r0, 0x44(r1)
+/* 803EBC48 003E19C8  7C 08 03 A6 */	mtlr r0
+/* 803EBC4C 003E19CC  38 21 00 40 */	addi r1, r1, 0x40
+/* 803EBC50 003E19D0  4E 80 00 20 */	blr 
+

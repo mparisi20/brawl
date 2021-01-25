@@ -1,0 +1,29 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global pf2_remove
+pf2_remove:
+/* 803EB9C8 003E1748  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 803EB9CC 003E174C  7C 08 02 A6 */	mflr r0
+/* 803EB9D0 003E1750  7C 64 1B 78 */	mr r4, r3
+/* 803EB9D4 003E1754  38 A0 00 01 */	li r5, 1
+/* 803EB9D8 003E1758  90 01 00 24 */	stw r0, 0x24(r1)
+/* 803EB9DC 003E175C  38 61 00 08 */	addi r3, r1, 8
+/* 803EB9E0 003E1760  4B FE AE 51 */	bl PFSTR_InitStr
+/* 803EB9E4 003E1764  2C 03 00 00 */	cmpwi r3, 0
+/* 803EB9E8 003E1768  40 82 00 10 */	bne lbl_803EB9F8
+/* 803EB9EC 003E176C  38 61 00 08 */	addi r3, r1, 8
+/* 803EB9F0 003E1770  4B FF 9B B9 */	bl PFFILE_remove
+/* 803EB9F4 003E1774  48 00 00 10 */	b lbl_803EBA04
+lbl_803EB9F8:
+/* 803EB9F8 003E1778  3C 80 80 56 */	lis r4, lbl_805644C0@ha
+/* 803EB9FC 003E177C  38 84 44 C0 */	addi r4, r4, lbl_805644C0@l
+/* 803EBA00 003E1780  90 64 00 40 */	stw r3, 0x40(r4)
+lbl_803EBA04:
+/* 803EBA04 003E1784  4B FF FA D9 */	bl PFAPI_convertReturnValue
+/* 803EBA08 003E1788  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 803EBA0C 003E178C  7C 08 03 A6 */	mtlr r0
+/* 803EBA10 003E1790  38 21 00 20 */	addi r1, r1, 0x20
+/* 803EBA14 003E1794  4E 80 00 20 */	blr 
+

@@ -1,0 +1,104 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global nw4r2ut10FileStreamFv$7Cancel
+nw4r2ut10FileStreamFv$7Cancel:
+/* 8015CC38 001529B8  4E 80 00 20 */	blr 
+
+.global nw4r2ut10FileStreamFPFlPQ34nw4r2ut$7CancelAsync
+nw4r2ut10FileStreamFPFlPQ34nw4r2ut$7CancelAsync:
+/* 8015CC3C 001529BC  38 60 00 01 */	li r3, 1
+/* 8015CC40 001529C0  4E 80 00 20 */	blr 
+
+.global nw4r2ut10FileStream12FilePositionFl$7Skip
+nw4r2ut10FileStream12FilePositionFl$7Skip:
+/* 8015CC44 001529C4  2C 04 00 00 */	cmpwi r4, 0
+/* 8015CC48 001529C8  41 82 00 58 */	beq lbl_8015CCA0
+/* 8015CC4C 001529CC  80 03 00 04 */	lwz r0, 4(r3)
+/* 8015CC50 001529D0  38 A0 00 00 */	li r5, 0
+/* 8015CC54 001529D4  80 C3 00 00 */	lwz r6, 0(r3)
+/* 8015CC58 001529D8  6C A5 80 00 */	xoris r5, r5, 0x8000
+/* 8015CC5C 001529DC  7C E0 22 14 */	add r7, r0, r4
+/* 8015CC60 001529E0  7C 07 30 10 */	subfc r0, r7, r6
+/* 8015CC64 001529E4  7C 05 29 10 */	subfe r0, r5, r5
+/* 8015CC68 001529E8  7C 05 29 10 */	subfe r0, r5, r5
+/* 8015CC6C 001529EC  7C 00 00 D1 */	neg. r0, r0
+/* 8015CC70 001529F0  41 82 00 08 */	beq lbl_8015CC78
+/* 8015CC74 001529F4  48 00 00 28 */	b lbl_8015CC9C
+lbl_8015CC78:
+/* 8015CC78 001529F8  38 C0 00 00 */	li r6, 0
+/* 8015CC7C 001529FC  6C C4 80 00 */	xoris r4, r6, 0x8000
+/* 8015CC80 00152A00  7C 06 38 10 */	subfc r0, r6, r7
+/* 8015CC84 00152A04  7C 84 29 10 */	subfe r4, r4, r5
+/* 8015CC88 00152A08  7C 85 29 10 */	subfe r4, r5, r5
+/* 8015CC8C 00152A0C  7C 84 00 D1 */	neg. r4, r4
+/* 8015CC90 00152A10  41 82 00 08 */	beq lbl_8015CC98
+/* 8015CC94 00152A14  48 00 00 08 */	b lbl_8015CC9C
+lbl_8015CC98:
+/* 8015CC98 00152A18  7C E6 3B 78 */	mr r6, r7
+lbl_8015CC9C:
+/* 8015CC9C 00152A1C  90 C3 00 04 */	stw r6, 4(r3)
+lbl_8015CCA0:
+/* 8015CCA0 00152A20  80 63 00 04 */	lwz r3, 4(r3)
+/* 8015CCA4 00152A24  4E 80 00 20 */	blr 
+
+.global nw4r2ut10FileStream12FilePositionFlUl$7Seek
+nw4r2ut10FileStream12FilePositionFlUl$7Seek:
+/* 8015CCA8 00152A28  2C 05 00 01 */	cmpwi r5, 1
+/* 8015CCAC 00152A2C  41 82 00 34 */	beq lbl_8015CCE0
+/* 8015CCB0 00152A30  40 80 00 10 */	bge lbl_8015CCC0
+/* 8015CCB4 00152A34  2C 05 00 00 */	cmpwi r5, 0
+/* 8015CCB8 00152A38  40 80 00 14 */	bge lbl_8015CCCC
+/* 8015CCBC 00152A3C  48 00 00 24 */	b lbl_8015CCE0
+lbl_8015CCC0:
+/* 8015CCC0 00152A40  2C 05 00 03 */	cmpwi r5, 3
+/* 8015CCC4 00152A44  40 80 00 1C */	bge lbl_8015CCE0
+/* 8015CCC8 00152A48  48 00 00 10 */	b lbl_8015CCD8
+lbl_8015CCCC:
+/* 8015CCCC 00152A4C  38 00 00 00 */	li r0, 0
+/* 8015CCD0 00152A50  90 03 00 04 */	stw r0, 4(r3)
+/* 8015CCD4 00152A54  48 00 00 0C */	b lbl_8015CCE0
+lbl_8015CCD8:
+/* 8015CCD8 00152A58  80 03 00 00 */	lwz r0, 0(r3)
+/* 8015CCDC 00152A5C  90 03 00 04 */	stw r0, 4(r3)
+lbl_8015CCE0:
+/* 8015CCE0 00152A60  2C 04 00 00 */	cmpwi r4, 0
+/* 8015CCE4 00152A64  4D 82 00 20 */	beqlr 
+/* 8015CCE8 00152A68  80 03 00 04 */	lwz r0, 4(r3)
+/* 8015CCEC 00152A6C  38 A0 00 00 */	li r5, 0
+/* 8015CCF0 00152A70  80 C3 00 00 */	lwz r6, 0(r3)
+/* 8015CCF4 00152A74  6C A5 80 00 */	xoris r5, r5, 0x8000
+/* 8015CCF8 00152A78  7C E0 22 14 */	add r7, r0, r4
+/* 8015CCFC 00152A7C  7C 07 30 10 */	subfc r0, r7, r6
+/* 8015CD00 00152A80  7C 05 29 10 */	subfe r0, r5, r5
+/* 8015CD04 00152A84  7C 05 29 10 */	subfe r0, r5, r5
+/* 8015CD08 00152A88  7C 00 00 D1 */	neg. r0, r0
+/* 8015CD0C 00152A8C  41 82 00 08 */	beq lbl_8015CD14
+/* 8015CD10 00152A90  48 00 00 28 */	b lbl_8015CD38
+lbl_8015CD14:
+/* 8015CD14 00152A94  38 C0 00 00 */	li r6, 0
+/* 8015CD18 00152A98  6C C4 80 00 */	xoris r4, r6, 0x8000
+/* 8015CD1C 00152A9C  7C 06 38 10 */	subfc r0, r6, r7
+/* 8015CD20 00152AA0  7C 84 29 10 */	subfe r4, r4, r5
+/* 8015CD24 00152AA4  7C 85 29 10 */	subfe r4, r5, r5
+/* 8015CD28 00152AA8  7C 84 00 D1 */	neg. r4, r4
+/* 8015CD2C 00152AAC  41 82 00 08 */	beq lbl_8015CD34
+/* 8015CD30 00152AB0  48 00 00 08 */	b lbl_8015CD38
+lbl_8015CD34:
+/* 8015CD34 00152AB4  7C E6 3B 78 */	mr r6, r7
+lbl_8015CD38:
+/* 8015CD38 00152AB8  90 C3 00 04 */	stw r6, 4(r3)
+/* 8015CD3C 00152ABC  4E 80 00 20 */	blr 
+
+.global nw4r2ut10FileStreamCFv$7GetRuntimeTypeInfo
+nw4r2ut10FileStreamCFv$7GetRuntimeTypeInfo:
+/* 8015CD40 00152AC0  38 6D C0 60 */	addi r3, r13, lbl_805A0480-_SDA_BASE_
+/* 8015CD44 00152AC4  4E 80 00 20 */	blr 
+
+.global __sinit_$3ut_FileStream_cpp
+__sinit_$3ut_FileStream_cpp:
+/* 8015CD48 00152AC8  38 0D C0 58 */	addi r0, r13, lbl_805A0478-_SDA_BASE_
+/* 8015CD4C 00152ACC  90 0D C0 60 */	stw r0, lbl_805A0480-_SDA_BASE_(r13)
+/* 8015CD50 00152AD0  4E 80 00 20 */	blr 
+

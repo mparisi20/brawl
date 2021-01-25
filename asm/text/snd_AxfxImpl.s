@@ -1,0 +1,115 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global nw4r3snd6detail8AxfxImplFPvUl$7CreateHeap
+nw4r3snd6detail8AxfxImplFPvUl$7CreateHeap:
+/* 801BBBC0 001B1940  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801BBBC4 001B1944  7C 08 02 A6 */	mflr r0
+/* 801BBBC8 001B1948  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801BBBCC 001B194C  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801BBBD0 001B1950  7C 7F 1B 78 */	mr r31, r3
+/* 801BBBD4 001B1954  7C 83 23 78 */	mr r3, r4
+/* 801BBBD8 001B1958  7C A4 2B 78 */	mr r4, r5
+/* 801BBBDC 001B195C  38 A0 00 00 */	li r5, 0
+/* 801BBBE0 001B1960  48 04 8D DD */	bl MEMCreateFrmHeapEx
+/* 801BBBE4 001B1964  7C 03 00 D0 */	neg r0, r3
+/* 801BBBE8 001B1968  90 7F 00 04 */	stw r3, 4(r31)
+/* 801BBBEC 001B196C  7C 00 1B 78 */	or r0, r0, r3
+/* 801BBBF0 001B1970  54 03 0F FE */	srwi r3, r0, 0x1f
+/* 801BBBF4 001B1974  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801BBBF8 001B1978  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801BBBFC 001B197C  7C 08 03 A6 */	mtlr r0
+/* 801BBC00 001B1980  38 21 00 10 */	addi r1, r1, 0x10
+/* 801BBC04 001B1984  4E 80 00 20 */	blr 
+
+.global nw4r3snd6detail8AxfxImplFv$7DestroyHeap
+nw4r3snd6detail8AxfxImplFv$7DestroyHeap:
+/* 801BBC08 001B1988  80 63 00 04 */	lwz r3, 4(r3)
+/* 801BBC0C 001B198C  2C 03 00 00 */	cmpwi r3, 0
+/* 801BBC10 001B1990  4D 82 00 20 */	beqlr 
+/* 801BBC14 001B1994  48 04 8E 2C */	b MEMDestroyFrmHeap
+/* 801BBC18 001B1998  4E 80 00 20 */	blr 
+
+.global nw4r3snd6detail8AxfxImplFPPFUl_PvPPFPv_v$7HookAlloc
+nw4r3snd6detail8AxfxImplFPPFUl_PvPPFPv_v$7HookAlloc:
+/* 801BBC1C 001B199C  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801BBC20 001B19A0  7C 08 02 A6 */	mflr r0
+/* 801BBC24 001B19A4  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801BBC28 001B19A8  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801BBC2C 001B19AC  7C 7F 1B 78 */	mr r31, r3
+/* 801BBC30 001B19B0  7C 83 23 78 */	mr r3, r4
+/* 801BBC34 001B19B4  7C A4 2B 78 */	mr r4, r5
+/* 801BBC38 001B19B8  48 04 80 C1 */	bl AXFXGetHooks
+/* 801BBC3C 001B19BC  3C 60 80 1C */	lis r3, nw4r3snd6detail8AxfxImplFUl$7Alloc@ha
+/* 801BBC40 001B19C0  3C 80 80 1C */	lis r4, nw4r3snd6detail8AxfxImplFPv$7Free@ha
+/* 801BBC44 001B19C4  38 63 BC 98 */	addi r3, r3, nw4r3snd6detail8AxfxImplFUl$7Alloc@l
+/* 801BBC48 001B19C8  38 84 BC F8 */	addi r4, r4, nw4r3snd6detail8AxfxImplFPv$7Free@l
+/* 801BBC4C 001B19CC  48 04 80 A1 */	bl AXFXSetHooks
+/* 801BBC50 001B19D0  93 ED C1 50 */	stw r31, lbl_805A0570-_SDA_BASE_(r13)
+/* 801BBC54 001B19D4  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801BBC58 001B19D8  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801BBC5C 001B19DC  7C 08 03 A6 */	mtlr r0
+/* 801BBC60 001B19E0  38 21 00 10 */	addi r1, r1, 0x10
+/* 801BBC64 001B19E4  4E 80 00 20 */	blr 
+
+.global nw4r3snd6detail8AxfxImplFPFUl_PvPFPv_v$7RestoreAlloc
+nw4r3snd6detail8AxfxImplFPFUl_PvPFPv_v$7RestoreAlloc:
+/* 801BBC68 001B19E8  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801BBC6C 001B19EC  7C 08 02 A6 */	mflr r0
+/* 801BBC70 001B19F0  7C 83 23 78 */	mr r3, r4
+/* 801BBC74 001B19F4  7C A4 2B 78 */	mr r4, r5
+/* 801BBC78 001B19F8  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801BBC7C 001B19FC  48 04 80 71 */	bl AXFXSetHooks
+/* 801BBC80 001B1A00  38 00 00 00 */	li r0, 0
+/* 801BBC84 001B1A04  90 0D C1 50 */	stw r0, lbl_805A0570-_SDA_BASE_(r13)
+/* 801BBC88 001B1A08  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801BBC8C 001B1A0C  7C 08 03 A6 */	mtlr r0
+/* 801BBC90 001B1A10  38 21 00 10 */	addi r1, r1, 0x10
+/* 801BBC94 001B1A14  4E 80 00 20 */	blr 
+
+.global nw4r3snd6detail8AxfxImplFUl$7Alloc
+nw4r3snd6detail8AxfxImplFUl$7Alloc:
+/* 801BBC98 001B1A18  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801BBC9C 001B1A1C  7C 08 02 A6 */	mflr r0
+/* 801BBCA0 001B1A20  38 A0 00 04 */	li r5, 4
+/* 801BBCA4 001B1A24  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801BBCA8 001B1A28  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801BBCAC 001B1A2C  7C 7F 1B 78 */	mr r31, r3
+/* 801BBCB0 001B1A30  7F E4 FB 78 */	mr r4, r31
+/* 801BBCB4 001B1A34  80 CD C1 50 */	lwz r6, lbl_805A0570-_SDA_BASE_(r13)
+/* 801BBCB8 001B1A38  80 66 00 04 */	lwz r3, 4(r6)
+/* 801BBCBC 001B1A3C  48 04 8D B5 */	bl MEMAllocFromFrmHeapEx
+/* 801BBCC0 001B1A40  80 AD C1 50 */	lwz r5, lbl_805A0570-_SDA_BASE_(r13)
+/* 801BBCC4 001B1A44  38 1F 00 03 */	addi r0, r31, 3
+/* 801BBCC8 001B1A48  54 00 00 3A */	rlwinm r0, r0, 0, 0, 0x1d
+/* 801BBCCC 001B1A4C  80 85 00 08 */	lwz r4, 8(r5)
+/* 801BBCD0 001B1A50  38 84 00 01 */	addi r4, r4, 1
+/* 801BBCD4 001B1A54  90 85 00 08 */	stw r4, 8(r5)
+/* 801BBCD8 001B1A58  80 8D C1 54 */	lwz r4, lbl_805A0574-_SDA_BASE_(r13)
+/* 801BBCDC 001B1A5C  7C 04 02 14 */	add r0, r4, r0
+/* 801BBCE0 001B1A60  90 0D C1 54 */	stw r0, lbl_805A0574-_SDA_BASE_(r13)
+/* 801BBCE4 001B1A64  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801BBCE8 001B1A68  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801BBCEC 001B1A6C  7C 08 03 A6 */	mtlr r0
+/* 801BBCF0 001B1A70  38 21 00 10 */	addi r1, r1, 0x10
+/* 801BBCF4 001B1A74  4E 80 00 20 */	blr 
+
+.global nw4r3snd6detail8AxfxImplFPv$7Free
+nw4r3snd6detail8AxfxImplFPv$7Free:
+/* 801BBCF8 001B1A78  80 8D C1 50 */	lwz r4, lbl_805A0570-_SDA_BASE_(r13)
+/* 801BBCFC 001B1A7C  80 64 00 08 */	lwz r3, 8(r4)
+/* 801BBD00 001B1A80  2C 03 00 00 */	cmpwi r3, 0
+/* 801BBD04 001B1A84  41 82 00 0C */	beq lbl_801BBD10
+/* 801BBD08 001B1A88  38 03 FF FF */	addi r0, r3, -1
+/* 801BBD0C 001B1A8C  90 04 00 08 */	stw r0, 8(r4)
+lbl_801BBD10:
+/* 801BBD10 001B1A90  80 6D C1 50 */	lwz r3, lbl_805A0570-_SDA_BASE_(r13)
+/* 801BBD14 001B1A94  80 03 00 08 */	lwz r0, 8(r3)
+/* 801BBD18 001B1A98  2C 00 00 00 */	cmpwi r0, 0
+/* 801BBD1C 001B1A9C  4C 82 00 20 */	bnelr 
+/* 801BBD20 001B1AA0  80 63 00 04 */	lwz r3, 4(r3)
+/* 801BBD24 001B1AA4  38 80 00 03 */	li r4, 3
+/* 801BBD28 001B1AA8  48 04 8E 68 */	b MEMFreeToFrmHeap
+/* 801BBD2C 001B1AAC  4E 80 00 20 */	blr 
+

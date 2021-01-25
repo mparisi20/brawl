@@ -1,0 +1,33 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global HID_DevInit
+HID_DevInit:
+/* 80246FD8 0023CD58  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 80246FDC 0023CD5C  7C 08 02 A6 */	mflr r0
+/* 80246FE0 0023CD60  38 80 00 00 */	li r4, 0
+/* 80246FE4 0023CD64  38 A0 01 44 */	li r5, 0x144
+/* 80246FE8 0023CD68  90 01 00 14 */	stw r0, 0x14(r1)
+/* 80246FEC 0023CD6C  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 80246FF0 0023CD70  3F E0 80 53 */	lis r31, lbl_8052C870@ha
+/* 80246FF4 0023CD74  38 7F C8 70 */	addi r3, r31, lbl_8052C870@l
+/* 80246FF8 0023CD78  4B DB D4 45 */	bl func_8000443C
+/* 80246FFC 0023CD7C  3C 60 80 24 */	lis r3, hidd_proc_repage_timeout@ha
+/* 80247000 0023CD80  38 BF C8 70 */	addi r5, r31, -14224
+/* 80247004 0023CD84  38 C0 00 01 */	li r6, 1
+/* 80247008 0023CD88  38 80 00 40 */	li r4, 0x40
+/* 8024700C 0023CD8C  38 63 71 00 */	addi r3, r3, hidd_proc_repage_timeout@l
+/* 80247010 0023CD90  38 00 00 00 */	li r0, 0
+/* 80247014 0023CD94  98 C5 00 CA */	stb r6, 0xca(r5)
+/* 80247018 0023CD98  B0 85 00 CC */	sth r4, 0xcc(r5)
+/* 8024701C 0023CD9C  98 C5 01 06 */	stb r6, 0x106(r5)
+/* 80247020 0023CDA0  B0 85 01 08 */	sth r4, 0x108(r5)
+/* 80247024 0023CDA4  90 65 00 2C */	stw r3, 0x2c(r5)
+/* 80247028 0023CDA8  98 05 01 41 */	stb r0, 0x141(r5)
+/* 8024702C 0023CDAC  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 80247030 0023CDB0  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 80247034 0023CDB4  7C 08 03 A6 */	mtlr r0
+/* 80247038 0023CDB8  38 21 00 10 */	addi r1, r1, 0x10
+/* 8024703C 0023CDBC  4E 80 00 20 */	blr 
+

@@ -1,0 +1,29 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global VFipf2_remove
+VFipf2_remove:
+/* 803C2E04 003B8B84  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 803C2E08 003B8B88  7C 08 02 A6 */	mflr r0
+/* 803C2E0C 003B8B8C  7C 64 1B 78 */	mr r4, r3
+/* 803C2E10 003B8B90  38 A0 00 01 */	li r5, 1
+/* 803C2E14 003B8B94  90 01 00 24 */	stw r0, 0x24(r1)
+/* 803C2E18 003B8B98  38 61 00 08 */	addi r3, r1, 8
+/* 803C2E1C 003B8B9C  4B FE 6D 99 */	bl VFiPFSTR_InitStr
+/* 803C2E20 003B8BA0  2C 03 00 00 */	cmpwi r3, 0
+/* 803C2E24 003B8BA4  40 82 00 10 */	bne lbl_803C2E34
+/* 803C2E28 003B8BA8  38 61 00 08 */	addi r3, r1, 8
+/* 803C2E2C 003B8BAC  4B FF 93 0D */	bl VFiPFFILE_remove
+/* 803C2E30 003B8BB0  48 00 00 10 */	b lbl_803C2E40
+lbl_803C2E34:
+/* 803C2E34 003B8BB4  3C 80 80 54 */	lis r4, lbl_8053B248@ha
+/* 803C2E38 003B8BB8  38 84 B2 48 */	addi r4, r4, lbl_8053B248@l
+/* 803C2E3C 003B8BBC  90 64 00 1C */	stw r3, 0x1c(r4)
+lbl_803C2E40:
+/* 803C2E40 003B8BC0  4B FF FA CD */	bl VFiPFAPI_convertReturnValue
+/* 803C2E44 003B8BC4  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 803C2E48 003B8BC8  7C 08 03 A6 */	mtlr r0
+/* 803C2E4C 003B8BCC  38 21 00 20 */	addi r1, r1, 0x20
+/* 803C2E50 003B8BD0  4E 80 00 20 */	blr 
+

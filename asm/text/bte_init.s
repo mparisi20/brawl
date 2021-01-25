@@ -1,0 +1,18 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global BTE_InitStack
+BTE_InitStack:
+/* 802318FC 0022767C  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 80231900 00227680  7C 08 02 A6 */	mflr r0
+/* 80231904 00227684  90 01 00 14 */	stw r0, 0x14(r1)
+/* 80231908 00227688  48 01 EB 25 */	bl RFCOMM_Init
+/* 8023190C 0022768C  48 01 1D F9 */	bl GAP_Init
+/* 80231910 00227690  48 01 56 C9 */	bl HID_DevInit
+/* 80231914 00227694  48 01 61 49 */	bl HID_HostInit
+/* 80231918 00227698  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8023191C 0022769C  7C 08 03 A6 */	mtlr r0
+/* 80231920 002276A0  38 21 00 10 */	addi r1, r1, 0x10
+/* 80231924 002276A4  4E 80 00 20 */	blr 
+

@@ -1,0 +1,88 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global nw4r3snd11SoundHandleFPQ44nw4r3snd$7detail_AttachSoundAsTempHandle
+nw4r3snd11SoundHandleFPQ44nw4r3snd$7detail_AttachSoundAsTempHandle:
+/* 801CA720 001C04A0  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801CA724 001C04A4  7C 08 02 A6 */	mflr r0
+/* 801CA728 001C04A8  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801CA72C 001C04AC  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801CA730 001C04B0  7C 7F 1B 78 */	mr r31, r3
+/* 801CA734 001C04B4  90 83 00 00 */	stw r4, 0(r3)
+/* 801CA738 001C04B8  7C 83 23 78 */	mr r3, r4
+/* 801CA73C 001C04BC  4B FF 2E AD */	bl nw4r3snd6detail10BasicSoundFv$7IsAttachedTempGeneralHandle
+/* 801CA740 001C04C0  2C 03 00 00 */	cmpwi r3, 0
+/* 801CA744 001C04C4  41 82 00 0C */	beq lbl_801CA750
+/* 801CA748 001C04C8  80 7F 00 00 */	lwz r3, 0(r31)
+/* 801CA74C 001C04CC  4B FF 2E B9 */	bl nw4r3snd6detail10BasicSoundFv$7DetachTempGeneralHandle
+lbl_801CA750:
+/* 801CA750 001C04D0  80 7F 00 00 */	lwz r3, 0(r31)
+/* 801CA754 001C04D4  81 83 00 00 */	lwz r12, 0(r3)
+/* 801CA758 001C04D8  81 8C 00 5C */	lwz r12, 0x5c(r12)
+/* 801CA75C 001C04DC  7D 89 03 A6 */	mtctr r12
+/* 801CA760 001C04E0  4E 80 04 21 */	bctrl 
+/* 801CA764 001C04E4  2C 03 00 00 */	cmpwi r3, 0
+/* 801CA768 001C04E8  41 82 00 18 */	beq lbl_801CA780
+/* 801CA76C 001C04EC  80 7F 00 00 */	lwz r3, 0(r31)
+/* 801CA770 001C04F0  81 83 00 00 */	lwz r12, 0(r3)
+/* 801CA774 001C04F4  81 8C 00 60 */	lwz r12, 0x60(r12)
+/* 801CA778 001C04F8  7D 89 03 A6 */	mtctr r12
+/* 801CA77C 001C04FC  4E 80 04 21 */	bctrl 
+lbl_801CA780:
+/* 801CA780 001C0500  80 7F 00 00 */	lwz r3, 0(r31)
+/* 801CA784 001C0504  93 E3 00 0C */	stw r31, 0xc(r3)
+/* 801CA788 001C0508  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801CA78C 001C050C  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801CA790 001C0510  7C 08 03 A6 */	mtlr r0
+/* 801CA794 001C0514  38 21 00 10 */	addi r1, r1, 0x10
+/* 801CA798 001C0518  4E 80 00 20 */	blr 
+
+.global nw4r3snd11SoundHandleFPQ44nw4r3snd$7detail_AttachSound
+nw4r3snd11SoundHandleFPQ44nw4r3snd$7detail_AttachSound:
+/* 801CA79C 001C051C  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 801CA7A0 001C0520  7C 08 02 A6 */	mflr r0
+/* 801CA7A4 001C0524  90 01 00 14 */	stw r0, 0x14(r1)
+/* 801CA7A8 001C0528  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 801CA7AC 001C052C  7C 7F 1B 78 */	mr r31, r3
+/* 801CA7B0 001C0530  90 83 00 00 */	stw r4, 0(r3)
+/* 801CA7B4 001C0534  7C 83 23 78 */	mr r3, r4
+/* 801CA7B8 001C0538  4B FF 2E 1D */	bl nw4r3snd6detail10BasicSoundFv$7IsAttachedGeneralHandle
+/* 801CA7BC 001C053C  2C 03 00 00 */	cmpwi r3, 0
+/* 801CA7C0 001C0540  41 82 00 0C */	beq lbl_801CA7CC
+/* 801CA7C4 001C0544  80 7F 00 00 */	lwz r3, 0(r31)
+/* 801CA7C8 001C0548  4B FF 2E 35 */	bl nw4r3snd6detail10BasicSoundFv$7DetachGeneralHandle
+lbl_801CA7CC:
+/* 801CA7CC 001C054C  80 7F 00 00 */	lwz r3, 0(r31)
+/* 801CA7D0 001C0550  93 E3 00 08 */	stw r31, 8(r3)
+/* 801CA7D4 001C0554  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 801CA7D8 001C0558  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 801CA7DC 001C055C  7C 08 03 A6 */	mtlr r0
+/* 801CA7E0 001C0560  38 21 00 10 */	addi r1, r1, 0x10
+/* 801CA7E4 001C0564  4E 80 00 20 */	blr 
+
+.global nw4r3snd11SoundHandleFv$7DetachSound
+nw4r3snd11SoundHandleFv$7DetachSound:
+/* 801CA7E8 001C0568  80 83 00 00 */	lwz r4, 0(r3)
+/* 801CA7EC 001C056C  2C 04 00 00 */	cmpwi r4, 0
+/* 801CA7F0 001C0570  41 82 00 30 */	beq lbl_801CA820
+/* 801CA7F4 001C0574  80 04 00 08 */	lwz r0, 8(r4)
+/* 801CA7F8 001C0578  7C 00 18 40 */	cmplw r0, r3
+/* 801CA7FC 001C057C  40 82 00 0C */	bne lbl_801CA808
+/* 801CA800 001C0580  38 00 00 00 */	li r0, 0
+/* 801CA804 001C0584  90 04 00 08 */	stw r0, 8(r4)
+lbl_801CA808:
+/* 801CA808 001C0588  80 83 00 00 */	lwz r4, 0(r3)
+/* 801CA80C 001C058C  80 04 00 0C */	lwz r0, 0xc(r4)
+/* 801CA810 001C0590  7C 00 18 40 */	cmplw r0, r3
+/* 801CA814 001C0594  40 82 00 0C */	bne lbl_801CA820
+/* 801CA818 001C0598  38 00 00 00 */	li r0, 0
+/* 801CA81C 001C059C  90 04 00 0C */	stw r0, 0xc(r4)
+lbl_801CA820:
+/* 801CA820 001C05A0  80 03 00 00 */	lwz r0, 0(r3)
+/* 801CA824 001C05A4  2C 00 00 00 */	cmpwi r0, 0
+/* 801CA828 001C05A8  4D 82 00 20 */	beqlr 
+/* 801CA82C 001C05AC  38 00 00 00 */	li r0, 0
+/* 801CA830 001C05B0  90 03 00 00 */	stw r0, 0(r3)
+/* 801CA834 001C05B4  4E 80 00 20 */	blr 
+

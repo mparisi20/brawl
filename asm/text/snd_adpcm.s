@@ -1,0 +1,44 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global nw4r3snd6detailFP10_AXPBADPCMUc$7DecodeDspAdpcm
+nw4r3snd6detailFP10_AXPBADPCMUc$7DecodeDspAdpcm:
+/* 801D4FDC 001CAD5C  A0 E3 00 22 */	lhz r7, 0x22(r3)
+/* 801D4FE0 001CAD60  54 80 63 26 */	rlwinm r0, r4, 0xc, 0xc, 0x13
+/* 801D4FE4 001CAD64  A1 23 00 24 */	lhz r9, 0x24(r3)
+/* 801D4FE8 001CAD68  38 A0 00 01 */	li r5, 1
+/* 801D4FEC 001CAD6C  7C E6 26 70 */	srawi r6, r7, 4
+/* 801D4FF0 001CAD70  54 E4 07 3E */	clrlwi r4, r7, 0x1c
+/* 801D4FF4 001CAD74  54 C7 10 3A */	slwi r7, r6, 2
+/* 801D4FF8 001CAD78  7C 00 07 34 */	extsh r0, r0
+/* 801D4FFC 001CAD7C  7C C3 3A 14 */	add r6, r3, r7
+/* 801D5000 001CAD80  7C A4 20 30 */	slw r4, r5, r4
+/* 801D5004 001CAD84  7D 03 3A AE */	lhax r8, r3, r7
+/* 801D5008 001CAD88  7D 27 07 34 */	extsh r7, r9
+/* 801D500C 001CAD8C  A8 C6 00 02 */	lha r6, 2(r6)
+/* 801D5010 001CAD90  7C 84 07 34 */	extsh r4, r4
+/* 801D5014 001CAD94  A8 A3 00 26 */	lha r5, 0x26(r3)
+/* 801D5018 001CAD98  7C 00 0E 70 */	srawi r0, r0, 1
+/* 801D501C 001CAD9C  7C E7 41 D6 */	mullw r7, r7, r8
+/* 801D5020 001CADA0  7C A5 31 D6 */	mullw r5, r5, r6
+/* 801D5024 001CADA4  7C 00 21 D6 */	mullw r0, r0, r4
+/* 801D5028 001CADA8  7C E7 2A 14 */	add r7, r7, r5
+/* 801D502C 001CADAC  7C E7 02 14 */	add r7, r7, r0
+/* 801D5030 001CADB0  7C E7 56 70 */	srawi r7, r7, 0xa
+/* 801D5034 001CADB4  38 E7 00 01 */	addi r7, r7, 1
+/* 801D5038 001CADB8  7C E7 0E 70 */	srawi r7, r7, 1
+/* 801D503C 001CADBC  2C 07 7F FF */	cmpwi r7, 0x7fff
+/* 801D5040 001CADC0  40 81 00 0C */	ble lbl_801D504C
+/* 801D5044 001CADC4  38 E0 7F FF */	li r7, 0x7fff
+/* 801D5048 001CADC8  48 00 00 10 */	b lbl_801D5058
+lbl_801D504C:
+/* 801D504C 001CADCC  2C 07 80 00 */	cmpwi r7, -32768
+/* 801D5050 001CADD0  40 80 00 08 */	bge lbl_801D5058
+/* 801D5054 001CADD4  38 E0 80 00 */	li r7, -32768
+lbl_801D5058:
+/* 801D5058 001CADD8  B1 23 00 26 */	sth r9, 0x26(r3)
+/* 801D505C 001CADDC  B0 E3 00 24 */	sth r7, 0x24(r3)
+/* 801D5060 001CADE0  7C E3 3B 78 */	mr r3, r7
+/* 801D5064 001CADE4  4E 80 00 20 */	blr 
+

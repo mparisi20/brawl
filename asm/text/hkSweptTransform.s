@@ -1,0 +1,64 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global hkSweptTransform$7initSweptTransform
+hkSweptTransform$7initSweptTransform:
+/* 80285CCC 0027BA4C  C0 82 AA 30 */	lfs f4, lbl_805A3D50-_SDA2_BASE_(r2)
+/* 80285CD0 0027BA50  C0 E4 00 00 */	lfs f7, 0(r4)
+/* 80285CD4 0027BA54  C0 C4 00 04 */	lfs f6, 4(r4)
+/* 80285CD8 0027BA58  C0 A4 00 08 */	lfs f5, 8(r4)
+/* 80285CDC 0027BA5C  C0 65 00 00 */	lfs f3, 0(r5)
+/* 80285CE0 0027BA60  C0 45 00 04 */	lfs f2, 4(r5)
+/* 80285CE4 0027BA64  C0 25 00 08 */	lfs f1, 8(r5)
+/* 80285CE8 0027BA68  C0 05 00 0C */	lfs f0, 0xc(r5)
+/* 80285CEC 0027BA6C  D0 E3 00 00 */	stfs f7, 0(r3)
+/* 80285CF0 0027BA70  D0 C3 00 04 */	stfs f6, 4(r3)
+/* 80285CF4 0027BA74  D0 A3 00 08 */	stfs f5, 8(r3)
+/* 80285CF8 0027BA78  D0 83 00 0C */	stfs f4, 0xc(r3)
+/* 80285CFC 0027BA7C  D0 E3 00 10 */	stfs f7, 0x10(r3)
+/* 80285D00 0027BA80  D0 C3 00 14 */	stfs f6, 0x14(r3)
+/* 80285D04 0027BA84  D0 A3 00 18 */	stfs f5, 0x18(r3)
+/* 80285D08 0027BA88  D0 83 00 1C */	stfs f4, 0x1c(r3)
+/* 80285D0C 0027BA8C  D0 63 00 20 */	stfs f3, 0x20(r3)
+/* 80285D10 0027BA90  D0 43 00 24 */	stfs f2, 0x24(r3)
+/* 80285D14 0027BA94  D0 23 00 28 */	stfs f1, 0x28(r3)
+/* 80285D18 0027BA98  D0 03 00 2C */	stfs f0, 0x2c(r3)
+/* 80285D1C 0027BA9C  D0 63 00 30 */	stfs f3, 0x30(r3)
+/* 80285D20 0027BAA0  D0 43 00 34 */	stfs f2, 0x34(r3)
+/* 80285D24 0027BAA4  D0 23 00 38 */	stfs f1, 0x38(r3)
+/* 80285D28 0027BAA8  D0 03 00 3C */	stfs f0, 0x3c(r3)
+/* 80285D2C 0027BAAC  D0 83 00 4C */	stfs f4, 0x4c(r3)
+/* 80285D30 0027BAB0  D0 83 00 48 */	stfs f4, 0x48(r3)
+/* 80285D34 0027BAB4  D0 83 00 44 */	stfs f4, 0x44(r3)
+/* 80285D38 0027BAB8  D0 83 00 40 */	stfs f4, 0x40(r3)
+/* 80285D3C 0027BABC  4E 80 00 20 */	blr 
+
+.global __sinit_$3hkSweptTransformClass_cpp
+__sinit_$3hkSweptTransformClass_cpp:
+/* 80285D40 0027BAC0  94 21 FF E0 */	stwu r1, -0x20(r1)
+/* 80285D44 0027BAC4  7C 08 02 A6 */	mflr r0
+/* 80285D48 0027BAC8  3C A0 80 41 */	lis r5, lbl_8040F8DC@ha
+/* 80285D4C 0027BACC  3C 60 80 53 */	lis r3, lbl_80532510@ha
+/* 80285D50 0027BAD0  90 01 00 24 */	stw r0, 0x24(r1)
+/* 80285D54 0027BAD4  38 A5 F8 DC */	addi r5, r5, lbl_8040F8DC@l
+/* 80285D58 0027BAD8  3C 80 80 41 */	lis r4, lbl_8040F940@ha
+/* 80285D5C 0027BADC  38 00 00 00 */	li r0, 0
+/* 80285D60 0027BAE0  90 A1 00 08 */	stw r5, 8(r1)
+/* 80285D64 0027BAE4  38 A0 00 05 */	li r5, 5
+/* 80285D68 0027BAE8  38 63 25 10 */	addi r3, r3, lbl_80532510@l
+/* 80285D6C 0027BAEC  38 84 F9 40 */	addi r4, r4, lbl_8040F940@l
+/* 80285D70 0027BAF0  90 A1 00 0C */	stw r5, 0xc(r1)
+/* 80285D74 0027BAF4  38 A0 00 00 */	li r5, 0
+/* 80285D78 0027BAF8  38 C0 00 50 */	li r6, 0x50
+/* 80285D7C 0027BAFC  38 E0 00 00 */	li r7, 0
+/* 80285D80 0027BB00  90 01 00 10 */	stw r0, 0x10(r1)
+/* 80285D84 0027BB04  39 00 00 00 */	li r8, 0
+/* 80285D88 0027BB08  39 20 00 00 */	li r9, 0
+/* 80285D8C 0027BB0C  39 40 00 00 */	li r10, 0
+/* 80285D90 0027BB10  4B FF 6A 79 */	bl hkClass$7__ct
+/* 80285D94 0027BB14  80 01 00 24 */	lwz r0, 0x24(r1)
+/* 80285D98 0027BB18  7C 08 03 A6 */	mtlr r0
+/* 80285D9C 0027BB1C  38 21 00 20 */	addi r1, r1, 0x20
+/* 80285DA0 0027BB20  4E 80 00 20 */	blr 
+

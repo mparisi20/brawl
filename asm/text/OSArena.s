@@ -1,0 +1,96 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global OSGetMEM1ArenaHi
+OSGetMEM1ArenaHi:
+/* 801D712C 001CCEAC  80 6D C2 70 */	lwz r3, lbl_805A0690-_SDA_BASE_(r13)
+/* 801D7130 001CCEB0  4E 80 00 20 */	blr 
+
+.global OSGetMEM2ArenaHi
+OSGetMEM2ArenaHi:
+/* 801D7134 001CCEB4  80 6D C2 74 */	lwz r3, lbl_805A0694-_SDA_BASE_(r13)
+/* 801D7138 001CCEB8  4E 80 00 20 */	blr 
+
+.global OSGetArenaHi
+OSGetArenaHi:
+/* 801D713C 001CCEBC  80 6D C2 70 */	lwz r3, lbl_805A0690-_SDA_BASE_(r13)
+/* 801D7140 001CCEC0  4E 80 00 20 */	blr 
+
+.global OSGetMEM1ArenaLo
+OSGetMEM1ArenaLo:
+/* 801D7144 001CCEC4  80 6D A5 98 */	lwz r3, lbl_8059E9B8-_SDA_BASE_(r13)
+/* 801D7148 001CCEC8  4E 80 00 20 */	blr 
+
+.global OSGetMEM2ArenaLo
+OSGetMEM2ArenaLo:
+/* 801D714C 001CCECC  80 6D A5 9C */	lwz r3, lbl_8059E9BC-_SDA_BASE_(r13)
+/* 801D7150 001CCED0  4E 80 00 20 */	blr 
+
+.global OSGetArenaLo
+OSGetArenaLo:
+/* 801D7154 001CCED4  80 6D A5 98 */	lwz r3, lbl_8059E9B8-_SDA_BASE_(r13)
+/* 801D7158 001CCED8  4E 80 00 20 */	blr 
+
+.global OSSetMEM1ArenaHi
+OSSetMEM1ArenaHi:
+/* 801D715C 001CCEDC  90 6D C2 70 */	stw r3, lbl_805A0690-_SDA_BASE_(r13)
+/* 801D7160 001CCEE0  4E 80 00 20 */	blr 
+
+.global OSSetMEM2ArenaHi
+OSSetMEM2ArenaHi:
+/* 801D7164 001CCEE4  90 6D C2 74 */	stw r3, lbl_805A0694-_SDA_BASE_(r13)
+/* 801D7168 001CCEE8  4E 80 00 20 */	blr 
+
+.global OSSetArenaHi
+OSSetArenaHi:
+/* 801D716C 001CCEEC  90 6D C2 70 */	stw r3, lbl_805A0690-_SDA_BASE_(r13)
+/* 801D7170 001CCEF0  4E 80 00 20 */	blr 
+
+.global OSSetMEM1ArenaLo
+OSSetMEM1ArenaLo:
+/* 801D7174 001CCEF4  90 6D A5 98 */	stw r3, lbl_8059E9B8-_SDA_BASE_(r13)
+/* 801D7178 001CCEF8  4E 80 00 20 */	blr 
+
+.global OSSetMEM2ArenaLo
+OSSetMEM2ArenaLo:
+/* 801D717C 001CCEFC  90 6D A5 9C */	stw r3, lbl_8059E9BC-_SDA_BASE_(r13)
+/* 801D7180 001CCF00  4E 80 00 20 */	blr 
+
+.global OSSetArenaLo
+OSSetArenaLo:
+/* 801D7184 001CCF04  90 6D A5 98 */	stw r3, lbl_8059E9B8-_SDA_BASE_(r13)
+/* 801D7188 001CCF08  4E 80 00 20 */	blr 
+
+.global OSAllocFromMEM1ArenaLo
+OSAllocFromMEM1ArenaLo:
+/* 801D718C 001CCF0C  80 0D A5 98 */	lwz r0, lbl_8059E9B8-_SDA_BASE_(r13)
+/* 801D7190 001CCF10  38 A4 FF FF */	addi r5, r4, -1
+/* 801D7194 001CCF14  7C A6 28 F8 */	nor r6, r5, r5
+/* 801D7198 001CCF18  7C A4 02 14 */	add r5, r4, r0
+/* 801D719C 001CCF1C  38 05 FF FF */	addi r0, r5, -1
+/* 801D71A0 001CCF20  7C C0 00 38 */	and r0, r6, r0
+/* 801D71A4 001CCF24  7C 60 1A 14 */	add r3, r0, r3
+/* 801D71A8 001CCF28  7C 83 22 14 */	add r4, r3, r4
+/* 801D71AC 001CCF2C  7C 03 03 78 */	mr r3, r0
+/* 801D71B0 001CCF30  38 04 FF FF */	addi r0, r4, -1
+/* 801D71B4 001CCF34  7C C0 00 38 */	and r0, r6, r0
+/* 801D71B8 001CCF38  90 0D A5 98 */	stw r0, lbl_8059E9B8-_SDA_BASE_(r13)
+/* 801D71BC 001CCF3C  4E 80 00 20 */	blr 
+
+.global OSAllocFromMEM2ArenaLo
+OSAllocFromMEM2ArenaLo:
+/* 801D71C0 001CCF40  80 0D A5 9C */	lwz r0, lbl_8059E9BC-_SDA_BASE_(r13)
+/* 801D71C4 001CCF44  38 A4 FF FF */	addi r5, r4, -1
+/* 801D71C8 001CCF48  7C A6 28 F8 */	nor r6, r5, r5
+/* 801D71CC 001CCF4C  7C A4 02 14 */	add r5, r4, r0
+/* 801D71D0 001CCF50  38 05 FF FF */	addi r0, r5, -1
+/* 801D71D4 001CCF54  7C C0 00 38 */	and r0, r6, r0
+/* 801D71D8 001CCF58  7C 60 1A 14 */	add r3, r0, r3
+/* 801D71DC 001CCF5C  7C 83 22 14 */	add r4, r3, r4
+/* 801D71E0 001CCF60  7C 03 03 78 */	mr r3, r0
+/* 801D71E4 001CCF64  38 04 FF FF */	addi r0, r4, -1
+/* 801D71E8 001CCF68  7C C0 00 38 */	and r0, r6, r0
+/* 801D71EC 001CCF6C  90 0D A5 9C */	stw r0, lbl_8059E9BC-_SDA_BASE_(r13)
+/* 801D71F0 001CCF70  4E 80 00 20 */	blr 
+
