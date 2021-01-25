@@ -70,7 +70,7 @@ PRAGMAPROC := tools/pragma/pragma.py
 # Options
 INCLUDES := -i . -I- -i include
 ASFLAGS := -mgekko -I include
-LDFLAGS := -map $(MAP) -fp hard -nodefaults
+LDFLAGS := -map $(MAP) -fp hard -nodefaults -v
 CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -nodefaults -msgstyle gcc $(INCLUDES) -W all -w nopragmas
 
 # for postprocess.py

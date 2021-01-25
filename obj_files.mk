@@ -187,6 +187,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/if_simple_result.o \
     $(BUILD_DIR)/asm/text/if_photo.o \
     $(BUILD_DIR)/asm/text/if_snap_save.o \
+    $(BUILD_DIR)/asm/text/if_smash_appear.o \
     $(BUILD_DIR)/asm/text/if_utility.o \
     $(BUILD_DIR)/asm/text/if_reward_list.o \
     $(BUILD_DIR)/asm/text/if_wifi_intr_menu.o \
@@ -273,6 +274,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/ut_CharWriter.o \
     $(BUILD_DIR)/asm/text/math_arithmetic.o \
     $(BUILD_DIR)/asm/text/math_triangular.o \
+    $(BUILD_DIR)/asm/text/math_types.o \
     $(BUILD_DIR)/asm/text/math_geometry.o \
     $(BUILD_DIR)/asm/text/ef_draworder.o \
     $(BUILD_DIR)/asm/text/ef_effect.o \
@@ -280,6 +282,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/ef_emitter.o \
     $(BUILD_DIR)/asm/text/ef_animcurve.o \
     $(BUILD_DIR)/asm/text/ef_particle__4709.o \
+    $(BUILD_DIR)/asm/text/ef_particlemanager.o \
     $(BUILD_DIR)/asm/text/ef_resource.o \
     $(BUILD_DIR)/asm/text/ef_util.o \
     $(BUILD_DIR)/asm/text/ef_handle.o \
@@ -296,10 +299,12 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/ef_drawstrategybuilder.o \
     $(BUILD_DIR)/asm/text/ef_drawstrategyimpl.o \
     $(BUILD_DIR)/asm/text/ef_drawbillboardstrategy.o \
+    $(BUILD_DIR)/asm/text/ef_drawdirectionalstrategy.o \
     $(BUILD_DIR)/asm/text/ef_drawfreestrategy.o \
     $(BUILD_DIR)/asm/text/ef_drawlinestrategy.o \
     $(BUILD_DIR)/asm/text/ef_drawpointstrategy.o \
     $(BUILD_DIR)/asm/text/ef_drawstripestrategy.o \
+    $(BUILD_DIR)/asm/text/ef_drawsmoothstripestrategy.o \
     $(BUILD_DIR)/asm/text/lyt_pane.o \
     $(BUILD_DIR)/asm/text/lyt_group.o \
     $(BUILD_DIR)/asm/text/lyt_layout.o \
@@ -696,12 +701,14 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/hkMatrix3.o \
     $(BUILD_DIR)/asm/text/hkMatrix4.o \
     $(BUILD_DIR)/asm/text/hkMatrix6.o \
+    $(BUILD_DIR)/asm/text/hkQsTransform.o \
     $(BUILD_DIR)/asm/text/hkQuaternion.o \
     $(BUILD_DIR)/asm/text/hkRotation.o \
     $(BUILD_DIR)/asm/text/hkSweptTransform.o \
     $(BUILD_DIR)/asm/text/hkSweptTransformUtil.o \
     $(BUILD_DIR)/asm/text/hkTransform.o \
     $(BUILD_DIR)/asm/text/hkVector4.o \
+    $(BUILD_DIR)/asm/text/hkBuildJacobianFromAtoms.o \
     $(BUILD_DIR)/asm/text/hk1dBilateralConstraintBuildJacobian.o \
     $(BUILD_DIR)/asm/text/hkInternalConstraintUtils.o \
     $(BUILD_DIR)/asm/text/hkChainBuildJacobian.o \
@@ -1050,6 +1057,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/RFL_NANDLoader.o \
     $(BUILD_DIR)/asm/text/RFL_NANDAccess.o \
     $(BUILD_DIR)/asm/text/RFL_Model.o \
+    $(BUILD_DIR)/asm/text/RFL_MakeTex.o \
     $(BUILD_DIR)/asm/text/RFL_HiddenDatabase.o \
     $(BUILD_DIR)/asm/text/RFL_Database.o \
     $(BUILD_DIR)/asm/text/RFL_Controller.o \

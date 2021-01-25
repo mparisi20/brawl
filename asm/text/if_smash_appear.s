@@ -2405,7 +2405,7 @@ IfDxFoxSmashAppearTask$7changeAction:
 /* 800F6DF4 000ECB74  94 21 FF 80 */	stwu r1, -0x80(r1)
 /* 800F6DF8 000ECB78  7C 08 02 A6 */	mflr r0
 /* 800F6DFC 000ECB7C  3D 40 80 41 */	lis r10, lbl_80410004@ha
-/* 800F6E00 000ECB80  2F 05 FF FF */	cmpwi cr6, r5, 0xffff
+/* 800F6E00 000ECB80  2F 05 FF FF */	cmpwi cr6, r5, -0x1
 /* 800F6E04 000ECB84  90 01 00 84 */	stw r0, 0x84(r1)
 /* 800F6E08 000ECB88  93 E1 00 7C */	stw r31, 0x7c(r1)
 /* 800F6E0C 000ECB8C  7C FF 3B 78 */	mr r31, r7
