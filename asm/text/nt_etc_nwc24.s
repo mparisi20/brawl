@@ -1607,7 +1607,7 @@ __sinit_$3nt_etc_nwc24_cpp:
 /* 8014E320 001440A0  38 7F EC C8 */	addi r3, r31, -4920
 /* 8014E324 001440A4  38 84 0A F8 */	addi r4, r4, gfMutex$7__dt@l
 /* 8014E328 001440A8  38 A5 EC B8 */	addi r5, r5, lbl_8049ECB8@l
-/* 8014E32C 001440AC  48 2A 23 F9 */	bl __register_global_object
+/* 8014E32C 001440AC  48 2A 23 F9 */	bl __register_global_object_tmp
 /* 8014E330 001440B0  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 8014E334 001440B4  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 8014E338 001440B8  7C 08 03 A6 */	mtlr r0

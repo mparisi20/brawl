@@ -1,0 +1,26 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global gmSysSave$7update
+gmSysSave$7update:
+/* 8005C5F0 00052370  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8005C5F4 00052374  7C 08 02 A6 */	mflr r0
+/* 8005C5F8 00052378  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8005C5FC 0005237C  80 0D BC F0 */	lwz r0, lbl_805A0110-_SDA_BASE_(r13)
+/* 8005C600 00052380  2C 00 00 00 */	cmpwi r0, 0
+/* 8005C604 00052384  40 82 00 20 */	bne lbl_8005C624
+/* 8005C608 00052388  38 60 01 3C */	li r3, 0x13c
+/* 8005C60C 0005238C  38 80 00 02 */	li r4, 2
+/* 8005C610 00052390  4B FB 02 A9 */	bl srHeapType$7__nw
+/* 8005C614 00052394  2C 03 00 00 */	cmpwi r3, 0
+/* 8005C618 00052398  41 82 00 08 */	beq lbl_8005C620
+/* 8005C61C 0005239C  4B FF E7 21 */	bl efManager$7__ct
+lbl_8005C620:
+/* 8005C620 000523A0  90 6D BC F0 */	stw r3, lbl_805A0110-_SDA_BASE_(r13)
+lbl_8005C624:
+/* 8005C624 000523A4  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8005C628 000523A8  7C 08 03 A6 */	mtlr r0
+/* 8005C62C 000523AC  38 21 00 10 */	addi r1, r1, 0x10
+/* 8005C630 000523B0  4E 80 00 20 */	blr 
+

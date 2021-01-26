@@ -26,7 +26,7 @@ nw4r3snd6detail22DisposeCallbackManagerFv$7GetInstance:
 /* 801BE808 001B4588  90 06 1C F4 */	stw r0, 0x1cf4(r6)
 /* 801BE80C 001B458C  90 E3 00 04 */	stw r7, 4(r3)
 /* 801BE810 001B4590  90 E3 00 08 */	stw r7, 8(r3)
-/* 801BE814 001B4594  48 23 1F 11 */	bl __register_global_object
+/* 801BE814 001B4594  48 23 1F 11 */	bl __register_global_object_tmp
 /* 801BE818 001B4598  38 00 00 01 */	li r0, 1
 /* 801BE81C 001B459C  98 0D C1 68 */	stb r0, lbl_805A0588-_SDA_BASE_(r13)
 lbl_801BE820:
@@ -117,7 +117,7 @@ nw4r3snd6detail22DisposeCallbackManagerFPvUl$7Dispose:
 /* 801BE938 001B46B8  90 06 1C F4 */	stw r0, 0x1cf4(r6)
 /* 801BE93C 001B46BC  90 E3 00 04 */	stw r7, 4(r3)
 /* 801BE940 001B46C0  90 E3 00 08 */	stw r7, 8(r3)
-/* 801BE944 001B46C4  48 23 1D E1 */	bl __register_global_object
+/* 801BE944 001B46C4  48 23 1D E1 */	bl __register_global_object_tmp
 /* 801BE948 001B46C8  38 00 00 01 */	li r0, 1
 /* 801BE94C 001B46CC  98 0D C1 68 */	stb r0, lbl_805A0588-_SDA_BASE_(r13)
 lbl_801BE950:
@@ -156,7 +156,7 @@ lbl_801BE99C:
 /* 801BE9C8 001B4748  92 F5 1C F4 */	stw r23, 0x1cf4(r21)
 /* 801BE9CC 001B474C  90 D6 00 04 */	stw r6, 4(r22)
 /* 801BE9D0 001B4750  90 D6 00 08 */	stw r6, 8(r22)
-/* 801BE9D4 001B4754  48 23 1D 51 */	bl __register_global_object
+/* 801BE9D4 001B4754  48 23 1D 51 */	bl __register_global_object_tmp
 /* 801BE9D8 001B4758  9B 4D C1 68 */	stb r26, lbl_805A0588-_SDA_BASE_(r13)
 lbl_801BE9DC:
 /* 801BE9DC 001B475C  7F 83 E3 78 */	mr r3, r28
@@ -203,7 +203,7 @@ nw4r3snd6detail22DisposeCallbackManagerFPvUl$7DisposeWave:
 /* 801BEA74 001B47F4  90 06 1C F4 */	stw r0, 0x1cf4(r6)
 /* 801BEA78 001B47F8  90 E3 00 04 */	stw r7, 4(r3)
 /* 801BEA7C 001B47FC  90 E3 00 08 */	stw r7, 8(r3)
-/* 801BEA80 001B4800  48 23 1C A5 */	bl __register_global_object
+/* 801BEA80 001B4800  48 23 1C A5 */	bl __register_global_object_tmp
 /* 801BEA84 001B4804  38 00 00 01 */	li r0, 1
 /* 801BEA88 001B4808  98 0D C1 68 */	stb r0, lbl_805A0588-_SDA_BASE_(r13)
 lbl_801BEA8C:
@@ -242,7 +242,7 @@ lbl_801BEAD8:
 /* 801BEB04 001B4884  92 F5 1C F4 */	stw r23, 0x1cf4(r21)
 /* 801BEB08 001B4888  90 D6 00 04 */	stw r6, 4(r22)
 /* 801BEB0C 001B488C  90 D6 00 08 */	stw r6, 8(r22)
-/* 801BEB10 001B4890  48 23 1C 15 */	bl __register_global_object
+/* 801BEB10 001B4890  48 23 1C 15 */	bl __register_global_object_tmp
 /* 801BEB14 001B4894  9B 4D C1 68 */	stb r26, lbl_805A0588-_SDA_BASE_(r13)
 lbl_801BEB18:
 /* 801BEB18 001B4898  7F 83 E3 78 */	mr r3, r28

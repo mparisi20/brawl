@@ -423,7 +423,7 @@ lbl_80164CE4:
 /* 80164D00 0015AA80  90 03 50 14 */	stw r0, 0x5014(r3)
 /* 80164D04 0015AA84  38 A5 ED C8 */	addi r5, r5, lbl_8049EDC8@l
 /* 80164D08 0015AA88  98 03 50 64 */	stb r0, 0x5064(r3)
-/* 80164D0C 0015AA8C  48 28 BA 19 */	bl __register_global_object
+/* 80164D0C 0015AA8C  48 28 BA 19 */	bl __register_global_object_tmp
 /* 80164D10 0015AA90  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 80164D14 0015AA94  7C 08 03 A6 */	mtlr r0
 /* 80164D18 0015AA98  38 21 00 10 */	addi r1, r1, 0x10

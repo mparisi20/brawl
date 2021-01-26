@@ -39,5 +39,5 @@ __sinit_$3ft_system_cpp:
 /* 8013D068 00132DE8  38 A5 EA 20 */	addi r5, r5, lbl_8049EA20@l
 /* 8013D06C 00132DEC  38 6D BF 60 */	addi r3, r13, lbl_805A0380-_SDA_BASE_
 /* 8013D070 00132DF0  90 06 00 04 */	stw r0, 4(r6)
-/* 8013D074 00132DF4  48 2B 36 B0 */	b __register_global_object
+/* 8013D074 00132DF4  48 2B 36 B0 */	b __register_global_object_tmp
 

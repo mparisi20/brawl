@@ -19,7 +19,7 @@ gfHomeMenu$7create:
 /* 800367F8 0002C578  38 7F 01 40 */	addi r3, r31, 0x140
 /* 800367FC 0002C57C  38 84 68 2C */	addi r4, r4, gfHomeMenu$7__dt@l
 /* 80036800 0002C580  38 BF 01 34 */	addi r5, r31, 0x134
-/* 80036804 0002C584  48 3B 9F 21 */	bl __register_global_object
+/* 80036804 0002C584  48 3B 9F 21 */	bl __register_global_object_tmp
 /* 80036808 0002C588  38 00 00 01 */	li r0, 1
 /* 8003680C 0002C58C  98 1F 01 30 */	stb r0, 0x130(r31)
 lbl_80036810:

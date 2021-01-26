@@ -169,7 +169,7 @@ __sinit_$3hkFakeRigidBodyDeactivator_cpp:
 /* 802E22A0 002D8020  91 09 00 08 */	stw r8, 8(r9)
 /* 802E22A4 002D8024  B0 07 00 06 */	sth r0, 6(r7)
 /* 802E22A8 002D8028  90 DF 00 20 */	stw r6, 0x20(r31)
-/* 802E22AC 002D802C  48 10 E4 79 */	bl __register_global_object
+/* 802E22AC 002D802C  48 10 E4 79 */	bl __register_global_object_tmp
 /* 802E22B0 002D8030  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 802E22B4 002D8034  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 802E22B8 002D8038  7C 08 03 A6 */	mtlr r0

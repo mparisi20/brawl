@@ -718,7 +718,7 @@ __sinit_$3ms_text_writer_base_cpp:
 /* 80072644 000683C4  38 84 E7 F0 */	addi r4, r4, ms19TagProcessorBase$0c$7__dt@l
 /* 80072648 000683C8  38 6D BD A8 */	addi r3, r13, lbl_805A01C8-_SDA_BASE_
 /* 8007264C 000683CC  38 A5 7E D8 */	addi r5, r5, lbl_80497ED8@l
-/* 80072650 000683D0  48 37 E0 D5 */	bl __register_global_object
+/* 80072650 000683D0  48 37 E0 D5 */	bl __register_global_object_tmp
 /* 80072654 000683D4  38 00 00 01 */	li r0, 1
 /* 80072658 000683D8  98 0D BD AC */	stb r0, lbl_805A01CC-_SDA_BASE_(r13)
 lbl_8007265C:

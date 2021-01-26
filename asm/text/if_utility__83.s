@@ -1,0 +1,26 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global utility10AutoFileIFFP9gfArc$7Set
+utility10AutoFileIFFP9gfArc$7Set:
+/* 800FBF90 000F1D10  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 800FBF94 000F1D14  7C 08 02 A6 */	mflr r0
+/* 800FBF98 000F1D18  90 01 00 14 */	stw r0, 0x14(r1)
+/* 800FBF9C 000F1D1C  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 800FBFA0 000F1D20  7C 7F 1B 78 */	mr r31, r3
+/* 800FBFA4 000F1D24  80 63 00 00 */	lwz r3, 0(r3)
+/* 800FBFA8 000F1D28  80 9F 00 04 */	lwz r4, 4(r31)
+/* 800FBFAC 000F1D2C  81 83 00 00 */	lwz r12, 0(r3)
+/* 800FBFB0 000F1D30  80 84 00 10 */	lwz r4, 0x10(r4)
+/* 800FBFB4 000F1D34  81 8C 00 3C */	lwz r12, 0x3c(r12)
+/* 800FBFB8 000F1D38  7D 89 03 A6 */	mtctr r12
+/* 800FBFBC 000F1D3C  4E 80 04 21 */	bctrl 
+/* 800FBFC0 000F1D40  38 00 00 00 */	li r0, 0
+/* 800FBFC4 000F1D44  98 1F 00 1C */	stb r0, 0x1c(r31)
+/* 800FBFC8 000F1D48  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 800FBFCC 000F1D4C  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 800FBFD0 000F1D50  7C 08 03 A6 */	mtlr r0
+/* 800FBFD4 000F1D54  38 21 00 10 */	addi r1, r1, 0x10
+/* 800FBFD8 000F1D58  4E 80 00 20 */	blr 
+

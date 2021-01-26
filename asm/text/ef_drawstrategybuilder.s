@@ -21,7 +21,7 @@ nw4r2ef19DrawStrategyBuilderFUl$7Create:
 /* 8017446C 0016A1EC  38 7F 00 0C */	addi r3, r31, 0xc
 /* 80174470 0016A1F0  38 84 46 18 */	addi r4, r4, nw4r2ef21DrawBillboardStrategyFv$7__dt@l
 /* 80174474 0016A1F4  38 BF 00 00 */	addi r5, r31, 0
-/* 80174478 0016A1F8  48 27 C2 AD */	bl __register_global_object
+/* 80174478 0016A1F8  48 27 C2 AD */	bl __register_global_object_tmp
 /* 8017447C 0016A1FC  38 00 00 01 */	li r0, 1
 /* 80174480 0016A200  98 0D C0 D0 */	stb r0, lbl_805A04F0-_SDA_BASE_(r13)
 lbl_80174484:
@@ -34,7 +34,7 @@ lbl_80174484:
 /* 8017449C 0016A21C  38 7F 00 D4 */	addi r3, r31, 0xd4
 /* 801744A0 0016A220  38 84 46 58 */	addi r4, r4, nw4r2ef23DrawDirectionalStrategyFv$7__dt@l
 /* 801744A4 0016A224  38 BF 00 C8 */	addi r5, r31, 0xc8
-/* 801744A8 0016A228  48 27 C2 7D */	bl __register_global_object
+/* 801744A8 0016A228  48 27 C2 7D */	bl __register_global_object_tmp
 /* 801744AC 0016A22C  38 00 00 01 */	li r0, 1
 /* 801744B0 0016A230  98 0D C0 D1 */	stb r0, lbl_805A04F1-_SDA_BASE_(r13)
 lbl_801744B4:
@@ -47,7 +47,7 @@ lbl_801744B4:
 /* 801744CC 0016A24C  38 7F 01 9C */	addi r3, r31, 0x19c
 /* 801744D0 0016A250  38 84 46 98 */	addi r4, r4, nw4r2ef16DrawFreeStrategyFv$7__dt@l
 /* 801744D4 0016A254  38 BF 01 90 */	addi r5, r31, 0x190
-/* 801744D8 0016A258  48 27 C2 4D */	bl __register_global_object
+/* 801744D8 0016A258  48 27 C2 4D */	bl __register_global_object_tmp
 /* 801744DC 0016A25C  38 00 00 01 */	li r0, 1
 /* 801744E0 0016A260  98 0D C0 D2 */	stb r0, lbl_805A04F2-_SDA_BASE_(r13)
 lbl_801744E4:
@@ -60,7 +60,7 @@ lbl_801744E4:
 /* 801744FC 0016A27C  38 7F 02 64 */	addi r3, r31, 0x264
 /* 80174500 0016A280  38 84 46 D8 */	addi r4, r4, nw4r2ef16DrawLineStrategyFv$7__dt@l
 /* 80174504 0016A284  38 BF 02 58 */	addi r5, r31, 0x258
-/* 80174508 0016A288  48 27 C2 1D */	bl __register_global_object
+/* 80174508 0016A288  48 27 C2 1D */	bl __register_global_object_tmp
 /* 8017450C 0016A28C  38 00 00 01 */	li r0, 1
 /* 80174510 0016A290  98 0D C0 D3 */	stb r0, lbl_805A04F3-_SDA_BASE_(r13)
 lbl_80174514:
@@ -73,7 +73,7 @@ lbl_80174514:
 /* 8017452C 0016A2AC  38 7F 03 2C */	addi r3, r31, 0x32c
 /* 80174530 0016A2B0  38 84 47 18 */	addi r4, r4, nw4r2ef17DrawPointStrategyFv$7__dt@l
 /* 80174534 0016A2B4  38 BF 03 20 */	addi r5, r31, 0x320
-/* 80174538 0016A2B8  48 27 C1 ED */	bl __register_global_object
+/* 80174538 0016A2B8  48 27 C1 ED */	bl __register_global_object_tmp
 /* 8017453C 0016A2BC  38 00 00 01 */	li r0, 1
 /* 80174540 0016A2C0  98 0D C0 D4 */	stb r0, lbl_805A04F4-_SDA_BASE_(r13)
 lbl_80174544:
@@ -86,7 +86,7 @@ lbl_80174544:
 /* 8017455C 0016A2DC  38 7F 03 F4 */	addi r3, r31, 0x3f4
 /* 80174560 0016A2E0  38 84 47 58 */	addi r4, r4, nw4r2ef18DrawStripeStrategyFv$7__dt@l
 /* 80174564 0016A2E4  38 BF 03 E8 */	addi r5, r31, 0x3e8
-/* 80174568 0016A2E8  48 27 C1 BD */	bl __register_global_object
+/* 80174568 0016A2E8  48 27 C1 BD */	bl __register_global_object_tmp
 /* 8017456C 0016A2EC  38 00 00 01 */	li r0, 1
 /* 80174570 0016A2F0  98 0D C0 D5 */	stb r0, lbl_805A04F5-_SDA_BASE_(r13)
 lbl_80174574:
@@ -99,7 +99,7 @@ lbl_80174574:
 /* 8017458C 0016A30C  38 7F 04 BC */	addi r3, r31, 0x4bc
 /* 80174590 0016A310  38 84 47 98 */	addi r4, r4, nw4r2ef24DrawSmoothStripeStrategyF$7__dt@l
 /* 80174594 0016A314  38 BF 04 B0 */	addi r5, r31, 0x4b0
-/* 80174598 0016A318  48 27 C1 8D */	bl __register_global_object
+/* 80174598 0016A318  48 27 C1 8D */	bl __register_global_object_tmp
 /* 8017459C 0016A31C  38 00 00 01 */	li r0, 1
 /* 801745A0 0016A320  98 0D C0 D6 */	stb r0, lbl_805A04F6-_SDA_BASE_(r13)
 lbl_801745A4:

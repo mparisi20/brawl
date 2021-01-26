@@ -107,7 +107,7 @@ __sinit_$3gf_error_check_cpp:
 /* 8001B6C0 00011440  38 84 B6 D0 */	addi r4, r4, gfErrorCheckCallback$7__dt@l
 /* 8001B6C4 00011444  38 A5 48 E8 */	addi r5, r5, lbl_804948E8@l
 /* 8001B6C8 00011448  90 C3 00 04 */	stw r6, 4(r3)
-/* 8001B6CC 0001144C  48 3D 50 58 */	b __register_global_object
+/* 8001B6CC 0001144C  48 3D 50 58 */	b __register_global_object_tmp
 
 .global gfErrorCheckCallback$7__dt
 gfErrorCheckCallback$7__dt:

@@ -43,7 +43,7 @@ nw4r3snd6detail11SoundThreadFv$7GetInstance:
 /* 801CC374 001C20F4  7F E3 FB 78 */	mr r3, r31
 /* 801CC378 001C20F8  38 84 C3 A8 */	addi r4, r4, nw4r3snd6detail11SoundThreadFv$7__dt@l
 /* 801CC37C 001C20FC  38 A5 8C B0 */	addi r5, r5, lbl_804D8CB0@l
-/* 801CC380 001C2100  48 22 43 A5 */	bl __register_global_object
+/* 801CC380 001C2100  48 22 43 A5 */	bl __register_global_object_tmp
 /* 801CC384 001C2104  38 00 00 01 */	li r0, 1
 /* 801CC388 001C2108  98 0D C1 E0 */	stb r0, lbl_805A0600-_SDA_BASE_(r13)
 lbl_801CC38C:
@@ -144,7 +144,7 @@ lbl_801CC450:
 /* 801CC4DC 001C225C  7F C3 F3 78 */	mr r3, r30
 /* 801CC4E0 001C2260  38 84 C3 A8 */	addi r4, r4, nw4r3snd6detail11SoundThreadFv$7__dt@l
 /* 801CC4E4 001C2264  38 A5 8C B0 */	addi r5, r5, lbl_804D8CB0@l
-/* 801CC4E8 001C2268  48 22 42 3D */	bl __register_global_object
+/* 801CC4E8 001C2268  48 22 42 3D */	bl __register_global_object_tmp
 /* 801CC4EC 001C226C  9B ED C1 E0 */	stb r31, lbl_805A0600-_SDA_BASE_(r13)
 lbl_801CC4F0:
 /* 801CC4F0 001C2270  3C 80 80 1D */	lis r4, nw4r3snd6detail11SoundThreadFPv$7SoundThreadFunc@ha
@@ -220,7 +220,7 @@ nw4r3snd6detail11SoundThreadFv$7Shutdown:
 /* 801CC5F4 001C2374  7F E3 FB 78 */	mr r3, r31
 /* 801CC5F8 001C2378  38 84 C3 A8 */	addi r4, r4, nw4r3snd6detail11SoundThreadFv$7__dt@l
 /* 801CC5FC 001C237C  38 A5 8C B0 */	addi r5, r5, lbl_804D8CB0@l
-/* 801CC600 001C2380  48 22 41 25 */	bl __register_global_object
+/* 801CC600 001C2380  48 22 41 25 */	bl __register_global_object_tmp
 /* 801CC604 001C2384  38 00 00 01 */	li r0, 1
 /* 801CC608 001C2388  98 0D C1 E0 */	stb r0, lbl_805A0600-_SDA_BASE_(r13)
 lbl_801CC60C:
@@ -285,7 +285,7 @@ nw4r3snd6detail11SoundThreadFv$7AxCallbackFunc:
 /* 801CC6E4 001C2464  7F C3 F3 78 */	mr r3, r30
 /* 801CC6E8 001C2468  38 84 C3 A8 */	addi r4, r4, nw4r3snd6detail11SoundThreadFv$7__dt@l
 /* 801CC6EC 001C246C  38 A5 8C B0 */	addi r5, r5, lbl_804D8CB0@l
-/* 801CC6F0 001C2470  48 22 40 35 */	bl __register_global_object
+/* 801CC6F0 001C2470  48 22 40 35 */	bl __register_global_object_tmp
 /* 801CC6F4 001C2474  38 00 00 01 */	li r0, 1
 /* 801CC6F8 001C2478  98 0D C1 E0 */	stb r0, lbl_805A0600-_SDA_BASE_(r13)
 lbl_801CC6FC:

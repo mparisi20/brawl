@@ -98,7 +98,7 @@ __sinit_$3hkNullAgent_cpp:
 /* 802C0668 002B63E8  38 7F 25 BC */	addi r3, r31, 0x25bc
 /* 802C066C 002B63EC  38 84 05 E8 */	addi r4, r4, hkNullAgent$7__dt@l
 /* 802C0670 002B63F0  38 A5 25 B0 */	addi r5, r5, lbl_805325B0@l
-/* 802C0674 002B63F4  48 13 00 B1 */	bl __register_global_object
+/* 802C0674 002B63F4  48 13 00 B1 */	bl __register_global_object_tmp
 /* 802C0678 002B63F8  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 802C067C 002B63FC  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 802C0680 002B6400  7C 08 03 A6 */	mtlr r0

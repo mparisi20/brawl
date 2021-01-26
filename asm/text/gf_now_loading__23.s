@@ -1,0 +1,35 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global gfNowLoading$7__ct
+gfNowLoading$7__ct:
+/* 80043CB0 00039A30  94 21 FF C0 */	stwu r1, -0x40(r1)
+/* 80043CB4 00039A34  7C 08 02 A6 */	mflr r0
+/* 80043CB8 00039A38  7C A6 2B 78 */	mr r6, r5
+/* 80043CBC 00039A3C  38 A0 00 01 */	li r5, 1
+/* 80043CC0 00039A40  90 01 00 44 */	stw r0, 0x44(r1)
+/* 80043CC4 00039A44  93 E1 00 3C */	stw r31, 0x3c(r1)
+/* 80043CC8 00039A48  7C 7F 1B 78 */	mr r31, r3
+/* 80043CCC 00039A4C  7C 83 23 78 */	mr r3, r4
+/* 80043CD0 00039A50  38 81 00 08 */	addi r4, r1, 8
+/* 80043CD4 00039A54  48 16 B2 AD */	bl nw4r3g3d12ScnMdlSimpleCFPQ34nw4r4m$7GetScnMtxPos
+/* 80043CD8 00039A58  7F E4 FB 78 */	mr r4, r31
+/* 80043CDC 00039A5C  38 61 00 08 */	addi r3, r1, 8
+/* 80043CE0 00039A60  4B FF B1 39 */	bl Matrix$7getRotate
+/* 80043CE4 00039A64  C0 62 84 C4 */	lfs f3, lbl_805A17E4-_SDA2_BASE_(r2)
+/* 80043CE8 00039A68  C0 5F 00 00 */	lfs f2, 0(r31)
+/* 80043CEC 00039A6C  C0 3F 00 04 */	lfs f1, 4(r31)
+/* 80043CF0 00039A70  C0 1F 00 08 */	lfs f0, 8(r31)
+/* 80043CF4 00039A74  EC 43 00 B2 */	fmuls f2, f3, f2
+/* 80043CF8 00039A78  EC 23 00 72 */	fmuls f1, f3, f1
+/* 80043CFC 00039A7C  EC 03 00 32 */	fmuls f0, f3, f0
+/* 80043D00 00039A80  D0 5F 00 00 */	stfs f2, 0(r31)
+/* 80043D04 00039A84  D0 3F 00 04 */	stfs f1, 4(r31)
+/* 80043D08 00039A88  D0 1F 00 08 */	stfs f0, 8(r31)
+/* 80043D0C 00039A8C  83 E1 00 3C */	lwz r31, 0x3c(r1)
+/* 80043D10 00039A90  80 01 00 44 */	lwz r0, 0x44(r1)
+/* 80043D14 00039A94  7C 08 03 A6 */	mtlr r0
+/* 80043D18 00039A98  38 21 00 40 */	addi r1, r1, 0x40
+/* 80043D1C 00039A9C  4E 80 00 20 */	blr 
+

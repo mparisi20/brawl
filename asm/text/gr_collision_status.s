@@ -5308,7 +5308,7 @@ __sinit_$3gr_collision_status_cpp:
 /* 80137FE0 0012DD60  90 06 E5 94 */	stw r0, -0x1a6c(r6)
 /* 80137FE4 0012DD64  90 E3 00 04 */	stw r7, 4(r3)
 /* 80137FE8 0012DD68  90 E3 00 08 */	stw r7, 8(r3)
-/* 80137FEC 0012DD6C  48 2B 87 38 */	b __register_global_object
+/* 80137FEC 0012DD6C  48 2B 87 38 */	b __register_global_object_tmp
 
 .global grCollStList$7__dt
 grCollStList$7__dt:

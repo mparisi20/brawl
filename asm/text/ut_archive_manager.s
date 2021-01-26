@@ -2257,7 +2257,7 @@ __sinit_$3ut_archive_manager_cpp:
 /* 800469D4 0003C754  38 84 69 E4 */	addi r4, r4, utArchiveEventObserverNull$7__dt@l
 /* 800469D8 0003C758  38 A5 77 C0 */	addi r5, r5, lbl_804977C0@l
 /* 800469DC 0003C75C  38 6D BC A0 */	addi r3, r13, lbl_805A00C0-_SDA_BASE_
-/* 800469E0 0003C760  48 3A 9D 44 */	b __register_global_object
+/* 800469E0 0003C760  48 3A 9D 44 */	b __register_global_object_tmp
 
 .global utArchiveEventObserverNull$7__dt
 utArchiveEventObserverNull$7__dt:

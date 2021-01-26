@@ -30,7 +30,7 @@ nw4r3snd6detail12VoiceManagerFv$7GetInstance:
 /* 801D2B2C 001C88AC  90 03 00 10 */	stw r0, 0x10(r3)
 /* 801D2B30 001C88B0  90 E3 00 14 */	stw r7, 0x14(r3)
 /* 801D2B34 001C88B4  90 E3 00 18 */	stw r7, 0x18(r3)
-/* 801D2B38 001C88B8  48 21 DB ED */	bl __register_global_object
+/* 801D2B38 001C88B8  48 21 DB ED */	bl __register_global_object_tmp
 /* 801D2B3C 001C88BC  38 00 00 01 */	li r0, 1
 /* 801D2B40 001C88C0  98 0D C2 00 */	stb r0, lbl_805A0620-_SDA_BASE_(r13)
 lbl_801D2B44:

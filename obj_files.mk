@@ -20,6 +20,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gf_archive_load_thread.o \
     $(BUILD_DIR)/asm/text/gf_archive.o \
     $(BUILD_DIR)/asm/text/gf_file_io.o \
+    $(BUILD_DIR)/asm/text/gf_archive__1.o \
     $(BUILD_DIR)/asm/text/gf_archive_file.o \
     $(BUILD_DIR)/asm/text/gf_archive_db.o \
     $(BUILD_DIR)/asm/text/gf_archive_manager.o \
@@ -30,9 +31,12 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gf_callback.o \
     $(BUILD_DIR)/asm/text/gf_decomp.o \
     $(BUILD_DIR)/asm/text/gf_draw.o \
+    $(BUILD_DIR)/asm/text/gf_app__2.o \
+    $(BUILD_DIR)/asm/text/gf_draw__3.o \
     $(BUILD_DIR)/asm/text/gf_effect.o \
     $(BUILD_DIR)/asm/text/gf_error_manager.o \
     $(BUILD_DIR)/asm/text/gf_error_check.o \
+    $(BUILD_DIR)/asm/text/gf_file_io__4.o \
     $(BUILD_DIR)/asm/text/gf_file_io_handle.o \
     $(BUILD_DIR)/asm/text/gf_file_io_request.o \
     $(BUILD_DIR)/asm/text/gf_file_io_thread.o \
@@ -46,7 +50,11 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gf_memory_util.o \
     $(BUILD_DIR)/asm/text/gf_module.o \
     $(BUILD_DIR)/asm/text/gf_pad.o \
+    $(BUILD_DIR)/asm/text/gf_module__5.o \
     $(BUILD_DIR)/asm/text/gf_model.o \
+    $(BUILD_DIR)/asm/text/gf_pad__6.o \
+    $(BUILD_DIR)/asm/text/gf_keep_fb__7.o \
+    $(BUILD_DIR)/asm/text/gf_pad__8.o \
     $(BUILD_DIR)/asm/text/gf_pad_queue.o \
     $(BUILD_DIR)/asm/text/gf_pad_thread.o \
     $(BUILD_DIR)/asm/text/gf_rumble.o \
@@ -59,6 +67,8 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gf_copyefb.o \
     $(BUILD_DIR)/asm/text/gf_shutdown_manager.o \
     $(BUILD_DIR)/asm/text/gf_sys_recorder2.o \
+    $(BUILD_DIR)/asm/text/gf_shutdown_manager__9.o \
+    $(BUILD_DIR)/asm/text/gf_sys_recorder2__10.o \
     $(BUILD_DIR)/asm/text/gf_slow_manager.o \
     $(BUILD_DIR)/asm/text/gf_mii.o \
     $(BUILD_DIR)/asm/text/gf_now_loading.o \
@@ -68,23 +78,37 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gf_system_callback.o \
     $(BUILD_DIR)/asm/text/gf_collection_io.o \
     $(BUILD_DIR)/asm/text/gf_capture_util.o \
+    $(BUILD_DIR)/asm/text/gf_collection_io__11.o \
     $(BUILD_DIR)/asm/text/gf_crypto_esp.o \
     $(BUILD_DIR)/asm/text/gf_vc_launch.o \
     $(BUILD_DIR)/asm/text/gf_monitor.o \
     $(BUILD_DIR)/asm/text/gf_resource_loader.o \
     $(BUILD_DIR)/asm/text/mt_common.o \
     $(BUILD_DIR)/asm/text/mt_vector.o \
+    $(BUILD_DIR)/asm/text/gf_now_loading__12.o \
     $(BUILD_DIR)/asm/text/mt_vector_old.o \
     $(BUILD_DIR)/asm/text/mt_matrix.o \
+    $(BUILD_DIR)/asm/text/gf_now_loading__13.o \
+    $(BUILD_DIR)/asm/text/mt_matrix__14.o \
+    $(BUILD_DIR)/asm/text/gf_now_loading__15.o \
+    $(BUILD_DIR)/asm/text/mt_matrix__16.o \
     $(BUILD_DIR)/asm/text/mt_quaternion.o \
     $(BUILD_DIR)/asm/text/mt_prng.o \
     $(BUILD_DIR)/asm/text/mt_trig.o \
     $(BUILD_DIR)/asm/text/mt_spline.o \
     $(BUILD_DIR)/asm/text/mt_coll2d.o \
+    $(BUILD_DIR)/asm/text/gf_now_loading__17.o \
+    $(BUILD_DIR)/asm/text/mt_coll2d__18.o \
+    $(BUILD_DIR)/asm/text/gf_now_loading__19.o \
+    $(BUILD_DIR)/asm/text/mt_coll2d__20.o \
+    $(BUILD_DIR)/asm/text/gf_now_loading__21.o \
+    $(BUILD_DIR)/asm/text/mt_coll2d__22.o \
     $(BUILD_DIR)/asm/text/mt_coll3d.o \
     $(BUILD_DIR)/asm/text/mt_prng_log.o \
     $(BUILD_DIR)/asm/text/module.o \
     $(BUILD_DIR)/asm/text/ut_nw.o \
+    $(BUILD_DIR)/asm/text/gf_now_loading__23.o \
+    $(BUILD_DIR)/asm/text/ut_nw__24.o \
     $(BUILD_DIR)/asm/text/ut_relocate.o \
     $(BUILD_DIR)/asm/text/ut_bitarray.o \
     $(BUILD_DIR)/asm/text/ut_list.o \
@@ -97,12 +121,22 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/ip_padrec.o \
     $(BUILD_DIR)/asm/text/gm_global.o \
     $(BUILD_DIR)/asm/text/gm_lib.o \
+    $(BUILD_DIR)/asm/text/ip_padrec__25.o \
+    $(BUILD_DIR)/asm/text/gm_lib__26.o \
+    $(BUILD_DIR)/asm/text/gm_global__27.o \
+    $(BUILD_DIR)/asm/text/gm_lib__28.o \
+    $(BUILD_DIR)/asm/text/gm_global__29.o \
     $(BUILD_DIR)/asm/text/gm_data_itemswitch.o \
     $(BUILD_DIR)/asm/text/gm_data_collection.o \
     $(BUILD_DIR)/asm/text/gm_hide_lib.o \
     $(BUILD_DIR)/asm/text/gm_syssave_task.o \
     $(BUILD_DIR)/asm/text/effect.o \
     $(BUILD_DIR)/asm/text/ef_manager.o \
+    $(BUILD_DIR)/asm/text/gm_syssave_task__30.o \
+    $(BUILD_DIR)/asm/text/ef_manager__31.o \
+    $(BUILD_DIR)/asm/text/gm_syssave_task__32.o \
+    $(BUILD_DIR)/asm/text/ef_manager__33.o \
+    $(BUILD_DIR)/asm/text/gm_syssave_task__34.o \
     $(BUILD_DIR)/asm/text/ef_particle.o \
     $(BUILD_DIR)/asm/text/ef_particle_counter.o \
     $(BUILD_DIR)/asm/text/ef_screen.o \
@@ -113,24 +147,45 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/ec_trace_mgr.o \
     $(BUILD_DIR)/asm/text/ec_trace.o \
     $(BUILD_DIR)/asm/text/ms_message.o \
+    $(BUILD_DIR)/asm/text/ec_trace__35.o \
+    $(BUILD_DIR)/asm/text/ms_message__36.o \
     $(BUILD_DIR)/asm/text/ms_resfont.o \
     $(BUILD_DIR)/asm/text/ms_tag.o \
     $(BUILD_DIR)/asm/text/ms_char_writer.o \
+    $(BUILD_DIR)/asm/text/ms_message__37.o \
     $(BUILD_DIR)/asm/text/ms_text_writer_base.o \
     $(BUILD_DIR)/asm/text/ms_texobj.o \
     $(BUILD_DIR)/asm/text/snd_system.o \
     $(BUILD_DIR)/asm/text/snd_bgmsys.o \
+    $(BUILD_DIR)/asm/text/snd_system__38.o \
+    $(BUILD_DIR)/asm/text/snd_bgmsys__39.o \
+    $(BUILD_DIR)/asm/text/snd_system__40.o \
+    $(BUILD_DIR)/asm/text/snd_bgmsys__41.o \
+    $(BUILD_DIR)/asm/text/snd_system__42.o \
     $(BUILD_DIR)/asm/text/snd_3d_generator.o \
     $(BUILD_DIR)/asm/text/snd_init_thread.o \
     $(BUILD_DIR)/asm/text/snd_load_thread.o \
+    $(BUILD_DIR)/asm/text/snd_system__43.o \
+    $(BUILD_DIR)/asm/text/snd_load_thread__44.o \
     $(BUILD_DIR)/asm/text/snd_heapsys.o \
     $(BUILD_DIR)/asm/text/snd_doubutsugo_task.o \
     $(BUILD_DIR)/asm/text/mv_THPAudioDecode.o \
+    $(BUILD_DIR)/asm/text/snd_system__45.o \
     $(BUILD_DIR)/asm/text/mv_THPDraw.o \
+    $(BUILD_DIR)/asm/text/snd_system__46.o \
     $(BUILD_DIR)/asm/text/mv_THPPlayer.o \
+    $(BUILD_DIR)/asm/text/snd_system__47.o \
+    $(BUILD_DIR)/asm/text/mv_THPPlayer__48.o \
     $(BUILD_DIR)/asm/text/mv_THPRead.o \
     $(BUILD_DIR)/asm/text/mv_THPVideoDecode.o \
+    $(BUILD_DIR)/asm/text/snd_system__49.o \
     $(BUILD_DIR)/asm/text/mv_movie_player.o \
+    $(BUILD_DIR)/asm/text/snd_system__50.o \
+    $(BUILD_DIR)/asm/text/mv_movie_player__51.o \
+    $(BUILD_DIR)/asm/text/snd_system__52.o \
+    $(BUILD_DIR)/asm/text/mv_movie_player__53.o \
+    $(BUILD_DIR)/asm/text/snd_system__54.o \
+    $(BUILD_DIR)/asm/text/mv_movie_player__55.o \
     $(BUILD_DIR)/asm/text/ph_container.o \
     $(BUILD_DIR)/asm/text/ph_2ndary_container.o \
     $(BUILD_DIR)/asm/text/ph_2ndary_constraint.o \
@@ -166,14 +221,34 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/cm_stage_param.o \
     $(BUILD_DIR)/asm/text/ty_fig_listmng.o \
     $(BUILD_DIR)/asm/text/menu.o \
+    $(BUILD_DIR)/asm/text/ty_fig_listmng__56.o \
+    $(BUILD_DIR)/asm/text/menu__57.o \
+    $(BUILD_DIR)/asm/text/ty_fig_listmng__58.o \
+    $(BUILD_DIR)/asm/text/menu__59.o \
+    $(BUILD_DIR)/asm/text/ty_fig_listmng__60.o \
     $(BUILD_DIR)/asm/text/ty_seal_listmng.o \
+    $(BUILD_DIR)/asm/text/menu__61.o \
+    $(BUILD_DIR)/asm/text/ty_seal_listmng__62.o \
+    $(BUILD_DIR)/asm/text/menu__63.o \
     $(BUILD_DIR)/asm/text/mu_menuroot.o \
     $(BUILD_DIR)/asm/text/mu_object.o \
+    $(BUILD_DIR)/asm/text/menu__64.o \
+    $(BUILD_DIR)/asm/text/mu_object__65.o \
+    $(BUILD_DIR)/asm/text/menu__66.o \
+    $(BUILD_DIR)/asm/text/mu_object__67.o \
     $(BUILD_DIR)/asm/text/mu_msg.o \
     $(BUILD_DIR)/asm/text/mu_controller.o \
     $(BUILD_DIR)/asm/text/mu_clear_get_mng.o \
     $(BUILD_DIR)/asm/text/mu_clear_get_task.o \
+    $(BUILD_DIR)/asm/text/mu_msg__68.o \
     $(BUILD_DIR)/asm/text/mu_notice_wnd.o \
+    $(BUILD_DIR)/asm/text/mu_msg__69.o \
+    $(BUILD_DIR)/asm/text/mu_notice_wnd__70.o \
+    $(BUILD_DIR)/asm/text/mu_msg__71.o \
+    $(BUILD_DIR)/asm/text/mu_notice_wnd__72.o \
+    $(BUILD_DIR)/asm/text/mu_msg__73.o \
+    $(BUILD_DIR)/asm/text/mu_notice_wnd__74.o \
+    $(BUILD_DIR)/asm/text/mu_msg__75.o \
     $(BUILD_DIR)/asm/text/mu_prize_wnd.o \
     $(BUILD_DIR)/asm/text/mu_collection.o \
     $(BUILD_DIR)/asm/text/mu_wifi_interface.o \
@@ -186,21 +261,45 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/if_vsresult.o \
     $(BUILD_DIR)/asm/text/if_simple_result.o \
     $(BUILD_DIR)/asm/text/if_photo.o \
+    $(BUILD_DIR)/asm/text/if_simple_result__76.o \
     $(BUILD_DIR)/asm/text/if_snap_save.o \
+    $(BUILD_DIR)/asm/text/if_simple_result__77.o \
+    $(BUILD_DIR)/asm/text/if_snap_save__78.o \
     $(BUILD_DIR)/asm/text/if_smash_appear.o \
     $(BUILD_DIR)/asm/text/if_utility.o \
+    $(BUILD_DIR)/asm/text/if_smash_appear__79.o \
     $(BUILD_DIR)/asm/text/if_reward_list.o \
+    $(BUILD_DIR)/asm/text/if_photo__80.o \
+    $(BUILD_DIR)/asm/text/if_reward_list__81.o \
+    $(BUILD_DIR)/asm/text/if_utility__82.o \
     $(BUILD_DIR)/asm/text/if_wifi_intr_menu.o \
+    $(BUILD_DIR)/asm/text/if_utility__83.o \
+    $(BUILD_DIR)/asm/text/if_wifi_intr_menu__84.o \
     $(BUILD_DIR)/asm/text/if_wifipr_mngr.o \
+    $(BUILD_DIR)/asm/text/if_utility__85.o \
+    $(BUILD_DIR)/asm/text/if_wifipr_mngr__86.o \
     $(BUILD_DIR)/asm/text/if_wifipr_task.o \
     $(BUILD_DIR)/asm/text/if_wifipr_center.o \
     $(BUILD_DIR)/asm/text/if_wifipr_player.o \
+    $(BUILD_DIR)/asm/text/if_wifipr_mngr__87.o \
     $(BUILD_DIR)/asm/text/if_minigame_homerun.o \
+    $(BUILD_DIR)/asm/text/if_utility__88.o \
+    $(BUILD_DIR)/asm/text/if_minigame_homerun__89.o \
+    $(BUILD_DIR)/asm/text/if_reward_list__90.o \
+    $(BUILD_DIR)/asm/text/if_utility__91.o \
+    $(BUILD_DIR)/asm/text/if_smash_appear__92.o \
+    $(BUILD_DIR)/asm/text/if_utility__93.o \
     $(BUILD_DIR)/asm/text/if_minigame_coin_shooter.o \
+    $(BUILD_DIR)/asm/text/if_wifipr_mngr__94.o \
     $(BUILD_DIR)/asm/text/if_minigame_training.o \
+    $(BUILD_DIR)/asm/text/if_wifipr_mngr__95.o \
+    $(BUILD_DIR)/asm/text/if_minigame_training__96.o \
+    $(BUILD_DIR)/asm/text/if_wifipr_mngr__97.o \
+    $(BUILD_DIR)/asm/text/if_minigame_training__98.o \
     $(BUILD_DIR)/asm/text/if_figure_loader.o \
     $(BUILD_DIR)/asm/text/if_adv_mngr.o \
     $(BUILD_DIR)/asm/text/if_adv_task.o \
+    $(BUILD_DIR)/asm/text/if_minigame_coin_shooter__99.o \
     $(BUILD_DIR)/asm/text/if_adv_zako.o \
     $(BUILD_DIR)/asm/text/if_adv_boss.o \
     $(BUILD_DIR)/asm/text/if_adv_pause.o \
@@ -214,6 +313,8 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gr_collision_handle.o \
     $(BUILD_DIR)/asm/text/gr_collision_manager.o \
     $(BUILD_DIR)/asm/text/gr_collision_joint.o \
+    $(BUILD_DIR)/asm/text/if_adv_gauge__100.o \
+    $(BUILD_DIR)/asm/text/gr_collision_joint__101.o \
     $(BUILD_DIR)/asm/text/gr_collision_linework.o \
     $(BUILD_DIR)/asm/text/gr_collision_collection.o \
     $(BUILD_DIR)/asm/text/gr_collision_test.o \
@@ -248,6 +349,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/nt_etc_sbs.o \
     $(BUILD_DIR)/asm/text/nt_etc_contribution.o \
     $(BUILD_DIR)/asm/text/nt_etc_file.o \
+    $(BUILD_DIR)/asm/text/nt_etc_contribution__102.o \
     $(BUILD_DIR)/asm/text/nt_etc_watching.o \
     $(BUILD_DIR)/asm/text/nt_etc_checkdata.o \
     $(BUILD_DIR)/asm/text/nt_etc_boottask.o \
@@ -539,6 +641,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/nand.o \
     $(BUILD_DIR)/asm/text/NANDOpenClose.o \
     $(BUILD_DIR)/asm/text/encunicode.o \
+    $(BUILD_DIR)/asm/text/NANDOpenClose__103.o \
     $(BUILD_DIR)/asm/text/NANDCore.o \
     $(BUILD_DIR)/asm/text/NANDSecret.o \
     $(BUILD_DIR)/asm/text/NANDCheck.o \
@@ -548,15 +651,20 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/scapi_prdinfo.o \
     $(BUILD_DIR)/asm/text/wenc.o \
     $(BUILD_DIR)/asm/text/arc.o \
+    $(BUILD_DIR)/asm/text/encunicode__104.o \
+    $(BUILD_DIR)/asm/text/arc__105.o \
     $(BUILD_DIR)/asm/text/esp.o \
     $(BUILD_DIR)/asm/text/ipcMain.o \
     $(BUILD_DIR)/asm/text/ipcclt.o \
     $(BUILD_DIR)/asm/text/encutility.o \
+    $(BUILD_DIR)/asm/text/ipcclt__106.o \
     $(BUILD_DIR)/asm/text/memory.o \
     $(BUILD_DIR)/asm/text/ipcProfile.o \
     $(BUILD_DIR)/asm/text/fs.o \
     $(BUILD_DIR)/asm/text/Pad.o \
     $(BUILD_DIR)/asm/text/WPAD.o \
+    $(BUILD_DIR)/asm/text/encutility__107.o \
+    $(BUILD_DIR)/asm/text/WPAD__108.o \
     $(BUILD_DIR)/asm/text/WPADHIDParser.o \
     $(BUILD_DIR)/asm/text/WPADEncrypt.o \
     $(BUILD_DIR)/asm/text/WPADMem.o \
@@ -894,6 +1002,8 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/hashtable.o \
     $(BUILD_DIR)/asm/text/md5c.o \
     $(BUILD_DIR)/asm/text/nonport.o \
+    $(BUILD_DIR)/asm/text/dwc_nd__109.o \
+    $(BUILD_DIR)/asm/text/nonport__110.o \
     $(BUILD_DIR)/asm/text/gsAvailable.o \
     $(BUILD_DIR)/asm/text/gsCore.o \
     $(BUILD_DIR)/asm/text/gsCrypt.o \
@@ -1087,6 +1197,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/pf_file__13763.o \
     $(BUILD_DIR)/asm/text/pf_path__13787.o \
     $(BUILD_DIR)/asm/text/Doubutsugo.o \
+    $(BUILD_DIR)/asm/text/pf_path__13787__111.o \
     $(BUILD_DIR)/asm/text/pf_sector__13814.o \
     $(BUILD_DIR)/asm/text/pf_volume__13818.o \
     $(BUILD_DIR)/asm/text/pf_volume_apiadd.o \
@@ -1136,8 +1247,11 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/FAUnmount.o \
     $(BUILD_DIR)/asm/text/pfk_api.o \
     $(BUILD_DIR)/asm/text/nand_drv__13897.o \
+    $(BUILD_DIR)/asm/text/Doubutsugo__112.o \
+    $(BUILD_DIR)/asm/text/nand_drv__13897__113.o \
     $(BUILD_DIR)/asm/text/sd_drv__13915.o \
     $(BUILD_DIR)/asm/text/pfd_cmn.o \
+    $(BUILD_DIR)/asm/text/Doubutsugo__114.o \
     $(BUILD_DIR)/asm/text/__mem.o \
     $(BUILD_DIR)/asm/text/__va_arg.o \
     $(BUILD_DIR)/asm/text/global_destructor_chain.o \
@@ -1162,6 +1276,8 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/math_api.o \
     $(BUILD_DIR)/asm/text/misc_io.o \
     $(BUILD_DIR)/asm/text/printf.o \
+    $(BUILD_DIR)/asm/text/Doubutsugo__115.o \
+    $(BUILD_DIR)/asm/text/printf__116.o \
     $(BUILD_DIR)/asm/text/qsort.o \
     $(BUILD_DIR)/asm/text/rand.o \
     $(BUILD_DIR)/asm/text/scanf.o \
@@ -1232,7 +1348,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/UDP_Stubs.o \
     $(BUILD_DIR)/asm/text/main__14305.o \
     $(BUILD_DIR)/asm/text/CircleBuffer.o \
-    $(BUILD_DIR)/asm/text/MWCriticalSection_gc.o
+    $(BUILD_DIR)/asm/text/MWCriticalSection_gc.o \
 
 CTORS_O_FILES := \
     $(BUILD_DIR)/asm/ctors.o

@@ -371,7 +371,7 @@ nw4r3snd6detail9AxManagerFv$7GetInstance:
 /* 801B7828 001AD5A8  38 7F 1B 8C */	addi r3, r31, 0x1b8c
 /* 801B782C 001AD5AC  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B7830 001AD5B0  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B7834 001AD5B4  48 23 8E F1 */	bl __register_global_object
+/* 801B7834 001AD5B4  48 23 8E F1 */	bl __register_global_object_tmp
 /* 801B7838 001AD5B8  38 00 00 01 */	li r0, 1
 /* 801B783C 001AD5BC  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B7840:
@@ -977,7 +977,7 @@ nw4r3snd6detail9AxManagerFv$7AxCallbackFunc:
 /* 801B8068 001ADDE8  38 79 1B 8C */	addi r3, r25, 0x1b8c
 /* 801B806C 001ADDEC  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B8070 001ADDF0  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B8074 001ADDF4  48 23 86 B1 */	bl __register_global_object
+/* 801B8074 001ADDF4  48 23 86 B1 */	bl __register_global_object_tmp
 /* 801B8078 001ADDF8  38 00 00 01 */	li r0, 1
 /* 801B807C 001ADDFC  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B8080:
@@ -1004,7 +1004,7 @@ lbl_801B80B4:
 /* 801B80C8 001ADE48  38 79 1B 8C */	addi r3, r25, 0x1b8c
 /* 801B80CC 001ADE4C  38 9B 78 5C */	addi r4, r27, 0x785c
 /* 801B80D0 001ADE50  38 BC 1B 80 */	addi r5, r28, 0x1b80
-/* 801B80D4 001ADE54  48 23 86 51 */	bl __register_global_object
+/* 801B80D4 001ADE54  48 23 86 51 */	bl __register_global_object_tmp
 /* 801B80D8 001ADE58  9B AD C1 40 */	stb r29, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B80DC:
 /* 801B80DC 001ADE5C  7C 1F F0 40 */	cmplw r31, r30
@@ -1019,7 +1019,7 @@ lbl_801B80DC:
 /* 801B8100 001ADE80  7F 43 D3 78 */	mr r3, r26
 /* 801B8104 001ADE84  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B8108 001ADE88  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B810C 001ADE8C  48 23 86 19 */	bl __register_global_object
+/* 801B810C 001ADE8C  48 23 86 19 */	bl __register_global_object_tmp
 /* 801B8110 001ADE90  38 00 00 01 */	li r0, 1
 /* 801B8114 001ADE94  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B8118:
@@ -1038,7 +1038,7 @@ lbl_801B8118:
 /* 801B8148 001ADEC8  7F E3 FB 78 */	mr r3, r31
 /* 801B814C 001ADECC  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B8150 001ADED0  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B8154 001ADED4  48 23 85 D1 */	bl __register_global_object
+/* 801B8154 001ADED4  48 23 85 D1 */	bl __register_global_object_tmp
 /* 801B8158 001ADED8  38 00 00 01 */	li r0, 1
 /* 801B815C 001ADEDC  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B8160:
@@ -1350,7 +1350,7 @@ nw4r3snd6detail9AxManagerFPvPv$7AuxCallbackFunc:
 /* 801B857C 001AE2FC  38 79 1B 8C */	addi r3, r25, 0x1b8c
 /* 801B8580 001AE300  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B8584 001AE304  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B8588 001AE308  48 23 81 9D */	bl __register_global_object
+/* 801B8588 001AE308  48 23 81 9D */	bl __register_global_object_tmp
 /* 801B858C 001AE30C  38 00 00 01 */	li r0, 1
 /* 801B8590 001AE310  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B8594:
@@ -1388,7 +1388,7 @@ lbl_801B85E8:
 /* 801B8608 001AE388  38 79 1B 8C */	addi r3, r25, 0x1b8c
 /* 801B860C 001AE38C  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B8610 001AE390  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B8614 001AE394  48 23 81 11 */	bl __register_global_object
+/* 801B8614 001AE394  48 23 81 11 */	bl __register_global_object_tmp
 /* 801B8618 001AE398  38 00 00 01 */	li r0, 1
 /* 801B861C 001AE39C  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B8620:
@@ -1408,7 +1408,7 @@ lbl_801B8620:
 /* 801B8654 001AE3D4  7F 43 D3 78 */	mr r3, r26
 /* 801B8658 001AE3D8  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B865C 001AE3DC  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B8660 001AE3E0  48 23 80 C5 */	bl __register_global_object
+/* 801B8660 001AE3E0  48 23 80 C5 */	bl __register_global_object_tmp
 /* 801B8664 001AE3E4  38 00 00 01 */	li r0, 1
 /* 801B8668 001AE3E8  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B866C:
@@ -1440,7 +1440,7 @@ lbl_801B86A8:
 /* 801B86C4 001AE444  7F 43 D3 78 */	mr r3, r26
 /* 801B86C8 001AE448  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B86CC 001AE44C  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B86D0 001AE450  48 23 80 55 */	bl __register_global_object
+/* 801B86D0 001AE450  48 23 80 55 */	bl __register_global_object_tmp
 /* 801B86D4 001AE454  38 00 00 01 */	li r0, 1
 /* 801B86D8 001AE458  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B86DC:
@@ -1476,7 +1476,7 @@ lbl_801B8728:
 /* 801B8744 001AE4C4  7F 43 D3 78 */	mr r3, r26
 /* 801B8748 001AE4C8  38 84 78 5C */	addi r4, r4, nw4r3snd6detail9AxManagerFv$7__dt@l
 /* 801B874C 001AE4CC  38 A5 1B 80 */	addi r5, r5, lbl_804C1B80@l
-/* 801B8750 001AE4D0  48 23 7F D5 */	bl __register_global_object
+/* 801B8750 001AE4D0  48 23 7F D5 */	bl __register_global_object_tmp
 /* 801B8754 001AE4D4  38 00 00 01 */	li r0, 1
 /* 801B8758 001AE4D8  98 0D C1 40 */	stb r0, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B875C:
@@ -1496,7 +1496,7 @@ lbl_801B8778:
 /* 801B878C 001AE50C  38 79 1B 8C */	addi r3, r25, 0x1b8c
 /* 801B8790 001AE510  38 9A 78 5C */	addi r4, r26, 0x785c
 /* 801B8794 001AE514  38 BB 1B 80 */	addi r5, r27, 0x1b80
-/* 801B8798 001AE518  48 23 7F 8D */	bl __register_global_object
+/* 801B8798 001AE518  48 23 7F 8D */	bl __register_global_object_tmp
 /* 801B879C 001AE51C  9B 8D C1 40 */	stb r28, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B87A0:
 /* 801B87A0 001AE520  81 9E FF FC */	lwz r12, -4(r30)
@@ -1520,7 +1520,7 @@ lbl_801B87D0:
 /* 801B87E4 001AE564  38 79 1B 8C */	addi r3, r25, 0x1b8c
 /* 801B87E8 001AE568  38 9A 78 5C */	addi r4, r26, 0x785c
 /* 801B87EC 001AE56C  38 BB 1B 80 */	addi r5, r27, 0x1b80
-/* 801B87F0 001AE570  48 23 7F 35 */	bl __register_global_object
+/* 801B87F0 001AE570  48 23 7F 35 */	bl __register_global_object_tmp
 /* 801B87F4 001AE574  9B 8D C1 40 */	stb r28, lbl_805A0560-_SDA_BASE_(r13)
 lbl_801B87F8:
 /* 801B87F8 001AE578  7C 1E E8 40 */	cmplw r30, r29

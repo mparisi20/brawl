@@ -509,78 +509,78 @@ __sinit_$3ms_resfont_cpp:
 /* 8006CC44 000629C4  38 7D 00 0C */	addi r3, r29, 0xc
 /* 8006CC48 000629C8  38 84 DA 18 */	addi r4, r4, nw4r2ut7RomFontFv$7__dt@l
 /* 8006CC4C 000629CC  38 BD 00 00 */	addi r5, r29, 0
-/* 8006CC50 000629D0  48 38 3A D5 */	bl __register_global_object
+/* 8006CC50 000629D0  48 38 3A D5 */	bl __register_global_object_tmp
 /* 8006CC54 000629D4  38 7D 00 34 */	addi r3, r29, 0x34
 /* 8006CC58 000629D8  48 0F 19 95 */	bl nw4r2ut7ResFontFv$7__ct
 /* 8006CC5C 000629DC  3F C0 80 16 */	lis r30, nw4r2ut7ResFontFv$7__dt@ha
 /* 8006CC60 000629E0  38 7D 00 34 */	addi r3, r29, 0x34
 /* 8006CC64 000629E4  38 9E E6 28 */	addi r4, r30, nw4r2ut7ResFontFv$7__dt@l
 /* 8006CC68 000629E8  38 BD 00 28 */	addi r5, r29, 0x28
-/* 8006CC6C 000629EC  48 38 3A B9 */	bl __register_global_object
+/* 8006CC6C 000629EC  48 38 3A B9 */	bl __register_global_object_tmp
 /* 8006CC70 000629F0  38 7D 00 5C */	addi r3, r29, 0x5c
 /* 8006CC74 000629F4  48 0F 19 79 */	bl nw4r2ut7ResFontFv$7__ct
 /* 8006CC78 000629F8  38 7D 00 5C */	addi r3, r29, 0x5c
 /* 8006CC7C 000629FC  38 9E E6 28 */	addi r4, r30, -6616
 /* 8006CC80 00062A00  38 BD 00 50 */	addi r5, r29, 0x50
-/* 8006CC84 00062A04  48 38 3A A1 */	bl __register_global_object
+/* 8006CC84 00062A04  48 38 3A A1 */	bl __register_global_object_tmp
 /* 8006CC88 00062A08  38 7D 00 84 */	addi r3, r29, 0x84
 /* 8006CC8C 00062A0C  48 0F 19 61 */	bl nw4r2ut7ResFontFv$7__ct
 /* 8006CC90 00062A10  38 7D 00 84 */	addi r3, r29, 0x84
 /* 8006CC94 00062A14  38 9E E6 28 */	addi r4, r30, -6616
 /* 8006CC98 00062A18  38 BD 00 78 */	addi r5, r29, 0x78
-/* 8006CC9C 00062A1C  48 38 3A 89 */	bl __register_global_object
+/* 8006CC9C 00062A1C  48 38 3A 89 */	bl __register_global_object_tmp
 /* 8006CCA0 00062A20  38 7D 00 AC */	addi r3, r29, 0xac
 /* 8006CCA4 00062A24  48 0F 19 49 */	bl nw4r2ut7ResFontFv$7__ct
 /* 8006CCA8 00062A28  38 7D 00 AC */	addi r3, r29, 0xac
 /* 8006CCAC 00062A2C  38 9E E6 28 */	addi r4, r30, -6616
 /* 8006CCB0 00062A30  38 BD 00 A0 */	addi r5, r29, 0xa0
-/* 8006CCB4 00062A34  48 38 3A 71 */	bl __register_global_object
+/* 8006CCB4 00062A34  48 38 3A 71 */	bl __register_global_object_tmp
 /* 8006CCB8 00062A38  38 7D 00 D4 */	addi r3, r29, 0xd4
 /* 8006CCBC 00062A3C  48 0F 19 31 */	bl nw4r2ut7ResFontFv$7__ct
 /* 8006CCC0 00062A40  38 7D 00 D4 */	addi r3, r29, 0xd4
 /* 8006CCC4 00062A44  38 9E E6 28 */	addi r4, r30, -6616
 /* 8006CCC8 00062A48  38 BD 00 C8 */	addi r5, r29, 0xc8
-/* 8006CCCC 00062A4C  48 38 3A 59 */	bl __register_global_object
+/* 8006CCCC 00062A4C  48 38 3A 59 */	bl __register_global_object_tmp
 /* 8006CCD0 00062A50  38 7D 00 FC */	addi r3, r29, 0xfc
 /* 8006CCD4 00062A54  48 0F 19 19 */	bl nw4r2ut7ResFontFv$7__ct
 /* 8006CCD8 00062A58  38 7D 00 FC */	addi r3, r29, 0xfc
 /* 8006CCDC 00062A5C  38 9E E6 28 */	addi r4, r30, -6616
 /* 8006CCE0 00062A60  38 BD 00 F0 */	addi r5, r29, 0xf0
-/* 8006CCE4 00062A64  48 38 3A 41 */	bl __register_global_object
+/* 8006CCE4 00062A64  48 38 3A 41 */	bl __register_global_object_tmp
 /* 8006CCE8 00062A68  38 7D 01 24 */	addi r3, r29, 0x124
 /* 8006CCEC 00062A6C  48 0F 19 01 */	bl nw4r2ut7ResFontFv$7__ct
 /* 8006CCF0 00062A70  38 7D 01 24 */	addi r3, r29, 0x124
 /* 8006CCF4 00062A74  38 9E E6 28 */	addi r4, r30, -6616
 /* 8006CCF8 00062A78  38 BD 01 18 */	addi r5, r29, 0x118
-/* 8006CCFC 00062A7C  48 38 3A 29 */	bl __register_global_object
+/* 8006CCFC 00062A7C  48 38 3A 29 */	bl __register_global_object_tmp
 /* 8006CD00 00062A80  38 7D 01 4C */	addi r3, r29, 0x14c
 /* 8006CD04 00062A84  48 0F 18 E9 */	bl nw4r2ut7ResFontFv$7__ct
 /* 8006CD08 00062A88  38 7D 01 4C */	addi r3, r29, 0x14c
 /* 8006CD0C 00062A8C  38 9E E6 28 */	addi r4, r30, -6616
 /* 8006CD10 00062A90  38 BD 01 40 */	addi r5, r29, 0x140
-/* 8006CD14 00062A94  48 38 3A 11 */	bl __register_global_object
+/* 8006CD14 00062A94  48 38 3A 11 */	bl __register_global_object_tmp
 /* 8006CD18 00062A98  3B C0 00 00 */	li r30, 0
 /* 8006CD1C 00062A9C  3F E0 80 02 */	lis r31, gfFileIOHandle$7__dt@ha
 /* 8006CD20 00062AA0  93 CD BD 74 */	stw r30, lbl_805A0194-_SDA_BASE_(r13)
 /* 8006CD24 00062AA4  38 9F 0B 38 */	addi r4, r31, gfFileIOHandle$7__dt@l
 /* 8006CD28 00062AA8  38 BD 01 68 */	addi r5, r29, 0x168
 /* 8006CD2C 00062AAC  38 6D BD 74 */	addi r3, r13, lbl_805A0194-_SDA_BASE_
-/* 8006CD30 00062AB0  48 38 39 F5 */	bl __register_global_object
+/* 8006CD30 00062AB0  48 38 39 F5 */	bl __register_global_object_tmp
 /* 8006CD34 00062AB4  93 CD BD 78 */	stw r30, lbl_805A0198-_SDA_BASE_(r13)
 /* 8006CD38 00062AB8  38 9F 0B 38 */	addi r4, r31, 0xb38
 /* 8006CD3C 00062ABC  38 BD 01 74 */	addi r5, r29, 0x174
 /* 8006CD40 00062AC0  38 6D BD 78 */	addi r3, r13, lbl_805A0198-_SDA_BASE_
-/* 8006CD44 00062AC4  48 38 39 E1 */	bl __register_global_object
+/* 8006CD44 00062AC4  48 38 39 E1 */	bl __register_global_object_tmp
 /* 8006CD48 00062AC8  93 CD BD 7C */	stw r30, lbl_805A019C-_SDA_BASE_(r13)
 /* 8006CD4C 00062ACC  38 9F 0B 38 */	addi r4, r31, 0xb38
 /* 8006CD50 00062AD0  38 BD 01 80 */	addi r5, r29, 0x180
 /* 8006CD54 00062AD4  38 6D BD 7C */	addi r3, r13, lbl_805A019C-_SDA_BASE_
-/* 8006CD58 00062AD8  48 38 39 CD */	bl __register_global_object
+/* 8006CD58 00062AD8  48 38 39 CD */	bl __register_global_object_tmp
 /* 8006CD5C 00062ADC  93 CD BD 80 */	stw r30, lbl_805A01A0-_SDA_BASE_(r13)
 /* 8006CD60 00062AE0  38 9F 0B 38 */	addi r4, r31, 0xb38
 /* 8006CD64 00062AE4  38 BD 01 8C */	addi r5, r29, 0x18c
 /* 8006CD68 00062AE8  38 6D BD 80 */	addi r3, r13, lbl_805A01A0-_SDA_BASE_
-/* 8006CD6C 00062AEC  48 38 39 B9 */	bl __register_global_object
+/* 8006CD6C 00062AEC  48 38 39 B9 */	bl __register_global_object_tmp
 /* 8006CD70 00062AF0  80 01 00 24 */	lwz r0, 0x24(r1)
 /* 8006CD74 00062AF4  83 E1 00 1C */	lwz r31, 0x1c(r1)
 /* 8006CD78 00062AF8  83 C1 00 18 */	lwz r30, 0x18(r1)

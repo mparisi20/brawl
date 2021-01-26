@@ -353,7 +353,7 @@ lbl_8015EDD0:
 /* 8015EDE8 00154B68  38 84 C9 98 */	addi r4, r4, nw4r2ut5ColorFv$7__dt@l
 /* 8015EDEC 00154B6C  38 A5 ED 90 */	addi r5, r5, lbl_8049ED90@l
 /* 8015EDF0 00154B70  38 6D C0 8C */	addi r3, r13, lbl_805A04AC-_SDA_BASE_
-/* 8015EDF4 00154B74  48 29 19 31 */	bl __register_global_object
+/* 8015EDF4 00154B74  48 29 19 31 */	bl __register_global_object_tmp
 /* 8015EDF8 00154B78  38 00 00 01 */	li r0, 1
 /* 8015EDFC 00154B7C  98 0D C0 88 */	stb r0, lbl_805A04A8-_SDA_BASE_(r13)
 lbl_8015EE00:
@@ -494,7 +494,7 @@ lbl_8015EFFC:
 /* 8015F014 00154D94  38 84 C9 98 */	addi r4, r4, nw4r2ut5ColorFv$7__dt@l
 /* 8015F018 00154D98  38 A5 ED 90 */	addi r5, r5, lbl_8049ED90@l
 /* 8015F01C 00154D9C  38 6D C0 8C */	addi r3, r13, lbl_805A04AC-_SDA_BASE_
-/* 8015F020 00154DA0  48 29 17 05 */	bl __register_global_object
+/* 8015F020 00154DA0  48 29 17 05 */	bl __register_global_object_tmp
 /* 8015F024 00154DA4  38 00 00 01 */	li r0, 1
 /* 8015F028 00154DA8  98 0D C0 88 */	stb r0, lbl_805A04A8-_SDA_BASE_(r13)
 lbl_8015F02C:
@@ -612,7 +612,7 @@ lbl_8015F1CC:
 /* 8015F1E4 00154F64  38 84 C9 98 */	addi r4, r4, nw4r2ut5ColorFv$7__dt@l
 /* 8015F1E8 00154F68  38 A5 ED 90 */	addi r5, r5, lbl_8049ED90@l
 /* 8015F1EC 00154F6C  38 6D C0 8C */	addi r3, r13, lbl_805A04AC-_SDA_BASE_
-/* 8015F1F0 00154F70  48 29 15 35 */	bl __register_global_object
+/* 8015F1F0 00154F70  48 29 15 35 */	bl __register_global_object_tmp
 /* 8015F1F4 00154F74  38 00 00 01 */	li r0, 1
 /* 8015F1F8 00154F78  98 0D C0 88 */	stb r0, lbl_805A04A8-_SDA_BASE_(r13)
 lbl_8015F1FC:
@@ -731,7 +731,7 @@ lbl_8015F39C:
 /* 8015F3B8 00155138  38 84 C9 98 */	addi r4, r4, nw4r2ut5ColorFv$7__dt@l
 /* 8015F3BC 0015513C  38 6D C0 8C */	addi r3, r13, lbl_805A04AC-_SDA_BASE_
 /* 8015F3C0 00155140  38 A5 ED 90 */	addi r5, r5, lbl_8049ED90@l
-/* 8015F3C4 00155144  48 29 13 61 */	bl __register_global_object
+/* 8015F3C4 00155144  48 29 13 61 */	bl __register_global_object_tmp
 /* 8015F3C8 00155148  38 00 00 01 */	li r0, 1
 /* 8015F3CC 0015514C  98 0D C0 88 */	stb r0, lbl_805A04A8-_SDA_BASE_(r13)
 lbl_8015F3D0:
@@ -849,7 +849,7 @@ lbl_8015F570:
 /* 8015F588 00155308  38 84 C9 98 */	addi r4, r4, nw4r2ut5ColorFv$7__dt@l
 /* 8015F58C 0015530C  38 A5 ED 90 */	addi r5, r5, lbl_8049ED90@l
 /* 8015F590 00155310  38 6D C0 8C */	addi r3, r13, lbl_805A04AC-_SDA_BASE_
-/* 8015F594 00155314  48 29 11 91 */	bl __register_global_object
+/* 8015F594 00155314  48 29 11 91 */	bl __register_global_object_tmp
 /* 8015F598 00155318  38 00 00 01 */	li r0, 1
 /* 8015F59C 0015531C  98 0D C0 88 */	stb r0, lbl_805A04A8-_SDA_BASE_(r13)
 lbl_8015F5A0:
@@ -1454,7 +1454,7 @@ nw4r2ut10CharWriterFQ34nw4r2ut5Col$7SetupGXWithColorMapping:
 /* 8015FE68 00155BE8  38 84 C9 98 */	addi r4, r4, nw4r2ut5ColorFv$7__dt@l
 /* 8015FE6C 00155BEC  38 6D C0 8C */	addi r3, r13, lbl_805A04AC-_SDA_BASE_
 /* 8015FE70 00155BF0  38 A5 ED 90 */	addi r5, r5, lbl_8049ED90@l
-/* 8015FE74 00155BF4  48 29 08 B1 */	bl __register_global_object
+/* 8015FE74 00155BF4  48 29 08 B1 */	bl __register_global_object_tmp
 /* 8015FE78 00155BF8  38 00 00 01 */	li r0, 1
 /* 8015FE7C 00155BFC  98 0D C0 88 */	stb r0, lbl_805A04A8-_SDA_BASE_(r13)
 lbl_8015FE80:
@@ -3800,7 +3800,7 @@ __sinit_$3ut_TextWriterBase_cpp:
 /* 8016212C 00157EAC  38 84 C5 38 */	addi r4, r4, nw4r2ut19TagProcessorBase$0c$1Fv$7__dt@l
 /* 80162130 00157EB0  38 6D C0 90 */	addi r3, r13, lbl_805A04B0-_SDA_BASE_
 /* 80162134 00157EB4  38 A5 ED B0 */	addi r5, r5, lbl_8049EDB0@l
-/* 80162138 00157EB8  48 28 E5 ED */	bl __register_global_object
+/* 80162138 00157EB8  48 28 E5 ED */	bl __register_global_object_tmp
 /* 8016213C 00157EBC  38 00 00 01 */	li r0, 1
 /* 80162140 00157EC0  98 0D C0 98 */	stb r0, lbl_805A04B8-_SDA_BASE_(r13)
 lbl_80162144:
@@ -3814,7 +3814,7 @@ lbl_80162144:
 /* 80162160 00157EE0  38 84 C8 A0 */	addi r4, r4, nw4r2ut19TagProcessorBase$0w$1Fv$7__dt@l
 /* 80162164 00157EE4  38 6D C0 94 */	addi r3, r13, lbl_805A04B4-_SDA_BASE_
 /* 80162168 00157EE8  38 A5 ED BC */	addi r5, r5, lbl_8049EDBC@l
-/* 8016216C 00157EEC  48 28 E5 B9 */	bl __register_global_object
+/* 8016216C 00157EEC  48 28 E5 B9 */	bl __register_global_object_tmp
 /* 80162170 00157EF0  38 00 00 01 */	li r0, 1
 /* 80162174 00157EF4  98 0D C0 99 */	stb r0, lbl_805A04B9-_SDA_BASE_(r13)
 lbl_80162178:

@@ -790,7 +790,7 @@ __sinit_$3nt_friendinfo_cpp:
 /* 8014CC1C 0014299C  38 7F EC A0 */	addi r3, r31, -4960
 /* 8014CC20 001429A0  38 84 0A F8 */	addi r4, r4, gfMutex$7__dt@l
 /* 8014CC24 001429A4  38 A5 EC 90 */	addi r5, r5, lbl_8049EC90@l
-/* 8014CC28 001429A8  48 2A 3A FD */	bl __register_global_object
+/* 8014CC28 001429A8  48 2A 3A FD */	bl __register_global_object_tmp
 /* 8014CC2C 001429AC  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 8014CC30 001429B0  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 8014CC34 001429B4  7C 08 03 A6 */	mtlr r0

@@ -1,0 +1,62 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global sndSystem$7updateRemSpeakerState
+sndSystem$7updateRemSpeakerState:
+/* 8007E99C 0007471C  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8007E9A0 00074720  7C 08 02 A6 */	mflr r0
+/* 8007E9A4 00074724  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8007E9A8 00074728  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8007E9AC 0007472C  7C 7F 1B 78 */	mr r31, r3
+/* 8007E9B0 00074730  80 8D BD F0 */	lwz r4, lbl_805A0210-_SDA_BASE_(r13)
+/* 8007E9B4 00074734  90 6D BE 3C */	stw r3, lbl_805A025C-_SDA_BASE_(r13)
+/* 8007E9B8 00074738  38 04 00 01 */	addi r0, r4, 1
+/* 8007E9BC 0007473C  90 0D BD F0 */	stw r0, lbl_805A0210-_SDA_BASE_(r13)
+/* 8007E9C0 00074740  48 18 7A 39 */	bl MIXInit
+/* 8007E9C4 00074744  3C 60 80 08 */	lis r3, $2unnamed$2mv_movie_player_cpp$2$7CallbackTHPAudioFrame@ha
+/* 8007E9C8 00074748  38 63 F5 F0 */	addi r3, r3, $2unnamed$2mv_movie_player_cpp$2$7CallbackTHPAudioFrame@l
+/* 8007E9CC 0007474C  48 18 27 0D */	bl AXRegisterCallback
+/* 8007E9D0 00074750  90 6D BE 10 */	stw r3, lbl_805A0230-_SDA_BASE_(r13)
+/* 8007E9D4 00074754  38 60 00 00 */	li r3, 0
+/* 8007E9D8 00074758  38 80 00 00 */	li r4, 0
+/* 8007E9DC 0007475C  48 18 14 4D */	bl AXRegisterAuxACallback
+/* 8007E9E0 00074760  4B FF F7 0D */	bl GetSizeTHPReadWork
+/* 8007E9E4 00074764  7C 64 1B 78 */	mr r4, r3
+/* 8007E9E8 00074768  38 60 00 2A */	li r3, 0x2a
+/* 8007E9EC 0007476C  4B FA 5F F9 */	bl gfHeapManager$7alloc
+/* 8007E9F0 00074770  90 6D BD FC */	stw r3, lbl_805A021C-_SDA_BASE_(r13)
+/* 8007E9F4 00074774  4B FF F7 01 */	bl SetTHPReadWork
+/* 8007E9F8 00074778  4B FF F9 AD */	bl GetSizeTHPVideoDecWork
+/* 8007E9FC 0007477C  7C 64 1B 78 */	mr r4, r3
+/* 8007EA00 00074780  38 60 00 2A */	li r3, 0x2a
+/* 8007EA04 00074784  4B FA 5F E1 */	bl gfHeapManager$7alloc
+/* 8007EA08 00074788  90 6D BE 00 */	stw r3, lbl_805A0220-_SDA_BASE_(r13)
+/* 8007EA0C 0007478C  4B FF F9 A1 */	bl SetTHPVideoDecWork
+/* 8007EA10 00074790  4B FF C6 A5 */	bl GetSizeTHPAudioDecWork
+/* 8007EA14 00074794  7C 64 1B 78 */	mr r4, r3
+/* 8007EA18 00074798  38 60 00 2A */	li r3, 0x2a
+/* 8007EA1C 0007479C  4B FA 5F C9 */	bl gfHeapManager$7alloc
+/* 8007EA20 000747A0  90 6D BE 04 */	stw r3, lbl_805A0224-_SDA_BASE_(r13)
+/* 8007EA24 000747A4  4B FF C6 99 */	bl SetTHPAudioDecWork
+/* 8007EA28 000747A8  4B FF D2 71 */	bl GetSizeTHPPlayerWork
+/* 8007EA2C 000747AC  7C 64 1B 78 */	mr r4, r3
+/* 8007EA30 000747B0  38 60 00 2A */	li r3, 0x2a
+/* 8007EA34 000747B4  4B FA 5F B1 */	bl gfHeapManager$7alloc
+/* 8007EA38 000747B8  90 6D BE 08 */	stw r3, lbl_805A0228-_SDA_BASE_(r13)
+/* 8007EA3C 000747BC  4B FF D2 65 */	bl SetTHPPlayerWork
+/* 8007EA40 000747C0  48 0D ED 4D */	bl nw4r2ut2LCFv$7Disable
+/* 8007EA44 000747C4  4B FF D2 AD */	bl THPPlayerInit
+/* 8007EA48 000747C8  38 00 00 00 */	li r0, 0
+/* 8007EA4C 000747CC  38 6D BE 2C */	addi r3, r13, lbl_805A024C-_SDA_BASE_
+/* 8007EA50 000747D0  98 03 00 01 */	stb r0, 1(r3)
+/* 8007EA54 000747D4  7F E3 FB 78 */	mr r3, r31
+/* 8007EA58 000747D8  98 0D BE 2C */	stb r0, lbl_805A024C-_SDA_BASE_(r13)
+/* 8007EA5C 000747DC  98 0D BE 2E */	stb r0, lbl_805A024E-_SDA_BASE_(r13)
+/* 8007EA60 000747E0  98 0D BE 2A */	stb r0, lbl_805A024A-_SDA_BASE_(r13)
+/* 8007EA64 000747E4  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8007EA68 000747E8  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8007EA6C 000747EC  7C 08 03 A6 */	mtlr r0
+/* 8007EA70 000747F0  38 21 00 10 */	addi r1, r1, 0x10
+/* 8007EA74 000747F4  4E 80 00 20 */	blr 
+

@@ -704,7 +704,7 @@ __sinit_$3network_cpp:
 /* 80146C28 0013C9A8  93 E3 00 30 */	stw r31, 0x30(r3)
 /* 80146C2C 0013C9AC  93 E3 00 34 */	stw r31, 0x34(r3)
 /* 80146C30 0013C9B0  93 E3 00 38 */	stw r31, 0x38(r3)
-/* 80146C34 0013C9B4  48 2A 9A F1 */	bl __register_global_object
+/* 80146C34 0013C9B4  48 2A 9A F1 */	bl __register_global_object_tmp
 /* 80146C38 0013C9B8  3C 80 80 42 */	lis r4, lbl_80420BA0@ha
 /* 80146C3C 0013C9BC  3C 60 80 46 */	lis r3, lbl_8045F470@ha
 /* 80146C40 0013C9C0  38 AD BF 98 */	addi r5, r13, lbl_805A03B8-_SDA_BASE_
@@ -717,7 +717,7 @@ __sinit_$3network_cpp:
 /* 80146C5C 0013C9DC  90 65 00 04 */	stw r3, 4(r5)
 /* 80146C60 0013C9E0  38 BE 00 50 */	addi r5, r30, 0x50
 /* 80146C64 0013C9E4  38 6D BF 98 */	addi r3, r13, lbl_805A03B8-_SDA_BASE_
-/* 80146C68 0013C9E8  48 2A 9A BD */	bl __register_global_object
+/* 80146C68 0013C9E8  48 2A 9A BD */	bl __register_global_object_tmp
 /* 80146C6C 0013C9EC  3C A0 80 42 */	lis r5, lbl_804230FC@ha
 /* 80146C70 0013C9F0  3C 60 80 46 */	lis r3, lbl_8045F460@ha
 /* 80146C74 0013C9F4  38 8D BF A0 */	addi r4, r13, lbl_805A03C0-_SDA_BASE_

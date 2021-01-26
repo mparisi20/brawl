@@ -2,8 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
-.global __register_global_object
-__register_global_object:
+.global __register_global_object_tmp
+__register_global_object_tmp:
 /* 803F0724 003E64A4  80 0D CE B4 */	lwz r0, lbl_805A12D4-_SDA_BASE_(r13)
 /* 803F0728 003E64A8  90 05 00 00 */	stw r0, 0(r5)
 /* 803F072C 003E64AC  90 85 00 04 */	stw r4, 4(r5)
@@ -11,8 +11,8 @@ __register_global_object:
 /* 803F0734 003E64B4  90 AD CE B4 */	stw r5, lbl_805A12D4-_SDA_BASE_(r13)
 /* 803F0738 003E64B8  4E 80 00 20 */	blr 
 
-.global __destroy_global_chain
-__destroy_global_chain:
+.global __destroy_global_chain_tmp
+__destroy_global_chain_tmp:
 /* 803F073C 003E64BC  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 803F0740 003E64C0  7C 08 02 A6 */	mflr r0
 /* 803F0744 003E64C4  90 01 00 14 */	stw r0, 0x14(r1)

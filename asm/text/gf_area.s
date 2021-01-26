@@ -1076,7 +1076,7 @@ __sinit_$3gf_area_cpp:
 /* 80011C60 000079E0  98 E6 00 01 */	stb r7, 1(r6)
 /* 80011C64 000079E4  98 E6 00 02 */	stb r7, 2(r6)
 /* 80011C68 000079E8  98 06 00 03 */	stb r0, 3(r6)
-/* 80011C6C 000079EC  48 3D EA B8 */	b __register_global_object
+/* 80011C6C 000079EC  48 3D EA B8 */	b __register_global_object_tmp
 
 .global gfAreaEventReciverNull$7reciveEvent
 gfAreaEventReciverNull$7reciveEvent:

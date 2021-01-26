@@ -1,0 +1,187 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global gfCollectionIO$7isEnableVFSaveLoad
+gfCollectionIO$7isEnableVFSaveLoad:
+/* 8003CD6C 00032AEC  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8003CD70 00032AF0  7C 08 02 A6 */	mflr r0
+/* 8003CD74 00032AF4  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8003CD78 00032AF8  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
+/* 8003CD7C 00032AFC  48 01 1D 59 */	bl GameGlobal$7setEnableSaveLoad
+/* 8003CD80 00032B00  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8003CD84 00032B04  54 63 EF FE */	rlwinm r3, r3, 0x1d, 0x1f, 0x1f
+/* 8003CD88 00032B08  7C 08 03 A6 */	mtlr r0
+/* 8003CD8C 00032B0C  38 21 00 10 */	addi r1, r1, 0x10
+/* 8003CD90 00032B10  4E 80 00 20 */	blr 
+
+.global gfCollSummaryStageEdit$7__dt
+gfCollSummaryStageEdit$7__dt:
+/* 8003CD94 00032B14  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8003CD98 00032B18  7C 08 02 A6 */	mflr r0
+/* 8003CD9C 00032B1C  2C 03 00 00 */	cmpwi r3, 0
+/* 8003CDA0 00032B20  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8003CDA4 00032B24  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8003CDA8 00032B28  7C 9F 23 78 */	mr r31, r4
+/* 8003CDAC 00032B2C  93 C1 00 08 */	stw r30, 8(r1)
+/* 8003CDB0 00032B30  7C 7E 1B 78 */	mr r30, r3
+/* 8003CDB4 00032B34  41 82 00 34 */	beq lbl_8003CDE8
+/* 8003CDB8 00032B38  80 03 00 80 */	lwz r0, 0x80(r3)
+/* 8003CDBC 00032B3C  3C 80 80 42 */	lis r4, lbl_804237D4@ha
+/* 8003CDC0 00032B40  38 84 37 D4 */	addi r4, r4, lbl_804237D4@l
+/* 8003CDC4 00032B44  2C 00 00 00 */	cmpwi r0, 0
+/* 8003CDC8 00032B48  90 83 00 50 */	stw r4, 0x50(r3)
+/* 8003CDCC 00032B4C  41 82 00 0C */	beq lbl_8003CDD8
+/* 8003CDD0 00032B50  7C 03 03 78 */	mr r3, r0
+/* 8003CDD4 00032B54  4B FE 7C 79 */	bl gfHeapManager$7free
+lbl_8003CDD8:
+/* 8003CDD8 00032B58  2C 1F 00 00 */	cmpwi r31, 0
+/* 8003CDDC 00032B5C  40 81 00 0C */	ble lbl_8003CDE8
+/* 8003CDE0 00032B60  7F C3 F3 78 */	mr r3, r30
+/* 8003CDE4 00032B64  4B FC FA E5 */	bl __dl
+lbl_8003CDE8:
+/* 8003CDE8 00032B68  7F C3 F3 78 */	mr r3, r30
+/* 8003CDEC 00032B6C  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8003CDF0 00032B70  83 C1 00 08 */	lwz r30, 8(r1)
+/* 8003CDF4 00032B74  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8003CDF8 00032B78  7C 08 03 A6 */	mtlr r0
+/* 8003CDFC 00032B7C  38 21 00 10 */	addi r1, r1, 0x10
+/* 8003CE00 00032B80  4E 80 00 20 */	blr 
+
+.global gfCollSummaryReplay$7__dt
+gfCollSummaryReplay$7__dt:
+/* 8003CE04 00032B84  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8003CE08 00032B88  7C 08 02 A6 */	mflr r0
+/* 8003CE0C 00032B8C  2C 03 00 00 */	cmpwi r3, 0
+/* 8003CE10 00032B90  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8003CE14 00032B94  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8003CE18 00032B98  7C 9F 23 78 */	mr r31, r4
+/* 8003CE1C 00032B9C  93 C1 00 08 */	stw r30, 8(r1)
+/* 8003CE20 00032BA0  7C 7E 1B 78 */	mr r30, r3
+/* 8003CE24 00032BA4  41 82 00 34 */	beq lbl_8003CE58
+/* 8003CE28 00032BA8  80 03 00 C4 */	lwz r0, 0xc4(r3)
+/* 8003CE2C 00032BAC  3C 80 80 42 */	lis r4, lbl_80423804@ha
+/* 8003CE30 00032BB0  38 84 38 04 */	addi r4, r4, lbl_80423804@l
+/* 8003CE34 00032BB4  2C 00 00 00 */	cmpwi r0, 0
+/* 8003CE38 00032BB8  90 83 00 50 */	stw r4, 0x50(r3)
+/* 8003CE3C 00032BBC  41 82 00 0C */	beq lbl_8003CE48
+/* 8003CE40 00032BC0  7C 03 03 78 */	mr r3, r0
+/* 8003CE44 00032BC4  4B FE 7C 09 */	bl gfHeapManager$7free
+lbl_8003CE48:
+/* 8003CE48 00032BC8  2C 1F 00 00 */	cmpwi r31, 0
+/* 8003CE4C 00032BCC  40 81 00 0C */	ble lbl_8003CE58
+/* 8003CE50 00032BD0  7F C3 F3 78 */	mr r3, r30
+/* 8003CE54 00032BD4  4B FC FA 75 */	bl __dl
+lbl_8003CE58:
+/* 8003CE58 00032BD8  7F C3 F3 78 */	mr r3, r30
+/* 8003CE5C 00032BDC  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8003CE60 00032BE0  83 C1 00 08 */	lwz r30, 8(r1)
+/* 8003CE64 00032BE4  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8003CE68 00032BE8  7C 08 03 A6 */	mtlr r0
+/* 8003CE6C 00032BEC  38 21 00 10 */	addi r1, r1, 0x10
+/* 8003CE70 00032BF0  4E 80 00 20 */	blr 
+
+.global gfCollSummarySnapShot$7__dt
+gfCollSummarySnapShot$7__dt:
+/* 8003CE74 00032BF4  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8003CE78 00032BF8  7C 08 02 A6 */	mflr r0
+/* 8003CE7C 00032BFC  2C 03 00 00 */	cmpwi r3, 0
+/* 8003CE80 00032C00  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8003CE84 00032C04  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8003CE88 00032C08  7C 9F 23 78 */	mr r31, r4
+/* 8003CE8C 00032C0C  93 C1 00 08 */	stw r30, 8(r1)
+/* 8003CE90 00032C10  7C 7E 1B 78 */	mr r30, r3
+/* 8003CE94 00032C14  41 82 00 34 */	beq lbl_8003CEC8
+/* 8003CE98 00032C18  80 03 00 5C */	lwz r0, 0x5c(r3)
+/* 8003CE9C 00032C1C  3C 80 80 42 */	lis r4, lbl_80423830@ha
+/* 8003CEA0 00032C20  38 84 38 30 */	addi r4, r4, lbl_80423830@l
+/* 8003CEA4 00032C24  2C 00 00 00 */	cmpwi r0, 0
+/* 8003CEA8 00032C28  90 83 00 50 */	stw r4, 0x50(r3)
+/* 8003CEAC 00032C2C  41 82 00 0C */	beq lbl_8003CEB8
+/* 8003CEB0 00032C30  7C 03 03 78 */	mr r3, r0
+/* 8003CEB4 00032C34  4B FE 7B 99 */	bl gfHeapManager$7free
+lbl_8003CEB8:
+/* 8003CEB8 00032C38  2C 1F 00 00 */	cmpwi r31, 0
+/* 8003CEBC 00032C3C  40 81 00 0C */	ble lbl_8003CEC8
+/* 8003CEC0 00032C40  7F C3 F3 78 */	mr r3, r30
+/* 8003CEC4 00032C44  4B FC FA 05 */	bl __dl
+lbl_8003CEC8:
+/* 8003CEC8 00032C48  7F C3 F3 78 */	mr r3, r30
+/* 8003CECC 00032C4C  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8003CED0 00032C50  83 C1 00 08 */	lwz r30, 8(r1)
+/* 8003CED4 00032C54  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8003CED8 00032C58  7C 08 03 A6 */	mtlr r0
+/* 8003CEDC 00032C5C  38 21 00 10 */	addi r1, r1, 0x10
+/* 8003CEE0 00032C60  4E 80 00 20 */	blr 
+
+.global gfCIOPermitRebootCallback$7returnStatus
+gfCIOPermitRebootCallback$7returnStatus:
+/* 8003CEE4 00032C64  88 63 00 08 */	lbz r3, 8(r3)
+/* 8003CEE8 00032C68  4E 80 00 20 */	blr 
+
+.global __sinit_$3gf_collection_io_cpp
+__sinit_$3gf_collection_io_cpp:
+/* 8003CEEC 00032C6C  94 21 FF F0 */	stwu r1, -0x10(r1)
+/* 8003CEF0 00032C70  7C 08 02 A6 */	mflr r0
+/* 8003CEF4 00032C74  3C 60 80 42 */	lis r3, lbl_804230FC@ha
+/* 8003CEF8 00032C78  3C 80 80 42 */	lis r4, lbl_80423880@ha
+/* 8003CEFC 00032C7C  90 01 00 14 */	stw r0, 0x14(r1)
+/* 8003CF00 00032C80  38 63 30 FC */	addi r3, r3, lbl_804230FC@l
+/* 8003CF04 00032C84  38 A0 00 00 */	li r5, 0
+/* 8003CF08 00032C88  38 00 00 01 */	li r0, 1
+/* 8003CF0C 00032C8C  93 E1 00 0C */	stw r31, 0xc(r1)
+/* 8003CF10 00032C90  38 84 38 80 */	addi r4, r4, lbl_80423880@l
+/* 8003CF14 00032C94  93 C1 00 08 */	stw r30, 8(r1)
+/* 8003CF18 00032C98  3F C0 80 49 */	lis r30, lbl_804976D8@ha
+/* 8003CF1C 00032C9C  3B DE 76 D8 */	addi r30, r30, lbl_804976D8@l
+/* 8003CF20 00032CA0  38 DE 00 00 */	addi r6, r30, 0
+/* 8003CF24 00032CA4  90 BE 00 00 */	stw r5, 0(r30)
+/* 8003CF28 00032CA8  90 66 00 04 */	stw r3, 4(r6)
+/* 8003CF2C 00032CAC  38 7E 00 18 */	addi r3, r30, 0x18
+/* 8003CF30 00032CB0  90 86 00 04 */	stw r4, 4(r6)
+/* 8003CF34 00032CB4  98 06 00 08 */	stb r0, 8(r6)
+/* 8003CF38 00032CB8  48 1A 1C 45 */	bl OSInitMutex
+/* 8003CF3C 00032CBC  3F E0 80 02 */	lis r31, gfMutex$7__dt@ha
+/* 8003CF40 00032CC0  38 7E 00 18 */	addi r3, r30, 0x18
+/* 8003CF44 00032CC4  38 9F 0A F8 */	addi r4, r31, gfMutex$7__dt@l
+/* 8003CF48 00032CC8  38 BE 00 0C */	addi r5, r30, 0xc
+/* 8003CF4C 00032CCC  48 3B 37 D9 */	bl __register_global_object_tmp
+/* 8003CF50 00032CD0  38 7E 00 40 */	addi r3, r30, 0x40
+/* 8003CF54 00032CD4  48 1A 1C 29 */	bl OSInitMutex
+/* 8003CF58 00032CD8  38 7E 00 40 */	addi r3, r30, 0x40
+/* 8003CF5C 00032CDC  38 9F 0A F8 */	addi r4, r31, 0xaf8
+/* 8003CF60 00032CE0  38 BE 00 30 */	addi r5, r30, 0x30
+/* 8003CF64 00032CE4  48 3B 37 C1 */	bl __register_global_object_tmp
+/* 8003CF68 00032CE8  38 7E 00 68 */	addi r3, r30, 0x68
+/* 8003CF6C 00032CEC  48 1A 1C 11 */	bl OSInitMutex
+/* 8003CF70 00032CF0  38 7E 00 68 */	addi r3, r30, 0x68
+/* 8003CF74 00032CF4  38 9F 0A F8 */	addi r4, r31, 0xaf8
+/* 8003CF78 00032CF8  38 BE 00 58 */	addi r5, r30, 0x58
+/* 8003CF7C 00032CFC  48 3B 37 A9 */	bl __register_global_object_tmp
+/* 8003CF80 00032D00  38 7E 00 90 */	addi r3, r30, 0x90
+/* 8003CF84 00032D04  48 1A 1B F9 */	bl OSInitMutex
+/* 8003CF88 00032D08  38 7E 00 90 */	addi r3, r30, 0x90
+/* 8003CF8C 00032D0C  38 9F 0A F8 */	addi r4, r31, 0xaf8
+/* 8003CF90 00032D10  38 BE 00 80 */	addi r5, r30, 0x80
+/* 8003CF94 00032D14  48 3B 37 91 */	bl __register_global_object_tmp
+/* 8003CF98 00032D18  38 7E 00 A8 */	addi r3, r30, 0xa8
+/* 8003CF9C 00032D1C  38 80 00 00 */	li r4, 0
+/* 8003CFA0 00032D20  38 A0 00 28 */	li r5, 0x28
+/* 8003CFA4 00032D24  4B FC 74 99 */	bl func_8000443C
+/* 8003CFA8 00032D28  80 01 00 14 */	lwz r0, 0x14(r1)
+/* 8003CFAC 00032D2C  83 E1 00 0C */	lwz r31, 0xc(r1)
+/* 8003CFB0 00032D30  83 C1 00 08 */	lwz r30, 8(r1)
+/* 8003CFB4 00032D34  7C 08 03 A6 */	mtlr r0
+/* 8003CFB8 00032D38  38 21 00 10 */	addi r1, r1, 0x10
+/* 8003CFBC 00032D3C  4E 80 00 20 */	blr 
+
+.global gfCollectionIO$7$24$2
+gfCollectionIO$7$24$2:
+/* 8003CFC0 00032D40  38 63 FF FC */	addi r3, r3, -4
+/* 8003CFC4 00032D44  4B FF BB 04 */	b gfCollectionIO$7__dt
+
+.global gfCollectionIO$7$24$2processDefault
+gfCollectionIO$7$24$2processDefault:
+/* 8003CFC8 00032D48  38 63 FF FC */	addi r3, r3, -4
+/* 8003CFCC 00032D4C  4B FF BF A0 */	b gfCollectionIO$7processDefault
+

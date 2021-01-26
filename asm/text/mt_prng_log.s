@@ -143,5 +143,5 @@ __sinit_$3mt_prng_log_cpp:
 /* 80043B08 00039888  90 03 00 04 */	stw r0, 4(r3)
 /* 80043B0C 0003988C  38 A5 77 A8 */	addi r5, r5, lbl_804977A8@l
 /* 80043B10 00039890  90 03 00 08 */	stw r0, 8(r3)
-/* 80043B14 00039894  48 3A CC 10 */	b __register_global_object
+/* 80043B14 00039894  48 3A CC 10 */	b __register_global_object_tmp
 

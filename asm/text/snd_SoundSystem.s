@@ -188,7 +188,7 @@ __sinit_$3snd_SoundSystem_cpp:
 /* 801CC2C0 001C2040  38 7F 20 10 */	addi r3, r31, 0x2010
 /* 801CC2C4 001C2044  38 84 01 94 */	addi r4, r4, nw4r3snd6detail10TaskThreadFv$7__dt@l
 /* 801CC2C8 001C2048  38 A5 20 00 */	addi r5, r5, lbl_804C2000@l
-/* 801CC2CC 001C204C  48 22 44 59 */	bl __register_global_object
+/* 801CC2CC 001C204C  48 22 44 59 */	bl __register_global_object_tmp
 /* 801CC2D0 001C2050  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 801CC2D4 001C2054  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 801CC2D8 001C2058  7C 08 03 A6 */	mtlr r0

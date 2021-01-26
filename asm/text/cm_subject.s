@@ -624,7 +624,7 @@ __sinit_$3cm_subject_cpp:
 /* 8009F4F4 00095274  90 06 DE DC */	stw r0, -0x2124(r6)
 /* 8009F4F8 00095278  90 E3 00 04 */	stw r7, 4(r3)
 /* 8009F4FC 0009527C  90 E3 00 08 */	stw r7, 8(r3)
-/* 8009F500 00095280  48 35 12 24 */	b __register_global_object
+/* 8009F500 00095280  48 35 12 24 */	b __register_global_object_tmp
 
 .global cmSubjectList$7__dt
 cmSubjectList$7__dt:

@@ -33,7 +33,7 @@ nw4r3snd6detail11TaskManagerFv$7GetInstance:
 /* 801CFA7C 001C57FC  7F E3 FB 78 */	mr r3, r31
 /* 801CFA80 001C5800  38 84 FA B0 */	addi r4, r4, nw4r3snd6detail11TaskManagerFv$7__dt@l
 /* 801CFA84 001C5804  38 A5 D0 98 */	addi r5, r5, lbl_804DD098@l
-/* 801CFA88 001C5808  48 22 0C 9D */	bl __register_global_object
+/* 801CFA88 001C5808  48 22 0C 9D */	bl __register_global_object_tmp
 /* 801CFA8C 001C580C  38 00 00 01 */	li r0, 1
 /* 801CFA90 001C5810  98 0D C1 F8 */	stb r0, lbl_805A0618-_SDA_BASE_(r13)
 lbl_801CFA94:

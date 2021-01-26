@@ -2011,7 +2011,7 @@ __sinit_$3gr_collision_cpp:
 /* 80112278 00107FF8  90 06 E5 7C */	stw r0, -0x1a84(r6)
 /* 8011227C 00107FFC  90 E3 00 04 */	stw r7, 4(r3)
 /* 80112280 00108000  90 E3 00 08 */	stw r7, 8(r3)
-/* 80112284 00108004  48 2D E4 A0 */	b __register_global_object
+/* 80112284 00108004  48 2D E4 A0 */	b __register_global_object_tmp
 
 .global grCollisionList$7__dt
 grCollisionList$7__dt:

@@ -98,5 +98,5 @@ __sinit_$3ac_null_cpp:
 /* 8013CFF4 00132D74  38 A5 EA 10 */	addi r5, r5, lbl_8049EA10@l
 /* 8013CFF8 00132D78  98 07 00 04 */	stb r0, 4(r7)
 /* 8013CFFC 00132D7C  90 CD BF 58 */	stw r6, lbl_805A0378-_SDA_BASE_(r13)
-/* 8013D000 00132D80  48 2B 37 24 */	b __register_global_object
+/* 8013D000 00132D80  48 2B 37 24 */	b __register_global_object_tmp
 

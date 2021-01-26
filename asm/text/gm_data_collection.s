@@ -471,5 +471,5 @@ __sinit_$3gm_data_collection_cpp:
 /* 800568B8 0004C638  38 84 0B 38 */	addi r4, r4, gfFileIOHandle$7__dt@l
 /* 800568BC 0004C63C  38 6D BC CC */	addi r3, r13, lbl_805A00EC-_SDA_BASE_
 /* 800568C0 0004C640  38 A5 77 F0 */	addi r5, r5, lbl_804977F0@l
-/* 800568C4 0004C644  48 39 9E 60 */	b __register_global_object
+/* 800568C4 0004C644  48 39 9E 60 */	b __register_global_object_tmp
 

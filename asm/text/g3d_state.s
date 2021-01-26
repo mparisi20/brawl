@@ -3940,7 +3940,7 @@ lbl_801A1894:
 /* 801A1938 001976B8  98 1C 00 26 */	stb r0, 0x26(r28)
 /* 801A193C 001976BC  98 1C 00 25 */	stb r0, 0x25(r28)
 /* 801A1940 001976C0  98 1C 00 24 */	stb r0, 0x24(r28)
-/* 801A1944 001976C4  48 24 ED E1 */	bl __register_global_object
+/* 801A1944 001976C4  48 24 ED E1 */	bl __register_global_object_tmp
 /* 801A1948 001976C8  38 7F 3A 80 */	addi r3, r31, 0x3a80
 /* 801A194C 001976CC  4B FF D7 6D */	bl nw4r3g3d8G3DState23$2unnamed$2g3d_state_cpp$214CameraMtxS$7__ct
 /* 801A1950 001976D0  3C 60 80 46 */	lis r3, lbl_804661F8@ha
@@ -3971,7 +3971,7 @@ lbl_801A1974:
 /* 801A19B0 00197730  98 1C 00 05 */	stb r0, 5(r28)
 /* 801A19B4 00197734  98 1C 00 04 */	stb r0, 4(r28)
 /* 801A19B8 00197738  98 1C 00 07 */	stb r0, 7(r28)
-/* 801A19BC 0019773C  48 24 ED 69 */	bl __register_global_object
+/* 801A19BC 0019773C  48 24 ED 69 */	bl __register_global_object_tmp
 /* 801A19C0 00197740  80 01 00 24 */	lwz r0, 0x24(r1)
 /* 801A19C4 00197744  83 E1 00 1C */	lwz r31, 0x1c(r1)
 /* 801A19C8 00197748  83 C1 00 18 */	lwz r30, 0x18(r1)

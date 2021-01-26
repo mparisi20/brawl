@@ -36,7 +36,7 @@ nw4r3snd6detail14AxVoiceManagerFv$7GetInstance:
 /* 801BB1FC 001B0F7C  90 E3 00 1C */	stw r7, 0x1c(r3)
 /* 801BB200 001B0F80  90 E3 00 20 */	stw r7, 0x20(r3)
 /* 801BB204 001B0F84  98 03 00 24 */	stb r0, 0x24(r3)
-/* 801BB208 001B0F88  48 23 55 1D */	bl __register_global_object
+/* 801BB208 001B0F88  48 23 55 1D */	bl __register_global_object_tmp
 /* 801BB20C 001B0F8C  38 00 00 01 */	li r0, 1
 /* 801BB210 001B0F90  98 0D C1 48 */	stb r0, lbl_805A0568-_SDA_BASE_(r13)
 lbl_801BB214:
@@ -398,7 +398,7 @@ lbl_801BB698:
 /* 801BB6F0 001B1470  91 1A 00 1C */	stw r8, 0x1c(r26)
 /* 801BB6F4 001B1474  91 1A 00 20 */	stw r8, 0x20(r26)
 /* 801BB6F8 001B1478  9B 9A 00 24 */	stb r28, 0x24(r26)
-/* 801BB6FC 001B147C  48 23 50 29 */	bl __register_global_object
+/* 801BB6FC 001B147C  48 23 50 29 */	bl __register_global_object_tmp
 /* 801BB700 001B1480  9B ED C1 48 */	stb r31, lbl_805A0568-_SDA_BASE_(r13)
 lbl_801BB704:
 /* 801BB704 001B1484  48 02 18 0D */	bl OSDisableInterrupts
@@ -687,7 +687,7 @@ lbl_801BBAAC:
 /* 801BBB04 001B1884  91 16 00 1C */	stw r8, 0x1c(r22)
 /* 801BBB08 001B1888  91 16 00 20 */	stw r8, 0x20(r22)
 /* 801BBB0C 001B188C  9B 16 00 24 */	stb r24, 0x24(r22)
-/* 801BBB10 001B1890  48 23 4C 15 */	bl __register_global_object
+/* 801BBB10 001B1890  48 23 4C 15 */	bl __register_global_object_tmp
 /* 801BBB14 001B1894  9B 6D C1 48 */	stb r27, lbl_805A0568-_SDA_BASE_(r13)
 lbl_801BBB18:
 /* 801BBB18 001B1898  48 02 13 F9 */	bl OSDisableInterrupts

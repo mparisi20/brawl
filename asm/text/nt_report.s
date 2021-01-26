@@ -274,7 +274,7 @@ __sinit_$3nt_report_cpp:
 /* 8013D40C 0013318C  9B BE 00 FC */	stb r29, 0xfc(r30)
 /* 8013D410 00133190  93 BE 01 00 */	stw r29, 0x100(r30)
 /* 8013D414 00133194  9B BE 01 08 */	stb r29, 0x108(r30)
-/* 8013D418 00133198  48 2B 33 0D */	bl __register_global_object
+/* 8013D418 00133198  48 2B 33 0D */	bl __register_global_object_tmp
 /* 8013D41C 0013319C  3C 80 80 14 */	lis r4, NtBlock$7__ct@ha
 /* 8013D420 001331A0  38 7C 01 38 */	addi r3, r28, 0x138
 /* 8013D424 001331A4  38 84 D4 80 */	addi r4, r4, NtBlock$7__ct@l
@@ -291,7 +291,7 @@ __sinit_$3nt_report_cpp:
 /* 8013D450 001331D0  93 A3 00 08 */	stw r29, 8(r3)
 /* 8013D454 001331D4  9B A3 00 0C */	stb r29, 0xc(r3)
 /* 8013D458 001331D8  93 A3 00 10 */	stw r29, 0x10(r3)
-/* 8013D45C 001331DC  48 2B 32 C9 */	bl __register_global_object
+/* 8013D45C 001331DC  48 2B 32 C9 */	bl __register_global_object_tmp
 /* 8013D460 001331E0  80 01 00 24 */	lwz r0, 0x24(r1)
 /* 8013D464 001331E4  83 E1 00 1C */	lwz r31, 0x1c(r1)
 /* 8013D468 001331E8  83 C1 00 18 */	lwz r30, 0x18(r1)

@@ -2655,5 +2655,5 @@ __sinit_$3ad_keep_manager_cpp:
 /* 8015B08C 00150E0C  90 E3 00 0C */	stw r7, 0xc(r3)
 /* 8015B090 00150E10  90 E3 00 10 */	stw r7, 0x10(r3)
 /* 8015B094 00150E14  90 03 00 24 */	stw r0, 0x24(r3)
-/* 8015B098 00150E18  48 29 56 8C */	b __register_global_object
+/* 8015B098 00150E18  48 29 56 8C */	b __register_global_object_tmp
 

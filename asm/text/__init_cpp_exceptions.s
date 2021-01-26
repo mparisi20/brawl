@@ -2,8 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
-.global __init_cpp_exceptions
-__init_cpp_exceptions:
+.global __init_cpp_exceptions_tmp
+__init_cpp_exceptions_tmp:
 /* 803F1A08 003E7788  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 803F1A0C 003E778C  7C 08 02 A6 */	mflr r0
 /* 803F1A10 003E7790  90 01 00 14 */	stw r0, 0x14(r1)
@@ -21,8 +21,8 @@ lbl_803F1A34:
 /* 803F1A3C 003E77BC  38 21 00 10 */	addi r1, r1, 0x10
 /* 803F1A40 003E77C0  4E 80 00 20 */	blr 
 
-.global __fini_cpp_exceptions
-__fini_cpp_exceptions:
+.global __fini_cpp_exceptions_tmp
+__fini_cpp_exceptions_tmp:
 /* 803F1A44 003E77C4  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 803F1A48 003E77C8  7C 08 02 A6 */	mflr r0
 /* 803F1A4C 003E77CC  90 01 00 14 */	stw r0, 0x14(r1)

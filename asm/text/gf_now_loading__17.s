@@ -1,0 +1,56 @@
+.include "macros.inc"
+
+.section .text, "ax"  # 0x8000C860 - 0x804064E0
+
+.global gfNowLoading$7renderPeriod
+gfNowLoading$7renderPeriod:
+/* 80041F70 00037CF0  94 21 FC 30 */	stwu r1, -0x3d0(r1)
+/* 80041F74 00037CF4  7C 08 02 A6 */	mflr r0
+/* 80041F78 00037CF8  90 01 03 D4 */	stw r0, 0x3d4(r1)
+/* 80041F7C 00037CFC  93 E1 03 CC */	stw r31, 0x3cc(r1)
+/* 80041F80 00037D00  7C 7F 1B 78 */	mr r31, r3
+/* 80041F84 00037D04  4B FD 80 21 */	bl gfCameraManager$7getManager
+/* 80041F88 00037D08  4B FD 6E 5D */	bl gfCamera$7setGX
+/* 80041F8C 00037D0C  4B FD 86 35 */	bl gfDrawSetVtxPosColorPrimEnviroment
+/* 80041F90 00037D10  C0 02 84 88 */	lfs f0, lbl_805A17A8-_SDA2_BASE_(r2)
+/* 80041F94 00037D14  C0 5F 00 0C */	lfs f2, 0xc(r31)
+/* 80041F98 00037D18  C0 3F 00 00 */	lfs f1, 0(r31)
+/* 80041F9C 00037D1C  C0 7F 00 04 */	lfs f3, 4(r31)
+/* 80041FA0 00037D20  C0 9F 00 08 */	lfs f4, 8(r31)
+/* 80041FA4 00037D24  D0 21 00 38 */	stfs f1, 0x38(r1)
+/* 80041FA8 00037D28  D0 41 00 3C */	stfs f2, 0x3c(r1)
+/* 80041FAC 00037D2C  D0 01 00 40 */	stfs f0, 0x40(r1)
+/* 80041FB0 00037D30  D0 21 03 8C */	stfs f1, 0x38c(r1)
+/* 80041FB4 00037D34  D0 41 00 48 */	stfs f2, 0x48(r1)
+/* 80041FB8 00037D38  D0 01 00 88 */	stfs f0, 0x88(r1)
+/* 80041FBC 00037D3C  D0 21 00 2C */	stfs f1, 0x2c(r1)
+/* 80041FC0 00037D40  D0 61 00 30 */	stfs f3, 0x30(r1)
+/* 80041FC4 00037D44  D0 01 00 34 */	stfs f0, 0x34(r1)
+/* 80041FC8 00037D48  D0 21 00 C8 */	stfs f1, 0xc8(r1)
+/* 80041FCC 00037D4C  D0 61 01 08 */	stfs f3, 0x108(r1)
+/* 80041FD0 00037D50  D0 01 01 48 */	stfs f0, 0x148(r1)
+/* 80041FD4 00037D54  D0 81 00 20 */	stfs f4, 0x20(r1)
+/* 80041FD8 00037D58  D0 61 00 24 */	stfs f3, 0x24(r1)
+/* 80041FDC 00037D5C  D0 01 00 28 */	stfs f0, 0x28(r1)
+/* 80041FE0 00037D60  D0 81 01 88 */	stfs f4, 0x188(r1)
+/* 80041FE4 00037D64  D0 61 01 C8 */	stfs f3, 0x1c8(r1)
+/* 80041FE8 00037D68  D0 01 02 08 */	stfs f0, 0x208(r1)
+/* 80041FEC 00037D6C  D0 81 00 14 */	stfs f4, 0x14(r1)
+/* 80041FF0 00037D70  D0 41 00 18 */	stfs f2, 0x18(r1)
+/* 80041FF4 00037D74  D0 01 00 1C */	stfs f0, 0x1c(r1)
+/* 80041FF8 00037D78  D0 81 02 48 */	stfs f4, 0x248(r1)
+/* 80041FFC 00037D7C  D0 41 02 88 */	stfs f2, 0x288(r1)
+/* 80042000 00037D80  D0 01 02 C8 */	stfs f0, 0x2c8(r1)
+/* 80042004 00037D84  D0 21 00 08 */	stfs f1, 8(r1)
+/* 80042008 00037D88  D0 41 00 0C */	stfs f2, 0xc(r1)
+/* 8004200C 00037D8C  D0 01 00 10 */	stfs f0, 0x10(r1)
+/* 80042010 00037D90  D0 21 03 08 */	stfs f1, 0x308(r1)
+/* 80042014 00037D94  D0 41 03 48 */	stfs f2, 0x348(r1)
+/* 80042018 00037D98  D0 01 03 88 */	stfs f0, 0x388(r1)
+/* 8004201C 00037D9C  4B FD 7F 89 */	bl gfCameraManager$7getManager
+/* 80042020 00037DA0  80 01 03 D4 */	lwz r0, 0x3d4(r1)
+/* 80042024 00037DA4  83 E1 03 CC */	lwz r31, 0x3cc(r1)
+/* 80042028 00037DA8  7C 08 03 A6 */	mtlr r0
+/* 8004202C 00037DAC  38 21 03 D0 */	addi r1, r1, 0x3d0
+/* 80042030 00037DB0  4E 80 00 20 */	blr 
+
