@@ -28,6 +28,8 @@ lbl_803EEEE8:
 /* 803EEF00 003E4C80  3B 80 00 00 */	li r28, 0
 /* 803EEF04 003E4C84  3B A0 00 00 */	li r29, 0
 /* 803EEF08 003E4C88  3B E0 00 0D */	li r31, 0xd
+
+.global lbl_803EEF0C
 lbl_803EEF0C:
 /* 803EEF0C 003E4C8C  7F 43 D3 78 */	mr r3, r26
 /* 803EEF10 003E4C90  4B FE 9A 79 */	bl pdm_part_is_attached_partition
@@ -39,6 +41,8 @@ lbl_803EEF0C:
 /* 803EEF28 003E4CA8  38 BE 00 A0 */	addi r5, r30, 0xa0
 /* 803EEF2C 003E4CAC  38 80 00 00 */	li r4, 0
 /* 803EEF30 003E4CB0  7F E9 03 A6 */	mtctr r31
+
+.global lbl_803EEF34
 lbl_803EEF34:
 /* 803EEF34 003E4CB4  80 05 1F BC */	lwz r0, 0x1fbc(r5)
 /* 803EEF38 003E4CB8  7C 00 D0 40 */	cmplw r0, r26

@@ -10,6 +10,8 @@ Doubutsugo$7SetCharSkipLv:
 /* 803EEF50 003E4CD0  98 7B 00 00 */	stb r3, 0(r27)
 /* 803EEF54 003E4CD4  3B 7B 00 01 */	addi r27, r27, 1
 /* 803EEF58 003E4CD8  41 82 00 3C */	beq lbl_803EEF94
+
+.global lbl_803EEF5C
 lbl_803EEF5C:
 /* 803EEF5C 003E4CDC  80 05 3F 84 */	lwz r0, 0x3f84(r5)
 /* 803EEF60 003E4CE0  38 84 00 01 */	addi r4, r4, 1
@@ -26,6 +28,8 @@ lbl_803EEF88:
 /* 803EEF88 003E4D08  38 84 00 01 */	addi r4, r4, 1
 /* 803EEF8C 003E4D0C  38 A5 3F 90 */	addi r5, r5, 0x3f90
 /* 803EEF90 003E4D10  42 00 FF A4 */	bdnz lbl_803EEF34
+
+.global lbl_803EEF94
 lbl_803EEF94:
 /* 803EEF94 003E4D14  57 80 06 3E */	clrlwi r0, r28, 0x18
 /* 803EEF98 003E4D18  7C 00 C8 40 */	cmplw r0, r25
@@ -36,6 +40,8 @@ lbl_803EEF94:
 /* 803EEFAC 003E4D2C  41 80 FF 60 */	blt lbl_803EEF0C
 lbl_803EEFB0:
 /* 803EEFB0 003E4D30  7F 83 E3 78 */	mr r3, r28
+
+.global lbl_803EEFB4
 lbl_803EEFB4:
 /* 803EEFB4 003E4D34  39 61 00 30 */	addi r11, r1, 0x30
 /* 803EEFB8 003E4D38  48 00 23 A9 */	bl _restgpr_24

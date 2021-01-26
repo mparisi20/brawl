@@ -85,6 +85,8 @@ lbl_803FFF8C:
 /* 803FFFF8 003F5D78  FF C3 07 B2 */	fmul f30, f3, f30
 /* 803FFFFC 003F5D7C  D8 01 00 18 */	stfd f0, 0x18(r1)
 /* 80400000 003F5D80  FD 29 50 2A */	fadd f9, f9, f10
+
+.global lbl_80400004
 lbl_80400004:
 /* 80400004 003F5D84  FD 5F F0 2A */	fadd f10, f31, f30
 /* 80400008 003F5D88  FD 23 02 72 */	fmul f9, f3, f9

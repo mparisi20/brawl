@@ -14,11 +14,15 @@ muMenu$7exchangeStockchkind2SelCharNarrationSndID:
 /* 800AE4BC 000A423C  90 E6 17 84 */	stw r7, 0x1784(r6)
 /* 800AE4C0 000A4240  38 C6 00 04 */	addi r6, r6, 4
 /* 800AE4C4 000A4244  48 00 00 08 */	b lbl_800AE4CC
+
+.global lbl_800AE4C8
 lbl_800AE4C8:
 /* 800AE4C8 000A4248  3B FF FF FF */	addi r31, r31, -1
 lbl_800AE4CC:
 /* 800AE4CC 000A424C  38 A5 00 04 */	addi r5, r5, 4
 /* 800AE4D0 000A4250  42 00 FF B0 */	bdnz lbl_800AE480
+
+.global lbl_800AE4D4
 lbl_800AE4D4:
 /* 800AE4D4 000A4254  93 FE 00 0C */	stw r31, 0xc(r30)
 /* 800AE4D8 000A4258  7F E3 FB 78 */	mr r3, r31

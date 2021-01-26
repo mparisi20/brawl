@@ -14,6 +14,8 @@ lbl_800ACF40:
 /* 800ACF40 000A2CC0  7C 03 F0 16 */	mulhwu r0, r3, r30
 /* 800ACF44 000A2CC4  54 03 E8 FE */	srwi r3, r0, 3
 /* 800ACF48 000A2CC8  38 63 00 01 */	addi r3, r3, 1
+
+.global lbl_800ACF4C
 lbl_800ACF4C:
 /* 800ACF4C 000A2CCC  39 61 00 20 */	addi r11, r1, 0x20
 /* 800ACF50 000A2CD0  48 34 44 1D */	bl _restgpr_27

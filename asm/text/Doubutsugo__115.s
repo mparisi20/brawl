@@ -6,6 +6,8 @@
 Doubutsugo$7ControlCodeDecode:
 /* 803F67E4 003EC564  2C 06 01 00 */	cmpwi r6, 0x100
 /* 803F67E8 003EC568  41 80 00 08 */	blt lbl_803F67F0
+
+.global lbl_803F67EC
 lbl_803F67EC:
 /* 803F67EC 003EC56C  38 00 00 01 */	li r0, 1
 lbl_803F67F0:
@@ -21,6 +23,8 @@ lbl_803F6800:
 lbl_803F6810:
 /* 803F6810 003EC590  2C 00 00 00 */	cmpwi r0, 0
 /* 803F6814 003EC594  40 82 FF A8 */	bne lbl_803F67BC
+
+.global lbl_803F6818
 lbl_803F6818:
 /* 803F6818 003EC598  2C 06 00 6B */	cmpwi r6, 0x6b
 /* 803F681C 003EC59C  38 80 00 01 */	li r4, 1
@@ -256,6 +260,8 @@ lbl_803F6B34:
 /* 803F6B4C 003EC8CC  90 BE 00 04 */	stw r5, 4(r30)
 /* 803F6B50 003EC8D0  90 9E 00 08 */	stw r4, 8(r30)
 /* 803F6B54 003EC8D4  90 1E 00 0C */	stw r0, 0xc(r30)
+
+.global lbl_803F6B58
 lbl_803F6B58:
 /* 803F6B58 003EC8D8  80 01 00 34 */	lwz r0, 0x34(r1)
 /* 803F6B5C 003EC8DC  83 E1 00 2C */	lwz r31, 0x2c(r1)

@@ -6,9 +6,13 @@
 gfFileIO$7setLanguage:
 /* 80014164 00009EE4  7F 63 DB 78 */	mr r3, r27
 /* 80014168 00009EE8  48 01 08 E5 */	bl gfHeapManager$7free
+
+.global lbl_8001416C
 lbl_8001416C:
 /* 8001416C 00009EEC  7F 43 D3 78 */	mr r3, r26
 /* 80014170 00009EF0  48 01 08 DD */	bl gfHeapManager$7free
+
+.global lbl_80014174
 lbl_80014174:
 /* 80014174 00009EF4  7F E3 FB 78 */	mr r3, r31
 /* 80014178 00009EF8  48 01 08 D5 */	bl gfHeapManager$7free

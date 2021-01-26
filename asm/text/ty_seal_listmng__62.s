@@ -779,6 +779,8 @@ tySealListDataManager$7getPutCharaNo:
 /* 800AEF54 000A4CD4  38 C0 00 00 */	li r6, 0
 /* 800AEF58 000A4CD8  38 E0 00 00 */	li r7, 0
 /* 800AEF5C 000A4CDC  39 20 00 01 */	li r9, 1
+
+.global lbl_800AEF60
 lbl_800AEF60:
 /* 800AEF60 000A4CE0  2C 07 00 04 */	cmpwi r7, 4
 /* 800AEF64 000A4CE4  7C E8 3B 78 */	mr r8, r7
@@ -803,6 +805,8 @@ lbl_800AEF9C:
 /* 800AEFA8 000A4D28  7C 09 03 A6 */	mtctr r0
 /* 800AEFAC 000A4D2C  28 00 00 00 */	cmplwi r0, 0
 /* 800AEFB0 000A4D30  40 81 00 2C */	ble lbl_800AEFDC
+
+.global lbl_800AEFB4
 lbl_800AEFB4:
 /* 800AEFB4 000A4D34  81 83 00 00 */	lwz r12, 0(r3)
 /* 800AEFB8 000A4D38  7C 0C 58 2E */	lwzx r0, r12, r11

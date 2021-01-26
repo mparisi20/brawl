@@ -7,15 +7,23 @@ muMenu$7getNumStockCharColor:
 /* 800AEFC4 000A4D44  1C 08 00 64 */	mulli r0, r8, 0x64
 /* 800AEFC8 000A4D48  7D 0C 02 14 */	add r8, r12, r0
 /* 800AEFCC 000A4D4C  48 00 00 14 */	b lbl_800AEFE0
+
+.global lbl_800AEFD0
 lbl_800AEFD0:
 /* 800AEFD0 000A4D50  39 6B 00 64 */	addi r11, r11, 0x64
 /* 800AEFD4 000A4D54  39 08 00 01 */	addi r8, r8, 1
 /* 800AEFD8 000A4D58  42 00 FF DC */	bdnz lbl_800AEFB4
+
+.global lbl_800AEFDC
 lbl_800AEFDC:
 /* 800AEFDC 000A4D5C  39 00 00 00 */	li r8, 0
+
+.global lbl_800AEFE0
 lbl_800AEFE0:
 /* 800AEFE0 000A4D60  80 08 00 1C */	lwz r0, 0x1c(r8)
 /* 800AEFE4 000A4D64  48 00 00 74 */	b lbl_800AF058
+
+.global lbl_800AEFE8
 lbl_800AEFE8:
 /* 800AEFE8 000A4D68  88 03 3E A8 */	lbz r0, 0x3ea8(r3)
 /* 800AEFEC 000A4D6C  39 08 FF E0 */	addi r8, r8, -32

@@ -23,6 +23,8 @@ lbl_803E7B30:
 /* 803E7B34 003DD8B4  38 63 00 01 */	addi r3, r3, 1
 /* 803E7B38 003DD8B8  38 A5 00 01 */	addi r5, r5, 1
 /* 803E7B3C 003DD8BC  42 00 FF C0 */	bdnz Doubutsugo$7IsPause
+
+.global lbl_803E7B40
 lbl_803E7B40:
 /* 803E7B40 003DD8C0  38 00 00 00 */	li r0, 0
 /* 803E7B44 003DD8C4  7C 04 51 AE */	stbx r0, r4, r10

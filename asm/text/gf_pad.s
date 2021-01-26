@@ -8,6 +8,8 @@ gfPadSystem$7wpadSimpleSyncCallback:
 /* 80026C50 0001C9D0  40 81 00 0C */	ble lbl_80026C5C
 /* 80026C54 0001C9D4  7F C3 F3 78 */	mr r3, r30
 /* 80026C58 0001C9D8  4B FE 5C 71 */	bl __dl
+
+.global lbl_80026C5C
 lbl_80026C5C:
 /* 80026C5C 0001C9DC  7F C3 F3 78 */	mr r3, r30
 /* 80026C60 0001C9E0  83 E1 00 0C */	lwz r31, 0xc(r1)

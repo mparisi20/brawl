@@ -31,6 +31,8 @@ sndSystem$7isFinishLoad:
 /* 8007953C 0006F2BC  38 E7 04 B0 */	addi r7, r7, 0x4b0
 /* 80079540 0006F2C0  39 08 00 01 */	addi r8, r8, 1
 /* 80079544 0006F2C4  42 00 FF 50 */	bdnz lbl_80079494
+
+.global lbl_80079548
 lbl_80079548:
 /* 80079548 0006F2C8  7D 03 43 78 */	mr r3, r8
 /* 8007954C 0006F2CC  4E 80 00 20 */	blr 

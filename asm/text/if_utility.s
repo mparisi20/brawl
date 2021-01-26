@@ -10,6 +10,8 @@ utility12StandardTaskFv$7preLoad:
 .global utility12StandardTaskCFv$7checkLoadFinish
 utility12StandardTaskCFv$7checkLoadFinish:
 /* 800F77BC 000ED53C  38 C0 00 00 */	li r6, 0
+
+.global lbl_800F77C0
 lbl_800F77C0:
 /* 800F77C0 000ED540  34 06 00 02 */	addic. r0, r6, 2
 /* 800F77C4 000ED544  40 82 00 38 */	bne lbl_800F77FC
