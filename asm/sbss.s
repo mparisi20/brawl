@@ -2939,4 +2939,4 @@ lbl_805A1308:
 	.skip 0x8
 .global lbl_805A1310
 lbl_805A1310:
-	.skip 0x3E10
+	.skip 0x10

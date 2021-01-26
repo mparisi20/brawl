@@ -1526,4 +1526,4 @@ lbl_8059BEE8:
 	.skip 0x500
 .global lbl_8059C3E8
 lbl_8059C3E8:
-	.skip 0x3B98
+	.skip 0x38

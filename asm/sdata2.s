@@ -1,4 +1,4 @@
-.section .sdata2, "wa"  # 0x805A1320 - 0x805A5120
+.section .sdata2, "a"  # 0x805A1320 - 0x805A5120
 
 .global lbl_805A1320
 lbl_805A1320:

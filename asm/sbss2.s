@@ -1,4 +1,4 @@
-.section .sbss2, "wa"  # 0x805A5120 - 0x805A5153
+.section .sbss2, "a"  # 0x805A5120 - 0x805A5153
 
 .global lbl_805A5120
 lbl_805A5120:

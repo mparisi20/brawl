@@ -1,4 +1,4 @@
-.section .rodata, "wa"  # 0x80406800 - 0x80420680
+.section .rodata, "a"  # 0x80406800 - 0x80420680
 
 .global lbl_80406800
 lbl_80406800:
