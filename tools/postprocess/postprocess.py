@@ -13,7 +13,7 @@ BANNER = """
 # 2) Certain C++ symbols cannot be assembled normally.
 #    To support the buildsystem, a simple substitution system has been devised
 #
-#    ?<ID> -> CHAR
+#    $<ID> -> CHAR
 #
 #    IDs (all irregular symbols in mangled names):
 #       0: <
@@ -23,6 +23,7 @@ BANNER = """
 #       4: ,
 #       5: -
 #       6: *
+#       7: .
 #
 #    This option is enabled with -fsymbol-fixup, and disabled by default with -fno-symbol-fixup
 #
@@ -121,7 +122,8 @@ SHT_STRTAB = 3
 
 def impl_postprocess_elf(f, do_ctor_realign, do_old_stack, do_symbol_fixup):
     result = []
-
+    strtab_sh_offset = -1
+    
     f.seek(0x20)
     ofsSecHeader = read_u32(f)
     f.seek(0x30)
@@ -243,7 +245,6 @@ def impl_postprocess_elf(f, do_ctor_realign, do_old_stack, do_symbol_fixup):
                     
                     f.seek(blr_pos - 4)
                     write_u32(f, mtlr)
-
     return (result, patch_align_ofs, strtab_sh_offset)
 
 class SymName:
