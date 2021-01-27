@@ -31,4 +31,5 @@ FORCEFILES
 {
     extab.o
     extabindex.o
+    ac_anim_cmd_impl.o
 }

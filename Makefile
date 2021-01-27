@@ -28,7 +28,7 @@ TARGET := brawl
 
 BUILD_DIR := build/$(TARGET)
 
-SRC_DIRS := src
+SRC_DIRS := src src/text
 ASM_DIRS := asm asm/text
 
 # Inputs

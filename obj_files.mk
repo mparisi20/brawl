@@ -326,8 +326,9 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gr_collision_raycheck.o \
     $(BUILD_DIR)/asm/text/gr_collconv.o \
     $(BUILD_DIR)/asm/text/gr_path.o \
-    $(BUILD_DIR)/asm/text/ac_cmd_interpreter.o \
-    $(BUILD_DIR)/asm/text/ac_anim_cmd_impl.o \
+    $(BUILD_DIR)/asm/text/ac_cmd_interpreter_asm.o \
+    $(BUILD_DIR)/src/text/ac_anim_cmd_impl.o \
+    $(BUILD_DIR)/asm/text/ac_anim_cmd_impl_asm.o \
     $(BUILD_DIR)/asm/text/ac_null.o \
     $(BUILD_DIR)/asm/text/ft_system.o \
     $(BUILD_DIR)/asm/text/nt_report.o \
