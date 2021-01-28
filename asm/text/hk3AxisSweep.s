@@ -2145,8 +2145,8 @@ lbl_8030A698:
 /* 8030A6B4 00300434  38 21 00 20 */	addi r1, r1, 0x20
 /* 8030A6B8 00300438  4E 80 00 20 */	blr 
 
-.global hkBroadPhase$7__dl
-hkBroadPhase$7__dl:
+.global hkBroadPhase$7__dl__FPv
+hkBroadPhase$7__dl__FPv:
 /* 8030A6BC 0030043C  7C 64 1B 78 */	mr r4, r3
 /* 8030A6C0 00300440  80 6D CA 98 */	lwz r3, lbl_805A0EB8-_SDA_BASE_(r13)
 /* 8030A6C4 00300444  A0 A4 00 04 */	lhz r5, 4(r4)

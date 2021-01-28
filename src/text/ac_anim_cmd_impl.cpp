@@ -1,26 +1,142 @@
 #include "global.h"
 
-
-// TODO move
-template<typename T>
-struct soArrayContractibleTable
+struct soNullableInterface
 {
-	soArrayContractibleTable* link; // 0x4
-	T* arr; // 0x8
-	s32 size; // 0xC
-    
-    soArrayContractibleTable() : link(0), arr(0), size(0) { }
-    soArrayContractibleTable(soArrayContractibleTable* lnk, T* a, s32 sz)
-        : link(lnk), arr(a), size(sz)
+    virtual BOOL isNull() const = 0;
+};
+
+template<typename T>
+struct soArrayFixed : public soNullableInterface
+{
+    // TODO: placeholder
+    virtual BOOL isNull() const
     {
-        if (!arr)
-            size = 0;
+        return FALSE;
     }
     
-    virtual BOOL isEmpty();
+    // TODO: placeholder
+    virtual T* at(s32)
+    {
+        return 0;
+    }
     
-    // TODO add member functions
+    // TODO: placeholder
+    virtual T* at(s32, s32)
+    {
+        return 0;
+    }
     
+    // TODO: placeholder
+    virtual s32 size() const
+    {
+        return 0;
+    }
+    
+    virtual BOOL isEmpty() const
+    {
+        return size() == 0;
+    }
+    
+    virtual ~soArrayFixed() { }
+};
+
+template<typename T>
+struct soArrayContractible : public soArrayFixed<T>
+{
+    // TODO: defined in the RELs
+    virtual ~soArrayContractible() { }
+};
+
+template<typename T>
+struct soConnectable
+{
+    
+    // TODO: placeholder
+    void connect();
+    
+};
+
+// TODO move to header
+template<typename T>
+struct soArrayContractibleTable : public soArrayContractible<T>, public soConnectable<soArrayContractibleTable<T> >
+{
+	soArrayContractibleTable* link_; // 0x4
+	T* arr_; // 0x8
+	s32 count_; // 0xC
+    
+    soArrayContractibleTable() : link_(0), arr_(0), count_(0) { }
+    soArrayContractibleTable(soArrayContractibleTable* lnk, T* a, s32 sz)
+        : link_(lnk), arr_(a), count_(sz)
+    {
+        if (!arr_)
+            count_ = 0;
+    }
+    
+    virtual BOOL isNull() const
+    {
+        return FALSE;
+    }
+    
+    virtual T* at(s32 i)
+    {
+        return atSub(i);
+    }
+    
+    // overload
+    virtual T* at(s32 i, s32)
+    {
+        return atSub(i);
+    }
+    
+    virtual s32 size() const
+    {
+        s32 subcount = count_;
+        if (!arr_)
+            subcount = 0;
+        if (link_)
+            return subcount + link_->size();
+        return subcount;
+    }
+    
+    virtual ~soArrayContractibleTable() { }
+    
+    virtual void shift()
+    {
+        if (!isEmpty()) {
+            if (count_ > 0) {
+                count_--;
+                if (count_ <= 0)
+                    arr_ = 0;
+                else
+                    arr_++;
+            } else if (link_) {
+                link_->shift();
+            }
+        }
+    }
+    
+    virtual void pop()
+    {
+        if (link_ && !link_->isEmpty())
+            link_->pop();
+        else if (count_ > 0)
+            count_--;
+    }
+    
+    virtual void clear()
+    {
+        if (link_)
+            link_->clear();
+        arr_ = 0;
+        count_ = 0;
+    }
+    
+    virtual T* atSub(s32 i)
+    {
+        if (i >= count_ && link_)
+            return link_->at(i - count_);
+        return arr_ + i;
+    }
 };
 
 
@@ -57,9 +173,20 @@ struct acAnimCmdConv
 	const acCmdArgConv* args; // 0x4
 };
 
-struct acAnimCmdImpl
+struct soNullable
 {
-    u8 unk0[0x8];
+    // TODO: defined in ac_cmd_interpreter.o
+    virtual BOOL isNull() const { return FALSE; }
+};
+
+struct acAnimCmd : public soNullable
+{
+    
+};
+
+struct acAnimCmdImpl : public acAnimCmd
+{
+    u8 unk0[0x4];
     acAnimCmdConv* cmdAddr;
     
     virtual s8 getGroup() const;
@@ -110,6 +237,7 @@ BOOL acAnimCmdImpl::getArg(acCmdArg* arg, s32 index) const
 	return TRUE;
 }
 
+// TODO: fix vtable
 u32 acAnimCmdImpl::isArgEmpty() const
 {
     return getArgNum() == 0;
@@ -130,21 +258,6 @@ BOOL acAnimCmdImpl::isValid() const
         return FALSE;
     return TRUE;
 }
-
-
-
-
-template<typename T>
-BOOL soArrayContractibleTable<T>::isEmpty()
-{
-    return TRUE;
-}
-
-
-
-
-
-
 
 
 

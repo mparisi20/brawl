@@ -35,7 +35,7 @@ efScreen$7destroy:
 /* 8005D5B4 00053334  4D 82 00 20 */	beqlr 
 /* 8005D5B8 00053338  38 00 00 00 */	li r0, 0
 /* 8005D5BC 0005333C  90 0D BD 20 */	stw r0, lbl_805A0140-_SDA_BASE_(r13)
-/* 8005D5C0 00053340  4B FA F3 08 */	b __dl
+/* 8005D5C0 00053340  4B FA F3 08 */	b __dl__FPv
 /* 8005D5C4 00053344  4E 80 00 20 */	blr 
 
 .global efScreen$7reset

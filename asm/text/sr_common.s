@@ -20,8 +20,8 @@ srHeapType$7__nw:
 /* 8000C8C0 00002640  7C 04 03 78 */	mr r4, r0
 /* 8000C8C4 00002644  48 01 81 20 */	b gfHeapManager$7alloc
 
-.global __dl
-__dl:
+.global __dl__FPv
+__dl__FPv:
 /* 8000C8C8 00002648  48 01 81 84 */	b gfHeapManager$7free
 
 .global srHeapType$7__nwa
@@ -31,7 +31,7 @@ srHeapType$7__nwa:
 /* 8000C8D4 00002654  7C 04 03 78 */	mr r4, r0
 /* 8000C8D8 00002658  48 01 81 0C */	b gfHeapManager$7alloc
 
-.global __dla
-__dla:
+.global __dl__FPva__FPv
+__dl__FPva__FPv:
 /* 8000C8DC 0000265C  48 01 81 70 */	b gfHeapManager$7free
 

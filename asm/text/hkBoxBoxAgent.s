@@ -91,8 +91,8 @@ lbl_802A0D88:
 /* 802A0D9C 00296B1C  38 21 00 20 */	addi r1, r1, 0x20
 /* 802A0DA0 00296B20  4E 80 00 20 */	blr 
 
-.global hkIterativeLinearCastAgent$7__dl
-hkIterativeLinearCastAgent$7__dl:
+.global hkIterativeLinearCastAgent$7__dl__FPv
+hkIterativeLinearCastAgent$7__dl__FPv:
 /* 802A0DA4 00296B24  7C 64 1B 78 */	mr r4, r3
 /* 802A0DA8 00296B28  80 6D CA 98 */	lwz r3, lbl_805A0EB8-_SDA_BASE_(r13)
 /* 802A0DAC 00296B2C  A0 A4 00 04 */	lhz r5, 4(r4)

@@ -91,7 +91,7 @@ nw4r3snd6detail20MmlSeqTrackAllocatorFv$7__dt:
 /* 801C21D0 001B7F50  41 82 00 10 */	beq lbl_801C21E0
 /* 801C21D4 001B7F54  2C 04 00 00 */	cmpwi r4, 0
 /* 801C21D8 001B7F58  40 81 00 08 */	ble lbl_801C21E0
-/* 801C21DC 001B7F5C  4B E4 A6 ED */	bl __dl
+/* 801C21DC 001B7F5C  4B E4 A6 ED */	bl __dl__FPv
 lbl_801C21E0:
 /* 801C21E0 001B7F60  7F E3 FB 78 */	mr r3, r31
 /* 801C21E4 001B7F64  83 E1 00 0C */	lwz r31, 0xc(r1)
