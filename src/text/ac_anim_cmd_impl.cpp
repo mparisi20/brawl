@@ -37,14 +37,14 @@ struct soArrayFixed : public soNullableInterface
         return size() == 0;
     }
     
-    virtual ~soArrayFixed() { }
+    //virtual ~soArrayFixed() { }
 };
 
 template<typename T>
 struct soArrayContractible : public soArrayFixed<T>
 {
     // TODO: defined in the RELs
-    virtual ~soArrayContractible() { }
+    //virtual ~soArrayContractible() { }
 };
 
 template<typename T>
@@ -160,7 +160,7 @@ struct acCmdArg {
 };
 
 // TODO: Null instance?
-acCmdArg gUnk805a0370;
+extern acCmdArg lbl_805A0370;
 
 // TODO: soAnimCmdAddressPack... see
 // soAnimCmdControlUnit::getAddressPack
@@ -195,9 +195,14 @@ struct acAnimCmdImpl : public acAnimCmd
     virtual s32 getOption() const;
     virtual soArrayContractibleTable<const acCmdArgConv> getArgList();
     virtual BOOL getArg(acCmdArg* arg, s32 index) const;
-    // getCmdAddress
+    // probably an inline function
+    virtual acAnimCmdConv* getCmdAddress()
+    {
+        return cmdAddr;
+    }
     virtual u32 isArgEmpty() const;
     virtual BOOL isValid() const;
+    virtual ~acAnimCmdImpl() { }
 };
 
 s8 acAnimCmdImpl::getGroup() const
@@ -224,11 +229,11 @@ s32 acAnimCmdImpl::getOption() const
 BOOL acAnimCmdImpl::getArg(acCmdArg* arg, s32 index) const
 {
 	if (isArgEmpty() == 1 || !cmdAddr->args) {
-        *arg = gUnk805a0370;
+        *arg = lbl_805A0370;
 		return FALSE;
 	}
 	if (index < 0 || index >= getArgNum()) {
-        *arg = gUnk805a0370;
+        *arg = lbl_805A0370;
 		return FALSE;
 	}
     const acCmdArgConv* ptr = cmdAddr->args + index;

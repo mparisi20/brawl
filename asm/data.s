@@ -1383,12 +1383,9 @@ lbl_8045DD78:
 .global lbl_8045DDC4
 lbl_8045DDC4:
 	.incbin "baserom.dol", 0x459EC4, 0x2C
-.global lbl_8045DDF0
-lbl_8045DDF0:
-	.incbin "baserom.dol", 0x459EF0, 0x58
-.global lbl_8045DE48
-lbl_8045DE48:
-	.incbin "baserom.dol", 0x459F48, 0x130
+
+
+
 .global lbl_8045DF78
 lbl_8045DF78:
 	.incbin "baserom.dol", 0x45A078, 0x58

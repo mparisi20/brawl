@@ -13,10 +13,10 @@ acCmdInterpreter$7__ct:
 /* 80139670 0012F3F0  90 03 00 30 */	stw r0, 0x30(r3)
 /* 80139674 0012F3F4  3D 20 80 46 */	lis r9, lbl_8045DD78@ha
 /* 80139678 0012F3F8  88 07 00 00 */	lbz r0, 0(r7)
-/* 8013967C 0012F3FC  3C A0 80 46 */	lis r5, lbl_8045DDF0@ha
+/* 8013967C 0012F3FC  3C A0 80 46 */	lis r5, __vt__13acAnimCmdImpl@ha
 /* 80139680 0012F400  39 29 DD 78 */	addi r9, r9, lbl_8045DD78@l
 /* 80139684 0012F404  D0 23 00 04 */	stfs f1, 4(r3)
-/* 80139688 0012F408  38 A5 DD F0 */	addi r5, r5, lbl_8045DDF0@l
+/* 80139688 0012F408  38 A5 DD F0 */	addi r5, r5, __vt__13acAnimCmdImpl@l
 /* 8013968C 0012F40C  91 23 00 00 */	stw r9, 0(r3)
 /* 80139690 0012F410  D0 43 00 08 */	stfs f2, 8(r3)
 /* 80139694 0012F414  90 C3 00 0C */	stw r6, 0xc(r3)

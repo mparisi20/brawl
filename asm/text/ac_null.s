@@ -54,9 +54,9 @@ acAnimCmdNull$7getArg:
 
 .global acAnimCmdNull$7getArgList
 acAnimCmdNull$7getArgList:
-/* 8013CF80 00132D00  3C 80 80 46 */	lis r4, lbl_8045DE48@ha
+/* 8013CF80 00132D00  3C 80 80 46 */	lis r4, __vt__41soArrayContractibleTable$0C12acCmdArgConv$1@ha
 /* 8013CF84 00132D04  38 00 00 00 */	li r0, 0
-/* 8013CF88 00132D08  38 84 DE 48 */	addi r4, r4, lbl_8045DE48@l
+/* 8013CF88 00132D08  38 84 DE 48 */	addi r4, r4, __vt__41soArrayContractibleTable$0C12acCmdArgConv$1@l
 /* 8013CF8C 00132D0C  90 03 00 04 */	stw r0, 4(r3)
 /* 8013CF90 00132D10  90 83 00 00 */	stw r4, 0(r3)
 /* 8013CF94 00132D14  90 03 00 08 */	stw r0, 8(r3)

@@ -1025,7 +1025,14 @@ lbl_8059E6B8:
 	.incbin "baserom.dol", 0x492BD8, 0x8
 .global lbl_8059E6C0
 lbl_8059E6C0:
-	.incbin "baserom.dol", 0x492BE0, 0x60
+	.incbin "baserom.dol", 0x492BE0, 0x30
+
+
+
+
+.global lbl_8059E718
+lbl_8059E718:
+	.incbin "baserom.dol", 0x492C38, 0x8
 .global lbl_8059E720
 lbl_8059E720:
 	.incbin "baserom.dol", 0x492C40, 0x8
