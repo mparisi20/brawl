@@ -7260,7 +7260,7 @@ lbl_800CD7A8:
 /* 800CD7C0 000C3540  88 1E 00 E8 */	lbz r0, 0xe8(r30)
 /* 800CD7C4 000C3544  60 00 00 08 */	ori r0, r0, 8
 /* 800CD7C8 000C3548  98 1E 00 E8 */	stb r0, 0xe8(r30)
-/* 800CD7CC 000C354C  4B F3 F1 15 */	bl srSystemGetRevisionNumber
+/* 800CD7CC 000C354C  4B F3 F1 15 */	bl srSystemGetRevisionNumber__Fv
 /* 800CD7D0 000C3550  B0 7E 00 74 */	sth r3, 0x74(r30)
 /* 800CD7D4 000C3554  3B 00 00 00 */	li r24, 0
 /* 800CD7D8 000C3558  3A E0 00 00 */	li r23, 0
@@ -9332,7 +9332,7 @@ lbl_800CF3D0:
 /* 800CF580 000C5300  88 1D 00 E8 */	lbz r0, 0xe8(r29)
 /* 800CF584 000C5304  60 00 00 08 */	ori r0, r0, 8
 /* 800CF588 000C5308  98 1D 00 E8 */	stb r0, 0xe8(r29)
-/* 800CF58C 000C530C  4B F3 D3 55 */	bl srSystemGetRevisionNumber
+/* 800CF58C 000C530C  4B F3 D3 55 */	bl srSystemGetRevisionNumber__Fv
 /* 800CF590 000C5310  B0 7D 00 74 */	sth r3, 0x74(r29)
 /* 800CF594 000C5314  3B 00 00 00 */	li r24, 0
 /* 800CF598 000C5318  3A E0 00 00 */	li r23, 0

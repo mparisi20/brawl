@@ -1974,7 +1974,7 @@ lbl_8003A404:
 /* 8003A424 000301A4  38 61 00 30 */	addi r3, r1, 0x30
 /* 8003A428 000301A8  38 84 69 20 */	addi r4, r4, lbl_80406920@l
 /* 8003A42C 000301AC  48 3B FF 59 */	bl strcat
-/* 8003A430 000301B0  4B FD 24 31 */	bl srGetAppGamename
+/* 8003A430 000301B0  4B FD 24 31 */	bl srGetAppGamename__Fv
 /* 8003A434 000301B4  7C 64 1B 78 */	mr r4, r3
 /* 8003A438 000301B8  38 61 00 30 */	addi r3, r1, 0x30
 /* 8003A43C 000301BC  48 3B FF 49 */	bl strcat
@@ -2307,7 +2307,7 @@ lbl_8003A8B4:
 /* 8003A8D4 00030654  38 61 00 08 */	addi r3, r1, 8
 /* 8003A8D8 00030658  38 84 69 20 */	addi r4, r4, lbl_80406920@l
 /* 8003A8DC 0003065C  48 3B FA A9 */	bl strcat
-/* 8003A8E0 00030660  4B FD 1F 81 */	bl srGetAppGamename
+/* 8003A8E0 00030660  4B FD 1F 81 */	bl srGetAppGamename__Fv
 /* 8003A8E4 00030664  7C 64 1B 78 */	mr r4, r3
 /* 8003A8E8 00030668  38 61 00 08 */	addi r3, r1, 8
 /* 8003A8EC 0003066C  48 3B FA 99 */	bl strcat
@@ -2759,7 +2759,7 @@ lbl_8003AF14:
 /* 8003AF34 00030CB4  38 61 00 50 */	addi r3, r1, 0x50
 /* 8003AF38 00030CB8  38 84 69 20 */	addi r4, r4, lbl_80406920@l
 /* 8003AF3C 00030CBC  48 3B F4 49 */	bl strcat
-/* 8003AF40 00030CC0  4B FD 19 21 */	bl srGetAppGamename
+/* 8003AF40 00030CC0  4B FD 19 21 */	bl srGetAppGamename__Fv
 /* 8003AF44 00030CC4  7C 64 1B 78 */	mr r4, r3
 /* 8003AF48 00030CC8  38 61 00 50 */	addi r3, r1, 0x50
 /* 8003AF4C 00030CCC  48 3B F4 39 */	bl strcat
@@ -3482,7 +3482,7 @@ lbl_8003B944:
 /* 8003B954 000316D4  38 61 00 48 */	addi r3, r1, 0x48
 /* 8003B958 000316D8  38 84 69 20 */	addi r4, r4, lbl_80406920@l
 /* 8003B95C 000316DC  48 3B EA 29 */	bl strcat
-/* 8003B960 000316E0  4B FD 0F 01 */	bl srGetAppGamename
+/* 8003B960 000316E0  4B FD 0F 01 */	bl srGetAppGamename__Fv
 /* 8003B964 000316E4  7C 64 1B 78 */	mr r4, r3
 /* 8003B968 000316E8  38 61 00 48 */	addi r3, r1, 0x48
 /* 8003B96C 000316EC  48 3B EA 19 */	bl strcat
@@ -3803,7 +3803,7 @@ lbl_8003BDC0:
 /* 8003BDD0 00031B50  38 61 00 48 */	addi r3, r1, 0x48
 /* 8003BDD4 00031B54  38 84 69 20 */	addi r4, r4, lbl_80406920@l
 /* 8003BDD8 00031B58  48 3B E5 AD */	bl strcat
-/* 8003BDDC 00031B5C  4B FD 0A 85 */	bl srGetAppGamename
+/* 8003BDDC 00031B5C  4B FD 0A 85 */	bl srGetAppGamename__Fv
 /* 8003BDE0 00031B60  7C 64 1B 78 */	mr r4, r3
 /* 8003BDE4 00031B64  38 61 00 48 */	addi r3, r1, 0x48
 /* 8003BDE8 00031B68  48 3B E5 9D */	bl strcat
@@ -4740,7 +4740,7 @@ lbl_8003CAFC:
 /* 8003CB10 00032890  38 61 00 48 */	addi r3, r1, 0x48
 /* 8003CB14 00032894  38 84 69 20 */	addi r4, r4, lbl_80406920@l
 /* 8003CB18 00032898  48 3B D8 6D */	bl strcat
-/* 8003CB1C 0003289C  4B FC FD 45 */	bl srGetAppGamename
+/* 8003CB1C 0003289C  4B FC FD 45 */	bl srGetAppGamename__Fv
 /* 8003CB20 000328A0  7C 64 1B 78 */	mr r4, r3
 /* 8003CB24 000328A4  38 61 00 48 */	addi r3, r1, 0x48
 /* 8003CB28 000328A8  48 3B D8 5D */	bl strcat

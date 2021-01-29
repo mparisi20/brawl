@@ -649,7 +649,7 @@ lbl_8014EC00:
 /* 8014EC18 00144998  80 14 00 E8 */	lwz r0, 0xe8(r20)
 /* 8014EC1C 0014499C  3A A0 00 00 */	li r21, 0
 /* 8014EC20 001449A0  B0 01 00 3E */	sth r0, 0x3e(r1)
-/* 8014EC24 001449A4  4B EB DC 65 */	bl srGetAppInitialCodeLocaleNum
+/* 8014EC24 001449A4  4B EB DC 65 */	bl srGetAppInitialCodeLocaleNum__Fv
 /* 8014EC28 001449A8  7C 78 1B 78 */	mr r24, r3
 /* 8014EC2C 001449AC  3B 21 00 40 */	addi r25, r1, 0x40
 /* 8014EC30 001449B0  3A C1 00 38 */	addi r22, r1, 0x38
@@ -663,7 +663,7 @@ lbl_8014EC00:
 lbl_8014EC50:
 /* 8014EC50 001449D0  93 41 00 2C */	stw r26, 0x2c(r1)
 /* 8014EC54 001449D4  7E 63 9B 78 */	mr r3, r19
-/* 8014EC58 001449D8  4B EB DC 39 */	bl srGetAppInitialCodeLocale
+/* 8014EC58 001449D8  4B EB DC 39 */	bl srGetAppInitialCodeLocale__FUl
 /* 8014EC5C 001449DC  7C 64 1B 78 */	mr r4, r3
 /* 8014EC60 001449E0  7E 03 83 78 */	mr r3, r16
 /* 8014EC64 001449E4  4B FF E8 E9 */	bl nteWiiConnect24$7startSearchMail

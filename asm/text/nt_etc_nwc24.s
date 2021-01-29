@@ -1088,7 +1088,7 @@ nteWiiConnect24$7dl_deleteDLTask:
 /* 8014DC04 00143984  38 60 00 00 */	li r3, 0
 /* 8014DC08 00143988  48 00 00 68 */	b lbl_8014DC70
 lbl_8014DC0C:
-/* 8014DC0C 0014398C  4B EB EC 59 */	bl srGetAppInitialCode
+/* 8014DC0C 0014398C  4B EB EC 59 */	bl srGetAppInitialCode__Fv
 /* 8014DC10 00143990  38 80 00 00 */	li r4, 0
 /* 8014DC14 00143994  48 00 06 1D */	bl Patch_NWC24DeleteDlTasksForOptOut
 /* 8014DC18 00143998  2C 03 00 00 */	cmpwi r3, 0
@@ -1138,7 +1138,7 @@ nteWiiConnect24$7dl_deleteDLTaskAll:
 /* 8014DCB0 00143A30  38 60 00 00 */	li r3, 0
 /* 8014DCB4 00143A34  48 00 00 68 */	b lbl_8014DD1C
 lbl_8014DCB8:
-/* 8014DCB8 00143A38  4B EB EB AD */	bl srGetAppInitialCode
+/* 8014DCB8 00143A38  4B EB EB AD */	bl srGetAppInitialCode__Fv
 /* 8014DCBC 00143A3C  38 80 00 01 */	li r4, 1
 /* 8014DCC0 00143A40  48 00 05 71 */	bl Patch_NWC24DeleteDlTasksForOptOut
 /* 8014DCC4 00143A44  2C 03 00 00 */	cmpwi r3, 0

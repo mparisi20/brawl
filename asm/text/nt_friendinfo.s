@@ -245,7 +245,7 @@ lbl_8014C4C8:
 /* 8014C4DC 0014225C  9B BC 00 08 */	stb r29, 8(r28)
 /* 8014C4E0 00142260  80 7C 00 00 */	lwz r3, 0(r28)
 /* 8014C4E4 00142264  B0 03 00 00 */	sth r0, 0(r3)
-/* 8014C4E8 00142268  4B EC 03 F9 */	bl srSystemGetRevisionNumber
+/* 8014C4E8 00142268  4B EC 03 F9 */	bl srSystemGetRevisionNumber__Fv
 /* 8014C4EC 0014226C  80 BC 00 00 */	lwz r5, 0(r28)
 /* 8014C4F0 00142270  38 80 28 04 */	li r4, 0x2804
 /* 8014C4F4 00142274  B0 65 00 04 */	sth r3, 4(r5)
@@ -505,7 +505,7 @@ lbl_8014C850:
 /* 8014C864 001425E4  9B DD 00 08 */	stb r30, 8(r29)
 /* 8014C868 001425E8  80 7D 00 00 */	lwz r3, 0(r29)
 /* 8014C86C 001425EC  B0 03 00 00 */	sth r0, 0(r3)
-/* 8014C870 001425F0  4B EC 00 71 */	bl srSystemGetRevisionNumber
+/* 8014C870 001425F0  4B EC 00 71 */	bl srSystemGetRevisionNumber__Fv
 /* 8014C874 001425F4  80 BD 00 00 */	lwz r5, 0(r29)
 /* 8014C878 001425F8  38 80 28 04 */	li r4, 0x2804
 /* 8014C87C 001425FC  B0 65 00 04 */	sth r3, 4(r5)
@@ -632,7 +632,7 @@ lbl_8014C9F4:
 /* 8014CA08 00142788  9B DB 00 08 */	stb r30, 8(r27)
 /* 8014CA0C 0014278C  3B E0 28 04 */	li r31, 0x2804
 /* 8014CA10 00142790  B3 E3 00 00 */	sth r31, 0(r3)
-/* 8014CA14 00142794  4B EB FE CD */	bl srSystemGetRevisionNumber
+/* 8014CA14 00142794  4B EB FE CD */	bl srSystemGetRevisionNumber__Fv
 /* 8014CA18 00142798  80 BB 00 00 */	lwz r5, 0(r27)
 /* 8014CA1C 0014279C  38 80 28 04 */	li r4, 0x2804
 /* 8014CA20 001427A0  B0 65 00 04 */	sth r3, 4(r5)

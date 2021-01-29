@@ -1580,7 +1580,7 @@ nteFile$7makeFile:
 /* 80153ED4 00149C54  48 29 D4 49 */	bl _savegpr_26
 /* 80153ED8 00149C58  7C 7E 1B 78 */	mr r30, r3
 /* 80153EDC 00149C5C  7C 9F 23 78 */	mr r31, r4
-/* 80153EE0 00149C60  4B EB 89 85 */	bl srGetAppInitialCode
+/* 80153EE0 00149C60  4B EB 89 85 */	bl srGetAppInitialCode__Fv
 /* 80153EE4 00149C64  90 61 00 08 */	stw r3, 8(r1)
 /* 80153EE8 00149C68  3B 80 00 00 */	li r28, 0
 /* 80153EEC 00149C6C  7F E3 FB 78 */	mr r3, r31
