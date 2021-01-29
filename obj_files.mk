@@ -9,7 +9,8 @@ EXTABINDEX_O_FILES := \
 
 TEXT_O_FILES := \
     $(BUILD_DIR)/src/text/sr_getappname.o \
-    $(BUILD_DIR)/asm/text/sr_common.o \
+    $(BUILD_DIR)/src/text/sr_common.o \
+    $(BUILD_DIR)/asm/text/sr_common_asm.o \
     $(BUILD_DIR)/asm/text/sr_revision.o \
     $(BUILD_DIR)/asm/text/main.o \
     $(BUILD_DIR)/asm/text/gf_3d_scene.o \
