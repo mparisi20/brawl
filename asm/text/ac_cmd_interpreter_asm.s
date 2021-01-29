@@ -33,8 +33,8 @@ acCmdInterpreter$7__ct:
 /* 801396C0 0012F440  98 03 00 33 */	stb r0, 0x33(r3)
 /* 801396C4 0012F444  4E 80 00 20 */	blr 
 
-.global acAnimCmdImpl$7__dt
-acAnimCmdImpl$7__dt:
+.global __dt__13acAnimCmdImplFv
+__dt__13acAnimCmdImplFv:
 /* 801396C8 0012F448  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 801396CC 0012F44C  7C 08 02 A6 */	mflr r0
 /* 801396D0 0012F450  2C 03 00 00 */	cmpwi r3, 0
@@ -783,8 +783,8 @@ lbl_8013A0BC:
 /* 8013A0CC 0012FE4C  38 21 00 20 */	addi r1, r1, 0x20
 /* 8013A0D0 0012FE50  4E 80 00 20 */	blr 
 
-.global soNullable$7isNull
-soNullable$7isNull:
+.global isNull__10soNullableCFv
+isNull__10soNullableCFv:
 /* 8013A0D4 0012FE54  88 63 00 04 */	lbz r3, 4(r3)
 /* 8013A0D8 0012FE58  4E 80 00 20 */	blr 
 
@@ -1106,8 +1106,8 @@ lbl_8013A508:
 /* 8013A518 00130298  38 21 00 10 */	addi r1, r1, 0x10
 /* 8013A51C 0013029C  4E 80 00 20 */	blr 
 
-.global acAnimCmdImpl$7getCmdAddress
-acAnimCmdImpl$7getCmdAddress:
+.global getCmdAddress__13acAnimCmdImplFv
+getCmdAddress__13acAnimCmdImplFv:
 /* 8013A520 001302A0  80 63 00 08 */	lwz r3, 8(r3)
 /* 8013A524 001302A4  4E 80 00 20 */	blr 
 

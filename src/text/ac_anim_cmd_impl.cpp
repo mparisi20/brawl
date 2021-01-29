@@ -8,36 +8,21 @@ struct soNullableInterface
 template<typename T>
 struct soArrayFixed : public soNullableInterface
 {
-    // TODO: placeholder
-    virtual BOOL isNull() const
-    {
-        return FALSE;
-    }
-    
-    // TODO: placeholder
-    virtual T* at(s32)
-    {
-        return 0;
-    }
-    
-    // TODO: placeholder
-    virtual T* at(s32, s32)
-    {
-        return 0;
-    }
-    
-    // TODO: placeholder
-    virtual s32 size() const
-    {
-        return 0;
-    }
+    virtual BOOL isNull() const;
+    virtual T* at(s32);
+    virtual T* at(s32, s32);
+    virtual s32 size() const;
     
     virtual BOOL isEmpty() const
     {
         return size() == 0;
     }
     
-    //virtual ~soArrayFixed() { }
+    //virtual ~soArrayFixed();
+    virtual void shift();
+    virtual void pop();
+    virtual void clear();
+    virtual T* atSub(s32 i);
 };
 
 template<typename T>
@@ -60,16 +45,25 @@ struct soConnectable
 template<typename T>
 struct soArrayContractibleTable : public soArrayContractible<T>, public soConnectable<soArrayContractibleTable<T> >
 {
-	soArrayContractibleTable* link_; // 0x4
-	T* arr_; // 0x8
-	s32 count_; // 0xC
+	soArrayContractibleTable* mLink; // 0x4
+	T* mArray; // 0x8
+	s32 mCount; // 0xC
     
-    soArrayContractibleTable() : link_(0), arr_(0), count_(0) { }
+    soArrayContractibleTable() : mLink(0), mArray(0), mCount(0) { }
     soArrayContractibleTable(soArrayContractibleTable* lnk, T* a, s32 sz)
-        : link_(lnk), arr_(a), count_(sz)
+        : mLink(lnk), mArray(a), mCount(sz)
     {
-        if (!arr_)
-            count_ = 0;
+        if (!mArray)
+            mCount = 0;
+    }
+
+    virtual ~soArrayContractibleTable() { }
+
+    virtual T* atSub(s32 i)
+    {
+        if (i >= mCount && mLink)
+            return mLink->at(i - mCount);
+        return mArray + i;
     }
     
     virtual BOOL isNull() const
@@ -77,69 +71,57 @@ struct soArrayContractibleTable : public soArrayContractible<T>, public soConnec
         return FALSE;
     }
     
-    virtual T* at(s32 i)
+    virtual s32 size() const
     {
-        return atSub(i);
+        s32 subcount = mCount;
+        if (!mArray)
+            subcount = 0;
+        if (mLink)
+            return subcount + mLink->size();
+        return subcount;
     }
     
-    // overload
+    virtual void clear()
+    {
+        if (mLink)
+            mLink->clear();
+        mArray = 0;
+        mCount = 0;
+    }
+    
+    virtual void pop()
+    {
+        if (mLink && !mLink->isEmpty())
+            mLink->pop();
+        else if (mCount > 0)
+            mCount--;
+    }
+    
+    virtual void shift()
+    {
+        if (!isEmpty()) {
+            if (mCount > 0) {
+                mCount--;
+                if (mCount <= 0)
+                    mArray = 0;
+                else
+                    mArray++;
+            } else if (mLink) {
+                mLink->shift();
+            }
+        }
+    }
+    
     virtual T* at(s32 i, s32)
     {
         return atSub(i);
     }
     
-    virtual s32 size() const
+    virtual T* at(s32 i)
     {
-        s32 subcount = count_;
-        if (!arr_)
-            subcount = 0;
-        if (link_)
-            return subcount + link_->size();
-        return subcount;
-    }
-    
-    virtual ~soArrayContractibleTable() { }
-    
-    virtual void shift()
-    {
-        if (!isEmpty()) {
-            if (count_ > 0) {
-                count_--;
-                if (count_ <= 0)
-                    arr_ = 0;
-                else
-                    arr_++;
-            } else if (link_) {
-                link_->shift();
-            }
-        }
-    }
-    
-    virtual void pop()
-    {
-        if (link_ && !link_->isEmpty())
-            link_->pop();
-        else if (count_ > 0)
-            count_--;
-    }
-    
-    virtual void clear()
-    {
-        if (link_)
-            link_->clear();
-        arr_ = 0;
-        count_ = 0;
-    }
-    
-    virtual T* atSub(s32 i)
-    {
-        if (i >= count_ && link_)
-            return link_->at(i - count_);
-        return arr_ + i;
+        return atSub(i);
     }
 };
-
-
 
 // TODO: data is a union?
 struct acCmdArgConv {
@@ -176,7 +158,7 @@ struct acAnimCmdConv
 struct soNullable
 {
     // TODO: defined in ac_cmd_interpreter.o
-    virtual BOOL isNull() const { return FALSE; }
+    virtual BOOL isNull() const;
 };
 
 struct acAnimCmd : public soNullable
@@ -195,14 +177,10 @@ struct acAnimCmdImpl : public acAnimCmd
     virtual s32 getOption() const;
     virtual soArrayContractibleTable<const acCmdArgConv> getArgList();
     virtual BOOL getArg(acCmdArg* arg, s32 index) const;
-    // probably an inline function
-    virtual acAnimCmdConv* getCmdAddress()
-    {
-        return cmdAddr;
-    }
+    virtual acAnimCmdConv* getCmdAddress();
     virtual u32 isArgEmpty() const;
     virtual BOOL isValid() const;
-    virtual ~acAnimCmdImpl() { }
+    virtual ~acAnimCmdImpl();
 };
 
 s8 acAnimCmdImpl::getGroup() const
