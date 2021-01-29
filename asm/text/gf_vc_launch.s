@@ -97,8 +97,8 @@ lbl_8003D560:
 /* 8003D64C 000333CC  38 21 00 C0 */	addi r1, r1, 0xc0
 /* 8003D650 000333D0  4E 80 00 20 */	blr 
 
-.global vcBootParam$7init
-vcBootParam$7init:
+.global init__11vcBootParamFiPPc
+init__11vcBootParamFiPPc:
 /* 8003D654 000333D4  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 8003D658 000333D8  7C 08 02 A6 */	mflr r0
 /* 8003D65C 000333DC  2C 04 00 02 */	cmpwi r4, 2

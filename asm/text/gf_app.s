@@ -2,8 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
-.global gfApplication$7__ct
-gfApplication$7__ct:
+.global __ct__13gfApplicationFv
+__ct__13gfApplicationFv:
 /* 800167C4 0000C544  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800167C8 0000C548  7C 08 02 A6 */	mflr r0
 /* 800167CC 0000C54C  90 01 00 14 */	stw r0, 0x14(r1)
@@ -62,8 +62,8 @@ gfApplication$7__ct:
 /* 800168A0 0000C620  38 21 00 10 */	addi r1, r1, 0x10
 /* 800168A4 0000C624  4E 80 00 20 */	blr 
 
-.global gfApplication$7__dt
-gfApplication$7__dt:
+.global __dt__13gfApplicationFv
+__dt__13gfApplicationFv:
 /* 800168A8 0000C628  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800168AC 0000C62C  7C 08 02 A6 */	mflr r0
 /* 800168B0 0000C630  2C 03 00 00 */	cmpwi r3, 0
@@ -212,8 +212,8 @@ lbl_80016974:
 /* 80016AC0 0000C840  38 21 00 80 */	addi r1, r1, 0x80
 /* 80016AC4 0000C844  4E 80 00 20 */	blr 
 
-.global func_80016AC8
-func_80016AC8:
+.global init__13gfApplicationFv
+init__13gfApplicationFv:
 /* 80016AC8 0000C848  94 21 FF D0 */	stwu r1, -0x30(r1)
 /* 80016ACC 0000C84C  7C 08 02 A6 */	mflr r0
 /* 80016AD0 0000C850  90 01 00 34 */	stw r0, 0x34(r1)
@@ -487,8 +487,8 @@ gfApplication$7restart:
 /* 80016ED8 0000CC58  38 21 00 10 */	addi r1, r1, 0x10
 /* 80016EDC 0000CC5C  4E 80 00 20 */	blr 
 
-.global gfApplication$7mainLoop
-gfApplication$7mainLoop:
+.global mainLoop__13gfApplicationFv
+mainLoop__13gfApplicationFv:
 /* 80016EE0 0000CC60  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80016EE4 0000CC64  7C 08 02 A6 */	mflr r0
 /* 80016EE8 0000CC68  90 01 00 24 */	stw r0, 0x24(r1)
@@ -526,15 +526,15 @@ gfApplication$7mainLoop:
 /* 80016F68 0000CCE8  38 60 00 00 */	li r3, 0
 /* 80016F6C 0000CCEC  48 1D A4 01 */	bl GXSetCullMode
 /* 80016F70 0000CCF0  7F E3 FB 78 */	mr r3, r31
-/* 80016F74 0000CCF4  48 00 00 19 */	bl gfApplication$7mainLoopSub
+/* 80016F74 0000CCF4  48 00 00 19 */	bl mainLoop__13gfApplicationFvSub
 /* 80016F78 0000CCF8  80 01 00 24 */	lwz r0, 0x24(r1)
 /* 80016F7C 0000CCFC  83 E1 00 1C */	lwz r31, 0x1c(r1)
 /* 80016F80 0000CD00  7C 08 03 A6 */	mtlr r0
 /* 80016F84 0000CD04  38 21 00 20 */	addi r1, r1, 0x20
 /* 80016F88 0000CD08  4E 80 00 20 */	blr 
 
-.global gfApplication$7mainLoopSub
-gfApplication$7mainLoopSub:
+.global mainLoop__13gfApplicationFvSub
+mainLoop__13gfApplicationFvSub:
 /* 80016F8C 0000CD0C  94 21 FF 40 */	stwu r1, -0xc0(r1)
 /* 80016F90 0000CD10  7C 08 02 A6 */	mflr r0
 /* 80016F94 0000CD14  90 01 00 C4 */	stw r0, 0xc4(r1)
@@ -1256,8 +1256,8 @@ lbl_800179A4:
 /* 800179C8 0000D748  38 21 00 10 */	addi r1, r1, 0x10
 /* 800179CC 0000D74C  4E 80 00 20 */	blr 
 
-.global gfApplication$7exit
-gfApplication$7exit:
+.global exit__13gfApplicationFv
+exit__13gfApplicationFv:
 /* 800179D0 0000D750  48 04 6C F0 */	b ecMgr$7exit
 /* 800179D4 0000D754  3C C0 80 49 */	lis r6, lbl_80494890@ha
 
