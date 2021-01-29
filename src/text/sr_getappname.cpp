@@ -1,8 +1,6 @@
-typedef unsigned u32;
-
-extern "C" {
-
-const char* OSGetAppGamename();
+#include "global.h"
+#include "OS.h"
+#include "sr_getappname.h"
 
 const char* srGetAppGamename()
 {
@@ -19,12 +17,7 @@ u32 srGetAppInitialCodeLocaleNum()
     return 3;
 }
 
-const char* LocaleStr = "RSBJRSBERSBP";
-
 u32 srGetAppInitialCodeLocale(u32 i)
 {
-    return ((u32*)LocaleStr)[i];
+    return ((u32*)"RSBJRSBERSBP")[i];
 }
-
-}
-
