@@ -13,7 +13,7 @@ gfEffectList$7create:
 /* 8001ABFC 0001097C  38 60 00 03 */	li r3, 3
 /* 8001AC00 00010980  1C 9C 00 30 */	mulli r4, r28, 0x30
 /* 8001AC04 00010984  38 84 00 1C */	addi r4, r4, 0x1c
-/* 8001AC08 00010988  48 00 9D DD */	bl gfHeapManager$7alloc
+/* 8001AC08 00010988  48 00 9D DD */	bl alloc__13gfHeapManagerFUlUl
 /* 8001AC0C 0001098C  2C 03 00 00 */	cmpwi r3, 0
 /* 8001AC10 00010990  7C 7B 1B 78 */	mr r27, r3
 /* 8001AC14 00010994  38 03 00 0C */	addi r0, r3, 0xc
@@ -59,7 +59,7 @@ gfEffectList$7release:
 /* 8001AC9C 00010A1C  7C 08 02 A6 */	mflr r0
 /* 8001ACA0 00010A20  90 01 00 14 */	stw r0, 0x14(r1)
 /* 8001ACA4 00010A24  80 6D BB A8 */	lwz r3, lbl_8059FFC8-_SDA_BASE_(r13)
-/* 8001ACA8 00010A28  48 00 9D A5 */	bl gfHeapManager$7free
+/* 8001ACA8 00010A28  48 00 9D A5 */	bl free__13gfHeapManagerFPv
 /* 8001ACAC 00010A2C  38 00 00 00 */	li r0, 0
 /* 8001ACB0 00010A30  90 0D BB A8 */	stw r0, lbl_8059FFC8-_SDA_BASE_(r13)
 /* 8001ACB4 00010A34  80 01 00 14 */	lwz r0, 0x14(r1)

@@ -149,7 +149,7 @@ sndBgmRateSystem$7create:
 /* 80078614 0006E394  40 82 00 20 */	bne lbl_80078634
 /* 80078618 0006E398  38 60 14 D8 */	li r3, 0x14d8
 /* 8007861C 0006E39C  38 80 00 05 */	li r4, 5
-/* 80078620 0006E3A0  4B F9 42 99 */	bl srHeapType$7__nw
+/* 80078620 0006E3A0  4B F9 42 99 */	bl __nw__10srHeapTypeFUlUl
 /* 80078624 0006E3A4  2C 03 00 00 */	cmpwi r3, 0
 /* 80078628 0006E3A8  41 82 00 08 */	beq lbl_80078630
 /* 8007862C 0006E3AC  4B FF FD C1 */	bl sndBgmRateSystem$7__ct

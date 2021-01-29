@@ -666,8 +666,8 @@ lbl_80302A44:
 /* 80302A80 002F8800  38 21 00 50 */	addi r1, r1, 0x50
 /* 80302A84 002F8804  4E 80 00 20 */	blr 
 
-.global hkShape$7__dl
-hkShape$7__dl:
+.global hkShape$7__dl__FPv
+hkShape$7__dl__FPv:
 /* 80302A88 002F8808  7C 64 1B 78 */	mr r4, r3
 /* 80302A8C 002F880C  80 6D CA 98 */	lwz r3, lbl_805A0EB8-_SDA_BASE_(r13)
 /* 80302A90 002F8810  A0 A4 00 04 */	lhz r5, 4(r4)

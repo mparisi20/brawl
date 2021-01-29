@@ -196,7 +196,7 @@ soArrayContractibleTable$0C12acCmdArgConv$1$7__dt:
 /* 8013CC80 00132A00  41 82 00 10 */	beq lbl_8013CC90
 /* 8013CC84 00132A04  2C 04 00 00 */	cmpwi r4, 0
 /* 8013CC88 00132A08  40 81 00 08 */	ble lbl_8013CC90
-/* 8013CC8C 00132A0C  4B EC FC 3D */	bl __dl
+/* 8013CC8C 00132A0C  4B EC FC 3D */	bl __dl__FPv
 lbl_8013CC90:
 /* 8013CC90 00132A10  7F E3 FB 78 */	mr r3, r31
 /* 8013CC94 00132A14  83 E1 00 0C */	lwz r31, 0xc(r1)

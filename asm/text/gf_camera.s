@@ -46,7 +46,7 @@ gfCamera$7init:
 /* 800186AC 0000E42C  40 82 00 1C */	bne lbl_800186C8
 /* 800186B0 0000E430  38 60 07 40 */	li r3, 0x740
 /* 800186B4 0000E434  38 80 00 01 */	li r4, 1
-/* 800186B8 0000E438  4B FF 42 01 */	bl srHeapType$7__nw
+/* 800186B8 0000E438  4B FF 42 01 */	bl __nw__10srHeapTypeFUlUl
 /* 800186BC 0000E43C  2C 03 00 00 */	cmpwi r3, 0
 /* 800186C0 0000E440  41 82 00 08 */	beq lbl_800186C8
 /* 800186C4 0000E444  48 00 19 29 */	bl gfCameraManager$7__ct
@@ -1710,7 +1710,7 @@ gfCameraManager$7create:
 /* 80019F74 0000FCF4  40 82 00 1C */	bne lbl_80019F90
 /* 80019F78 0000FCF8  38 60 07 40 */	li r3, 0x740
 /* 80019F7C 0000FCFC  38 80 00 01 */	li r4, 1
-/* 80019F80 0000FD00  4B FF 29 39 */	bl srHeapType$7__nw
+/* 80019F80 0000FD00  4B FF 29 39 */	bl __nw__10srHeapTypeFUlUl
 /* 80019F84 0000FD04  2C 03 00 00 */	cmpwi r3, 0
 /* 80019F88 0000FD08  41 82 00 08 */	beq lbl_80019F90
 /* 80019F8C 0000FD0C  48 00 00 61 */	bl gfCameraManager$7__ct
@@ -1732,7 +1732,7 @@ gfCameraManager$7getManager:
 /* 80019FBC 0000FD3C  40 82 00 1C */	bne lbl_80019FD8
 /* 80019FC0 0000FD40  38 60 07 40 */	li r3, 0x740
 /* 80019FC4 0000FD44  38 80 00 01 */	li r4, 1
-/* 80019FC8 0000FD48  4B FF 28 F1 */	bl srHeapType$7__nw
+/* 80019FC8 0000FD48  4B FF 28 F1 */	bl __nw__10srHeapTypeFUlUl
 /* 80019FCC 0000FD4C  2C 03 00 00 */	cmpwi r3, 0
 /* 80019FD0 0000FD50  41 82 00 08 */	beq lbl_80019FD8
 /* 80019FD4 0000FD54  48 00 00 19 */	bl gfCameraManager$7__ct
@@ -1876,7 +1876,7 @@ Vec3f$7gfProjection:
 /* 8001A1C4 0000FF44  40 82 00 1C */	bne lbl_8001A1E0
 /* 8001A1C8 0000FF48  38 60 07 40 */	li r3, 0x740
 /* 8001A1CC 0000FF4C  38 80 00 01 */	li r4, 1
-/* 8001A1D0 0000FF50  4B FF 26 E9 */	bl srHeapType$7__nw
+/* 8001A1D0 0000FF50  4B FF 26 E9 */	bl __nw__10srHeapTypeFUlUl
 /* 8001A1D4 0000FF54  2C 03 00 00 */	cmpwi r3, 0
 /* 8001A1D8 0000FF58  41 82 00 08 */	beq lbl_8001A1E0
 /* 8001A1DC 0000FF5C  4B FF FE 11 */	bl gfCameraManager$7__ct

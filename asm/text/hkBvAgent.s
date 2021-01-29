@@ -71,8 +71,8 @@ lbl_802A1F90:
 /* 802A1FCC 00297D4C  38 21 00 30 */	addi r1, r1, 0x30
 /* 802A1FD0 00297D50  4E 80 00 20 */	blr 
 
-.global hkCollisionAgent$7__dl
-hkCollisionAgent$7__dl:
+.global hkCollisionAgent$7__dl__FPv
+hkCollisionAgent$7__dl__FPv:
 /* 802A1FD4 00297D54  7C 64 1B 78 */	mr r4, r3
 /* 802A1FD8 00297D58  80 6D CA 98 */	lwz r3, lbl_805A0EB8-_SDA_BASE_(r13)
 /* 802A1FDC 00297D5C  A0 A4 00 04 */	lhz r5, 4(r4)

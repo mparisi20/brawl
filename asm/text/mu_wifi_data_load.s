@@ -15,7 +15,7 @@ muWifiDataLoadTask$7create:
 /* 800DAA50 000D07D0  7C DE 33 78 */	mr r30, r6
 /* 800DAA54 000D07D4  38 60 00 70 */	li r3, 0x70
 /* 800DAA58 000D07D8  38 80 00 2A */	li r4, 0x2a
-/* 800DAA5C 000D07DC  4B F3 1E 5D */	bl srHeapType$7__nw
+/* 800DAA5C 000D07DC  4B F3 1E 5D */	bl __nw__10srHeapTypeFUlUl
 /* 800DAA60 000D07E0  2C 03 00 00 */	cmpwi r3, 0
 /* 800DAA64 000D07E4  7C 7F 1B 78 */	mr r31, r3
 /* 800DAA68 000D07E8  41 82 00 0C */	beq lbl_800DAA74
@@ -134,7 +134,7 @@ muWifiDataLoadTask$7__dt:
 /* 800DABF4 000D0974  2C 1F 00 00 */	cmpwi r31, 0
 /* 800DABF8 000D0978  40 81 00 0C */	ble lbl_800DAC04
 /* 800DABFC 000D097C  7F C3 F3 78 */	mr r3, r30
-/* 800DAC00 000D0980  4B F3 1C C9 */	bl __dl
+/* 800DAC00 000D0980  4B F3 1C C9 */	bl __dl__FPv
 lbl_800DAC04:
 /* 800DAC04 000D0984  7F C3 F3 78 */	mr r3, r30
 /* 800DAC08 000D0988  83 E1 00 0C */	lwz r31, 0xc(r1)
@@ -222,7 +222,7 @@ muWifiDataLoadTask$7mainStepLoadMain:
 /* 800DAD20 000D0AA0  48 07 1D 4D */	bl ntFriendInfo$7setSaveData
 /* 800DAD24 000D0AA4  38 7E 00 08 */	addi r3, r30, 8
 /* 800DAD28 000D0AA8  4B F4 72 6D */	bl gfFileIOHandle$7getBuffer
-/* 800DAD2C 000D0AAC  4B F4 9D 21 */	bl gfHeapManager$7free
+/* 800DAD2C 000D0AAC  4B F4 9D 21 */	bl free__13gfHeapManagerFPv
 /* 800DAD30 000D0AB0  88 1C 00 6C */	lbz r0, 0x6c(r28)
 /* 800DAD34 000D0AB4  2C 00 00 00 */	cmpwi r0, 0
 /* 800DAD38 000D0AB8  41 82 00 14 */	beq lbl_800DAD4C

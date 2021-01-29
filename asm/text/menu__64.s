@@ -24,7 +24,7 @@ muMenu$7getChkindCharaNameInEn:
 lbl_800B3110:
 /* 800B3110 000A8E90  7F A4 EB 78 */	mr r4, r29
 /* 800B3114 000A8E94  38 60 00 20 */	li r3, 0x20
-/* 800B3118 000A8E98  4B F5 97 A1 */	bl srHeapType$7__nw
+/* 800B3118 000A8E98  4B F5 97 A1 */	bl __nw__10srHeapTypeFUlUl
 /* 800B311C 000A8E9C  2C 03 00 00 */	cmpwi r3, 0
 /* 800B3120 000A8EA0  7C 7F 1B 78 */	mr r31, r3
 /* 800B3124 000A8EA4  41 82 00 30 */	beq lbl_800B3154

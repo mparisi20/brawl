@@ -13,7 +13,7 @@ ipNetworkProducer$7getInstance:
 /* 8004AE2C 00040BAC  40 82 00 3C */	bne lbl_8004AE68
 /* 8004AE30 00040BB0  38 60 00 12 */	li r3, 0x12
 /* 8004AE34 00040BB4  38 80 00 01 */	li r4, 1
-/* 8004AE38 00040BB8  4B FC 1A 81 */	bl srHeapType$7__nw
+/* 8004AE38 00040BB8  4B FC 1A 81 */	bl __nw__10srHeapTypeFUlUl
 /* 8004AE3C 00040BBC  2C 03 00 00 */	cmpwi r3, 0
 /* 8004AE40 00040BC0  7C 7F 1B 78 */	mr r31, r3
 /* 8004AE44 00040BC4  41 82 00 20 */	beq lbl_8004AE64
@@ -51,7 +51,7 @@ ipNetworkProducer$7networkInCallback:
 /* 8004AEA4 00040C24  40 82 00 38 */	bne lbl_8004AEDC
 /* 8004AEA8 00040C28  38 60 00 12 */	li r3, 0x12
 /* 8004AEAC 00040C2C  38 80 00 01 */	li r4, 1
-/* 8004AEB0 00040C30  4B FC 1A 09 */	bl srHeapType$7__nw
+/* 8004AEB0 00040C30  4B FC 1A 09 */	bl __nw__10srHeapTypeFUlUl
 /* 8004AEB4 00040C34  2C 03 00 00 */	cmpwi r3, 0
 /* 8004AEB8 00040C38  41 82 00 20 */	beq lbl_8004AED8
 /* 8004AEBC 00040C3C  3C A0 80 05 */	lis r5, ipNetworkProducer$7networkInCallback@ha

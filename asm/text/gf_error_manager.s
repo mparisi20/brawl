@@ -12,7 +12,7 @@ gfErrorManager$7getInstance:
 /* 8001AF1C 00010C9C  40 82 00 20 */	bne lbl_8001AF3C
 /* 8001AF20 00010CA0  38 60 00 1C */	li r3, 0x1c
 /* 8001AF24 00010CA4  38 80 00 01 */	li r4, 1
-/* 8001AF28 00010CA8  4B FF 19 91 */	bl srHeapType$7__nw
+/* 8001AF28 00010CA8  4B FF 19 91 */	bl __nw__10srHeapTypeFUlUl
 /* 8001AF2C 00010CAC  2C 03 00 00 */	cmpwi r3, 0
 /* 8001AF30 00010CB0  41 82 00 08 */	beq lbl_8001AF38
 /* 8001AF34 00010CB4  48 00 00 55 */	bl gfErrorManager$7__ct
@@ -32,7 +32,7 @@ gfErrorManager$7create:
 /* 8001AF58 00010CD8  38 60 00 1C */	li r3, 0x1c
 /* 8001AF5C 00010CDC  38 80 00 01 */	li r4, 1
 /* 8001AF60 00010CE0  90 01 00 14 */	stw r0, 0x14(r1)
-/* 8001AF64 00010CE4  4B FF 19 55 */	bl srHeapType$7__nw
+/* 8001AF64 00010CE4  4B FF 19 55 */	bl __nw__10srHeapTypeFUlUl
 /* 8001AF68 00010CE8  2C 03 00 00 */	cmpwi r3, 0
 /* 8001AF6C 00010CEC  41 82 00 08 */	beq lbl_8001AF74
 /* 8001AF70 00010CF0  48 00 00 19 */	bl gfErrorManager$7__ct
@@ -63,7 +63,7 @@ gfErrorManager$7__ct:
 /* 8001AFC4 00010D44  90 03 00 00 */	stw r0, 0(r3)
 /* 8001AFC8 00010D48  90 C3 00 04 */	stw r6, 4(r3)
 /* 8001AFCC 00010D4C  38 60 01 E0 */	li r3, 0x1e0
-/* 8001AFD0 00010D50  4B FF 18 E9 */	bl srHeapType$7__nw
+/* 8001AFD0 00010D50  4B FF 18 E9 */	bl __nw__10srHeapTypeFUlUl
 /* 8001AFD4 00010D54  2C 03 00 00 */	cmpwi r3, 0
 /* 8001AFD8 00010D58  41 82 00 10 */	beq lbl_8001AFE8
 /* 8001AFDC 00010D5C  38 80 04 00 */	li r4, 0x400

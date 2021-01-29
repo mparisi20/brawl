@@ -1,8 +1,8 @@
 .section .sdata, "wa"  # 0x8059C420 - 0x8059FF80
 
-.global lbl_8059C420
-lbl_8059C420:
-	.incbin "baserom.dol", 0x490940, 0x8
+.global lbl_8059C424
+lbl_8059C424:
+	.incbin "baserom.dol", 0x490944, 0x4
 .global lbl_8059C428
 lbl_8059C428:
 	.incbin "baserom.dol", 0x490948, 0x18

@@ -45,8 +45,8 @@ lbl_80326050:
 /* 80326070 0031BDF0  38 21 00 10 */	addi r1, r1, 0x10
 /* 80326074 0031BDF4  4E 80 00 20 */	blr 
 
-.global hkReferencedObject$7__dl
-hkReferencedObject$7__dl:
+.global hkReferencedObject$7__dl__FPv
+hkReferencedObject$7__dl__FPv:
 /* 80326078 0031BDF8  7C 64 1B 78 */	mr r4, r3
 /* 8032607C 0031BDFC  80 6D CA 98 */	lwz r3, lbl_805A0EB8-_SDA_BASE_(r13)
 /* 80326080 0031BE00  A0 A4 00 04 */	lhz r5, 4(r4)

@@ -232,7 +232,7 @@ srHeapType$7gfVfbToTex:
 /* 8002F4E0 00025260  7C 7D 1B 78 */	mr r29, r3
 /* 8002F4E4 00025264  7F 23 CB 78 */	mr r3, r25
 /* 8002F4E8 00025268  38 84 C0 00 */	addi r4, r4, 0x0012C000@l
-/* 8002F4EC 0002526C  4B FF 54 F9 */	bl gfHeapManager$7alloc
+/* 8002F4EC 0002526C  4B FF 54 F9 */	bl alloc__13gfHeapManagerFUlUl
 /* 8002F4F0 00025270  7C 7A 1B 78 */	mr r26, r3
 /* 8002F4F4 00025274  90 78 00 00 */	stw r3, 0(r24)
 /* 8002F4F8 00025278  7F 5B D3 78 */	mr r27, r26

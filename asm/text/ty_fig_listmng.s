@@ -64,7 +64,7 @@ tyFigListDataManager$7__dt:
 /* 800ACAB0 000A2830  40 82 00 18 */	bne lbl_800ACAC8
 /* 800ACAB4 000A2834  38 63 14 60 */	addi r3, r3, 0x1460
 /* 800ACAB8 000A2838  4B F7 54 DD */	bl gfFileIOHandle$7getBuffer
-/* 800ACABC 000A283C  4B F7 7F 91 */	bl gfHeapManager$7free
+/* 800ACABC 000A283C  4B F7 7F 91 */	bl free__13gfHeapManagerFPv
 /* 800ACAC0 000A2840  38 7E 14 60 */	addi r3, r30, 0x1460
 /* 800ACAC4 000A2844  4B F7 54 E9 */	bl gfFileIOHandle$7release
 lbl_800ACAC8:
@@ -74,7 +74,7 @@ lbl_800ACAC8:
 /* 800ACAD4 000A2854  2C 1F 00 00 */	cmpwi r31, 0
 /* 800ACAD8 000A2858  40 81 00 0C */	ble lbl_800ACAE4
 /* 800ACADC 000A285C  7F C3 F3 78 */	mr r3, r30
-/* 800ACAE0 000A2860  4B F5 FD E9 */	bl __dl
+/* 800ACAE0 000A2860  4B F5 FD E9 */	bl __dl__FPv
 lbl_800ACAE4:
 /* 800ACAE4 000A2864  7F C3 F3 78 */	mr r3, r30
 /* 800ACAE8 000A2868  83 E1 00 0C */	lwz r31, 0xc(r1)

@@ -14,7 +14,7 @@ grCollision$7createJoint:
 /* 80110764 001064E4  1C 84 00 60 */	mulli r4, r4, 0x60
 /* 80110768 001064E8  7C BC 2B 78 */	mr r28, r5
 /* 8011076C 001064EC  38 60 00 0F */	li r3, 0xf
-/* 80110770 001064F0  4B F1 42 75 */	bl gfHeapManager$7alloc
+/* 80110770 001064F0  4B F1 42 75 */	bl alloc__13gfHeapManagerFUlUl
 /* 80110774 001064F4  7C 7F 1B 78 */	mr r31, r3
 /* 80110778 001064F8  3B A0 00 00 */	li r29, 0
 /* 8011077C 001064FC  7F FE FB 78 */	mr r30, r31
@@ -54,7 +54,7 @@ grCollision$7createLine:
 /* 801107EC 0010656C  93 A1 00 14 */	stw r29, 0x14(r1)
 /* 801107F0 00106570  7C 9D 23 78 */	mr r29, r4
 /* 801107F4 00106574  1C 84 00 12 */	mulli r4, r4, 0x12
-/* 801107F8 00106578  4B F1 41 ED */	bl gfHeapManager$7alloc
+/* 801107F8 00106578  4B F1 41 ED */	bl alloc__13gfHeapManagerFUlUl
 /* 801107FC 0010657C  7C 68 1B 78 */	mr r8, r3
 /* 80110800 00106580  38 E0 00 00 */	li r7, 0
 /* 80110804 00106584  38 C0 FF FF */	li r6, -1
@@ -139,19 +139,19 @@ grCollision$7__dt:
 /* 8011091C 0010669C  38 63 E5 7C */	addi r3, r3, lbl_8049E57C@l
 /* 80110920 001066A0  48 04 BA 55 */	bl nw4r2ut6detail12LinkListImplFPQ34nw4r2ut12Li$7Erase
 /* 80110924 001066A4  80 7D 00 10 */	lwz r3, 0x10(r29)
-/* 80110928 001066A8  4B F1 41 25 */	bl gfHeapManager$7free
+/* 80110928 001066A8  4B F1 41 25 */	bl free__13gfHeapManagerFPv
 /* 8011092C 001066AC  3B E0 00 00 */	li r31, 0
 /* 80110930 001066B0  80 7D 00 14 */	lwz r3, 0x14(r29)
 /* 80110934 001066B4  93 FD 00 10 */	stw r31, 0x10(r29)
-/* 80110938 001066B8  4B F1 41 15 */	bl gfHeapManager$7free
+/* 80110938 001066B8  4B F1 41 15 */	bl free__13gfHeapManagerFPv
 /* 8011093C 001066BC  93 FD 00 14 */	stw r31, 0x14(r29)
 /* 80110940 001066C0  80 7D 00 18 */	lwz r3, 0x18(r29)
-/* 80110944 001066C4  4B F1 41 09 */	bl gfHeapManager$7free
+/* 80110944 001066C4  4B F1 41 09 */	bl free__13gfHeapManagerFPv
 /* 80110948 001066C8  2C 1E 00 00 */	cmpwi r30, 0
 /* 8011094C 001066CC  93 FD 00 18 */	stw r31, 0x18(r29)
 /* 80110950 001066D0  40 81 00 0C */	ble lbl_8011095C
 /* 80110954 001066D4  7F A3 EB 78 */	mr r3, r29
-/* 80110958 001066D8  4B EF BF 71 */	bl __dl
+/* 80110958 001066D8  4B EF BF 71 */	bl __dl__FPv
 lbl_8011095C:
 /* 8011095C 001066DC  83 E1 00 1C */	lwz r31, 0x1c(r1)
 /* 80110960 001066E0  7F A3 EB 78 */	mr r3, r29
@@ -2031,7 +2031,7 @@ lbl_801122B8:
 /* 801122B8 00108038  2C 1F 00 00 */	cmpwi r31, 0
 /* 801122BC 0010803C  40 81 00 0C */	ble lbl_801122C8
 /* 801122C0 00108040  7F C3 F3 78 */	mr r3, r30
-/* 801122C4 00108044  4B EF A6 05 */	bl __dl
+/* 801122C4 00108044  4B EF A6 05 */	bl __dl__FPv
 lbl_801122C8:
 /* 801122C8 00108048  7F C3 F3 78 */	mr r3, r30
 /* 801122CC 0010804C  83 E1 00 0C */	lwz r31, 0xc(r1)

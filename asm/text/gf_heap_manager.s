@@ -325,7 +325,7 @@ lbl_80024740:
 /* 80024760 0001A4E0  93 A6 00 08 */	stw r29, 8(r6)
 /* 80024764 0001A4E4  93 86 00 0C */	stw r28, 0xc(r6)
 /* 80024768 0001A4E8  48 00 1B 95 */	bl gfMemoryPool$7createMEMAllocator
-/* 8002476C 0001A4EC  4B FE 81 39 */	bl srSystemGetDebugLevel
+/* 8002476C 0001A4EC  4B FE 81 39 */	bl srSystemGetDebugLevel__Fv
 /* 80024770 0001A4F0  E3 E1 00 48 */	psq_l f31, 72(r1), 0, qr0
 /* 80024774 0001A4F4  39 61 00 40 */	addi r11, r1, 0x40
 /* 80024778 0001A4F8  CB E1 00 40 */	lfd f31, 0x40(r1)
@@ -471,7 +471,7 @@ lbl_80024958:
 /* 80024968 0001A6E8  80 7B 00 04 */	lwz r3, 4(r27)
 /* 8002496C 0001A6EC  48 1B 28 11 */	bl OSSetMEM2ArenaLo
 lbl_80024970:
-/* 80024970 0001A6F0  4B FE 7F 35 */	bl srSystemGetDebugLevel
+/* 80024970 0001A6F0  4B FE 7F 35 */	bl srSystemGetDebugLevel__Fv
 /* 80024974 0001A6F4  2C 03 00 04 */	cmpwi r3, 4
 /* 80024978 0001A6F8  40 80 00 20 */	bge lbl_80024998
 /* 8002497C 0001A6FC  80 9B 00 04 */	lwz r4, 4(r27)
@@ -506,8 +506,8 @@ gfHeapManager$7getHeap:
 /* 800249DC 0001A75C  80 63 00 04 */	lwz r3, 4(r3)
 /* 800249E0 0001A760  4E 80 00 20 */	blr 
 
-.global gfHeapManager$7alloc
-gfHeapManager$7alloc:
+.global alloc__13gfHeapManagerFUlUl
+alloc__13gfHeapManagerFUlUl:
 /* 800249E4 0001A764  3C C0 80 49 */	lis r6, lbl_80494958@ha
 /* 800249E8 0001A768  54 60 20 36 */	slwi r0, r3, 4
 /* 800249EC 0001A76C  38 C6 49 58 */	addi r6, r6, lbl_80494958@l
@@ -516,8 +516,8 @@ gfHeapManager$7alloc:
 /* 800249F8 0001A778  80 63 00 04 */	lwz r3, 4(r3)
 /* 800249FC 0001A77C  48 00 12 5C */	b gfMemoryPool$7alloc
 
-.global gfHeapManager$7alloc_379
-gfHeapManager$7alloc_379:
+.global alloc__13gfHeapManagerFUlUl_379
+alloc__13gfHeapManagerFUlUl_379:
 /* 80024A00 0001A780  3C C0 80 49 */	lis r6, lbl_80494958@ha
 /* 80024A04 0001A784  54 60 20 36 */	slwi r0, r3, 4
 /* 80024A08 0001A788  38 C6 49 58 */	addi r6, r6, lbl_80494958@l
@@ -544,8 +544,8 @@ gfHeapManager$7getMaxFreeSize:
 /* 80024A44 0001A7C4  80 63 00 04 */	lwz r3, 4(r3)
 /* 80024A48 0001A7C8  48 00 16 24 */	b gfMemoryPool$7getMaxFreeBlockSize
 
-.global gfHeapManager$7free
-gfHeapManager$7free:
+.global free__13gfHeapManagerFPv
+free__13gfHeapManagerFPv:
 /* 80024A4C 0001A7CC  48 00 18 E0 */	b gfPoolFree
 
 .global gfHeapManager$7dumpAll

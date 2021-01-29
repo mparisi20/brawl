@@ -20,7 +20,7 @@ gfResourceLoader$7loadResource:
 /* 8003D898 00033618  7F 83 E3 78 */	mr r3, r28
 /* 8003D89C 0003361C  7C 9F 00 50 */	subf r4, r31, r0
 /* 8003D8A0 00033620  90 9B 00 08 */	stw r4, 8(r27)
-/* 8003D8A4 00033624  4B FE 71 41 */	bl gfHeapManager$7alloc
+/* 8003D8A4 00033624  4B FE 71 41 */	bl alloc__13gfHeapManagerFUlUl
 /* 8003D8A8 00033628  90 7B 00 10 */	stw r3, 0x10(r27)
 /* 8003D8AC 0003362C  7F A3 EB 78 */	mr r3, r29
 /* 8003D8B0 00033630  4B FE 27 2D */	bl gfFileIO$7getFileSize
@@ -74,7 +74,7 @@ gfResourceLoader$7loadResourceMemSizeOrder:
 /* 8003D95C 000336DC  7C 7C 1B 78 */	mr r28, r3
 /* 8003D960 000336E0  90 E3 00 08 */	stw r7, 8(r3)
 /* 8003D964 000336E4  7F A3 EB 78 */	mr r3, r29
-/* 8003D968 000336E8  4B FE 70 7D */	bl gfHeapManager$7alloc
+/* 8003D968 000336E8  4B FE 70 7D */	bl alloc__13gfHeapManagerFUlUl
 /* 8003D96C 000336EC  90 7C 00 10 */	stw r3, 0x10(r28)
 /* 8003D970 000336F0  7F C3 F3 78 */	mr r3, r30
 /* 8003D974 000336F4  4B FE 26 69 */	bl gfFileIO$7getFileSize
@@ -173,7 +173,7 @@ gfResourceLoader$7freeResource:
 /* 8003DAB8 00033838  2C 00 00 00 */	cmpwi r0, 0
 /* 8003DABC 0003383C  41 82 00 0C */	beq lbl_8003DAC8
 /* 8003DAC0 00033840  7C 03 03 78 */	mr r3, r0
-/* 8003DAC4 00033844  4B FE 6F 89 */	bl gfHeapManager$7free
+/* 8003DAC4 00033844  4B FE 6F 89 */	bl free__13gfHeapManagerFPv
 lbl_8003DAC8:
 /* 8003DAC8 00033848  88 7F 00 1C */	lbz r3, 0x1c(r31)
 /* 8003DACC 0003384C  38 80 00 00 */	li r4, 0

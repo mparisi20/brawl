@@ -25,7 +25,7 @@ ipSwitch$7__ct:
 /* 8004A6B8 00040438  98 A3 00 25 */	stb r5, 0x25(r3)
 /* 8004A6BC 0004043C  98 03 00 26 */	stb r0, 0x26(r3)
 /* 8004A6C0 00040440  38 60 00 80 */	li r3, 0x80
-/* 8004A6C4 00040444  4B FC 21 F5 */	bl srHeapType$7__nw
+/* 8004A6C4 00040444  4B FC 21 F5 */	bl __nw__10srHeapTypeFUlUl
 /* 8004A6C8 00040448  2C 03 00 00 */	cmpwi r3, 0
 /* 8004A6CC 0004044C  7C 60 1B 78 */	mr r0, r3
 /* 8004A6D0 00040450  41 82 00 18 */	beq lbl_8004A6E8
@@ -76,7 +76,7 @@ ipSwitch$7getInstance:
 /* 8004A764 000404E4  40 82 00 20 */	bne lbl_8004A784
 /* 8004A768 000404E8  38 60 00 28 */	li r3, 0x28
 /* 8004A76C 000404EC  38 80 00 01 */	li r4, 1
-/* 8004A770 000404F0  4B FC 21 49 */	bl srHeapType$7__nw
+/* 8004A770 000404F0  4B FC 21 49 */	bl __nw__10srHeapTypeFUlUl
 /* 8004A774 000404F4  2C 03 00 00 */	cmpwi r3, 0
 /* 8004A778 000404F8  41 82 00 08 */	beq lbl_8004A780
 /* 8004A77C 000404FC  4B FF FE F5 */	bl ipSwitch$7__ct
@@ -103,7 +103,7 @@ ipSwitch$7networkOutCallback:
 /* 8004A7BC 0004053C  40 82 00 20 */	bne lbl_8004A7DC
 /* 8004A7C0 00040540  38 60 00 28 */	li r3, 0x28
 /* 8004A7C4 00040544  38 80 00 01 */	li r4, 1
-/* 8004A7C8 00040548  4B FC 20 F1 */	bl srHeapType$7__nw
+/* 8004A7C8 00040548  4B FC 20 F1 */	bl __nw__10srHeapTypeFUlUl
 /* 8004A7CC 0004054C  2C 03 00 00 */	cmpwi r3, 0
 /* 8004A7D0 00040550  41 82 00 08 */	beq lbl_8004A7D8
 /* 8004A7D4 00040554  4B FF FE 9D */	bl ipSwitch$7__ct

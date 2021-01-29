@@ -51,7 +51,7 @@ func_800AD87C:
 /* 800AD8A8 000A3628  40 82 00 18 */	bne lbl_800AD8C0
 /* 800AD8AC 000A362C  38 63 3E AC */	addi r3, r3, 0x3eac
 /* 800AD8B0 000A3630  4B F7 46 E5 */	bl gfFileIOHandle$7getBuffer
-/* 800AD8B4 000A3634  4B F7 71 99 */	bl gfHeapManager$7free
+/* 800AD8B4 000A3634  4B F7 71 99 */	bl free__13gfHeapManagerFPv
 /* 800AD8B8 000A3638  38 7E 3E AC */	addi r3, r30, 0x3eac
 /* 800AD8BC 000A363C  4B F7 46 F1 */	bl gfFileIOHandle$7release
 lbl_800AD8C0:
@@ -61,7 +61,7 @@ lbl_800AD8C0:
 /* 800AD8CC 000A364C  2C 1F 00 00 */	cmpwi r31, 0
 /* 800AD8D0 000A3650  40 81 00 0C */	ble lbl_800AD8DC
 /* 800AD8D4 000A3654  7F C3 F3 78 */	mr r3, r30
-/* 800AD8D8 000A3658  4B F5 EF F1 */	bl __dl
+/* 800AD8D8 000A3658  4B F5 EF F1 */	bl __dl__FPv
 lbl_800AD8DC:
 /* 800AD8DC 000A365C  7F C3 F3 78 */	mr r3, r30
 /* 800AD8E0 000A3660  83 E1 00 0C */	lwz r31, 0xc(r1)

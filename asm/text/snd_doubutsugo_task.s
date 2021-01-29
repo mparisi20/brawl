@@ -31,7 +31,7 @@ sndDoubutsugoTask$7__ct:
 /* 8007ADA8 00070B28  38 60 01 50 */	li r3, 0x150
 /* 8007ADAC 00070B2C  90 BD 00 54 */	stw r5, 0x54(r29)
 /* 8007ADB0 00070B30  98 1D 00 58 */	stb r0, 0x58(r29)
-/* 8007ADB4 00070B34  4B F9 1B 05 */	bl srHeapType$7__nw
+/* 8007ADB4 00070B34  4B F9 1B 05 */	bl __nw__10srHeapTypeFUlUl
 /* 8007ADB8 00070B38  2C 03 00 00 */	cmpwi r3, 0
 /* 8007ADBC 00070B3C  41 82 00 08 */	beq lbl_8007ADC4
 /* 8007ADC0 00070B40  48 14 5E E1 */	bl nw4r3snd18MemorySoundArchiveFv$7__ct
@@ -39,7 +39,7 @@ lbl_8007ADC4:
 /* 8007ADC4 00070B44  90 7D 00 44 */	stw r3, 0x44(r29)
 /* 8007ADC8 00070B48  7F C4 F3 78 */	mr r4, r30
 /* 8007ADCC 00070B4C  38 60 00 E0 */	li r3, 0xe0
-/* 8007ADD0 00070B50  4B F9 1A E9 */	bl srHeapType$7__nw
+/* 8007ADD0 00070B50  4B F9 1A E9 */	bl __nw__10srHeapTypeFUlUl
 /* 8007ADD4 00070B54  2C 03 00 00 */	cmpwi r3, 0
 /* 8007ADD8 00070B58  41 82 00 08 */	beq lbl_8007ADE0
 /* 8007ADDC 00070B5C  48 14 D9 79 */	bl nw4r3snd18SoundArchivePlayerFv$7__ct
@@ -54,11 +54,11 @@ lbl_8007ADE0:
 /* 8007ADFC 00070B7C  7C 7F 1B 78 */	mr r31, r3
 /* 8007AE00 00070B80  7F C3 F3 78 */	mr r3, r30
 /* 8007AE04 00070B84  7F E4 FB 78 */	mr r4, r31
-/* 8007AE08 00070B88  4B FA 9B DD */	bl gfHeapManager$7alloc
+/* 8007AE08 00070B88  4B FA 9B DD */	bl alloc__13gfHeapManagerFUlUl
 /* 8007AE0C 00070B8C  90 7D 00 4C */	stw r3, 0x4c(r29)
 /* 8007AE10 00070B90  7F C3 F3 78 */	mr r3, r30
 /* 8007AE14 00070B94  38 80 00 20 */	li r4, 0x20
-/* 8007AE18 00070B98  4B FA 9B CD */	bl gfHeapManager$7alloc
+/* 8007AE18 00070B98  4B FA 9B CD */	bl alloc__13gfHeapManagerFUlUl
 /* 8007AE1C 00070B9C  7C 67 1B 78 */	mr r7, r3
 /* 8007AE20 00070BA0  90 7D 00 50 */	stw r3, 0x50(r29)
 /* 8007AE24 00070BA4  80 7D 00 48 */	lwz r3, 0x48(r29)
@@ -69,7 +69,7 @@ lbl_8007ADE0:
 /* 8007AE38 00070BB8  48 14 DD 05 */	bl nw4r3snd18SoundArchivePlayerFPCQ34$7Setup
 /* 8007AE3C 00070BBC  7F C4 F3 78 */	mr r4, r30
 /* 8007AE40 00070BC0  38 60 00 C8 */	li r3, 0xc8
-/* 8007AE44 00070BC4  4B F9 1A 75 */	bl srHeapType$7__nw
+/* 8007AE44 00070BC4  4B F9 1A 75 */	bl __nw__10srHeapTypeFUlUl
 /* 8007AE48 00070BC8  2C 03 00 00 */	cmpwi r3, 0
 /* 8007AE4C 00070BCC  41 82 00 08 */	beq lbl_8007AE54
 /* 8007AE50 00070BD0  48 37 41 7D */	bl Doubutsugo$7__ct
@@ -177,9 +177,9 @@ lbl_8007AFB0:
 /* 8007AFCC 00070D4C  4E 80 04 21 */	bctrl 
 lbl_8007AFD0:
 /* 8007AFD0 00070D50  80 7E 00 4C */	lwz r3, 0x4c(r30)
-/* 8007AFD4 00070D54  4B FA 9A 79 */	bl gfHeapManager$7free
+/* 8007AFD4 00070D54  4B FA 9A 79 */	bl free__13gfHeapManagerFPv
 /* 8007AFD8 00070D58  80 7E 00 50 */	lwz r3, 0x50(r30)
-/* 8007AFDC 00070D5C  4B FA 9A 71 */	bl gfHeapManager$7free
+/* 8007AFDC 00070D5C  4B FA 9A 71 */	bl free__13gfHeapManagerFPv
 /* 8007AFE0 00070D60  80 7E 00 44 */	lwz r3, 0x44(r30)
 /* 8007AFE4 00070D64  48 14 5D D9 */	bl nw4r3snd18MemorySoundArchiveFv$7Shutdown
 /* 8007AFE8 00070D68  80 7E 00 44 */	lwz r3, 0x44(r30)
@@ -197,7 +197,7 @@ lbl_8007B008:
 /* 8007B014 00070D94  2C 1F 00 00 */	cmpwi r31, 0
 /* 8007B018 00070D98  40 81 00 0C */	ble lbl_8007B024
 /* 8007B01C 00070D9C  7F C3 F3 78 */	mr r3, r30
-/* 8007B020 00070DA0  4B F9 18 A9 */	bl __dl
+/* 8007B020 00070DA0  4B F9 18 A9 */	bl __dl__FPv
 lbl_8007B024:
 /* 8007B024 00070DA4  7F C3 F3 78 */	mr r3, r30
 /* 8007B028 00070DA8  83 E1 00 0C */	lwz r31, 0xc(r1)

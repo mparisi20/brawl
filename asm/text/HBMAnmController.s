@@ -23,7 +23,7 @@ homebutton18GroupAnmControllerFv$7__dt:
 /* 80278B24 0026E8A4  41 82 00 10 */	beq lbl_80278B34
 /* 80278B28 0026E8A8  2C 04 00 00 */	cmpwi r4, 0
 /* 80278B2C 0026E8AC  40 81 00 08 */	ble lbl_80278B34
-/* 80278B30 0026E8B0  4B D9 3D 99 */	bl __dl
+/* 80278B30 0026E8B0  4B D9 3D 99 */	bl __dl__FPv
 lbl_80278B34:
 /* 80278B34 0026E8B4  7F E3 FB 78 */	mr r3, r31
 /* 80278B38 0026E8B8  83 E1 00 0C */	lwz r31, 0xc(r1)

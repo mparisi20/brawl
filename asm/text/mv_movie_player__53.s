@@ -165,7 +165,7 @@ movieOpen$7__dt:
 /* 8007F3D8 00075158  2C 1F 00 00 */	cmpwi r31, 0
 /* 8007F3DC 0007515C  40 81 00 0C */	ble lbl_8007F3E8
 /* 8007F3E0 00075160  7F C3 F3 78 */	mr r3, r30
-/* 8007F3E4 00075164  4B F8 D4 E5 */	bl __dl
+/* 8007F3E4 00075164  4B F8 D4 E5 */	bl __dl__FPv
 lbl_8007F3E8:
 /* 8007F3E8 00075168  7F C3 F3 78 */	mr r3, r30
 /* 8007F3EC 0007516C  83 E1 00 0C */	lwz r31, 0xc(r1)
@@ -195,7 +195,7 @@ movieOpen$7processDefault:
 /* 8007F440 000751C0  4B FF CD 7D */	bl THPPlayerCalcNeedMemory
 /* 8007F444 000751C4  7C 64 1B 78 */	mr r4, r3
 /* 8007F448 000751C8  38 60 00 2A */	li r3, 0x2a
-/* 8007F44C 000751CC  4B FA 55 99 */	bl gfHeapManager$7alloc
+/* 8007F44C 000751CC  4B FA 55 99 */	bl alloc__13gfHeapManagerFUlUl
 /* 8007F450 000751D0  2C 03 00 00 */	cmpwi r3, 0
 /* 8007F454 000751D4  90 6D BD F8 */	stw r3, lbl_805A0218-_SDA_BASE_(r13)
 /* 8007F458 000751D8  40 82 00 18 */	bne lbl_8007F470
@@ -224,7 +224,7 @@ lbl_8007F494:
 /* 8007F4AC 0007522C  80 84 00 44 */	lwz r4, 0x44(r4)
 /* 8007F4B0 00075230  38 04 00 1F */	addi r0, r4, 0x1f
 /* 8007F4B4 00075234  54 04 00 34 */	rlwinm r4, r0, 0, 0, 0x1a
-/* 8007F4B8 00075238  4B FA 55 2D */	bl gfHeapManager$7alloc
+/* 8007F4B8 00075238  4B FA 55 2D */	bl alloc__13gfHeapManagerFUlUl
 /* 8007F4BC 0007523C  2C 03 00 00 */	cmpwi r3, 0
 /* 8007F4C0 00075240  90 6D BE 0C */	stw r3, lbl_805A022C-_SDA_BASE_(r13)
 /* 8007F4C4 00075244  40 82 00 44 */	bne lbl_8007F508

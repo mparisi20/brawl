@@ -106,7 +106,7 @@ __sinit_$3gf_system_callback_cpp:
 /* 800387C8 0002E548  80 03 03 40 */	lwz r0, 0x340(r3)
 /* 800387CC 0002E54C  54 00 40 10 */	rlwinm r0, r0, 8, 0, 8
 /* 800387D0 0002E550  7C 03 C6 70 */	srawi r3, r0, 0x18
-/* 800387D4 0002E554  4B FE C2 11 */	bl gfHeapManager$7alloc
+/* 800387D4 0002E554  4B FE C2 11 */	bl alloc__13gfHeapManagerFUlUl
 /* 800387D8 0002E558  80 1E 03 40 */	lwz r0, 0x340(r30)
 /* 800387DC 0002E55C  38 80 00 01 */	li r4, 1
 /* 800387E0 0002E560  50 80 C0 0E */	rlwimi r0, r4, 0x18, 0, 7
@@ -144,7 +144,7 @@ lbl_80038828:
 /* 80038858 0002E5D8  81 3E 03 58 */	lwz r9, 0x358(r30)
 /* 8003885C 0002E5DC  48 22 7D 85 */	bl TMCCJPEGEncEncode
 /* 80038860 0002E5E0  7F E3 FB 78 */	mr r3, r31
-/* 80038864 0002E5E4  4B FE C1 E9 */	bl gfHeapManager$7free
+/* 80038864 0002E5E4  4B FE C1 E9 */	bl free__13gfHeapManagerFPv
 /* 80038868 0002E5E8  80 1E 03 40 */	lwz r0, 0x340(r30)
 /* 8003886C 0002E5EC  38 60 00 02 */	li r3, 2
 /* 80038870 0002E5F0  50 60 C0 0E */	rlwimi r0, r3, 0x18, 0, 7

@@ -55,7 +55,7 @@ hkBufferedStreamReader6BufferFv$7__dt:
 /* 80280DA0 00276B20  2C 1F 00 00 */	cmpwi r31, 0
 /* 80280DA4 00276B24  40 81 00 0C */	ble lbl_80280DB0
 /* 80280DA8 00276B28  7F C3 F3 78 */	mr r3, r30
-/* 80280DAC 00276B2C  4B D8 BB 1D */	bl __dl
+/* 80280DAC 00276B2C  4B D8 BB 1D */	bl __dl__FPv
 lbl_80280DB0:
 /* 80280DB0 00276B30  7F C3 F3 78 */	mr r3, r30
 /* 80280DB4 00276B34  83 E1 00 0C */	lwz r31, 0xc(r1)

@@ -5,17 +5,17 @@
 .global gfFileIO$7setLanguage
 gfFileIO$7setLanguage:
 /* 80014164 00009EE4  7F 63 DB 78 */	mr r3, r27
-/* 80014168 00009EE8  48 01 08 E5 */	bl gfHeapManager$7free
+/* 80014168 00009EE8  48 01 08 E5 */	bl free__13gfHeapManagerFPv
 
 .global lbl_8001416C
 lbl_8001416C:
 /* 8001416C 00009EEC  7F 43 D3 78 */	mr r3, r26
-/* 80014170 00009EF0  48 01 08 DD */	bl gfHeapManager$7free
+/* 80014170 00009EF0  48 01 08 DD */	bl free__13gfHeapManagerFPv
 
 .global lbl_80014174
 lbl_80014174:
 /* 80014174 00009EF4  7F E3 FB 78 */	mr r3, r31
-/* 80014178 00009EF8  48 01 08 D5 */	bl gfHeapManager$7free
+/* 80014178 00009EF8  48 01 08 D5 */	bl free__13gfHeapManagerFPv
 /* 8001417C 00009EFC  39 61 00 20 */	addi r11, r1, 0x20
 /* 80014180 00009F00  48 3D D1 E9 */	bl _restgpr_26
 /* 80014184 00009F04  80 01 00 24 */	lwz r0, 0x24(r1)
@@ -35,7 +35,7 @@ gfArchiveEntryArray$7release_125:
 /* 800141B0 00009F30  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 800141B4 00009F34  41 82 00 20 */	beq lbl_800141D4
 /* 800141B8 00009F38  80 7F 00 10 */	lwz r3, 0x10(r31)
-/* 800141BC 00009F3C  48 01 08 91 */	bl gfHeapManager$7free
+/* 800141BC 00009F3C  48 01 08 91 */	bl free__13gfHeapManagerFPv
 /* 800141C0 00009F40  38 00 00 00 */	li r0, 0
 /* 800141C4 00009F44  90 1F 00 10 */	stw r0, 0x10(r31)
 /* 800141C8 00009F48  88 1F 00 0D */	lbz r0, 0xd(r31)

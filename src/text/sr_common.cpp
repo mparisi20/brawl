@@ -1,17 +1,6 @@
 #include "global.h"
-//#include "sr_getappname.h"
-
-struct gfHeapManager
-{
-    static void* alloc(size_t heap, size_t size);
-    static void free(void* ptr);
-};
-
-struct srHeapType
-{
-    static void* operator new(size_t sz, size_t heap);
-    static void* operator new[](size_t sz, size_t heap);
-};
+#include "gfHeapManager.h"
+#include "sr_common.h"
 
 static u32 DebugLevel = 4;
 

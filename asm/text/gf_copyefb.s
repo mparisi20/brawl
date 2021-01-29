@@ -9,7 +9,7 @@ gfCopyEFBMgr$7create:
 /* 8002FDFC 00025B7C  38 60 00 70 */	li r3, 0x70
 /* 8002FE00 00025B80  38 80 00 01 */	li r4, 1
 /* 8002FE04 00025B84  90 01 00 14 */	stw r0, 0x14(r1)
-/* 8002FE08 00025B88  4B FD CA B1 */	bl srHeapType$7__nw
+/* 8002FE08 00025B88  4B FD CA B1 */	bl __nw__10srHeapTypeFUlUl
 /* 8002FE0C 00025B8C  2C 03 00 00 */	cmpwi r3, 0
 /* 8002FE10 00025B90  41 82 00 24 */	beq lbl_8002FE34
 /* 8002FE14 00025B94  38 80 00 00 */	li r4, 0
@@ -60,7 +60,7 @@ gfCopyEFBMgr$7createCopyEFB:
 /* 8002FEAC 00025C2C  90 7F 00 08 */	stw r3, 8(r31)
 /* 8002FEB0 00025C30  7C 64 1B 78 */	mr r4, r3
 /* 8002FEB4 00025C34  7F C3 F3 78 */	mr r3, r30
-/* 8002FEB8 00025C38  4B FF 4B 2D */	bl gfHeapManager$7alloc
+/* 8002FEB8 00025C38  4B FF 4B 2D */	bl alloc__13gfHeapManagerFUlUl
 /* 8002FEBC 00025C3C  90 7F 00 04 */	stw r3, 4(r31)
 /* 8002FEC0 00025C40  80 9F 00 08 */	lwz r4, 8(r31)
 /* 8002FEC4 00025C44  48 1A 77 F9 */	bl DCInvalidateRange

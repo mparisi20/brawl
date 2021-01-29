@@ -22,7 +22,7 @@ grCollCollection$7__ct:
 /* 80116ED0 0010CC50  98 03 00 13 */	stb r0, 0x13(r3)
 /* 80116ED4 0010CC54  B0 C3 00 1A */	sth r6, 0x1a(r3)
 /* 80116ED8 0010CC58  38 60 00 0C */	li r3, 0xc
-/* 80116EDC 0010CC5C  4B F0 DB 09 */	bl gfHeapManager$7alloc
+/* 80116EDC 0010CC5C  4B F0 DB 09 */	bl alloc__13gfHeapManagerFUlUl
 /* 80116EE0 0010CC60  90 7E 00 1C */	stw r3, 0x1c(r30)
 /* 80116EE4 0010CC64  7F E5 FB 78 */	mr r5, r31
 /* 80116EE8 0010CC68  38 80 00 00 */	li r4, 0
@@ -51,12 +51,12 @@ grCollCollection$7__dt:
 /* 80116F38 0010CCB8  80 63 00 1C */	lwz r3, 0x1c(r3)
 /* 80116F3C 0010CCBC  2C 03 00 00 */	cmpwi r3, 0
 /* 80116F40 0010CCC0  41 82 00 08 */	beq lbl_80116F48
-/* 80116F44 0010CCC4  4B F0 DB 09 */	bl gfHeapManager$7free
+/* 80116F44 0010CCC4  4B F0 DB 09 */	bl free__13gfHeapManagerFPv
 lbl_80116F48:
 /* 80116F48 0010CCC8  2C 1F 00 00 */	cmpwi r31, 0
 /* 80116F4C 0010CCCC  40 81 00 0C */	ble lbl_80116F58
 /* 80116F50 0010CCD0  7F C3 F3 78 */	mr r3, r30
-/* 80116F54 0010CCD4  4B EF 59 75 */	bl __dl
+/* 80116F54 0010CCD4  4B EF 59 75 */	bl __dl__FPv
 lbl_80116F58:
 /* 80116F58 0010CCD8  7F C3 F3 78 */	mr r3, r30
 /* 80116F5C 0010CCDC  83 E1 00 0C */	lwz r31, 0xc(r1)

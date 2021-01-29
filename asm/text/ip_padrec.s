@@ -13,7 +13,7 @@ ipKeyRecorder$7__ct:
 /* 8004AFCC 00040D4C  90 A3 00 34 */	stw r5, 0x34(r3)
 /* 8004AFD0 00040D50  7C 83 23 78 */	mr r3, r4
 /* 8004AFD4 00040D54  7C A4 2B 78 */	mr r4, r5
-/* 8004AFD8 00040D58  4B FD 9A 0D */	bl gfHeapManager$7alloc
+/* 8004AFD8 00040D58  4B FD 9A 0D */	bl alloc__13gfHeapManagerFUlUl
 /* 8004AFDC 00040D5C  90 7E 00 24 */	stw r3, 0x24(r30)
 /* 8004AFE0 00040D60  38 80 00 00 */	li r4, 0
 /* 8004AFE4 00040D64  80 BE 00 34 */	lwz r5, 0x34(r30)

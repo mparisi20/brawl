@@ -10,7 +10,7 @@ ifAdvTask$7create:
 /* 80107ED0 000FDC50  38 80 00 28 */	li r4, 0x28
 /* 80107ED4 000FDC54  90 01 00 14 */	stw r0, 0x14(r1)
 /* 80107ED8 000FDC58  93 E1 00 0C */	stw r31, 0xc(r1)
-/* 80107EDC 000FDC5C  4B F0 49 DD */	bl srHeapType$7__nw
+/* 80107EDC 000FDC5C  4B F0 49 DD */	bl __nw__10srHeapTypeFUlUl
 /* 80107EE0 000FDC60  2C 03 00 00 */	cmpwi r3, 0
 /* 80107EE4 000FDC64  7C 7F 1B 78 */	mr r31, r3
 /* 80107EE8 000FDC68  41 82 00 34 */	beq lbl_80107F1C

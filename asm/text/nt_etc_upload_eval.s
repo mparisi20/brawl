@@ -17,7 +17,7 @@ nteUpdateEvaluator$7createInstance:
 /* 80158654 0014E3D4  40 82 00 58 */	bne lbl_801586AC
 /* 80158658 0014E3D8  38 60 00 34 */	li r3, 0x34
 /* 8015865C 0014E3DC  38 80 00 02 */	li r4, 2
-/* 80158660 0014E3E0  4B EB 42 59 */	bl srHeapType$7__nw
+/* 80158660 0014E3E0  4B EB 42 59 */	bl __nw__10srHeapTypeFUlUl
 /* 80158664 0014E3E4  2C 03 00 00 */	cmpwi r3, 0
 /* 80158668 0014E3E8  41 82 00 40 */	beq lbl_801586A8
 /* 8015866C 0014E3EC  38 80 FF FF */	li r4, -1
@@ -53,7 +53,7 @@ nteUpdateEvaluator$7dropInstance:
 /* 801586D0 0014E450  2C 03 00 00 */	cmpwi r3, 0
 /* 801586D4 0014E454  41 82 00 14 */	beq lbl_801586E8
 /* 801586D8 0014E458  41 82 00 08 */	beq lbl_801586E0
-/* 801586DC 0014E45C  4B EB 41 ED */	bl __dl
+/* 801586DC 0014E45C  4B EB 41 ED */	bl __dl__FPv
 lbl_801586E0:
 /* 801586E0 0014E460  38 00 00 00 */	li r0, 0
 /* 801586E4 0014E464  90 0D C0 40 */	stw r0, lbl_805A0460-_SDA_BASE_(r13)

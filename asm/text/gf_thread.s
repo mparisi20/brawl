@@ -20,11 +20,11 @@ gfThread$7__dt:
 /* 8002F5EC 0002536C  38 63 00 08 */	addi r3, r3, 8
 /* 8002F5F0 00025370  48 1B 1C 35 */	bl OSJoinThread
 /* 8002F5F4 00025374  80 7E 03 24 */	lwz r3, 0x324(r30)
-/* 8002F5F8 00025378  4B FF 54 55 */	bl gfHeapManager$7free
+/* 8002F5F8 00025378  4B FF 54 55 */	bl free__13gfHeapManagerFPv
 /* 8002F5FC 0002537C  2C 1F 00 00 */	cmpwi r31, 0
 /* 8002F600 00025380  40 81 00 0C */	ble lbl_8002F60C
 /* 8002F604 00025384  7F C3 F3 78 */	mr r3, r30
-/* 8002F608 00025388  4B FD D2 C1 */	bl __dl
+/* 8002F608 00025388  4B FD D2 C1 */	bl __dl__FPv
 lbl_8002F60C:
 /* 8002F60C 0002538C  7F C3 F3 78 */	mr r3, r30
 /* 8002F610 00025390  83 E1 00 1C */	lwz r31, 0x1c(r1)
@@ -58,7 +58,7 @@ lbl_8002F66C:
 lbl_8002F670:
 /* 8002F670 000253F0  7C E3 3B 78 */	mr r3, r7
 /* 8002F674 000253F4  7F E4 FB 78 */	mr r4, r31
-/* 8002F678 000253F8  4B FF 53 6D */	bl gfHeapManager$7alloc
+/* 8002F678 000253F8  4B FF 53 6D */	bl alloc__13gfHeapManagerFUlUl
 /* 8002F67C 000253FC  7C C3 FA 14 */	add r6, r3, r31
 /* 8002F680 00025400  90 7E 03 24 */	stw r3, 0x324(r30)
 /* 8002F684 00025404  3C 80 80 03 */	lis r4, gfThread$7startThread@ha

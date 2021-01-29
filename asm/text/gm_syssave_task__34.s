@@ -12,7 +12,7 @@ gmSysSave$7update:
 /* 8005C604 00052384  40 82 00 20 */	bne lbl_8005C624
 /* 8005C608 00052388  38 60 01 3C */	li r3, 0x13c
 /* 8005C60C 0005238C  38 80 00 02 */	li r4, 2
-/* 8005C610 00052390  4B FB 02 A9 */	bl srHeapType$7__nw
+/* 8005C610 00052390  4B FB 02 A9 */	bl __nw__10srHeapTypeFUlUl
 /* 8005C614 00052394  2C 03 00 00 */	cmpwi r3, 0
 /* 8005C618 00052398  41 82 00 08 */	beq lbl_8005C620
 /* 8005C61C 0005239C  4B FF E7 21 */	bl efManager$7__ct

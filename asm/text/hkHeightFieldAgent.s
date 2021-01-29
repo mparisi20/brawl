@@ -1863,7 +1863,7 @@ hkHeightFieldRayForwardingCollector$7__dt:
 /* 802B6078 002ABDF8  41 82 00 10 */	beq lbl_802B6088
 /* 802B607C 002ABDFC  2C 04 00 00 */	cmpwi r4, 0
 /* 802B6080 002ABE00  40 81 00 08 */	ble lbl_802B6088
-/* 802B6084 002ABE04  4B D5 68 45 */	bl __dl
+/* 802B6084 002ABE04  4B D5 68 45 */	bl __dl__FPv
 lbl_802B6088:
 /* 802B6088 002ABE08  7F E3 FB 78 */	mr r3, r31
 /* 802B608C 002ABE0C  83 E1 00 0C */	lwz r31, 0xc(r1)

@@ -337,7 +337,7 @@ gfSceneManager$7create:
 /* 8002CFE4 00022D64  40 82 00 20 */	bne lbl_8002D004
 /* 8002CFE8 00022D68  38 60 03 20 */	li r3, 0x320
 /* 8002CFEC 00022D6C  38 80 00 01 */	li r4, 1
-/* 8002CFF0 00022D70  4B FD F8 C9 */	bl srHeapType$7__nw
+/* 8002CFF0 00022D70  4B FD F8 C9 */	bl __nw__10srHeapTypeFUlUl
 /* 8002CFF4 00022D74  2C 03 00 00 */	cmpwi r3, 0
 /* 8002CFF8 00022D78  41 82 00 08 */	beq lbl_8002D000
 /* 8002CFFC 00022D7C  4B FF FC 19 */	bl gfSceneManager$7__ct

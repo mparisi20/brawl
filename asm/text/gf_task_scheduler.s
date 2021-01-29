@@ -10,7 +10,7 @@ gfTaskScheduler$7create:
 /* 8002E0A8 00023E28  38 80 00 01 */	li r4, 1
 /* 8002E0AC 00023E2C  90 01 00 14 */	stw r0, 0x14(r1)
 /* 8002E0B0 00023E30  93 E1 00 0C */	stw r31, 0xc(r1)
-/* 8002E0B4 00023E34  4B FD E8 05 */	bl srHeapType$7__nw
+/* 8002E0B4 00023E34  4B FD E8 05 */	bl __nw__10srHeapTypeFUlUl
 /* 8002E0B8 00023E38  2C 03 00 00 */	cmpwi r3, 0
 /* 8002E0BC 00023E3C  7C 7F 1B 78 */	mr r31, r3
 /* 8002E0C0 00023E40  41 82 02 30 */	beq lbl_8002E2F0

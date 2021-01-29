@@ -26,7 +26,7 @@ gfArchiveNotify$7notify:
 /* 80013510 00009290  80 7F 00 1C */	lwz r3, 0x1c(r31)
 /* 80013514 00009294  2C 03 00 00 */	cmpwi r3, 0
 /* 80013518 00009298  41 82 00 14 */	beq lbl_8001352C
-/* 8001351C 0000929C  48 01 15 31 */	bl gfHeapManager$7free
+/* 8001351C 0000929C  48 01 15 31 */	bl free__13gfHeapManagerFPv
 /* 80013520 000092A0  38 00 00 00 */	li r0, 0
 /* 80013524 000092A4  90 1F 00 1C */	stw r0, 0x1c(r31)
 /* 80013528 000092A8  48 00 01 A4 */	b lbl_800136CC
@@ -44,7 +44,7 @@ lbl_8001354C:
 /* 80013550 000092D0  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013554 000092D4  41 82 00 1C */	beq lbl_80013570
 /* 80013558 000092D8  80 77 00 10 */	lwz r3, 0x10(r23)
-/* 8001355C 000092DC  48 01 14 F1 */	bl gfHeapManager$7free
+/* 8001355C 000092DC  48 01 14 F1 */	bl free__13gfHeapManagerFPv
 /* 80013560 000092E0  93 37 00 10 */	stw r25, 0x10(r23)
 /* 80013564 000092E4  88 16 00 00 */	lbz r0, 0(r22)
 /* 80013568 000092E8  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -70,7 +70,7 @@ lbl_800135A8:
 /* 800135AC 0000932C  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 800135B0 00009330  41 82 00 1C */	beq lbl_800135CC
 /* 800135B4 00009334  80 77 00 10 */	lwz r3, 0x10(r23)
-/* 800135B8 00009338  48 01 14 95 */	bl gfHeapManager$7free
+/* 800135B8 00009338  48 01 14 95 */	bl free__13gfHeapManagerFPv
 /* 800135BC 0000933C  93 37 00 10 */	stw r25, 0x10(r23)
 /* 800135C0 00009340  88 16 00 00 */	lbz r0, 0(r22)
 /* 800135C4 00009344  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -96,7 +96,7 @@ lbl_80013604:
 /* 80013608 00009388  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 8001360C 0000938C  41 82 00 1C */	beq lbl_80013628
 /* 80013610 00009390  80 77 00 10 */	lwz r3, 0x10(r23)
-/* 80013614 00009394  48 01 14 39 */	bl gfHeapManager$7free
+/* 80013614 00009394  48 01 14 39 */	bl free__13gfHeapManagerFPv
 /* 80013618 00009398  93 37 00 10 */	stw r25, 0x10(r23)
 /* 8001361C 0000939C  88 16 00 00 */	lbz r0, 0(r22)
 /* 80013620 000093A0  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -122,7 +122,7 @@ lbl_80013660:
 /* 80013664 000093E4  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013668 000093E8  41 82 00 1C */	beq lbl_80013684
 /* 8001366C 000093EC  80 76 00 10 */	lwz r3, 0x10(r22)
-/* 80013670 000093F0  48 01 13 DD */	bl gfHeapManager$7free
+/* 80013670 000093F0  48 01 13 DD */	bl free__13gfHeapManagerFPv
 /* 80013674 000093F4  93 36 00 10 */	stw r25, 0x10(r22)
 /* 80013678 000093F8  88 17 00 00 */	lbz r0, 0(r23)
 /* 8001367C 000093FC  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -141,16 +141,16 @@ lbl_80013690:
 /* 800136A8 00009428  48 00 09 81 */	bl gfArchiveEntryArray$7release
 lbl_800136AC:
 /* 800136AC 0000942C  7E A3 AB 78 */	mr r3, r21
-/* 800136B0 00009430  48 01 13 9D */	bl gfHeapManager$7free
+/* 800136B0 00009430  48 01 13 9D */	bl free__13gfHeapManagerFPv
 lbl_800136B4:
 /* 800136B4 00009434  7F 83 E3 78 */	mr r3, r28
-/* 800136B8 00009438  48 01 13 95 */	bl gfHeapManager$7free
+/* 800136B8 00009438  48 01 13 95 */	bl free__13gfHeapManagerFPv
 lbl_800136BC:
 /* 800136BC 0000943C  7F A3 EB 78 */	mr r3, r29
-/* 800136C0 00009440  48 01 13 8D */	bl gfHeapManager$7free
+/* 800136C0 00009440  48 01 13 8D */	bl free__13gfHeapManagerFPv
 lbl_800136C4:
 /* 800136C4 00009444  7F C3 F3 78 */	mr r3, r30
-/* 800136C8 00009448  48 01 13 85 */	bl gfHeapManager$7free
+/* 800136C8 00009448  48 01 13 85 */	bl free__13gfHeapManagerFPv
 lbl_800136CC:
 /* 800136CC 0000944C  38 00 00 00 */	li r0, 0
 /* 800136D0 00009450  7F 64 DB 78 */	mr r4, r27
@@ -293,7 +293,7 @@ lbl_800138D0:
 /* 800138D4 00009654  54 00 D7 FF */	rlwinm. r0, r0, 0x1a, 0x1f, 0x1f
 /* 800138D8 00009658  41 82 00 0C */	beq lbl_800138E4
 /* 800138DC 0000965C  80 78 00 20 */	lwz r3, 0x20(r24)
-/* 800138E0 00009660  48 01 11 6D */	bl gfHeapManager$7free
+/* 800138E0 00009660  48 01 11 6D */	bl free__13gfHeapManagerFPv
 lbl_800138E4:
 /* 800138E4 00009664  38 00 00 00 */	li r0, 0
 /* 800138E8 00009668  90 18 00 20 */	stw r0, 0x20(r24)
@@ -301,7 +301,7 @@ lbl_800138EC:
 /* 800138EC 0000966C  80 78 00 1C */	lwz r3, 0x1c(r24)
 /* 800138F0 00009670  2C 03 00 00 */	cmpwi r3, 0
 /* 800138F4 00009674  41 82 00 14 */	beq lbl_80013908
-/* 800138F8 00009678  48 01 11 55 */	bl gfHeapManager$7free
+/* 800138F8 00009678  48 01 11 55 */	bl free__13gfHeapManagerFPv
 /* 800138FC 0000967C  38 00 00 00 */	li r0, 0
 /* 80013900 00009680  90 18 00 1C */	stw r0, 0x1c(r24)
 /* 80013904 00009684  48 00 01 A4 */	b lbl_80013AA8
@@ -319,7 +319,7 @@ lbl_80013928:
 /* 8001392C 000096AC  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013930 000096B0  41 82 00 1C */	beq lbl_8001394C
 /* 80013934 000096B4  80 75 00 10 */	lwz r3, 0x10(r21)
-/* 80013938 000096B8  48 01 11 15 */	bl gfHeapManager$7free
+/* 80013938 000096B8  48 01 11 15 */	bl free__13gfHeapManagerFPv
 /* 8001393C 000096BC  92 F5 00 10 */	stw r23, 0x10(r21)
 /* 80013940 000096C0  88 14 00 00 */	lbz r0, 0(r20)
 /* 80013944 000096C4  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -345,7 +345,7 @@ lbl_80013984:
 /* 80013988 00009708  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 8001398C 0000970C  41 82 00 1C */	beq lbl_800139A8
 /* 80013990 00009710  80 75 00 10 */	lwz r3, 0x10(r21)
-/* 80013994 00009714  48 01 10 B9 */	bl gfHeapManager$7free
+/* 80013994 00009714  48 01 10 B9 */	bl free__13gfHeapManagerFPv
 /* 80013998 00009718  92 F5 00 10 */	stw r23, 0x10(r21)
 /* 8001399C 0000971C  88 14 00 00 */	lbz r0, 0(r20)
 /* 800139A0 00009720  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -371,7 +371,7 @@ lbl_800139E0:
 /* 800139E4 00009764  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 800139E8 00009768  41 82 00 1C */	beq lbl_80013A04
 /* 800139EC 0000976C  80 75 00 10 */	lwz r3, 0x10(r21)
-/* 800139F0 00009770  48 01 10 5D */	bl gfHeapManager$7free
+/* 800139F0 00009770  48 01 10 5D */	bl free__13gfHeapManagerFPv
 /* 800139F4 00009774  92 F5 00 10 */	stw r23, 0x10(r21)
 /* 800139F8 00009778  88 14 00 00 */	lbz r0, 0(r20)
 /* 800139FC 0000977C  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -397,7 +397,7 @@ lbl_80013A3C:
 /* 80013A40 000097C0  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013A44 000097C4  41 82 00 1C */	beq lbl_80013A60
 /* 80013A48 000097C8  80 74 00 10 */	lwz r3, 0x10(r20)
-/* 80013A4C 000097CC  48 01 10 01 */	bl gfHeapManager$7free
+/* 80013A4C 000097CC  48 01 10 01 */	bl free__13gfHeapManagerFPv
 /* 80013A50 000097D0  92 F4 00 10 */	stw r23, 0x10(r20)
 /* 80013A54 000097D4  88 15 00 00 */	lbz r0, 0(r21)
 /* 80013A58 000097D8  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -416,16 +416,16 @@ lbl_80013A6C:
 /* 80013A84 00009804  48 00 05 A5 */	bl gfArchiveEntryArray$7release
 lbl_80013A88:
 /* 80013A88 00009808  7E 63 9B 78 */	mr r3, r19
-/* 80013A8C 0000980C  48 01 0F C1 */	bl gfHeapManager$7free
+/* 80013A8C 0000980C  48 01 0F C1 */	bl free__13gfHeapManagerFPv
 lbl_80013A90:
 /* 80013A90 00009810  7F 43 D3 78 */	mr r3, r26
-/* 80013A94 00009814  48 01 0F B9 */	bl gfHeapManager$7free
+/* 80013A94 00009814  48 01 0F B9 */	bl free__13gfHeapManagerFPv
 lbl_80013A98:
 /* 80013A98 00009818  7F 63 DB 78 */	mr r3, r27
-/* 80013A9C 0000981C  48 01 0F B1 */	bl gfHeapManager$7free
+/* 80013A9C 0000981C  48 01 0F B1 */	bl free__13gfHeapManagerFPv
 lbl_80013AA0:
 /* 80013AA0 00009820  7F 83 E3 78 */	mr r3, r28
-/* 80013AA4 00009824  48 01 0F A9 */	bl gfHeapManager$7free
+/* 80013AA4 00009824  48 01 0F A9 */	bl free__13gfHeapManagerFPv
 lbl_80013AA8:
 /* 80013AA8 00009828  88 18 00 09 */	lbz r0, 9(r24)
 /* 80013AAC 0000982C  3B 40 00 00 */	li r26, 0
@@ -499,7 +499,7 @@ lbl_80013BA0:
 /* 80013BA4 00009924  54 00 D7 FF */	rlwinm. r0, r0, 0x1a, 0x1f, 0x1f
 /* 80013BA8 00009928  41 82 00 0C */	beq lbl_80013BB4
 /* 80013BAC 0000992C  80 7B 00 20 */	lwz r3, 0x20(r27)
-/* 80013BB0 00009930  48 01 0E 9D */	bl gfHeapManager$7free
+/* 80013BB0 00009930  48 01 0E 9D */	bl free__13gfHeapManagerFPv
 lbl_80013BB4:
 /* 80013BB4 00009934  38 00 00 00 */	li r0, 0
 /* 80013BB8 00009938  90 1B 00 20 */	stw r0, 0x20(r27)
@@ -507,7 +507,7 @@ lbl_80013BBC:
 /* 80013BBC 0000993C  80 7B 00 1C */	lwz r3, 0x1c(r27)
 /* 80013BC0 00009940  2C 03 00 00 */	cmpwi r3, 0
 /* 80013BC4 00009944  41 82 00 14 */	beq lbl_80013BD8
-/* 80013BC8 00009948  48 01 0E 85 */	bl gfHeapManager$7free
+/* 80013BC8 00009948  48 01 0E 85 */	bl free__13gfHeapManagerFPv
 /* 80013BCC 0000994C  38 00 00 00 */	li r0, 0
 /* 80013BD0 00009950  90 1B 00 1C */	stw r0, 0x1c(r27)
 /* 80013BD4 00009954  48 00 01 A4 */	b lbl_80013D78
@@ -525,7 +525,7 @@ lbl_80013BF8:
 /* 80013BFC 0000997C  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013C00 00009980  41 82 00 1C */	beq lbl_80013C1C
 /* 80013C04 00009984  80 78 00 10 */	lwz r3, 0x10(r24)
-/* 80013C08 00009988  48 01 0E 45 */	bl gfHeapManager$7free
+/* 80013C08 00009988  48 01 0E 45 */	bl free__13gfHeapManagerFPv
 /* 80013C0C 0000998C  93 58 00 10 */	stw r26, 0x10(r24)
 /* 80013C10 00009990  88 17 00 00 */	lbz r0, 0(r23)
 /* 80013C14 00009994  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -551,7 +551,7 @@ lbl_80013C54:
 /* 80013C58 000099D8  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013C5C 000099DC  41 82 00 1C */	beq lbl_80013C78
 /* 80013C60 000099E0  80 78 00 10 */	lwz r3, 0x10(r24)
-/* 80013C64 000099E4  48 01 0D E9 */	bl gfHeapManager$7free
+/* 80013C64 000099E4  48 01 0D E9 */	bl free__13gfHeapManagerFPv
 /* 80013C68 000099E8  93 58 00 10 */	stw r26, 0x10(r24)
 /* 80013C6C 000099EC  88 17 00 00 */	lbz r0, 0(r23)
 /* 80013C70 000099F0  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -577,7 +577,7 @@ lbl_80013CB0:
 /* 80013CB4 00009A34  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013CB8 00009A38  41 82 00 1C */	beq lbl_80013CD4
 /* 80013CBC 00009A3C  80 78 00 10 */	lwz r3, 0x10(r24)
-/* 80013CC0 00009A40  48 01 0D 8D */	bl gfHeapManager$7free
+/* 80013CC0 00009A40  48 01 0D 8D */	bl free__13gfHeapManagerFPv
 /* 80013CC4 00009A44  93 58 00 10 */	stw r26, 0x10(r24)
 /* 80013CC8 00009A48  88 17 00 00 */	lbz r0, 0(r23)
 /* 80013CCC 00009A4C  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -603,7 +603,7 @@ lbl_80013D0C:
 /* 80013D10 00009A90  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013D14 00009A94  41 82 00 1C */	beq lbl_80013D30
 /* 80013D18 00009A98  80 77 00 10 */	lwz r3, 0x10(r23)
-/* 80013D1C 00009A9C  48 01 0D 31 */	bl gfHeapManager$7free
+/* 80013D1C 00009A9C  48 01 0D 31 */	bl free__13gfHeapManagerFPv
 /* 80013D20 00009AA0  93 57 00 10 */	stw r26, 0x10(r23)
 /* 80013D24 00009AA4  88 18 00 00 */	lbz r0, 0(r24)
 /* 80013D28 00009AA8  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -622,16 +622,16 @@ lbl_80013D3C:
 /* 80013D54 00009AD4  48 00 02 D5 */	bl gfArchiveEntryArray$7release
 lbl_80013D58:
 /* 80013D58 00009AD8  7E C3 B3 78 */	mr r3, r22
-/* 80013D5C 00009ADC  48 01 0C F1 */	bl gfHeapManager$7free
+/* 80013D5C 00009ADC  48 01 0C F1 */	bl free__13gfHeapManagerFPv
 lbl_80013D60:
 /* 80013D60 00009AE0  7F A3 EB 78 */	mr r3, r29
-/* 80013D64 00009AE4  48 01 0C E9 */	bl gfHeapManager$7free
+/* 80013D64 00009AE4  48 01 0C E9 */	bl free__13gfHeapManagerFPv
 lbl_80013D68:
 /* 80013D68 00009AE8  7F C3 F3 78 */	mr r3, r30
-/* 80013D6C 00009AEC  48 01 0C E1 */	bl gfHeapManager$7free
+/* 80013D6C 00009AEC  48 01 0C E1 */	bl free__13gfHeapManagerFPv
 lbl_80013D70:
 /* 80013D70 00009AF0  7F E3 FB 78 */	mr r3, r31
-/* 80013D74 00009AF4  48 01 0C D9 */	bl gfHeapManager$7free
+/* 80013D74 00009AF4  48 01 0C D9 */	bl free__13gfHeapManagerFPv
 lbl_80013D78:
 /* 80013D78 00009AF8  88 1B 00 09 */	lbz r0, 9(r27)
 /* 80013D7C 00009AFC  38 60 00 00 */	li r3, 0
@@ -655,7 +655,7 @@ lbl_80013DB4:
 /* 80013DC0 00009B40  2C 1C 00 00 */	cmpwi r28, 0
 /* 80013DC4 00009B44  40 81 00 0C */	ble lbl_80013DD0
 /* 80013DC8 00009B48  7F 63 DB 78 */	mr r3, r27
-/* 80013DCC 00009B4C  4B FF 8A FD */	bl __dl
+/* 80013DCC 00009B4C  4B FF 8A FD */	bl __dl__FPv
 lbl_80013DD0:
 /* 80013DD0 00009B50  39 61 00 30 */	addi r11, r1, 0x30
 /* 80013DD4 00009B54  7F 63 DB 78 */	mr r3, r27
@@ -685,7 +685,7 @@ lbl_80013E20:
 /* 80013E24 00009BA4  54 00 D7 FF */	rlwinm. r0, r0, 0x1a, 0x1f, 0x1f
 /* 80013E28 00009BA8  41 82 00 0C */	beq lbl_80013E34
 /* 80013E2C 00009BAC  80 7C 00 20 */	lwz r3, 0x20(r28)
-/* 80013E30 00009BB0  48 01 0C 1D */	bl gfHeapManager$7free
+/* 80013E30 00009BB0  48 01 0C 1D */	bl free__13gfHeapManagerFPv
 lbl_80013E34:
 /* 80013E34 00009BB4  38 00 00 00 */	li r0, 0
 /* 80013E38 00009BB8  90 1C 00 20 */	stw r0, 0x20(r28)
@@ -693,7 +693,7 @@ lbl_80013E3C:
 /* 80013E3C 00009BBC  80 7C 00 1C */	lwz r3, 0x1c(r28)
 /* 80013E40 00009BC0  2C 03 00 00 */	cmpwi r3, 0
 /* 80013E44 00009BC4  41 82 00 14 */	beq lbl_80013E58
-/* 80013E48 00009BC8  48 01 0C 05 */	bl gfHeapManager$7free
+/* 80013E48 00009BC8  48 01 0C 05 */	bl free__13gfHeapManagerFPv
 /* 80013E4C 00009BCC  38 00 00 00 */	li r0, 0
 /* 80013E50 00009BD0  90 1C 00 1C */	stw r0, 0x1c(r28)
 /* 80013E54 00009BD4  48 00 01 A4 */	b lbl_80013FF8
@@ -711,7 +711,7 @@ lbl_80013E78:
 /* 80013E7C 00009BFC  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013E80 00009C00  41 82 00 1C */	beq lbl_80013E9C
 /* 80013E84 00009C04  80 79 00 10 */	lwz r3, 0x10(r25)
-/* 80013E88 00009C08  48 01 0B C5 */	bl gfHeapManager$7free
+/* 80013E88 00009C08  48 01 0B C5 */	bl free__13gfHeapManagerFPv
 /* 80013E8C 00009C0C  93 79 00 10 */	stw r27, 0x10(r25)
 /* 80013E90 00009C10  88 18 00 00 */	lbz r0, 0(r24)
 /* 80013E94 00009C14  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -737,7 +737,7 @@ lbl_80013ED4:
 /* 80013ED8 00009C58  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013EDC 00009C5C  41 82 00 1C */	beq lbl_80013EF8
 /* 80013EE0 00009C60  80 79 00 10 */	lwz r3, 0x10(r25)
-/* 80013EE4 00009C64  48 01 0B 69 */	bl gfHeapManager$7free
+/* 80013EE4 00009C64  48 01 0B 69 */	bl free__13gfHeapManagerFPv
 /* 80013EE8 00009C68  93 79 00 10 */	stw r27, 0x10(r25)
 /* 80013EEC 00009C6C  88 18 00 00 */	lbz r0, 0(r24)
 /* 80013EF0 00009C70  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -763,7 +763,7 @@ lbl_80013F30:
 /* 80013F34 00009CB4  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013F38 00009CB8  41 82 00 1C */	beq lbl_80013F54
 /* 80013F3C 00009CBC  80 79 00 10 */	lwz r3, 0x10(r25)
-/* 80013F40 00009CC0  48 01 0B 0D */	bl gfHeapManager$7free
+/* 80013F40 00009CC0  48 01 0B 0D */	bl free__13gfHeapManagerFPv
 /* 80013F44 00009CC4  93 79 00 10 */	stw r27, 0x10(r25)
 /* 80013F48 00009CC8  88 18 00 00 */	lbz r0, 0(r24)
 /* 80013F4C 00009CCC  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -789,7 +789,7 @@ lbl_80013F8C:
 /* 80013F90 00009D10  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 80013F94 00009D14  41 82 00 1C */	beq lbl_80013FB0
 /* 80013F98 00009D18  80 78 00 10 */	lwz r3, 0x10(r24)
-/* 80013F9C 00009D1C  48 01 0A B1 */	bl gfHeapManager$7free
+/* 80013F9C 00009D1C  48 01 0A B1 */	bl free__13gfHeapManagerFPv
 /* 80013FA0 00009D20  93 78 00 10 */	stw r27, 0x10(r24)
 /* 80013FA4 00009D24  88 19 00 00 */	lbz r0, 0(r25)
 /* 80013FA8 00009D28  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -808,16 +808,16 @@ lbl_80013FBC:
 /* 80013FD4 00009D54  48 00 00 55 */	bl gfArchiveEntryArray$7release
 lbl_80013FD8:
 /* 80013FD8 00009D58  7E E3 BB 78 */	mr r3, r23
-/* 80013FDC 00009D5C  48 01 0A 71 */	bl gfHeapManager$7free
+/* 80013FDC 00009D5C  48 01 0A 71 */	bl free__13gfHeapManagerFPv
 lbl_80013FE0:
 /* 80013FE0 00009D60  7F A3 EB 78 */	mr r3, r29
-/* 80013FE4 00009D64  48 01 0A 69 */	bl gfHeapManager$7free
+/* 80013FE4 00009D64  48 01 0A 69 */	bl free__13gfHeapManagerFPv
 lbl_80013FE8:
 /* 80013FE8 00009D68  7F C3 F3 78 */	mr r3, r30
-/* 80013FEC 00009D6C  48 01 0A 61 */	bl gfHeapManager$7free
+/* 80013FEC 00009D6C  48 01 0A 61 */	bl free__13gfHeapManagerFPv
 lbl_80013FF0:
 /* 80013FF0 00009D70  7F E3 FB 78 */	mr r3, r31
-/* 80013FF4 00009D74  48 01 0A 59 */	bl gfHeapManager$7free
+/* 80013FF4 00009D74  48 01 0A 59 */	bl free__13gfHeapManagerFPv
 lbl_80013FF8:
 /* 80013FF8 00009D78  88 1C 00 09 */	lbz r0, 9(r28)
 /* 80013FFC 00009D7C  38 60 00 00 */	li r3, 0
@@ -850,7 +850,7 @@ lbl_80014054:
 /* 80014058 00009DD8  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 8001405C 00009DDC  41 82 00 1C */	beq lbl_80014078
 /* 80014060 00009DE0  80 7C 00 10 */	lwz r3, 0x10(r28)
-/* 80014064 00009DE4  48 01 09 E9 */	bl gfHeapManager$7free
+/* 80014064 00009DE4  48 01 09 E9 */	bl free__13gfHeapManagerFPv
 /* 80014068 00009DE8  93 DC 00 10 */	stw r30, 0x10(r28)
 /* 8001406C 00009DEC  88 1B 00 00 */	lbz r0, 0(r27)
 /* 80014070 00009DF0  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -876,7 +876,7 @@ lbl_800140B0:
 /* 800140B4 00009E34  54 00 CF FF */	rlwinm. r0, r0, 0x19, 0x1f, 0x1f
 /* 800140B8 00009E38  41 82 00 1C */	beq lbl_800140D4
 /* 800140BC 00009E3C  80 7B 00 10 */	lwz r3, 0x10(r27)
-/* 800140C0 00009E40  48 01 09 8D */	bl gfHeapManager$7free
+/* 800140C0 00009E40  48 01 09 8D */	bl free__13gfHeapManagerFPv
 /* 800140C4 00009E44  93 DB 00 10 */	stw r30, 0x10(r27)
 /* 800140C8 00009E48  88 1C 00 00 */	lbz r0, 0(r28)
 /* 800140CC 00009E4C  54 00 06 6E */	rlwinm r0, r0, 0, 0x19, 0x17
@@ -923,5 +923,5 @@ lbl_80014140:
 /* 80014158 00009ED8  4B FF FE D1 */	bl gfArchiveEntryArray$7release
 lbl_8001415C:
 /* 8001415C 00009EDC  7F 83 E3 78 */	mr r3, r28
-/* 80014160 00009EE0  48 01 08 ED */	bl gfHeapManager$7free
+/* 80014160 00009EE0  48 01 08 ED */	bl free__13gfHeapManagerFPv
 

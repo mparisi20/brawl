@@ -9,7 +9,7 @@ grCollConv$7create:
 /* 801385B4 0012E334  38 60 00 2C */	li r3, 0x2c
 /* 801385B8 0012E338  38 80 00 0F */	li r4, 0xf
 /* 801385BC 0012E33C  90 01 00 14 */	stw r0, 0x14(r1)
-/* 801385C0 0012E340  4B ED 42 F9 */	bl srHeapType$7__nw
+/* 801385C0 0012E340  4B ED 42 F9 */	bl __nw__10srHeapTypeFUlUl
 /* 801385C4 0012E344  2C 03 00 00 */	cmpwi r3, 0
 /* 801385C8 0012E348  41 82 00 18 */	beq lbl_801385E0
 /* 801385CC 0012E34C  3C 80 80 46 */	lis r4, lbl_8045DD3C@ha
@@ -34,7 +34,7 @@ grCollConv$7__dt:
 /* 80138608 0012E388  41 82 00 10 */	beq lbl_80138618
 /* 8013860C 0012E38C  2C 04 00 00 */	cmpwi r4, 0
 /* 80138610 0012E390  40 81 00 08 */	ble lbl_80138618
-/* 80138614 0012E394  4B ED 42 B5 */	bl __dl
+/* 80138614 0012E394  4B ED 42 B5 */	bl __dl__FPv
 lbl_80138618:
 /* 80138618 0012E398  7F E3 FB 78 */	mr r3, r31
 /* 8013861C 0012E39C  83 E1 00 0C */	lwz r31, 0xc(r1)
@@ -901,17 +901,17 @@ grCollConv$7grCollConvCollMakeLine:
 /* 80139240 0012EFC0  38 60 00 0F */	li r3, 0xf
 /* 80139244 0012EFC4  3B FF E5 A0 */	addi r31, r31, lbl_8049E5A0@l
 /* 80139248 0012EFC8  54 04 18 38 */	slwi r4, r0, 3
-/* 8013924C 0012EFCC  4B EE B7 99 */	bl gfHeapManager$7alloc
+/* 8013924C 0012EFCC  4B EE B7 99 */	bl alloc__13gfHeapManagerFUlUl
 /* 80139250 0012EFD0  A0 1E 00 02 */	lhz r0, 2(r30)
 /* 80139254 0012EFD4  90 7E 00 08 */	stw r3, 8(r30)
 /* 80139258 0012EFD8  38 60 00 0F */	li r3, 0xf
 /* 8013925C 0012EFDC  54 04 20 36 */	slwi r4, r0, 4
-/* 80139260 0012EFE0  4B EE B7 85 */	bl gfHeapManager$7alloc
+/* 80139260 0012EFE0  4B EE B7 85 */	bl alloc__13gfHeapManagerFUlUl
 /* 80139264 0012EFE4  A0 1E 00 04 */	lhz r0, 4(r30)
 /* 80139268 0012EFE8  90 7E 00 0C */	stw r3, 0xc(r30)
 /* 8013926C 0012EFEC  38 60 00 0F */	li r3, 0xf
 /* 80139270 0012EFF0  1C 80 00 6C */	mulli r4, r0, 0x6c
-/* 80139274 0012EFF4  4B EE B7 71 */	bl gfHeapManager$7alloc
+/* 80139274 0012EFF4  4B EE B7 71 */	bl alloc__13gfHeapManagerFUlUl
 /* 80139278 0012EFF8  90 7E 00 10 */	stw r3, 0x10(r30)
 /* 8013927C 0012EFFC  38 9F 00 00 */	addi r4, r31, 0
 /* 80139280 0012F000  38 C0 00 00 */	li r6, 0

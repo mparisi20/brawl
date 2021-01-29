@@ -22,11 +22,11 @@ gmSysSave$7create:
 /* 8005B500 00051280  38 63 01 18 */	addi r3, r3, 0x118
 /* 8005B504 00051284  4B FB EE D9 */	bl gfCallBackList$7remove
 /* 8005B508 00051288  80 7E 01 2C */	lwz r3, 0x12c(r30)
-/* 8005B50C 0005128C  4B FC 95 41 */	bl gfHeapManager$7free
+/* 8005B50C 0005128C  4B FC 95 41 */	bl free__13gfHeapManagerFPv
 /* 8005B510 00051290  80 7E 01 30 */	lwz r3, 0x130(r30)
-/* 8005B514 00051294  4B FC 95 39 */	bl gfHeapManager$7free
+/* 8005B514 00051294  4B FC 95 39 */	bl free__13gfHeapManagerFPv
 /* 8005B518 00051298  80 7E 01 34 */	lwz r3, 0x134(r30)
-/* 8005B51C 0005129C  4B FC 95 31 */	bl gfHeapManager$7free
+/* 8005B51C 0005129C  4B FC 95 31 */	bl free__13gfHeapManagerFPv
 /* 8005B520 000512A0  38 00 00 00 */	li r0, 0
 /* 8005B524 000512A4  3C 80 80 06 */	lis r4, nw4r2ut21LinkList$08efEffect$40$1Fv$7__dt@ha
 /* 8005B528 000512A8  90 1E 01 2C */	stw r0, 0x12c(r30)
@@ -44,7 +44,7 @@ gmSysSave$7create:
 /* 8005B558 000512D8  2C 1F 00 00 */	cmpwi r31, 0
 /* 8005B55C 000512DC  40 81 00 0C */	ble lbl_8005B568
 /* 8005B560 000512E0  7F C3 F3 78 */	mr r3, r30
-/* 8005B564 000512E4  4B FB 13 65 */	bl __dl
+/* 8005B564 000512E4  4B FB 13 65 */	bl __dl__FPv
 lbl_8005B568:
 /* 8005B568 000512E8  7F C3 F3 78 */	mr r3, r30
 /* 8005B56C 000512EC  83 E1 00 0C */	lwz r31, 0xc(r1)

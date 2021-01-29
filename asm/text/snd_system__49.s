@@ -24,25 +24,25 @@ sndSystem$7updateRemSpeakerState:
 /* 8007E9E0 00074760  4B FF F7 0D */	bl GetSizeTHPReadWork
 /* 8007E9E4 00074764  7C 64 1B 78 */	mr r4, r3
 /* 8007E9E8 00074768  38 60 00 2A */	li r3, 0x2a
-/* 8007E9EC 0007476C  4B FA 5F F9 */	bl gfHeapManager$7alloc
+/* 8007E9EC 0007476C  4B FA 5F F9 */	bl alloc__13gfHeapManagerFUlUl
 /* 8007E9F0 00074770  90 6D BD FC */	stw r3, lbl_805A021C-_SDA_BASE_(r13)
 /* 8007E9F4 00074774  4B FF F7 01 */	bl SetTHPReadWork
 /* 8007E9F8 00074778  4B FF F9 AD */	bl GetSizeTHPVideoDecWork
 /* 8007E9FC 0007477C  7C 64 1B 78 */	mr r4, r3
 /* 8007EA00 00074780  38 60 00 2A */	li r3, 0x2a
-/* 8007EA04 00074784  4B FA 5F E1 */	bl gfHeapManager$7alloc
+/* 8007EA04 00074784  4B FA 5F E1 */	bl alloc__13gfHeapManagerFUlUl
 /* 8007EA08 00074788  90 6D BE 00 */	stw r3, lbl_805A0220-_SDA_BASE_(r13)
 /* 8007EA0C 0007478C  4B FF F9 A1 */	bl SetTHPVideoDecWork
 /* 8007EA10 00074790  4B FF C6 A5 */	bl GetSizeTHPAudioDecWork
 /* 8007EA14 00074794  7C 64 1B 78 */	mr r4, r3
 /* 8007EA18 00074798  38 60 00 2A */	li r3, 0x2a
-/* 8007EA1C 0007479C  4B FA 5F C9 */	bl gfHeapManager$7alloc
+/* 8007EA1C 0007479C  4B FA 5F C9 */	bl alloc__13gfHeapManagerFUlUl
 /* 8007EA20 000747A0  90 6D BE 04 */	stw r3, lbl_805A0224-_SDA_BASE_(r13)
 /* 8007EA24 000747A4  4B FF C6 99 */	bl SetTHPAudioDecWork
 /* 8007EA28 000747A8  4B FF D2 71 */	bl GetSizeTHPPlayerWork
 /* 8007EA2C 000747AC  7C 64 1B 78 */	mr r4, r3
 /* 8007EA30 000747B0  38 60 00 2A */	li r3, 0x2a
-/* 8007EA34 000747B4  4B FA 5F B1 */	bl gfHeapManager$7alloc
+/* 8007EA34 000747B4  4B FA 5F B1 */	bl alloc__13gfHeapManagerFUlUl
 /* 8007EA38 000747B8  90 6D BE 08 */	stw r3, lbl_805A0228-_SDA_BASE_(r13)
 /* 8007EA3C 000747BC  4B FF D2 65 */	bl SetTHPPlayerWork
 /* 8007EA40 000747C0  48 0D ED 4D */	bl nw4r2ut2LCFv$7Disable
