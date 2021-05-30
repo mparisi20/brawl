@@ -93,7 +93,7 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gf_now_loading__15.o \
     $(BUILD_DIR)/asm/text/mt_matrix__16.o \
     $(BUILD_DIR)/asm/text/mt_quaternion.o \
-    $(BUILD_DIR)/asm/text/mt_prng.o \
+    $(BUILD_DIR)/src/text/mt_prng.o \
     $(BUILD_DIR)/asm/text/mt_trig.o \
     $(BUILD_DIR)/asm/text/mt_spline.o \
     $(BUILD_DIR)/asm/text/mt_coll2d.o \

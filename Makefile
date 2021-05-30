@@ -127,7 +127,7 @@ clean-tools:
 	$(foreach tool,$(TOOLDIRS),$(MAKE) clean -C $(tool);)
 
 $(ELF): $(O_FILES) $(LDSCRIPT)
-	echo $(O_FILES) > build/o_files
+	echo $(O_FILES) | tr " " "\n" > build/o_files
 	$(LD) $(LDFLAGS) -o $@ -lcf $(LDSCRIPT) @build/o_files
 # The Metrowerks linker doesn't generate physical addresses in the ELF program headers. This fixes it somehow.
 	$(OBJCOPY) $@ $@
