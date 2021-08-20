@@ -1,13 +1,7 @@
-INIT_O_FILES := \
-    $(BUILD_DIR)/asm/init.o
-
-EXTAB_O_FILES := \
-    $(BUILD_DIR)/asm/extab.o
-
-EXTABINDEX_O_FILES := \
-    $(BUILD_DIR)/asm/extabindex.o
-
-TEXT_O_FILES := \
+O_FILES := \
+    $(BUILD_DIR)/asm/text/init.o \
+    $(BUILD_DIR)/asm/data/extab.o \
+    $(BUILD_DIR)/asm/data/extabindex.o \
     $(BUILD_DIR)/src/text/sr_getappname.o \
     $(BUILD_DIR)/src/text/sr_common.o \
     $(BUILD_DIR)/src/text/sr_revision.o \
@@ -93,6 +87,12 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/gf_now_loading__15.o \
     $(BUILD_DIR)/asm/text/mt_matrix__16.o \
     $(BUILD_DIR)/asm/text/mt_quaternion.o \
+    \
+    $(BUILD_DIR)/asm/data/1_ctors.o \
+    $(BUILD_DIR)/asm/data/1_data.o \
+    $(BUILD_DIR)/asm/data/1_sbss.o \
+    $(BUILD_DIR)/asm/data/1_sdata2.o \
+    \
     $(BUILD_DIR)/src/text/mt_prng.o \
     $(BUILD_DIR)/asm/text/mt_trig.o \
     $(BUILD_DIR)/asm/text/mt_spline.o \
@@ -1349,30 +1349,12 @@ TEXT_O_FILES := \
     $(BUILD_DIR)/asm/text/main__14305.o \
     $(BUILD_DIR)/asm/text/CircleBuffer.o \
     $(BUILD_DIR)/asm/text/MWCriticalSection_gc.o \
-
-CTORS_O_FILES := \
-    $(BUILD_DIR)/asm/ctors.o
-
-DTORS_O_FILES := \
-    $(BUILD_DIR)/asm/dtors.o
-
-RODATA_O_FILES := \
-    $(BUILD_DIR)/asm/rodata.o
-
-DATA_O_FILES := \
-    $(BUILD_DIR)/asm/data.o
-
-BSS_O_FILES := \
-    $(BUILD_DIR)/asm/bss.o
-
-SDATA_O_FILES := \
-    $(BUILD_DIR)/asm/sdata.o
-
-SBSS_O_FILES := \
-    $(BUILD_DIR)/asm/sbss.o
-
-SDATA2_O_FILES := \
-    $(BUILD_DIR)/asm/sdata2.o
-
-SBSS2_O_FILES := \
-    $(BUILD_DIR)/asm/sbss2.o
+    $(BUILD_DIR)/asm/data/2_ctors.o \
+    $(BUILD_DIR)/asm/data/dtors.o \
+    $(BUILD_DIR)/asm/data/rodata.o \
+    $(BUILD_DIR)/asm/data/2_data.o \
+    $(BUILD_DIR)/asm/data/bss.o \
+    $(BUILD_DIR)/asm/data/sdata.o \
+    $(BUILD_DIR)/asm/data/2_sbss.o \
+    $(BUILD_DIR)/asm/data/2_sdata2.o \
+    $(BUILD_DIR)/asm/data/sbss2.o

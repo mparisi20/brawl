@@ -2,8 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
-.global mtPrngLog$7__ct
-mtPrngLog$7__ct:
+.global __ct__9mtPrngLogFUlUl
+__ct__9mtPrngLogFUlUl:
 /* 8004392C 000396AC  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 80043930 000396B0  7C 08 02 A6 */	mflr r0
 /* 80043934 000396B4  38 C0 00 00 */	li r6, 0
@@ -105,8 +105,8 @@ lbl_80043A78:
 /* 80043A8C 0003980C  38 21 00 10 */	addi r1, r1, 0x10
 /* 80043A90 00039810  4E 80 00 20 */	blr 
 
-.global mtPrngLogManager$7addLog
-mtPrngLogManager$7addLog:
+.global addLog__16mtPrngLogManagerFP9mtPrngLog
+addLog__16mtPrngLogManagerFP9mtPrngLog:
 /* 80043A94 00039814  80 A3 00 04 */	lwz r5, 4(r3)
 /* 80043A98 00039818  38 E0 00 00 */	li r7, 0
 /* 80043A9C 0003981C  80 03 00 00 */	lwz r0, 0(r3)

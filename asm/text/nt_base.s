@@ -57,7 +57,7 @@ NtBase$7clearWork:
 /* 80146F0C 0013CC8C  48 09 AC 41 */	bl OSGetTick
 /* 80146F10 0013CC90  7C 64 1B 78 */	mr r4, r3
 /* 80146F14 0013CC94  38 6D C0 00 */	addi r3, r13, lbl_805A0420-_SDA_BASE_
-/* 80146F18 0013CC98  4B EF 8B A5 */	bl mtRand$7init
+/* 80146F18 0013CC98  4B EF 8B A5 */	bl init__6mtRandFl
 /* 80146F1C 0013CC9C  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 80146F20 0013CCA0  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 80146F24 0013CCA4  83 C1 00 08 */	lwz r30, 8(r1)
@@ -365,7 +365,7 @@ NtBase$7initStaticWork:
 /* 80147374 0013D0F4  48 09 A7 D9 */	bl OSGetTick
 /* 80147378 0013D0F8  7C 64 1B 78 */	mr r4, r3
 /* 8014737C 0013D0FC  38 6D C0 00 */	addi r3, r13, lbl_805A0420-_SDA_BASE_
-/* 80147380 0013D100  4B EF 87 3D */	bl mtRand$7init
+/* 80147380 0013D100  4B EF 87 3D */	bl init__6mtRandFl
 /* 80147384 0013D104  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 80147388 0013D108  7C 08 03 A6 */	mtlr r0
 /* 8014738C 0013D10C  38 21 00 10 */	addi r1, r1, 0x10
@@ -419,9 +419,9 @@ lbl_80147408:
 
 .global __sinit_$3nt_base_cpp
 __sinit_$3nt_base_cpp:
-/* 80147418 0013D198  3C 80 80 43 */	lis r4, lbl_8042AE50@ha
+/* 80147418 0013D198  3C 80 80 43 */	lis r4, __vt__6mtRand@ha
 /* 8014741C 0013D19C  38 00 00 00 */	li r0, 0
-/* 80147420 0013D1A0  38 84 AE 50 */	addi r4, r4, lbl_8042AE50@l
+/* 80147420 0013D1A0  38 84 AE 50 */	addi r4, r4, __vt__6mtRand@l
 /* 80147424 0013D1A4  38 6D C0 00 */	addi r3, r13, lbl_805A0420-_SDA_BASE_
 /* 80147428 0013D1A8  90 8D C0 00 */	stw r4, lbl_805A0420-_SDA_BASE_(r13)
 /* 8014742C 0013D1AC  90 03 00 04 */	stw r0, 4(r3)

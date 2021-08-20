@@ -28,12 +28,21 @@ TARGET := brawl
 
 BUILD_DIR := build/$(TARGET)
 
-SRC_DIRS := src src/text
-ASM_DIRS := asm asm/text
+# Create the folders via recursive search.
+ASM_DIRS := $(sort $(shell find asm -type d))
+SRC_DIRS := $(sort $(shell find src -type d))
+DATA_DIRS := $(sort $(shell find data -type d))
+
+# Apply the slash removal after SRC_DIRS is created, otherwise asm/ gets into SRC.
+ASM_DIRS := $(patsubst %/,%,$(ASM_DIRS))
+SRC_DIRS := $(patsubst %/,%,$(SRC_DIRS))
+DATA_DIRS := $(patsubst %/,%,$(DATA_DIRS))
 
 # Inputs
-S_FILES := $(wildcard asm/*.s)
-CPP_FILES := $(wildcard src/*.cpp)
+S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
+DATA_FILES := $(foreach dir,$(DATA_DIRS),$(wildcard $(dir)/*.s))
+C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
+CPP_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 LDSCRIPT := $(BUILD_DIR)/ldscript.lcf
 
 # Outputs
@@ -41,12 +50,8 @@ DOL     := $(BUILD_DIR)/$(TARGET).dol
 ELF     := $(DOL:.dol=.elf)
 MAP     := $(BUILD_DIR)/$(TARGET).map
 
+# Define O_FILES
 include obj_files.mk
-
-O_FILES := $(INIT_O_FILES) $(EXTAB_O_FILES) $(EXTABINDEX_O_FILES) $(TEXT_O_FILES) \
-           $(CTORS_O_FILES) $(DTORS_O_FILES) $(RODATA_O_FILES) $(DATA_O_FILES)    \
-           $(BSS_O_FILES) $(SDATA_O_FILES) $(SBSS_O_FILES) $(SDATA2_O_FILES) 	  \
-		   $(SBSS2_O_FILES)
 
 #-------------------------------------------------------------------------------
 # Tools
@@ -101,7 +106,7 @@ default: all
 
 all: $(DOL)
 
-ALL_DIRS := build $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
+ALL_DIRS := build $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS) $(DATA_DIRS))
 
 # Make sure build directory exists before compiling anything
 DUMMY != mkdir -p $(ALL_DIRS)
@@ -138,6 +143,8 @@ $(BUILD_DIR)/%.o: %.s
 
 $(BUILD_DIR)/%.o: %.cpp
 	$(PYTHON) $(PRAGMAPROC) "$(CC)" "$(CFLAGS) -lang c++ -c" $@ $<
+	$(PYTHON) $(POSTPROC) $(PROCFLAGS) $@
 
 $(BUILD_DIR)/%.o: %.c
 	$(PYTHON) $(PRAGMAPROC) "$(CC)" "$(CFLAGS) -lang c99 -c" $@ $<
+	$(PYTHON) $(POSTPROC) $(PROCFLAGS) $@

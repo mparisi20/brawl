@@ -1,0 +1,95 @@
+{
+    "type": "dol",
+    "data_sections": [
+        {
+            "name": ".init",
+            "file": "build/brawl/asm/init.o",
+            "start": "0x80004000",
+            "end": "0x800064e0"
+        },
+        {
+            "name": "extab_",
+            "file": "build/brawl/asm/extab.o",
+            "start": "0x800064e0",
+            "end": "0x80009760"
+        },
+        {
+            "name": "extabindex_",
+            "file": "build/brawl/asm/extabindex.o",
+            "start": "0x80009760",
+            "end": "0x8000c860"
+        },
+        {
+            "name": ".ctors",
+            "file": "build/brawl/asm/ctors.o",
+            "start": "0x804064e0",
+            "end": "0x804067e0"
+        },
+        {
+            "name": ".dtors",
+            "file": "build/brawl/asm/dtors.o",
+            "start": "0x804067e0",
+            "end": "0x80406800"
+        },
+        {
+            "name": ".rodata",
+            "file": "build/brawl/asm/rodata.o",
+            "start": "0x80406800",
+            "end": "0x80420680"
+        },
+        {
+            "name": ".data",
+            "file": "build/brawl/asm/data.o",
+            "start": "0x80420680",
+            "end": "0x80494840"
+        },
+        {
+            "name": ".bss",
+            "file": "build/brawl/asm/bss.o",
+            "start": "0x80494880",
+            "end": "0x8059c420"
+        },
+        {
+            "name": ".sdata",
+            "file": "build/brawl/asm/sdata.o",
+            "start": "0x8059c420",
+            "end": "0x8059ff80"
+        },
+        {
+            "name": ".sbss",
+            "file": "build/brawl/asm/sbss.o",
+            "start": "0x8059ff80",
+            "end": "0x805a1320"
+        },
+        {
+            "name": ".sdata2",
+            "file": "build/brawl/asm/sdata2.o",
+            "start": "0x805a1320",
+            "end": "0x805a5120"
+        },
+        {
+            "name": ".sbss2",
+            "file": "build/brawl/asm/sbss2.o",
+            "start": "0x805a5120",
+            "end": "0x805a5154"
+        }
+    ],
+
+    "modules": [
+        {
+            "file": "build/brawl/src/text/sr_getappname.o",
+            ".data": ["0x80420680", "0xd"]
+        },
+        {
+            "file": "build/brawl/src/text/sr_common.o",
+            ".sdata": ["0x8059c420", "0x4"]
+        },
+        {
+            "file": "build/brawl/src/text/mt_prng.o",
+            ".ctors": ["0x80406510", "0x4"],
+            ".data": ["0x8042ae50", "0x1c"],
+            ".sbss": ["0x805a00b8", "0x8"],
+            ".sdata2": ["0x805a1748", "0x24"]
+        }
+    ]
+}
