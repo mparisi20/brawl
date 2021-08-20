@@ -1,39 +1,9 @@
 #include "global.h"
+#include "OS.h"
+#include "mtRand.h"
+#include "mtPrngLog.h"
 
 #pragma RTTI off
-
-extern "C" {
-    u32 OSGetStackPointer(void);
-}
-
-extern "C" {
-    void srandi(s32 seed);
-    s32 randseed(void);
-    float randf(void);
-    float randaf(void);
-    s32 randi(s32 p1);
-}
-
-struct mtPrngLog {
-    u8 unk0[0x10];
-    mtPrngLog(u32, u32);
-};
-
-struct mtPrngLogManager {
-    u8 unk0[0xC];
-    void addLog(mtPrngLog*);
-};
-
-struct mtRand {
-    virtual void init(s32 p1);
-    virtual s32 generate();
-    virtual float randf();
-    virtual s32 getMax();
-    virtual s32 randi();
-
-    mtRand(s32 v) : unk4(v) { }
-    s32 unk4;
-};
 
 void mtRand::init(s32 p1) {
     this->unk4 = p1;

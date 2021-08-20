@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 const char* OSGetAppGamename();
+u32 OSGetStackPointer(void);
 
 #ifdef __cplusplus
 }
