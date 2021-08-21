@@ -2,33 +2,6 @@
 
 .balign 8
 
-.global lbl_805A1770
-lbl_805A1770:
-	.incbin "baserom.dol", 0x4948F0, 0x4
-.global lbl_805A1774
-lbl_805A1774:
-	.incbin "baserom.dol", 0x4948F4, 0x4
-.global lbl_805A1778
-lbl_805A1778:
-	.incbin "baserom.dol", 0x4948F8, 0x4
-.global lbl_805A177C
-lbl_805A177C:
-	.incbin "baserom.dol", 0x4948FC, 0x4
-.global lbl_805A1780
-lbl_805A1780:
-	.incbin "baserom.dol", 0x494900, 0x4
-.global lbl_805A1784
-lbl_805A1784:
-	.incbin "baserom.dol", 0x494904, 0x4
-.global lbl_805A1788
-lbl_805A1788:
-	.incbin "baserom.dol", 0x494908, 0x8
-.global lbl_805A1790
-lbl_805A1790:
-	.incbin "baserom.dol", 0x494910, 0x8
-.global lbl_805A1798
-lbl_805A1798:
-	.incbin "baserom.dol", 0x494918, 0x8
 .global lbl_805A17A0
 lbl_805A17A0:
 	.incbin "baserom.dol", 0x494920, 0x8

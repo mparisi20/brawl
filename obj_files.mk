@@ -94,7 +94,7 @@ O_FILES := \
     $(BUILD_DIR)/asm/data/1_sdata2.o \
     \
     $(BUILD_DIR)/src/text/mt_prng.o \
-    $(BUILD_DIR)/asm/text/mt_trig.o \
+    $(BUILD_DIR)/src/text/mt_trig.o \
     $(BUILD_DIR)/asm/text/mt_spline.o \
     $(BUILD_DIR)/asm/text/mt_coll2d.o \
     $(BUILD_DIR)/asm/text/gf_now_loading__17.o \
