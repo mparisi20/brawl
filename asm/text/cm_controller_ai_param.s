@@ -89,7 +89,7 @@ lbl_800A2E00:
 /* 800A2E04 00098B84  80 63 01 38 */	lwz r3, 0x138(r3)
 /* 800A2E08 00098B88  C0 23 00 38 */	lfs f1, 0x38(r3)
 /* 800A2E0C 00098B8C  EF E0 00 72 */	fmuls f31, f0, f1
-/* 800A2E10 00098B90  4B FF 90 65 */	bl CameraController$7getInstance
+/* 800A2E10 00098B90  4B FF 90 65 */	bl getInstance__16CameraControllerFv
 /* 800A2E14 00098B94  C3 A2 8C 10 */	lfs f29, lbl_805A1F30-_SDA2_BASE_(r2)
 /* 800A2E18 00098B98  38 1B 00 04 */	addi r0, r27, 4
 /* 800A2E1C 00098B9C  C3 62 8C 14 */	lfs f27, lbl_805A1F34-_SDA2_BASE_(r2)
@@ -417,7 +417,7 @@ cmCameraParam$7getDistNormal:
 lbl_800A32D0:
 /* 800A32D0 00099050  FF E0 F0 90 */	fmr f31, f30
 lbl_800A32D4:
-/* 800A32D4 00099054  4B FF 8B A1 */	bl CameraController$7getInstance
+/* 800A32D4 00099054  4B FF 8B A1 */	bl getInstance__16CameraControllerFv
 /* 800A32D8 00099058  C0 03 00 94 */	lfs f0, 0x94(r3)
 /* 800A32DC 0009905C  C0 43 00 98 */	lfs f2, 0x98(r3)
 /* 800A32E0 00099060  EC 3F 00 28 */	fsubs f1, f31, f0
@@ -595,7 +595,7 @@ lbl_800A3528:
 lbl_800A3570:
 /* 800A3570 000992F0  FE C0 00 90 */	fmr f22, f0
 lbl_800A3574:
-/* 800A3574 000992F4  4B FF 89 01 */	bl CameraController$7getInstance
+/* 800A3574 000992F4  4B FF 89 01 */	bl getInstance__16CameraControllerFv
 /* 800A3578 000992F8  C0 83 00 94 */	lfs f4, 0x94(r3)
 /* 800A357C 000992FC  C0 02 8C 1C */	lfs f0, lbl_805A1F3C-_SDA2_BASE_(r2)
 /* 800A3580 00099300  EC 76 20 28 */	fsubs f3, f22, f4
@@ -650,7 +650,7 @@ lbl_800A3614:
 /* 800A3640 000993C0  EC 00 18 24 */	fdivs f0, f0, f3
 /* 800A3644 000993C4  EC 22 08 24 */	fdivs f1, f2, f1
 /* 800A3648 000993C8  FC 01 00 40 */	fcmpo cr0, f1, f0
-/* 800A364C 000993CC  4B FF 88 29 */	bl CameraController$7getInstance
+/* 800A364C 000993CC  4B FF 88 29 */	bl getInstance__16CameraControllerFv
 /* 800A3650 000993D0  C0 02 8B F8 */	lfs f0, lbl_805A1F18-_SDA2_BASE_(r2)
 /* 800A3654 000993D4  FC 1F 00 40 */	fcmpo cr0, f31, f0
 /* 800A3658 000993D8  40 81 00 14 */	ble lbl_800A366C
@@ -689,7 +689,7 @@ lbl_800A3688:
 lbl_800A36D4:
 /* 800A36D4 00099454  FE C0 00 90 */	fmr f22, f0
 lbl_800A36D8:
-/* 800A36D8 00099458  4B FF 87 9D */	bl CameraController$7getInstance
+/* 800A36D8 00099458  4B FF 87 9D */	bl getInstance__16CameraControllerFv
 /* 800A36DC 0009945C  C0 23 00 94 */	lfs f1, 0x94(r3)
 /* 800A36E0 00099460  C0 43 00 98 */	lfs f2, 0x98(r3)
 /* 800A36E4 00099464  EC 16 08 28 */	fsubs f0, f22, f1

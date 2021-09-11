@@ -2,8 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
-.global utRelocate$7__ct
-utRelocate$7__ct:
+.global __ct__10utRelocateFUlUl
+__ct__10utRelocateFUlUl:
 /* 80043E1C 00039B9C  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80043E20 00039BA0  7C 08 02 A6 */	mflr r0
 /* 80043E24 00039BA4  90 01 00 24 */	stw r0, 0x24(r1)
@@ -98,8 +98,8 @@ lbl_80043F4C:
 /* 80043F64 00039CE4  38 21 00 20 */	addi r1, r1, 0x20
 /* 80043F68 00039CE8  4E 80 00 20 */	blr 
 
-.global utRelocate$7__dt
-utRelocate$7__dt:
+.global __dt__10utRelocateFv
+__dt__10utRelocateFv:
 /* 80043F6C 00039CEC  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 80043F70 00039CF0  7C 08 02 A6 */	mflr r0
 /* 80043F74 00039CF4  2C 03 00 00 */	cmpwi r3, 0
@@ -118,8 +118,8 @@ lbl_80043F94:
 /* 80043FA4 00039D24  38 21 00 10 */	addi r1, r1, 0x10
 /* 80043FA8 00039D28  4E 80 00 20 */	blr 
 
-.global utRelocate$7getPublicAddress
-utRelocate$7getPublicAddress:
+.global getPublicAddress__10utRelocateFPCc
+getPublicAddress__10utRelocateFPCc:
 /* 80043FAC 00039D2C  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80043FB0 00039D30  7C 08 02 A6 */	mflr r0
 /* 80043FB4 00039D34  90 01 00 24 */	stw r0, 0x24(r1)

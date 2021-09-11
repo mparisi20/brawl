@@ -49,7 +49,7 @@ MuMsgRegData$7getRandomName:
 /* 800BFFC8 000B5D48  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 800BFFCC 000B5D4C  7C 7F 1B 78 */	mr r31, r3
 /* 800BFFD0 000B5D50  80 63 00 40 */	lwz r3, 0x40(r3)
-/* 800BFFD4 000B5D54  4B FF 61 ED */	bl MuObject$7isNodeAnimFinished
+/* 800BFFD4 000B5D54  4B FF 61 ED */	bl isNodeAnimFinished__8MuObjectFv
 /* 800BFFD8 000B5D58  2C 03 00 00 */	cmpwi r3, 0
 /* 800BFFDC 000B5D5C  41 82 00 28 */	beq lbl_800C0004
 /* 800BFFE0 000B5D60  80 7F 00 44 */	lwz r3, 0x44(r31)

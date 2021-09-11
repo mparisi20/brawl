@@ -1075,7 +1075,7 @@ hkAgentNnMachine_ProcessTrack:
 /* 802FFD44 002F5AC4  DB CC FF E0 */	stfd f30, -0x20(r12)
 /* 802FFD48 002F5AC8  F3 CC 0F E8 */	psq_st f30, -24(r12), 0, qr0
 /* 802FFD4C 002F5ACC  39 6C FF E0 */	addi r11, r12, -32
-/* 802FFD50 002F5AD0  48 0F 15 9D */	bl __save_gpr
+/* 802FFD50 002F5AD0  48 0F 15 9D */	bl _savegpr_14
 /* 802FFD54 002F5AD4  7C 8F 23 78 */	mr r15, r4
 /* 802FFD58 002F5AD8  7C B0 2B 78 */	mr r16, r5
 /* 802FFD5C 002F5ADC  38 61 02 30 */	addi r3, r1, 0x230
@@ -1551,7 +1551,7 @@ lbl_80300454:
 /* 80300468 002F61E8  13 CA 00 0C */	psq_lx f30, r10, r0, 0, qr0
 /* 8030046C 002F61EC  39 6A FF E0 */	addi r11, r10, -32
 /* 80300470 002F61F0  CB CA FF E0 */	lfd f30, -0x20(r10)
-/* 80300474 002F61F4  48 0F 0E C5 */	bl __restore_gpr
+/* 80300474 002F61F4  48 0F 0E C5 */	bl _restgpr_14
 /* 80300478 002F61F8  80 0A 00 04 */	lwz r0, 4(r10)
 /* 8030047C 002F61FC  7C 08 03 A6 */	mtlr r0
 /* 80300480 002F6200  7D 41 53 78 */	mr r1, r10

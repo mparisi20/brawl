@@ -18,7 +18,7 @@ NHTTPi_strcmp:
 NHTTPi_memclr:
 /* 80392738 003884B8  7C 85 23 78 */	mr r5, r4
 /* 8039273C 003884BC  38 80 00 00 */	li r4, 0
-/* 80392740 003884C0  4B C7 1C FC */	b func_8000443C
+/* 80392740 003884C0  4B C7 1C FC */	b memset
 
 .global NHTTPi_strnicmp
 NHTTPi_strnicmp:

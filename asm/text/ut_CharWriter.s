@@ -1780,7 +1780,7 @@ nw4r2ut17TextWriterBase$0w$1CFPQ34nw$7CalcStringRect:
 /* 8016032C 001560AC  7C 08 02 A6 */	mflr r0
 /* 80160330 001560B0  90 01 01 14 */	stw r0, 0x114(r1)
 /* 80160334 001560B4  39 61 01 10 */	addi r11, r1, 0x110
-/* 80160338 001560B8  48 29 0F B5 */	bl __save_gpr
+/* 80160338 001560B8  48 29 0F B5 */	bl _savegpr_14
 /* 8016033C 001560BC  89 E3 00 18 */	lbz r15, 0x18(r3)
 /* 80160340 001560C0  88 03 00 16 */	lbz r0, 0x16(r3)
 /* 80160344 001560C4  91 E1 00 BC */	stw r15, 0xbc(r1)
@@ -1933,7 +1933,7 @@ nw4r2ut17TextWriterBase$0w$1CFPQ34nw$7CalcStringRect:
 /* 80160590 00156310  38 80 00 00 */	li r4, 0
 /* 80160594 00156314  4B FF E7 25 */	bl nw4r2ut10CharWriterFv$7__dt
 /* 80160598 00156318  39 61 01 10 */	addi r11, r1, 0x110
-/* 8016059C 0015631C  48 29 0D 9D */	bl __restore_gpr
+/* 8016059C 0015631C  48 29 0D 9D */	bl _restgpr_14
 /* 801605A0 00156320  80 01 01 14 */	lwz r0, 0x114(r1)
 /* 801605A4 00156324  7C 08 03 A6 */	mtlr r0
 /* 801605A8 00156328  38 21 01 10 */	addi r1, r1, 0x110

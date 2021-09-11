@@ -21,7 +21,7 @@ hkExportImpulsesAndRhs:
 /* 8029F36C 002950EC  DB 6C FF B0 */	stfd f27, -0x50(r12)
 /* 8029F370 002950F0  F3 6C 0F B8 */	psq_st f27, -72(r12), 0, qr0
 /* 8029F374 002950F4  39 6C FF B0 */	addi r11, r12, -80
-/* 8029F378 002950F8  48 15 1F 75 */	bl __save_gpr
+/* 8029F378 002950F8  48 15 1F 75 */	bl _savegpr_14
 /* 8029F37C 002950FC  81 03 01 2C */	lwz r8, 0x12c(r3)
 /* 8029F380 00295100  3C 00 43 30 */	lis r0, 0x4330
 /* 8029F384 00295104  C3 E3 01 24 */	lfs f31, 0x124(r3)
@@ -669,7 +669,7 @@ lbl_8029FC70:
 /* 8029FD18 00295A98  13 6A 00 0C */	psq_lx f27, r10, r0, 0, qr0
 /* 8029FD1C 00295A9C  39 6A FF B0 */	addi r11, r10, -80
 /* 8029FD20 00295AA0  CB 6A FF B0 */	lfd f27, -0x50(r10)
-/* 8029FD24 00295AA4  48 15 16 15 */	bl __restore_gpr
+/* 8029FD24 00295AA4  48 15 16 15 */	bl _restgpr_14
 /* 8029FD28 00295AA8  80 0A 00 04 */	lwz r0, 4(r10)
 /* 8029FD2C 00295AAC  7C 08 03 A6 */	mtlr r0
 /* 8029FD30 00295AB0  7D 41 53 78 */	mr r1, r10

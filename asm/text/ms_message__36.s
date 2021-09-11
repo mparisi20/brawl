@@ -2,8 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
-.global Message$7__ct
-Message$7__ct:
+.global setObjZCompare__7MessageFUlUl
+setObjZCompare__7MessageFUlUl:
 /* 800696B4 0005F434  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800696B8 0005F438  7C 08 02 A6 */	mflr r0
 /* 800696BC 0005F43C  90 01 00 24 */	stw r0, 0x24(r1)

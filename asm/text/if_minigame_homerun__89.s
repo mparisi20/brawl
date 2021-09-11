@@ -17,7 +17,7 @@ IfMinigameHomerun$7initStepVersusResultAnim:
 /* 800FF3E8 000F5168  38 A0 00 01 */	li r5, 1
 /* 800FF3EC 000F516C  38 C0 00 01 */	li r6, 1
 /* 800FF3F0 000F5170  38 E0 00 00 */	li r7, 0
-/* 800FF3F4 000F5174  4B FB 64 61 */	bl MuObject$7setActionNo
+/* 800FF3F4 000F5174  4B FB 64 61 */	bl setActionNo__8MuObjectFllll
 /* 800FF3F8 000F5178  80 7F 00 00 */	lwz r3, 0(r31)
 /* 800FF3FC 000F517C  80 9F 00 F0 */	lwz r4, 0xf0(r31)
 /* 800FF400 000F5180  81 83 00 00 */	lwz r12, 0(r3)
@@ -40,7 +40,7 @@ IfMinigameHomerun$7initStepVersusResultAnim:
 /* 800FF444 000F51C4  38 A0 00 01 */	li r5, 1
 /* 800FF448 000F51C8  38 C0 00 01 */	li r6, 1
 /* 800FF44C 000F51CC  38 E0 00 00 */	li r7, 0
-/* 800FF450 000F51D0  4B FB 64 05 */	bl MuObject$7setActionNo
+/* 800FF450 000F51D0  4B FB 64 05 */	bl setActionNo__8MuObjectFllll
 /* 800FF454 000F51D4  80 7F 00 00 */	lwz r3, 0(r31)
 /* 800FF458 000F51D8  80 9F 00 F4 */	lwz r4, 0xf4(r31)
 /* 800FF45C 000F51DC  81 83 00 00 */	lwz r12, 0(r3)
@@ -63,7 +63,7 @@ IfMinigameHomerun$7initStepVersusResultAnim:
 /* 800FF4A0 000F5220  38 A0 00 01 */	li r5, 1
 /* 800FF4A4 000F5224  38 C0 00 01 */	li r6, 1
 /* 800FF4A8 000F5228  38 E0 00 00 */	li r7, 0
-/* 800FF4AC 000F522C  4B FB 63 A9 */	bl MuObject$7setActionNo
+/* 800FF4AC 000F522C  4B FB 63 A9 */	bl setActionNo__8MuObjectFllll
 /* 800FF4B0 000F5230  80 7F 00 00 */	lwz r3, 0(r31)
 /* 800FF4B4 000F5234  80 9F 00 F8 */	lwz r4, 0xf8(r31)
 /* 800FF4B8 000F5238  81 83 00 00 */	lwz r12, 0(r3)
@@ -98,7 +98,7 @@ IfMinigameHomerun$7mainStepVersusResultAnim:
 /* 800FF520 000F52A0  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 800FF524 000F52A4  7C 7F 1B 78 */	mr r31, r3
 /* 800FF528 000F52A8  80 63 00 04 */	lwz r3, 4(r3)
-/* 800FF52C 000F52AC  4B FB 6C 95 */	bl MuObject$7isNodeAnimFinished
+/* 800FF52C 000F52AC  4B FB 6C 95 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800FF530 000F52B0  2C 03 00 00 */	cmpwi r3, 0
 /* 800FF534 000F52B4  41 82 00 0C */	beq lbl_800FF540
 /* 800FF538 000F52B8  38 60 00 03 */	li r3, 3
@@ -154,7 +154,7 @@ $2unnamed$2if_minigame_coin_shooter_cpp$224IfCoinShooterLabelSimpleFP18IfCoinSho
 /* 800FF5EC 000F536C  7C 83 00 2E */	lwzx r4, r3, r0
 /* 800FF5F0 000F5370  80 BC 01 BC */	lwz r5, 0x1bc(r28)
 /* 800FF5F4 000F5374  38 7C 01 C8 */	addi r3, r28, 0x1c8
-/* 800FF5F8 000F5378  4B FB 2D 9D */	bl MuObject$7create
+/* 800FF5F8 000F5378  4B FB 2D 9D */	bl create__8MuObjectFUlPCcUlUlUl
 /* 800FF5FC 000F537C  2C 03 00 00 */	cmpwi r3, 0
 /* 800FF600 000F5380  7C 7F 1B 78 */	mr r31, r3
 /* 800FF604 000F5384  41 82 00 20 */	beq lbl_800FF624
@@ -466,7 +466,7 @@ lbl_800FFA00:
 /* 800FFA68 000F57E8  90 01 06 6C */	stw r0, 0x66c(r1)
 /* 800FFA6C 000F57EC  C8 01 06 68 */	lfd f0, 0x668(r1)
 /* 800FFA70 000F57F0  EC 20 08 28 */	fsubs f1, f0, f1
-/* 800FFA74 000F57F4  4B FB 7D D9 */	bl MuObject$7setFrameVisible
+/* 800FFA74 000F57F4  4B FB 7D D9 */	bl setFrameVisible__8MuObjectFf
 /* 800FFA78 000F57F8  48 00 01 E8 */	b lbl_800FFC60
 lbl_800FFA7C:
 /* 800FFA7C 000F57FC  80 6D BE F0 */	lwz r3, lbl_805A0310-_SDA_BASE_(r13)

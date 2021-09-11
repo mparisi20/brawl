@@ -68,7 +68,7 @@ gfErrorManager$7__ct:
 /* 8001AFD8 00010D58  41 82 00 10 */	beq lbl_8001AFE8
 /* 8001AFDC 00010D5C  38 80 04 00 */	li r4, 0x400
 /* 8001AFE0 00010D60  38 A0 00 01 */	li r5, 1
-/* 8001AFE4 00010D64  48 04 E6 D1 */	bl Message$7__ct
+/* 8001AFE4 00010D64  48 04 E6 D1 */	bl setObjZCompare__7MessageFUlUl
 lbl_8001AFE8:
 /* 8001AFE8 00010D68  38 C0 00 FF */	li r6, 0xff
 /* 8001AFEC 00010D6C  39 20 00 DE */	li r9, 0xde

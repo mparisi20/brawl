@@ -47,7 +47,7 @@ getlocalhost:
 /* 8035CFD0 00352D50  38 7F 00 60 */	addi r3, r31, 0x60
 /* 8035CFD4 00352D54  38 80 00 BE */	li r4, 0xbe
 /* 8035CFD8 00352D58  1C A0 00 0C */	mulli r5, r0, 0xc
-/* 8035CFDC 00352D5C  4B CA 74 61 */	bl func_8000443C
+/* 8035CFDC 00352D5C  4B CA 74 61 */	bl memset
 /* 8035CFE0 00352D60  80 01 00 10 */	lwz r0, 0x10(r1)
 /* 8035CFE4 00352D64  38 9E FF FE */	addi r4, r30, -2
 /* 8035CFE8 00352D68  38 DF 00 60 */	addi r6, r31, 0x60

@@ -820,7 +820,7 @@ nw4r3snd6detail5VoiceFRCQ44nw4r3snd6detail8W$7Setup:
 /* 801D0E74 001C6BF4  7C 08 02 A6 */	mflr r0
 /* 801D0E78 001C6BF8  90 01 00 A4 */	stw r0, 0xa4(r1)
 /* 801D0E7C 001C6BFC  39 61 00 A0 */	addi r11, r1, 0xa0
-/* 801D0E80 001C6C00  48 22 04 6D */	bl __save_gpr
+/* 801D0E80 001C6C00  48 22 04 6D */	bl _savegpr_14
 /* 801D0E84 001C6C04  88 04 00 00 */	lbz r0, 0(r4)
 /* 801D0E88 001C6C08  7C 76 1B 78 */	mr r22, r3
 /* 801D0E8C 001C6C0C  7C 97 23 78 */	mr r23, r4
@@ -995,7 +995,7 @@ lbl_801D10DC:
 /* 801D1100 001C6E80  98 76 00 AD */	stb r3, 0xad(r22)
 /* 801D1104 001C6E84  98 76 00 AE */	stb r3, 0xae(r22)
 /* 801D1108 001C6E88  98 16 00 B1 */	stb r0, 0xb1(r22)
-/* 801D110C 001C6E8C  48 22 02 2D */	bl __restore_gpr
+/* 801D110C 001C6E8C  48 22 02 2D */	bl _restgpr_14
 /* 801D1110 001C6E90  80 01 00 A4 */	lwz r0, 0xa4(r1)
 /* 801D1114 001C6E94  7C 08 03 A6 */	mtlr r0
 /* 801D1118 001C6E98  38 21 00 A0 */	addi r1, r1, 0xa0

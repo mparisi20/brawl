@@ -8,7 +8,7 @@ WPADiCreateKey:
 /* 80223920 002196A0  7C 08 02 A6 */	mflr r0
 /* 80223924 002196A4  90 01 00 A4 */	stw r0, 0xa4(r1)
 /* 80223928 002196A8  39 61 00 A0 */	addi r11, r1, 0xa0
-/* 8022392C 002196AC  48 1C D9 C1 */	bl __save_gpr
+/* 8022392C 002196AC  48 1C D9 C1 */	bl _savegpr_14
 /* 80223930 002196B0  3C 80 80 4F */	lis r4, lbl_804F6810@ha
 /* 80223934 002196B4  3F C0 80 48 */	lis r30, lbl_8047CEC0@ha
 /* 80223938 002196B8  54 60 10 3A */	slwi r0, r3, 2
@@ -444,7 +444,7 @@ lbl_802239E4:
 /* 80223FEC 00219D6C  80 61 00 34 */	lwz r3, 0x34(r1)
 /* 80223FF0 00219D70  4B FB 8F 49 */	bl OSRestoreInterrupts
 /* 80223FF4 00219D74  39 61 00 A0 */	addi r11, r1, 0xa0
-/* 80223FF8 00219D78  48 1C D3 41 */	bl __restore_gpr
+/* 80223FF8 00219D78  48 1C D3 41 */	bl _restgpr_14
 /* 80223FFC 00219D7C  80 01 00 A4 */	lwz r0, 0xa4(r1)
 /* 80224000 00219D80  7C 08 03 A6 */	mtlr r0
 /* 80224004 00219D84  38 21 00 A0 */	addi r1, r1, 0xa0
@@ -456,7 +456,7 @@ WPADiCreateKeyFor3rd:
 /* 80224010 00219D90  7C 08 02 A6 */	mflr r0
 /* 80224014 00219D94  90 01 00 A4 */	stw r0, 0xa4(r1)
 /* 80224018 00219D98  39 61 00 A0 */	addi r11, r1, 0xa0
-/* 8022401C 00219D9C  48 1C D2 D1 */	bl __save_gpr
+/* 8022401C 00219D9C  48 1C D2 D1 */	bl _savegpr_14
 /* 80224020 00219DA0  3C 80 80 4F */	lis r4, lbl_804F6810@ha
 /* 80224024 00219DA4  3F C0 80 48 */	lis r30, lbl_8047CEC0@ha
 /* 80224028 00219DA8  54 60 10 3A */	slwi r0, r3, 2
@@ -894,7 +894,7 @@ lbl_802240D4:
 /* 802246E4 0021A464  80 61 00 34 */	lwz r3, 0x34(r1)
 /* 802246E8 0021A468  4B FB 88 51 */	bl OSRestoreInterrupts
 /* 802246EC 0021A46C  39 61 00 A0 */	addi r11, r1, 0xa0
-/* 802246F0 0021A470  48 1C CC 49 */	bl __restore_gpr
+/* 802246F0 0021A470  48 1C CC 49 */	bl _restgpr_14
 /* 802246F4 0021A474  80 01 00 A4 */	lwz r0, 0xa4(r1)
 /* 802246F8 0021A478  7C 08 03 A6 */	mtlr r0
 /* 802246FC 0021A47C  38 21 00 A0 */	addi r1, r1, 0xa0

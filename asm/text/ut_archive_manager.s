@@ -2062,14 +2062,14 @@ lbl_80046730:
 /* 80046738 0003C4B8  80 A1 00 08 */	lwz r5, 8(r1)
 /* 8004673C 0003C4BC  7C 64 1B 78 */	mr r4, r3
 /* 80046740 0003C4C0  38 61 00 0C */	addi r3, r1, 0xc
-/* 80046744 0003C4C4  4B FF D6 D9 */	bl utRelocate$7__ct
+/* 80046744 0003C4C4  4B FF D6 D9 */	bl __ct__10utRelocateFUlUl
 /* 80046748 0003C4C8  7F 84 E3 78 */	mr r4, r28
 /* 8004674C 0003C4CC  38 61 00 0C */	addi r3, r1, 0xc
-/* 80046750 0003C4D0  4B FF D8 5D */	bl utRelocate$7getPublicAddress
+/* 80046750 0003C4D0  4B FF D8 5D */	bl getPublicAddress__10utRelocateFPCc
 /* 80046754 0003C4D4  7C 7F 1B 78 */	mr r31, r3
 /* 80046758 0003C4D8  38 61 00 0C */	addi r3, r1, 0xc
 /* 8004675C 0003C4DC  38 80 FF FF */	li r4, -1
-/* 80046760 0003C4E0  4B FF D8 0D */	bl utRelocate$7__dt
+/* 80046760 0003C4E0  4B FF D8 0D */	bl __dt__10utRelocateFv
 /* 80046764 0003C4E4  7F E3 FB 78 */	mr r3, r31
 /* 80046768 0003C4E8  48 00 00 08 */	b lbl_80046770
 lbl_8004676C:
@@ -2118,7 +2118,7 @@ lbl_800467FC:
 /* 800467FC 0003C57C  80 A1 00 0C */	lwz r5, 0xc(r1)
 /* 80046800 0003C580  7C 64 1B 78 */	mr r4, r3
 /* 80046804 0003C584  38 61 00 44 */	addi r3, r1, 0x44
-/* 80046808 0003C588  4B FF D6 15 */	bl utRelocate$7__ct
+/* 80046808 0003C588  4B FF D6 15 */	bl __ct__10utRelocateFUlUl
 /* 8004680C 0003C58C  3B E0 00 00 */	li r31, 0
 /* 80046810 0003C590  80 79 00 04 */	lwz r3, 4(r25)
 /* 80046814 0003C594  93 E1 00 08 */	stw r31, 8(r1)
@@ -2141,16 +2141,16 @@ lbl_80046850:
 /* 80046850 0003C5D0  80 A1 00 08 */	lwz r5, 8(r1)
 /* 80046854 0003C5D4  7C 64 1B 78 */	mr r4, r3
 /* 80046858 0003C5D8  38 61 00 10 */	addi r3, r1, 0x10
-/* 8004685C 0003C5DC  4B FF D5 C1 */	bl utRelocate$7__ct
+/* 8004685C 0003C5DC  4B FF D5 C1 */	bl __ct__10utRelocateFUlUl
 /* 80046860 0003C5E0  38 61 00 44 */	addi r3, r1, 0x44
 /* 80046864 0003C5E4  38 81 00 10 */	addi r4, r1, 0x10
 /* 80046868 0003C5E8  4B FF D8 9D */	bl utRelocate$7resolveReference
 /* 8004686C 0003C5EC  38 61 00 10 */	addi r3, r1, 0x10
 /* 80046870 0003C5F0  38 80 FF FF */	li r4, -1
-/* 80046874 0003C5F4  4B FF D6 F9 */	bl utRelocate$7__dt
+/* 80046874 0003C5F4  4B FF D6 F9 */	bl __dt__10utRelocateFv
 /* 80046878 0003C5F8  38 61 00 44 */	addi r3, r1, 0x44
 /* 8004687C 0003C5FC  38 80 FF FF */	li r4, -1
-/* 80046880 0003C600  4B FF D6 ED */	bl utRelocate$7__dt
+/* 80046880 0003C600  4B FF D6 ED */	bl __dt__10utRelocateFv
 /* 80046884 0003C604  39 61 00 A0 */	addi r11, r1, 0xa0
 /* 80046888 0003C608  48 3A AA DD */	bl _restgpr_25
 /* 8004688C 0003C60C  80 01 00 A4 */	lwz r0, 0xa4(r1)
@@ -2170,7 +2170,7 @@ utArchiveManager$7resolveReferenceExternalData:
 /* 800468B8 0003C638  7C FD 3B 78 */	mr r29, r7
 /* 800468BC 0003C63C  7D 1E 43 78 */	mr r30, r8
 /* 800468C0 0003C640  38 61 00 40 */	addi r3, r1, 0x40
-/* 800468C4 0003C644  4B FF D5 59 */	bl utRelocate$7__ct
+/* 800468C4 0003C644  4B FF D5 59 */	bl __ct__10utRelocateFUlUl
 /* 800468C8 0003C648  3B E0 00 00 */	li r31, 0
 /* 800468CC 0003C64C  80 7B 00 04 */	lwz r3, 4(r27)
 /* 800468D0 0003C650  93 E1 00 08 */	stw r31, 8(r1)
@@ -2193,16 +2193,16 @@ lbl_8004690C:
 /* 8004690C 0003C68C  80 A1 00 08 */	lwz r5, 8(r1)
 /* 80046910 0003C690  7C 64 1B 78 */	mr r4, r3
 /* 80046914 0003C694  38 61 00 0C */	addi r3, r1, 0xc
-/* 80046918 0003C698  4B FF D5 05 */	bl utRelocate$7__ct
+/* 80046918 0003C698  4B FF D5 05 */	bl __ct__10utRelocateFUlUl
 /* 8004691C 0003C69C  38 61 00 40 */	addi r3, r1, 0x40
 /* 80046920 0003C6A0  38 81 00 0C */	addi r4, r1, 0xc
 /* 80046924 0003C6A4  4B FF D7 E1 */	bl utRelocate$7resolveReference
 /* 80046928 0003C6A8  38 61 00 0C */	addi r3, r1, 0xc
 /* 8004692C 0003C6AC  38 80 FF FF */	li r4, -1
-/* 80046930 0003C6B0  4B FF D6 3D */	bl utRelocate$7__dt
+/* 80046930 0003C6B0  4B FF D6 3D */	bl __dt__10utRelocateFv
 /* 80046934 0003C6B4  38 61 00 40 */	addi r3, r1, 0x40
 /* 80046938 0003C6B8  38 80 FF FF */	li r4, -1
-/* 8004693C 0003C6BC  4B FF D6 31 */	bl utRelocate$7__dt
+/* 8004693C 0003C6BC  4B FF D6 31 */	bl __dt__10utRelocateFv
 /* 80046940 0003C6C0  39 61 00 90 */	addi r11, r1, 0x90
 /* 80046944 0003C6C4  48 3A AA 29 */	bl _restgpr_27
 /* 80046948 0003C6C8  80 01 00 94 */	lwz r0, 0x94(r1)

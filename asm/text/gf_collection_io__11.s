@@ -167,7 +167,7 @@ __sinit_$3gf_collection_io_cpp:
 /* 8003CF98 00032D18  38 7E 00 A8 */	addi r3, r30, 0xa8
 /* 8003CF9C 00032D1C  38 80 00 00 */	li r4, 0
 /* 8003CFA0 00032D20  38 A0 00 28 */	li r5, 0x28
-/* 8003CFA4 00032D24  4B FC 74 99 */	bl func_8000443C
+/* 8003CFA4 00032D24  4B FC 74 99 */	bl memset
 /* 8003CFA8 00032D28  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 8003CFAC 00032D2C  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 8003CFB0 00032D30  83 C1 00 08 */	lwz r30, 8(r1)

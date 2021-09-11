@@ -64,7 +64,7 @@ cmPhotoController$7__ct:
 /* 800A6B40 0009C8C0  D0 03 00 68 */	stfs f0, 0x68(r3)
 /* 800A6B44 0009C8C4  9B E3 00 B8 */	stb r31, 0xb8(r3)
 /* 800A6B48 0009C8C8  38 63 00 6C */	addi r3, r3, 0x6c
-/* 800A6B4C 0009C8CC  4B F5 D8 F1 */	bl func_8000443C
+/* 800A6B4C 0009C8CC  4B F5 D8 F1 */	bl memset
 /* 800A6B50 0009C8D0  93 FE 00 B0 */	stw r31, 0xb0(r30)
 /* 800A6B54 0009C8D4  7F C3 F3 78 */	mr r3, r30
 /* 800A6B58 0009C8D8  93 FE 00 AC */	stw r31, 0xac(r30)
@@ -297,7 +297,7 @@ cmPhotoController$7getModeParam:
 /* 800A6EA0 0009CC20  2C 00 00 02 */	cmpwi r0, 2
 /* 800A6EA4 0009CC24  40 82 01 58 */	bne lbl_800A6FFC
 lbl_800A6EA8:
-/* 800A6EA8 0009CC28  4B FF 4F CD */	bl CameraController$7getInstance
+/* 800A6EA8 0009CC28  4B FF 4F CD */	bl getInstance__16CameraControllerFv
 /* 800A6EAC 0009CC2C  C0 03 00 C4 */	lfs f0, 0xc4(r3)
 /* 800A6EB0 0009CC30  C0 42 8D 48 */	lfs f2, lbl_805A2068-_SDA2_BASE_(r2)
 /* 800A6EB4 0009CC34  C0 22 8D 44 */	lfs f1, lbl_805A2064-_SDA2_BASE_(r2)
@@ -451,7 +451,7 @@ cmPhotoController$7initCameraParam:
 /* 800A70E4 0009CE64  2C 1D 00 00 */	cmpwi r29, 0
 /* 800A70E8 0009CE68  93 BF 00 40 */	stw r29, 0x40(r31)
 /* 800A70EC 0009CE6C  41 80 00 94 */	blt lbl_800A7180
-/* 800A70F0 0009CE70  4B FF 4D 85 */	bl CameraController$7getInstance
+/* 800A70F0 0009CE70  4B FF 4D 85 */	bl getInstance__16CameraControllerFv
 /* 800A70F4 0009CE74  3B C0 00 01 */	li r30, 1
 /* 800A70F8 0009CE78  88 63 00 45 */	lbz r3, 0x45(r3)
 /* 800A70FC 0009CE7C  7F C0 E8 30 */	slw r0, r30, r29
@@ -603,7 +603,7 @@ lbl_800A7300:
 /* 800A731C 0009D09C  D0 1F 00 3C */	stfs f0, 0x3c(r31)
 /* 800A7320 0009D0A0  40 82 01 B4 */	bne lbl_800A74D4
 /* 800A7324 0009D0A4  83 BF 00 40 */	lwz r29, 0x40(r31)
-/* 800A7328 0009D0A8  4B FF 4B 4D */	bl CameraController$7getInstance
+/* 800A7328 0009D0A8  4B FF 4B 4D */	bl getInstance__16CameraControllerFv
 /* 800A732C 0009D0AC  3B C0 00 01 */	li r30, 1
 /* 800A7330 0009D0B0  88 63 00 45 */	lbz r3, 0x45(r3)
 /* 800A7334 0009D0B4  7F C0 E8 30 */	slw r0, r30, r29
@@ -655,7 +655,7 @@ lbl_800A73C0:
 /* 800A73D8 0009D158  EC 01 10 28 */	fsubs f0, f1, f2
 /* 800A73DC 0009D15C  FC 00 08 AE */	fsel f0, f0, f2, f1
 /* 800A73E0 0009D160  D0 1F 00 3C */	stfs f0, 0x3c(r31)
-/* 800A73E4 0009D164  4B FF 4A 91 */	bl CameraController$7getInstance
+/* 800A73E4 0009D164  4B FF 4A 91 */	bl getInstance__16CameraControllerFv
 /* 800A73E8 0009D168  80 A3 01 48 */	lwz r5, 0x148(r3)
 /* 800A73EC 0009D16C  38 00 00 00 */	li r0, 0
 /* 800A73F0 0009D170  80 83 01 54 */	lwz r4, 0x154(r3)
@@ -821,7 +821,7 @@ lbl_800A7614:
 /* 800A7620 0009D3A0  80 1E 00 08 */	lwz r0, 8(r30)
 /* 800A7624 0009D3A4  2C 00 00 00 */	cmpwi r0, 0
 /* 800A7628 0009D3A8  40 82 00 7C */	bne lbl_800A76A4
-/* 800A762C 0009D3AC  4B FF 48 49 */	bl CameraController$7getInstance
+/* 800A762C 0009D3AC  4B FF 48 49 */	bl getInstance__16CameraControllerFv
 /* 800A7630 0009D3B0  3B A0 00 01 */	li r29, 1
 /* 800A7634 0009D3B4  88 63 00 45 */	lbz r3, 0x45(r3)
 /* 800A7638 0009D3B8  7F A0 E0 30 */	slw r0, r29, r28
@@ -1564,7 +1564,7 @@ lbl_800A810C:
 /* 800A8110 0009DE90  2C 00 00 00 */	cmpwi r0, 0
 /* 800A8114 0009DE94  40 82 00 A4 */	bne lbl_800A81B8
 /* 800A8118 0009DE98  83 BF 00 40 */	lwz r29, 0x40(r31)
-/* 800A811C 0009DE9C  4B FF 3D 59 */	bl CameraController$7getInstance
+/* 800A811C 0009DE9C  4B FF 3D 59 */	bl getInstance__16CameraControllerFv
 /* 800A8120 0009DEA0  3B C0 00 01 */	li r30, 1
 /* 800A8124 0009DEA4  88 63 00 45 */	lbz r3, 0x45(r3)
 /* 800A8128 0009DEA8  7F C0 E8 30 */	slw r0, r30, r29
@@ -1674,7 +1674,7 @@ cmPhotoController$7getMoveRange:
 /* 800A829C 0009E01C  2C 00 00 02 */	cmpwi r0, 2
 /* 800A82A0 0009E020  40 82 02 D0 */	bne lbl_800A8570
 lbl_800A82A4:
-/* 800A82A4 0009E024  4B FF 3B D1 */	bl CameraController$7getInstance
+/* 800A82A4 0009E024  4B FF 3B D1 */	bl getInstance__16CameraControllerFv
 /* 800A82A8 0009E028  80 E3 01 48 */	lwz r7, 0x148(r3)
 /* 800A82AC 0009E02C  7F A4 EB 78 */	mr r4, r29
 /* 800A82B0 0009E030  80 C3 01 4C */	lwz r6, 0x14c(r3)
@@ -2133,7 +2133,7 @@ lbl_800A8948:
 /* 800A8960 0009E6E0  90 1F 00 00 */	stw r0, 0(r31)
 /* 800A8964 0009E6E4  48 00 00 EC */	b lbl_800A8A50
 lbl_800A8968:
-/* 800A8968 0009E6E8  4B FF 35 0D */	bl CameraController$7getInstance
+/* 800A8968 0009E6E8  4B FF 35 0D */	bl getInstance__16CameraControllerFv
 /* 800A896C 0009E6EC  88 63 00 45 */	lbz r3, 0x45(r3)
 /* 800A8970 0009E6F0  7F A0 F0 30 */	slw r0, r29, r30
 /* 800A8974 0009E6F4  7C 60 00 39 */	and. r0, r3, r0
@@ -2177,7 +2177,7 @@ lbl_800A89DC:
 /* 800A89F0 0009E770  90 1F 00 00 */	stw r0, 0(r31)
 /* 800A89F4 0009E774  48 00 00 5C */	b lbl_800A8A50
 lbl_800A89F8:
-/* 800A89F8 0009E778  4B FF 34 7D */	bl CameraController$7getInstance
+/* 800A89F8 0009E778  4B FF 34 7D */	bl getInstance__16CameraControllerFv
 /* 800A89FC 0009E77C  88 63 00 45 */	lbz r3, 0x45(r3)
 /* 800A8A00 0009E780  7F C0 E8 30 */	slw r0, r30, r29
 /* 800A8A04 0009E784  7C 60 00 39 */	and. r0, r3, r0
@@ -2355,7 +2355,7 @@ cmPhotoController$7updateControlByAllController:
 /* 800A8C38 0009E9B8  93 A1 00 94 */	stw r29, 0x94(r1)
 /* 800A8C3C 0009E9BC  7C 7D 1B 78 */	mr r29, r3
 /* 800A8C40 0009E9C0  38 61 00 30 */	addi r3, r1, 0x30
-/* 800A8C44 0009E9C4  4B F5 B7 F9 */	bl func_8000443C
+/* 800A8C44 0009E9C4  4B F5 B7 F9 */	bl memset
 /* 800A8C48 0009E9C8  3B E0 00 00 */	li r31, 0
 lbl_800A8C4C:
 /* 800A8C4C 0009E9CC  80 6D BC 20 */	lwz r3, lbl_805A0040-_SDA_BASE_(r13)
@@ -3140,7 +3140,7 @@ cmPhotoController$7store:
 /* 800A9694 0009F414  38 80 00 00 */	li r4, 0
 /* 800A9698 0009F418  93 C1 00 08 */	stw r30, 8(r1)
 /* 800A969C 0009F41C  7C 7E 1B 78 */	mr r30, r3
-/* 800A96A0 0009F420  4B F5 AD 9D */	bl func_8000443C
+/* 800A96A0 0009F420  4B F5 AD 9D */	bl memset
 /* 800A96A4 0009F424  C0 1F 00 28 */	lfs f0, 0x28(r31)
 /* 800A96A8 0009F428  D0 1E 00 00 */	stfs f0, 0(r30)
 /* 800A96AC 0009F42C  C0 1F 00 2C */	lfs f0, 0x2c(r31)

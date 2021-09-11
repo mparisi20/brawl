@@ -290,12 +290,13 @@ O_FILES := \
     $(BUILD_DIR)/asm/text/if_smash_appear__92.o \
     $(BUILD_DIR)/asm/text/if_utility__93.o \
     $(BUILD_DIR)/asm/text/if_minigame_coin_shooter.o \
-    $(BUILD_DIR)/asm/text/if_wifipr_mngr__94.o \
-    $(BUILD_DIR)/asm/text/if_minigame_training.o \
-    $(BUILD_DIR)/asm/text/if_wifipr_mngr__95.o \
-    $(BUILD_DIR)/asm/text/if_minigame_training__96.o \
-    $(BUILD_DIR)/asm/text/if_wifipr_mngr__97.o \
-    $(BUILD_DIR)/asm/text/if_minigame_training__98.o \
+    \
+    $(BUILD_DIR)/asm/data/1_rodata.o \
+    $(BUILD_DIR)/asm/data/2_data.o \
+    $(BUILD_DIR)/asm/data/1_sdata.o \
+    $(BUILD_DIR)/asm/data/2_sdata2.o \
+    \
+    $(BUILD_DIR)/src/text/if_minigame_training.o \
     $(BUILD_DIR)/asm/text/if_figure_loader.o \
     $(BUILD_DIR)/asm/text/if_adv_mngr.o \
     $(BUILD_DIR)/asm/text/if_adv_task.o \
@@ -1349,12 +1350,13 @@ O_FILES := \
     $(BUILD_DIR)/asm/text/main__14305.o \
     $(BUILD_DIR)/asm/text/CircleBuffer.o \
     $(BUILD_DIR)/asm/text/MWCriticalSection_gc.o \
+    \
     $(BUILD_DIR)/asm/data/2_ctors.o \
     $(BUILD_DIR)/asm/data/dtors.o \
-    $(BUILD_DIR)/asm/data/rodata.o \
-    $(BUILD_DIR)/asm/data/2_data.o \
+    $(BUILD_DIR)/asm/data/2_rodata.o \
+    $(BUILD_DIR)/asm/data/3_data.o \
     $(BUILD_DIR)/asm/data/bss.o \
-    $(BUILD_DIR)/asm/data/sdata.o \
+    $(BUILD_DIR)/asm/data/2_sdata.o \
     $(BUILD_DIR)/asm/data/2_sbss.o \
-    $(BUILD_DIR)/asm/data/2_sdata2.o \
+    $(BUILD_DIR)/asm/data/3_sdata2.o \
     $(BUILD_DIR)/asm/data/sbss2.o

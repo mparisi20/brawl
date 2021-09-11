@@ -452,7 +452,7 @@ lbl_800B00E0:
 /* 800B01E8 000A5F68  B0 9F 00 FA */	sth r4, 0xfa(r31)
 /* 800B01EC 000A5F6C  B0 1F 00 F8 */	sth r0, 0xf8(r31)
 /* 800B01F0 000A5F70  4B F6 85 89 */	bl gfCamera$7calc
-/* 800B01F4 000A5F74  4B FE BC 81 */	bl CameraController$7getInstance
+/* 800B01F4 000A5F74  4B FE BC 81 */	bl getInstance__16CameraControllerFv
 /* 800B01F8 000A5F78  38 80 00 08 */	li r4, 8
 /* 800B01FC 000A5F7C  4B FE C8 05 */	bl CameraController$7getCameraController
 /* 800B0200 000A5F80  38 80 00 04 */	li r4, 4
@@ -461,7 +461,7 @@ lbl_800B00E0:
 /* 800B020C 000A5F8C  38 E0 00 00 */	li r7, 0
 /* 800B0210 000A5F90  48 34 0D 35 */	bl __dynamic_cast
 /* 800B0214 000A5F94  4B FF 63 D5 */	bl cmMenuPadController$7storeDefault
-/* 800B0218 000A5F98  4B FE BC 5D */	bl CameraController$7getInstance
+/* 800B0218 000A5F98  4B FE BC 5D */	bl getInstance__16CameraControllerFv
 /* 800B021C 000A5F9C  38 80 00 09 */	li r4, 9
 /* 800B0220 000A5FA0  4B FE C7 E1 */	bl CameraController$7getCameraController
 /* 800B0224 000A5FA4  38 80 00 04 */	li r4, 4
@@ -560,7 +560,7 @@ lbl_800B027C:
 /* 800B0384 000A6104  B0 9F 00 FA */	sth r4, 0xfa(r31)
 /* 800B0388 000A6108  B0 1F 00 F8 */	sth r0, 0xf8(r31)
 /* 800B038C 000A610C  4B F6 83 ED */	bl gfCamera$7calc
-/* 800B0390 000A6110  4B FE BA E5 */	bl CameraController$7getInstance
+/* 800B0390 000A6110  4B FE BA E5 */	bl getInstance__16CameraControllerFv
 /* 800B0394 000A6114  38 80 00 08 */	li r4, 8
 /* 800B0398 000A6118  4B FE C6 69 */	bl CameraController$7getCameraController
 /* 800B039C 000A611C  38 80 00 04 */	li r4, 4
@@ -569,7 +569,7 @@ lbl_800B027C:
 /* 800B03A8 000A6128  38 E0 00 00 */	li r7, 0
 /* 800B03AC 000A612C  48 34 0B 99 */	bl __dynamic_cast
 /* 800B03B0 000A6130  4B FF 62 39 */	bl cmMenuPadController$7storeDefault
-/* 800B03B4 000A6134  4B FE BA C1 */	bl CameraController$7getInstance
+/* 800B03B4 000A6134  4B FE BA C1 */	bl getInstance__16CameraControllerFv
 /* 800B03B8 000A6138  38 80 00 09 */	li r4, 9
 /* 800B03BC 000A613C  4B FE C6 45 */	bl CameraController$7getCameraController
 /* 800B03C0 000A6140  38 80 00 04 */	li r4, 4

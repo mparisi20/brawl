@@ -649,7 +649,7 @@ grCollisionTest$7resetWork:
 /* 80117D48 0010DAC8  7C 08 02 A6 */	mflr r0
 /* 80117D4C 0010DACC  90 01 00 A4 */	stw r0, 0xa4(r1)
 /* 80117D50 0010DAD0  39 61 00 A0 */	addi r11, r1, 0xa0
-/* 80117D54 0010DAD4  48 2D 95 99 */	bl __save_gpr
+/* 80117D54 0010DAD4  48 2D 95 99 */	bl _savegpr_14
 /* 80117D58 0010DAD8  88 03 00 0C */	lbz r0, 0xc(r3)
 /* 80117D5C 0010DADC  3B C0 00 FF */	li r30, 0xff
 /* 80117D60 0010DAE0  3C A0 80 41 */	lis r5, lbl_804094E8@ha
@@ -983,7 +983,7 @@ lbl_80118268:
 /* 80118274 0010DFF4  D0 3F 02 D4 */	stfs f1, 0x2d4(r31)
 /* 80118278 0010DFF8  D0 1F 02 D8 */	stfs f0, 0x2d8(r31)
 /* 8011827C 0010DFFC  D0 3F 01 0C */	stfs f1, 0x10c(r31)
-/* 80118280 0010E000  48 2D 90 B9 */	bl __restore_gpr
+/* 80118280 0010E000  48 2D 90 B9 */	bl _restgpr_14
 /* 80118284 0010E004  80 01 00 A4 */	lwz r0, 0xa4(r1)
 /* 80118288 0010E008  7C 08 03 A6 */	mtlr r0
 /* 8011828C 0010E00C  38 21 00 A0 */	addi r1, r1, 0xa0

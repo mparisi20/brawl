@@ -208,8 +208,8 @@ lbl_800B8918:
 /* 800B8928 000AE6A8  38 21 00 10 */	addi r1, r1, 0x10
 /* 800B892C 000AE6AC  4E 80 00 20 */	blr 
 
-.global MuMsg$7create
-MuMsg$7create:
+.global create__5MuMsgFUlUlUl
+create__5MuMsgFUlUlUl:
 /* 800B8930 000AE6B0  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800B8934 000AE6B4  7C 08 02 A6 */	mflr r0
 /* 800B8938 000AE6B8  90 01 00 24 */	stw r0, 0x24(r1)
@@ -237,7 +237,7 @@ MuMsg$7create:
 /* 800B8990 000AE710  41 82 00 10 */	beq lbl_800B89A0
 /* 800B8994 000AE714  7F A5 EB 78 */	mr r5, r29
 /* 800B8998 000AE718  38 80 00 00 */	li r4, 0
-/* 800B899C 000AE71C  4B FB 0D 19 */	bl Message$7__ct
+/* 800B899C 000AE71C  4B FB 0D 19 */	bl setObjZCompare__7MessageFUlUl
 lbl_800B89A0:
 /* 800B89A0 000AE720  2C 1C 00 00 */	cmpwi r28, 0
 /* 800B89A4 000AE724  90 7F 00 08 */	stw r3, 8(r31)
@@ -270,8 +270,8 @@ lbl_800B89E8:
 /* 800B8A04 000AE784  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B8A08 000AE788  4E 80 00 20 */	blr 
 
-.global MuMsg$7__dt
-MuMsg$7__dt:
+.global __dt__5MuMsgFv
+__dt__5MuMsgFv:
 /* 800B8A0C 000AE78C  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800B8A10 000AE790  7C 08 02 A6 */	mflr r0
 /* 800B8A14 000AE794  2C 03 00 00 */	cmpwi r3, 0
@@ -345,8 +345,8 @@ lbl_800B8AF0:
 /* 800B8B00 000AE880  38 21 00 10 */	addi r1, r1, 0x10
 /* 800B8B04 000AE884  4E 80 00 20 */	blr 
 
-.global MuMsg$7allocMsgBuf
-MuMsg$7allocMsgBuf:
+.global allocMsgBuf__5MuMsgFUlUl
+allocMsgBuf__5MuMsgFUlUl:
 /* 800B8B08 000AE888  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800B8B0C 000AE88C  7C 08 02 A6 */	mflr r0
 /* 800B8B10 000AE890  90 01 00 24 */	stw r0, 0x24(r1)
@@ -451,16 +451,16 @@ MuMsg$7initWindowSetting:
 /* 800B8C74 000AE9F4  D0 C4 00 44 */	stfs f6, 0x44(r4)
 /* 800B8C78 000AE9F8  4E 80 00 20 */	blr 
 
-.global MuMsg$7setMsgData
-MuMsg$7setMsgData:
+.global setMsgData__5MuMsgFUl
+setMsgData__5MuMsgFUl:
 /* 800B8C7C 000AE9FC  88 03 00 00 */	lbz r0, 0(r3)
 /* 800B8C80 000AEA00  90 83 00 04 */	stw r4, 4(r3)
 /* 800B8C84 000AEA04  60 00 00 80 */	ori r0, r0, 0x80
 /* 800B8C88 000AEA08  98 03 00 00 */	stb r0, 0(r3)
 /* 800B8C8C 000AEA0C  4E 80 00 20 */	blr 
 
-.global MuMsg$7attachScnMdlSimple
-MuMsg$7attachScnMdlSimple:
+.global attachScnMdlSimple__5MuMsgFfUlPQ34nw4r3g3d6ScnObjUc
+attachScnMdlSimple__5MuMsgFfUlPQ34nw4r3g3d6ScnObjUc:
 /* 800B8C90 000AEA10  94 21 FF 90 */	stwu r1, -0x70(r1)
 /* 800B8C94 000AEA14  7C 08 02 A6 */	mflr r0
 /* 800B8C98 000AEA18  90 01 00 74 */	stw r0, 0x74(r1)
@@ -821,8 +821,8 @@ lbl_800B91A0:
 /* 800B91B0 000AEF30  38 21 00 10 */	addi r1, r1, 0x10
 /* 800B91B4 000AEF34  4E 80 00 20 */	blr 
 
-.global MuMsg$7printIndex
-MuMsg$7printIndex:
+.global printIndex__5MuMsgFUlUlUl
+printIndex__5MuMsgFUlUlUl:
 /* 800B91B8 000AEF38  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800B91BC 000AEF3C  7C 08 02 A6 */	mflr r0
 /* 800B91C0 000AEF40  2C 06 00 00 */	cmpwi r6, 0
@@ -856,8 +856,8 @@ lbl_800B9214:
 /* 800B9228 000AEFA8  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B922C 000AEFAC  4E 80 00 20 */	blr 
 
-.global MuMsg$7printf
-MuMsg$7printf:
+.global printf__5MuMsgFUlPCce
+printf__5MuMsgFUlPCce:
 /* 800B9230 000AEFB0  94 21 FF 80 */	stwu r1, -0x80(r1)
 /* 800B9234 000AEFB4  7C 08 02 A6 */	mflr r0
 /* 800B9238 000AEFB8  90 01 00 84 */	stw r0, 0x84(r1)
@@ -965,8 +965,8 @@ MuMsg$7setWindowRectVisible:
 /* 800B939C 000AF11C  7C 03 21 2E */	stwx r0, r3, r4
 /* 800B93A0 000AF120  4E 80 00 20 */	blr 
 
-.global MuMsg$7setFontColor
-MuMsg$7setFontColor:
+.global setFontColor__5MuMsgFUlUlUlUlUl
+setFontColor__5MuMsgFUlUlUlUlUl:
 /* 800B93A4 000AF124  1C 04 00 48 */	mulli r0, r4, 0x48
 /* 800B93A8 000AF128  80 63 00 0C */	lwz r3, 0xc(r3)
 /* 800B93AC 000AF12C  7C 63 02 14 */	add r3, r3, r0
@@ -1046,8 +1046,8 @@ func_800B9460:
 /* 800B9480 000AF200  98 03 00 1B */	stb r0, 0x1b(r3)
 /* 800B9484 000AF204  4E 80 00 20 */	blr 
 
-.global func_800B9488
-func_800B9488:
+.global func_800B9488__5MuMsgFUlUl
+func_800B9488__5MuMsgFUlUl:
 /* 800B9488 000AF208  1C 84 00 48 */	mulli r4, r4, 0x48
 /* 800B948C 000AF20C  80 63 00 0C */	lwz r3, 0xc(r3)
 /* 800B9490 000AF210  7C 03 20 2E */	lwzx r0, r3, r4
@@ -1071,8 +1071,8 @@ MuMsg$7setWScale:
 /* 800B94C0 000AF240  D0 23 00 28 */	stfs f1, 0x28(r3)
 /* 800B94C4 000AF244  4E 80 00 20 */	blr 
 
-.global MuMsg$7getWScale
-MuMsg$7getWScale:
+.global getWScale__5MuMsgFUlf
+getWScale__5MuMsgFUlf:
 /* 800B94C8 000AF248  1C 04 00 48 */	mulli r0, r4, 0x48
 /* 800B94CC 000AF24C  80 63 00 0C */	lwz r3, 0xc(r3)
 /* 800B94D0 000AF250  7C 63 02 14 */	add r3, r3, r0

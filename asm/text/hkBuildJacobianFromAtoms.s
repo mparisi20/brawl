@@ -4480,7 +4480,7 @@ hkRagdollMotorConstraintAtom$7buildJacobianFromRagdollMotorAtom:
 /* 8028BD60 00281AE0  DA 0C FF 00 */	stfd f16, -0x100(r12)
 /* 8028BD64 00281AE4  F2 0C 0F 08 */	psq_st f16, -248(r12), 0, qr0
 /* 8028BD68 00281AE8  39 6C FF 00 */	addi r11, r12, -256
-/* 8028BD6C 00281AEC  48 16 55 81 */	bl __save_gpr
+/* 8028BD6C 00281AEC  48 16 55 81 */	bl _savegpr_14
 /* 8028BD70 00281AF0  88 03 00 02 */	lbz r0, 2(r3)
 /* 8028BD74 00281AF4  7C 6F 1B 78 */	mr r15, r3
 /* 8028BD78 00281AF8  82 84 00 44 */	lwz r20, 0x44(r4)
@@ -5072,7 +5072,7 @@ lbl_8028C59C:
 /* 8028C658 002823D8  12 0A 00 0C */	psq_lx f16, r10, r0, 0, qr0
 /* 8028C65C 002823DC  39 6A FF 00 */	addi r11, r10, -256
 /* 8028C660 002823E0  CA 0A FF 00 */	lfd f16, -0x100(r10)
-/* 8028C664 002823E4  48 16 4C D5 */	bl __restore_gpr
+/* 8028C664 002823E4  48 16 4C D5 */	bl _restgpr_14
 /* 8028C668 002823E8  80 0A 00 04 */	lwz r0, 4(r10)
 /* 8028C66C 002823EC  7C 08 03 A6 */	mtlr r0
 /* 8028C670 002823F0  7D 41 53 78 */	mr r1, r10

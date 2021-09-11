@@ -281,7 +281,7 @@ lbl_8009E75C:
 /* 8009E76C 000944EC  2C 1E 00 00 */	cmpwi r30, 0
 /* 8009E770 000944F0  41 82 02 60 */	beq lbl_8009E9D0
 lbl_8009E774:
-/* 8009E774 000944F4  4B FF D7 01 */	bl CameraController$7getInstance
+/* 8009E774 000944F4  4B FF D7 01 */	bl getInstance__16CameraControllerFv
 /* 8009E778 000944F8  34 63 00 C4 */	addic. r3, r3, 0xc4
 /* 8009E77C 000944FC  41 82 00 3C */	beq lbl_8009E7B8
 /* 8009E780 00094500  C0 82 8A D4 */	lfs f4, lbl_805A1DF4-_SDA2_BASE_(r2)
@@ -312,7 +312,7 @@ lbl_8009E7D0:
 /* 8009E7DC 0009455C  54 60 00 38 */	rlwinm r0, r3, 0, 0, 0x1c
 /* 8009E7E0 00094560  54 7F 07 7E */	clrlwi r31, r3, 0x1d
 /* 8009E7E4 00094564  90 1A 00 00 */	stw r0, 0(r26)
-/* 8009E7E8 00094568  4B FF D6 8D */	bl CameraController$7getInstance
+/* 8009E7E8 00094568  4B FF D6 8D */	bl getInstance__16CameraControllerFv
 /* 8009E7EC 0009456C  57 60 07 FF */	clrlwi. r0, r27, 0x1f
 /* 8009E7F0 00094570  8B 23 00 45 */	lbz r25, 0x45(r3)
 /* 8009E7F4 00094574  41 82 00 4C */	beq lbl_8009E840
@@ -495,7 +495,7 @@ cmReplay$7calcCamera:
 /* 8009EA70 000947F0  90 A1 00 2C */	stw r5, 0x2c(r1)
 /* 8009EA74 000947F4  90 81 00 30 */	stw r4, 0x30(r1)
 /* 8009EA78 000947F8  90 01 00 34 */	stw r0, 0x34(r1)
-/* 8009EA7C 000947FC  4B FF D3 F9 */	bl CameraController$7getInstance
+/* 8009EA7C 000947FC  4B FF D3 F9 */	bl getInstance__16CameraControllerFv
 /* 8009EA80 00094800  C0 21 00 2C */	lfs f1, 0x2c(r1)
 /* 8009EA84 00094804  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 8009EA88 00094808  FC 01 00 40 */	fcmpo cr0, f1, f0
@@ -566,7 +566,7 @@ lbl_8009EAC4:
 /* 8009EB80 00094900  90 81 00 08 */	stw r4, 8(r1)
 /* 8009EB84 00094904  90 61 00 0C */	stw r3, 0xc(r1)
 /* 8009EB88 00094908  90 01 00 10 */	stw r0, 0x10(r1)
-/* 8009EB8C 0009490C  4B FF D2 E9 */	bl CameraController$7getInstance
+/* 8009EB8C 0009490C  4B FF D2 E9 */	bl getInstance__16CameraControllerFv
 /* 8009EB90 00094910  C0 21 00 08 */	lfs f1, 8(r1)
 /* 8009EB94 00094914  C0 03 01 58 */	lfs f0, 0x158(r3)
 /* 8009EB98 00094918  FC 01 00 40 */	fcmpo cr0, f1, f0

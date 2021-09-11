@@ -671,7 +671,7 @@ lbl_80061E2C:
 /* 80061E78 00057BF8  54 00 06 7D */	rlwinm. r0, r0, 0, 0x19, 0x1e
 /* 80061E7C 00057BFC  40 82 01 84 */	bne lbl_80062000
 /* 80061E80 00057C00  C0 22 86 38 */	lfs f1, lbl_805A1958-_SDA2_BASE_(r2)
-/* 80061E84 00057C04  4B FC 67 CD */	bl gfModelAnimation$7setUpdateRate
+/* 80061E84 00057C04  4B FC 67 CD */	bl setUpdateRate__16gfModelAnimationFf
 /* 80061E88 00057C08  48 00 01 78 */	b lbl_80062000
 lbl_80061E8C:
 /* 80061E8C 00057C0C  80 79 00 48 */	lwz r3, 0x48(r25)
@@ -681,7 +681,7 @@ lbl_80061E8C:
 /* 80061E9C 00057C1C  54 80 06 7D */	rlwinm. r0, r4, 0, 0x19, 0x1e
 /* 80061EA0 00057C20  40 82 00 10 */	bne lbl_80061EB0
 /* 80061EA4 00057C24  FC 20 F8 90 */	fmr f1, f31
-/* 80061EA8 00057C28  4B FC 67 A9 */	bl gfModelAnimation$7setUpdateRate
+/* 80061EA8 00057C28  4B FC 67 A9 */	bl setUpdateRate__16gfModelAnimationFf
 /* 80061EAC 00057C2C  48 00 01 1C */	b lbl_80061FC8
 lbl_80061EB0:
 /* 80061EB0 00057C30  54 80 07 BD */	rlwinm. r0, r4, 0, 0x1e, 0x1e
@@ -937,7 +937,7 @@ lbl_800621F0:
 /* 80062238 00057FB8  54 00 06 7D */	rlwinm. r0, r0, 0, 0x19, 0x1e
 /* 8006223C 00057FBC  40 82 01 4C */	bne lbl_80062388
 /* 80062240 00057FC0  C0 22 86 38 */	lfs f1, lbl_805A1958-_SDA2_BASE_(r2)
-/* 80062244 00057FC4  4B FC 64 0D */	bl gfModelAnimation$7setUpdateRate
+/* 80062244 00057FC4  4B FC 64 0D */	bl setUpdateRate__16gfModelAnimationFf
 /* 80062248 00057FC8  48 00 01 40 */	b lbl_80062388
 lbl_8006224C:
 /* 8006224C 00057FCC  80 7F 00 48 */	lwz r3, 0x48(r31)
@@ -947,7 +947,7 @@ lbl_8006224C:
 /* 8006225C 00057FDC  54 80 06 7D */	rlwinm. r0, r4, 0, 0x19, 0x1e
 /* 80062260 00057FE0  40 82 00 10 */	bne lbl_80062270
 /* 80062264 00057FE4  FC 20 F8 90 */	fmr f1, f31
-/* 80062268 00057FE8  4B FC 63 E9 */	bl gfModelAnimation$7setUpdateRate
+/* 80062268 00057FE8  4B FC 63 E9 */	bl setUpdateRate__16gfModelAnimationFf
 /* 8006226C 00057FEC  48 00 01 1C */	b lbl_80062388
 lbl_80062270:
 /* 80062270 00057FF0  54 80 07 BD */	rlwinm. r0, r4, 0, 0x1e, 0x1e
@@ -2696,7 +2696,7 @@ ecEffectWork$7set_mdl_enable_update:
 lbl_80063B48:
 /* 80063B48 000598C8  C0 22 86 38 */	lfs f1, lbl_805A1958-_SDA2_BASE_(r2)
 /* 80063B4C 000598CC  7C C3 33 78 */	mr r3, r6
-/* 80063B50 000598D0  4B FC 4B 01 */	bl gfModelAnimation$7setUpdateRate
+/* 80063B50 000598D0  4B FC 4B 01 */	bl setUpdateRate__16gfModelAnimationFf
 /* 80063B54 000598D4  A0 1D 00 56 */	lhz r0, 0x56(r29)
 /* 80063B58 000598D8  60 00 00 7E */	ori r0, r0, 0x7e
 /* 80063B5C 000598DC  B0 1D 00 56 */	sth r0, 0x56(r29)

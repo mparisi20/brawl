@@ -1810,8 +1810,8 @@ lbl_80074298:
 /* 800742A8 0006A028  38 21 00 10 */	addi r1, r1, 0x10
 /* 800742AC 0006A02C  4E 80 00 20 */	blr 
 
-.global sndSystem$7playSE
-sndSystem$7playSE:
+.global playSE__9sndSystemFlllll
+playSE__9sndSystemFlllll:
 /* 800742B0 0006A030  94 21 FF 70 */	stwu r1, -0x90(r1)
 /* 800742B4 0006A034  7C 08 02 A6 */	mflr r0
 /* 800742B8 0006A038  90 01 00 94 */	stw r0, 0x94(r1)
@@ -2700,7 +2700,7 @@ lbl_80074EE0:
 /* 80074EE4 0006AC64  38 C0 00 00 */	li r6, 0
 /* 80074EE8 0006AC68  38 E0 00 00 */	li r7, 0
 /* 80074EEC 0006AC6C  39 00 FF FF */	li r8, -1
-/* 80074EF0 0006AC70  4B FF F3 C0 */	b sndSystem$7playSE
+/* 80074EF0 0006AC70  4B FF F3 C0 */	b playSE__9sndSystemFlllll
 /* 80074EF4 0006AC74  4E 80 00 20 */	blr 
 
 .global lbl_80074EF8
@@ -6599,4 +6599,3 @@ lbl_800783DC:
 lbl_800783E4:
 /* 800783E4 0006E164  38 60 00 05 */	li r3, 5
 /* 800783E8 0006E168  4E 80 00 20 */	blr 
-

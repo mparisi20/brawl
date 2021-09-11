@@ -1623,7 +1623,7 @@ hkSymmetricAgentLinearCast$021hkMultiRayConvexAgent$1$7processCollision:
 /* 802BA624 002B03A4  DB 4C FF A0 */	stfd f26, -0x60(r12)
 /* 802BA628 002B03A8  F3 4C 0F A8 */	psq_st f26, -88(r12), 0, qr0
 /* 802BA62C 002B03AC  39 6C FF A0 */	addi r11, r12, -96
-/* 802BA630 002B03B0  48 13 6C BD */	bl __save_gpr
+/* 802BA630 002B03B0  48 13 6C BD */	bl _savegpr_14
 /* 802BA634 002B03B4  3D 00 80 53 */	lis r8, lbl_80532448@ha
 /* 802BA638 002B03B8  7C 6F 1B 78 */	mr r15, r3
 /* 802BA63C 002B03BC  39 08 24 48 */	addi r8, r8, lbl_80532448@l
@@ -1943,7 +1943,7 @@ lbl_802BAABC:
 /* 802BAB00 002B0880  13 4A 00 0C */	psq_lx f26, r10, r0, 0, qr0
 /* 802BAB04 002B0884  39 6A FF A0 */	addi r11, r10, -96
 /* 802BAB08 002B0888  CB 4A FF A0 */	lfd f26, -0x60(r10)
-/* 802BAB0C 002B088C  48 13 68 2D */	bl __restore_gpr
+/* 802BAB0C 002B088C  48 13 68 2D */	bl _restgpr_14
 /* 802BAB10 002B0890  80 0A 00 04 */	lwz r0, 4(r10)
 /* 802BAB14 002B0894  7C 08 03 A6 */	mtlr r0
 /* 802BAB18 002B0898  7D 41 53 78 */	mr r1, r10

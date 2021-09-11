@@ -93,7 +93,14 @@
         },
         {
             "file": "build/brawl/src/text/mt_trig.o",
-            ".sdata2": ["0x805a1770", "0x2C"]
+            ".sdata2": ["0x805a1770", "0x2c"]
+        },
+        {
+            "file": "build/brawl/src/text/if_minigame_training.o",
+            ".rodata": ["0x80409208", "0xd8"],
+            ".data": ["0x8045cfd8", "0x87"],
+            ".sdata": ["0x8059e5c0", "0x18"],
+            ".sdata2": ["0x805a27b8", "0x28"]
         }
     ]
 }

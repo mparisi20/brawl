@@ -12,7 +12,7 @@ HID_DevInit:
 /* 80246FEC 0023CD6C  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 80246FF0 0023CD70  3F E0 80 53 */	lis r31, lbl_8052C870@ha
 /* 80246FF4 0023CD74  38 7F C8 70 */	addi r3, r31, lbl_8052C870@l
-/* 80246FF8 0023CD78  4B DB D4 45 */	bl func_8000443C
+/* 80246FF8 0023CD78  4B DB D4 45 */	bl memset
 /* 80246FFC 0023CD7C  3C 60 80 24 */	lis r3, hidd_proc_repage_timeout@ha
 /* 80247000 0023CD80  38 BF C8 70 */	addi r5, r31, -14224
 /* 80247004 0023CD84  38 C0 00 01 */	li r6, 1

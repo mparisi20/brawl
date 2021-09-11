@@ -468,7 +468,7 @@ hkAgent1nMachine_Process:
 /* 802FCD28 002F2AA8  DB 6C FF B0 */	stfd f27, -0x50(r12)
 /* 802FCD2C 002F2AAC  F3 6C 0F B8 */	psq_st f27, -72(r12), 0, qr0
 /* 802FCD30 002F2AB0  39 6C FF B0 */	addi r11, r12, -80
-/* 802FCD34 002F2AB4  48 0F 45 B9 */	bl __save_gpr
+/* 802FCD34 002F2AB4  48 0F 45 B9 */	bl _savegpr_14
 /* 802FCD38 002F2AB8  80 08 30 50 */	lwz r0, 0x3050(r8)
 /* 802FCD3C 002F2ABC  7C 6F 1B 78 */	mr r15, r3
 /* 802FCD40 002F2AC0  7C 90 23 78 */	mr r16, r4
@@ -1528,7 +1528,7 @@ lbl_802FDCA8:
 /* 802FDCE8 002F3A68  13 6A 00 0C */	psq_lx f27, r10, r0, 0, qr0
 /* 802FDCEC 002F3A6C  CB 6A FF B0 */	lfd f27, -0x50(r10)
 /* 802FDCF0 002F3A70  39 6A FF B0 */	addi r11, r10, -80
-/* 802FDCF4 002F3A74  48 0F 36 45 */	bl __restore_gpr
+/* 802FDCF4 002F3A74  48 0F 36 45 */	bl _restgpr_14
 /* 802FDCF8 002F3A78  80 0A 00 04 */	lwz r0, 4(r10)
 /* 802FDCFC 002F3A7C  7C 08 03 A6 */	mtlr r0
 /* 802FDD00 002F3A80  7D 41 53 78 */	mr r1, r10

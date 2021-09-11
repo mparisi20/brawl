@@ -2,8 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
-.global muMenuController$7init
-muMenuController$7init:
+.global init__16muMenuControllerFUc
+init__16muMenuControllerFUc:
 /* 800B96E8 000AF468  38 00 00 01 */	li r0, 1
 /* 800B96EC 000AF46C  28 04 00 FF */	cmplwi r4, 0xff
 /* 800B96F0 000AF470  90 03 00 00 */	stw r0, 0(r3)
@@ -79,8 +79,8 @@ lbl_800B9720:
 /* 800B97FC 000AF57C  90 83 00 A4 */	stw r4, 0xa4(r3)
 /* 800B9800 000AF580  4E 80 00 20 */	blr 
 
-.global muMenuController$7setControllerID
-muMenuController$7setControllerID:
+.global setControllerID__16muMenuControllerFUc
+setControllerID__16muMenuControllerFUc:
 /* 800B9804 000AF584  28 04 00 FF */	cmplwi r4, 0xff
 /* 800B9808 000AF588  41 82 00 28 */	beq lbl_800B9830
 /* 800B980C 000AF58C  28 04 00 F0 */	cmplwi r4, 0xf0
@@ -184,8 +184,8 @@ muMenuController$7setControllerFlag:
 /* 800B997C 000AF6FC  98 03 00 9D */	stb r0, 0x9d(r3)
 /* 800B9980 000AF700  4E 80 00 20 */	blr 
 
-.global muMenuController$7main
-muMenuController$7main:
+.global main__16muMenuControllerFv
+main__16muMenuControllerFv:
 /* 800B9984 000AF704  94 21 FF 50 */	stwu r1, -0xb0(r1)
 /* 800B9988 000AF708  7C 08 02 A6 */	mflr r0
 /* 800B998C 000AF70C  90 01 00 B4 */	stw r0, 0xb4(r1)
@@ -901,8 +901,8 @@ lbl_800BA350:
 /* 800BA35C 000B00DC  38 21 00 50 */	addi r1, r1, 0x50
 /* 800BA360 000B00E0  4E 80 00 20 */	blr 
 
-.global muMenuController$7initRepeatCounter
-muMenuController$7initRepeatCounter:
+.global init__16muMenuControllerFUcRepeatCounter
+init__16muMenuControllerFUcRepeatCounter:
 /* 800BA364 000B00E4  3C E0 80 40 */	lis r7, 0x8040
 /* 800BA368 000B00E8  84 C7 7B F8 */	lwzu r6, 0x7bf8(r7)
 /* 800BA36C 000B00EC  38 A0 00 01 */	li r5, 1
@@ -983,4 +983,3 @@ lbl_800BA474:
 /* 800BA478 000B01F8  4D 80 00 20 */	bltlr 
 /* 800BA47C 000B01FC  38 60 FF FF */	li r3, -1
 /* 800BA480 000B0200  4E 80 00 20 */	blr 
-

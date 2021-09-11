@@ -47,7 +47,7 @@ nw4r3g3dFPQ34nw4r4math5M$7CalcWorld:
 /* 801A4E5C 0019ABDC  DB E1 00 C0 */	stfd f31, 0xc0(r1)
 /* 801A4E60 0019ABE0  F3 E1 00 C8 */	psq_st f31, 200(r1), 0, qr0
 /* 801A4E64 0019ABE4  39 61 00 C0 */	addi r11, r1, 0xc0
-/* 801A4E68 0019ABE8  48 24 C4 85 */	bl __save_gpr
+/* 801A4E68 0019ABE8  48 24 C4 85 */	bl _savegpr_14
 /* 801A4E6C 0019ABEC  2C 05 00 00 */	cmpwi r5, 0
 /* 801A4E70 0019ABF0  7C 72 1B 78 */	mr r18, r3
 /* 801A4E74 0019ABF4  7C 93 23 78 */	mr r19, r4
@@ -431,7 +431,7 @@ lbl_801A53F4:
 /* 801A53F4 0019B174  E3 E1 00 C8 */	psq_l f31, 200(r1), 0, qr0
 /* 801A53F8 0019B178  39 61 00 C0 */	addi r11, r1, 0xc0
 /* 801A53FC 0019B17C  CB E1 00 C0 */	lfd f31, 0xc0(r1)
-/* 801A5400 0019B180  48 24 BF 39 */	bl __restore_gpr
+/* 801A5400 0019B180  48 24 BF 39 */	bl _restgpr_14
 /* 801A5404 0019B184  80 01 00 D4 */	lwz r0, 0xd4(r1)
 /* 801A5408 0019B188  7C 08 03 A6 */	mtlr r0
 /* 801A540C 0019B18C  38 21 00 D0 */	addi r1, r1, 0xd0

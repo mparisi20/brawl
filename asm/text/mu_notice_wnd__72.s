@@ -146,7 +146,7 @@ muNoticeWndTask$7mainStepAppearInit:
 /* 800BFB60 000B58E0  83 83 01 18 */	lwz r28, 0x118(r3)
 /* 800BFB64 000B58E4  83 A3 00 50 */	lwz r29, 0x50(r3)
 /* 800BFB68 000B58E8  7F 23 CB 78 */	mr r3, r25
-/* 800BFB6C 000B58EC  4B FF 7C E1 */	bl MuObject$7setFrameVisible
+/* 800BFB6C 000B58EC  4B FF 7C E1 */	bl setFrameVisible__8MuObjectFf
 /* 800BFB70 000B58F0  80 1F 00 FC */	lwz r0, 0xfc(r31)
 /* 800BFB74 000B58F4  2C 1C 00 00 */	cmpwi r28, 0
 /* 800BFB78 000B58F8  54 00 08 3C */	slwi r0, r0, 1
@@ -223,7 +223,7 @@ lbl_800BFC14:
 /* 800BFC7C 000B59FC  38 C0 00 00 */	li r6, 0
 /* 800BFC80 000B5A00  38 E0 00 00 */	li r7, 0
 /* 800BFC84 000B5A04  39 00 FF FF */	li r8, -1
-/* 800BFC88 000B5A08  4B FB 46 29 */	bl sndSystem$7playSE
+/* 800BFC88 000B5A08  4B FB 46 29 */	bl playSE__9sndSystemFlllll
 /* 800BFC8C 000B5A0C  39 61 00 80 */	addi r11, r1, 0x80
 /* 800BFC90 000B5A10  48 33 16 D5 */	bl _restgpr_25
 /* 800BFC94 000B5A14  80 01 00 84 */	lwz r0, 0x84(r1)

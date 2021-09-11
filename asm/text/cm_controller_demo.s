@@ -65,8 +65,8 @@ lbl_800AAAC0:
 /* 800AAAD0 000A0850  38 21 00 10 */	addi r1, r1, 0x10
 /* 800AAAD4 000A0854  4E 80 00 20 */	blr 
 
-.global cmDemoController$7setTargetType
-cmDemoController$7setTargetType:
+.global setTargetType__16cmDemoControllerFUl
+setTargetType__16cmDemoControllerFUl:
 /* 800AAAD8 000A0858  94 21 FF A0 */	stwu r1, -0x60(r1)
 /* 800AAADC 000A085C  7C 08 02 A6 */	mflr r0
 /* 800AAAE0 000A0860  90 01 00 64 */	stw r0, 0x64(r1)
@@ -218,7 +218,7 @@ lbl_800AACA8:
 /* 800AACF0 000A0A70  80 03 00 08 */	lwz r0, 8(r3)
 /* 800AACF4 000A0A74  54 00 87 FF */	rlwinm. r0, r0, 0x10, 0x1f, 0x1f
 /* 800AACF8 000A0A78  41 82 00 54 */	beq lbl_800AAD4C
-/* 800AACFC 000A0A7C  4B FF 11 79 */	bl CameraController$7getInstance
+/* 800AACFC 000A0A7C  4B FF 11 79 */	bl getInstance__16CameraControllerFv
 /* 800AAD00 000A0A80  C0 21 00 28 */	lfs f1, 0x28(r1)
 /* 800AAD04 000A0A84  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 800AAD08 000A0A88  FC 01 00 40 */	fcmpo cr0, f1, f0
@@ -259,7 +259,7 @@ lbl_800AAD68:
 /* 800AAD80 000A0B00  D0 5F 00 44 */	stfs f2, 0x44(r31)
 /* 800AAD84 000A0B04  D0 3F 00 18 */	stfs f1, 0x18(r31)
 /* 800AAD88 000A0B08  D0 1F 00 14 */	stfs f0, 0x14(r31)
-/* 800AAD8C 000A0B0C  4B FF 10 E9 */	bl CameraController$7getInstance
+/* 800AAD8C 000A0B0C  4B FF 10 E9 */	bl getInstance__16CameraControllerFv
 /* 800AAD90 000A0B10  34 63 00 84 */	addic. r3, r3, 0x84
 /* 800AAD94 000A0B14  41 82 00 08 */	beq lbl_800AAD9C
 /* 800AAD98 000A0B18  C3 E3 00 30 */	lfs f31, 0x30(r3)
@@ -268,7 +268,7 @@ lbl_800AAD9C:
 /* 800AADA0 000A0B20  48 00 00 1C */	b lbl_800AADBC
 lbl_800AADA4:
 /* 800AADA4 000A0B24  C3 E2 8E 5C */	lfs f31, lbl_805A217C-_SDA2_BASE_(r2)
-/* 800AADA8 000A0B28  4B FF 10 CD */	bl CameraController$7getInstance
+/* 800AADA8 000A0B28  4B FF 10 CD */	bl getInstance__16CameraControllerFv
 /* 800AADAC 000A0B2C  34 63 00 84 */	addic. r3, r3, 0x84
 /* 800AADB0 000A0B30  41 82 00 08 */	beq lbl_800AADB8
 /* 800AADB4 000A0B34  C3 E3 00 30 */	lfs f31, 0x30(r3)
@@ -705,7 +705,7 @@ lbl_800AB390:
 /* 800AB3F8 000A1178  10 03 08 2A */	ps_add f0, f3, f1
 /* 800AB3FC 000A117C  F0 21 00 80 */	psq_st f1, 128(r1), 0, qr0
 /* 800AB400 000A1180  F0 01 00 74 */	psq_st f0, 116(r1), 0, qr0
-/* 800AB404 000A1184  4B FF 0A 71 */	bl CameraController$7getInstance
+/* 800AB404 000A1184  4B FF 0A 71 */	bl getInstance__16CameraControllerFv
 /* 800AB408 000A1188  C0 21 00 74 */	lfs f1, 0x74(r1)
 /* 800AB40C 000A118C  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 800AB410 000A1190  FC 01 00 40 */	fcmpo cr0, f1, f0
@@ -838,7 +838,7 @@ lbl_800AB578:
 /* 800AB5E0 000A1360  10 03 08 2A */	ps_add f0, f3, f1
 /* 800AB5E4 000A1364  F0 21 00 2C */	psq_st f1, 44(r1), 0, qr0
 /* 800AB5E8 000A1368  F0 01 00 20 */	psq_st f0, 32(r1), 0, qr0
-/* 800AB5EC 000A136C  4B FF 08 89 */	bl CameraController$7getInstance
+/* 800AB5EC 000A136C  4B FF 08 89 */	bl getInstance__16CameraControllerFv
 /* 800AB5F0 000A1370  C0 21 00 20 */	lfs f1, 0x20(r1)
 /* 800AB5F4 000A1374  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 800AB5F8 000A1378  FC 01 00 40 */	fcmpo cr0, f1, f0
@@ -989,7 +989,7 @@ cmDemoController$7updateResult:
 /* 800AB804 000A1584  7C 7E 1B 78 */	mr r30, r3
 /* 800AB808 000A1588  4C 40 13 82 */	cror 2, 0, 2
 /* 800AB80C 000A158C  41 82 08 10 */	beq lbl_800AC01C
-/* 800AB810 000A1590  4B FF 06 65 */	bl CameraController$7getInstance
+/* 800AB810 000A1590  4B FF 06 65 */	bl getInstance__16CameraControllerFv
 /* 800AB814 000A1594  4B FF 1A B5 */	bl CameraController$7isDisableZoom
 /* 800AB818 000A1598  2C 03 00 00 */	cmpwi r3, 0
 /* 800AB81C 000A159C  40 82 08 00 */	bne lbl_800AC01C
@@ -1034,7 +1034,7 @@ lbl_800AB848:
 /* 800AB8B0 000A1630  10 03 08 2A */	ps_add f0, f3, f1
 /* 800AB8B4 000A1634  F0 21 00 84 */	psq_st f1, 132(r1), 0, qr0
 /* 800AB8B8 000A1638  F0 01 00 78 */	psq_st f0, 120(r1), 0, qr0
-/* 800AB8BC 000A163C  4B FF 05 B9 */	bl CameraController$7getInstance
+/* 800AB8BC 000A163C  4B FF 05 B9 */	bl getInstance__16CameraControllerFv
 /* 800AB8C0 000A1640  C0 21 00 78 */	lfs f1, 0x78(r1)
 /* 800AB8C4 000A1644  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 800AB8C8 000A1648  FC 01 00 40 */	fcmpo cr0, f1, f0
@@ -1177,7 +1177,7 @@ lbl_800ABA50:
 /* 800ABAB8 000A1838  10 03 08 2A */	ps_add f0, f3, f1
 /* 800ABABC 000A183C  F0 21 00 30 */	psq_st f1, 48(r1), 0, qr0
 /* 800ABAC0 000A1840  F0 01 00 24 */	psq_st f0, 36(r1), 0, qr0
-/* 800ABAC4 000A1844  4B FF 03 B1 */	bl CameraController$7getInstance
+/* 800ABAC4 000A1844  4B FF 03 B1 */	bl getInstance__16CameraControllerFv
 /* 800ABAC8 000A1848  C0 21 00 24 */	lfs f1, 0x24(r1)
 /* 800ABACC 000A184C  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 800ABAD0 000A1850  FC 01 00 40 */	fcmpo cr0, f1, f0
@@ -1598,7 +1598,7 @@ lbl_800AC0D0:
 /* 800AC0E0 000A1E60  4E 80 04 21 */	bctrl 
 /* 800AC0E4 000A1E64  48 00 08 7C */	b lbl_800AC960
 lbl_800AC0E8:
-/* 800AC0E8 000A1E68  4B FE FD 8D */	bl CameraController$7getInstance
+/* 800AC0E8 000A1E68  4B FE FD 8D */	bl getInstance__16CameraControllerFv
 /* 800AC0EC 000A1E6C  4B FF 11 DD */	bl CameraController$7isDisableZoom
 /* 800AC0F0 000A1E70  2C 03 00 00 */	cmpwi r3, 0
 /* 800AC0F4 000A1E74  41 82 00 20 */	beq lbl_800AC114
@@ -1640,7 +1640,7 @@ lbl_800AC170:
 /* 800AC178 000A1EF8  80 03 00 08 */	lwz r0, 8(r3)
 /* 800AC17C 000A1EFC  54 00 87 FF */	rlwinm. r0, r0, 0x10, 0x1f, 0x1f
 /* 800AC180 000A1F00  41 82 00 54 */	beq lbl_800AC1D4
-/* 800AC184 000A1F04  4B FE FC F1 */	bl CameraController$7getInstance
+/* 800AC184 000A1F04  4B FE FC F1 */	bl getInstance__16CameraControllerFv
 /* 800AC188 000A1F08  C0 21 01 00 */	lfs f1, 0x100(r1)
 /* 800AC18C 000A1F0C  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 800AC190 000A1F10  FC 01 00 40 */	fcmpo cr0, f1, f0
@@ -1688,7 +1688,7 @@ lbl_800AC20C:
 /* 800AC21C 000A1F9C  EC 02 00 32 */	fmuls f0, f2, f0
 /* 800AC220 000A1FA0  EC 01 00 2A */	fadds f0, f1, f0
 /* 800AC224 000A1FA4  D0 1E 00 1C */	stfs f0, 0x1c(r30)
-/* 800AC228 000A1FA8  4B FE FC 4D */	bl CameraController$7getInstance
+/* 800AC228 000A1FA8  4B FE FC 4D */	bl getInstance__16CameraControllerFv
 /* 800AC22C 000A1FAC  34 63 00 84 */	addic. r3, r3, 0x84
 /* 800AC230 000A1FB0  41 82 00 08 */	beq lbl_800AC238
 /* 800AC234 000A1FB4  C3 83 00 30 */	lfs f28, 0x30(r3)
@@ -1721,7 +1721,7 @@ lbl_800AC238:
 /* 800AC29C 000A201C  4B F6 C4 DD */	bl gfCamera$7calc
 /* 800AC2A0 000A2020  48 00 06 C0 */	b lbl_800AC960
 lbl_800AC2A4:
-/* 800AC2A4 000A2024  4B FE FB D1 */	bl CameraController$7getInstance
+/* 800AC2A4 000A2024  4B FE FB D1 */	bl getInstance__16CameraControllerFv
 /* 800AC2A8 000A2028  4B FF 10 21 */	bl CameraController$7isDisableZoom
 /* 800AC2AC 000A202C  2C 03 00 00 */	cmpwi r3, 0
 /* 800AC2B0 000A2030  41 82 00 20 */	beq lbl_800AC2D0
@@ -1880,7 +1880,7 @@ lbl_800AC4C8:
 /* 800AC4D4 000A2254  D0 41 00 30 */	stfs f2, 0x30(r1)
 /* 800AC4D8 000A2258  D0 21 00 34 */	stfs f1, 0x34(r1)
 /* 800AC4DC 000A225C  D0 01 00 38 */	stfs f0, 0x38(r1)
-/* 800AC4E0 000A2260  4B FE F9 95 */	bl CameraController$7getInstance
+/* 800AC4E0 000A2260  4B FE F9 95 */	bl getInstance__16CameraControllerFv
 /* 800AC4E4 000A2264  C0 21 00 30 */	lfs f1, 0x30(r1)
 /* 800AC4E8 000A2268  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 800AC4EC 000A226C  FC 01 00 40 */	fcmpo cr0, f1, f0

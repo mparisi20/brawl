@@ -87,19 +87,19 @@ muMenu$7start:
 /* 800AF09C 000A4E1C  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 800AF0A0 000A4E20  7C 7F 1B 78 */	mr r31, r3
 /* 800AF0A4 000A4E24  38 63 00 08 */	addi r3, r3, 8
-/* 800AF0A8 000A4E28  48 00 A6 41 */	bl muMenuController$7init
+/* 800AF0A8 000A4E28  48 00 A6 41 */	bl init__16muMenuControllerFUc
 /* 800AF0AC 000A4E2C  38 7F 00 B0 */	addi r3, r31, 0xb0
 /* 800AF0B0 000A4E30  38 80 00 01 */	li r4, 1
-/* 800AF0B4 000A4E34  48 00 A6 35 */	bl muMenuController$7init
+/* 800AF0B4 000A4E34  48 00 A6 35 */	bl init__16muMenuControllerFUc
 /* 800AF0B8 000A4E38  38 7F 01 58 */	addi r3, r31, 0x158
 /* 800AF0BC 000A4E3C  38 80 00 02 */	li r4, 2
-/* 800AF0C0 000A4E40  48 00 A6 29 */	bl muMenuController$7init
+/* 800AF0C0 000A4E40  48 00 A6 29 */	bl init__16muMenuControllerFUc
 /* 800AF0C4 000A4E44  38 7F 02 00 */	addi r3, r31, 0x200
 /* 800AF0C8 000A4E48  38 80 00 03 */	li r4, 3
-/* 800AF0CC 000A4E4C  48 00 A6 1D */	bl muMenuController$7init
+/* 800AF0CC 000A4E4C  48 00 A6 1D */	bl init__16muMenuControllerFUc
 /* 800AF0D0 000A4E50  38 7F 02 A8 */	addi r3, r31, 0x2a8
 /* 800AF0D4 000A4E54  38 80 00 F0 */	li r4, 0xf0
-/* 800AF0D8 000A4E58  48 00 A6 11 */	bl muMenuController$7init
+/* 800AF0D8 000A4E58  48 00 A6 11 */	bl init__16muMenuControllerFUc
 /* 800AF0DC 000A4E5C  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 800AF0E0 000A4E60  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 800AF0E4 000A4E64  7C 08 03 A6 */	mtlr r0
@@ -117,7 +117,7 @@ muMenu$7process:
 /* 800AF108 000A4E88  3B C0 00 00 */	li r30, 0
 lbl_800AF10C:
 /* 800AF10C 000A4E8C  7F E3 FB 78 */	mr r3, r31
-/* 800AF110 000A4E90  48 00 A8 75 */	bl muMenuController$7main
+/* 800AF110 000A4E90  48 00 A8 75 */	bl main__16muMenuControllerFv
 /* 800AF114 000A4E94  3B DE 00 01 */	addi r30, r30, 1
 /* 800AF118 000A4E98  3B FF 00 A8 */	addi r31, r31, 0xa8
 /* 800AF11C 000A4E9C  2C 1E 00 05 */	cmpwi r30, 5
@@ -820,8 +820,8 @@ lbl_800AF9FC:
 /* 800AF9FC 000A577C  7C 03 03 78 */	mr r3, r0
 /* 800AFA00 000A5780  4E 80 00 20 */	blr 
 
-.global func_800AFA04
-func_800AFA04:
+.global getItemNameID__6muMenuFl
+getItemNameID__6muMenuFl:
 /* 800AFA04 000A5784  3C 80 80 45 */	lis r4, lbl_80455AA8@ha
 /* 800AFA08 000A5788  54 60 18 38 */	slwi r0, r3, 3
 /* 800AFA0C 000A578C  38 84 5A A8 */	addi r4, r4, lbl_80455AA8@l
@@ -829,8 +829,8 @@ func_800AFA04:
 /* 800AFA14 000A5794  80 63 00 04 */	lwz r3, 4(r3)
 /* 800AFA18 000A5798  4E 80 00 20 */	blr 
 
-.global func_800AFA1C
-func_800AFA1C:
+.global exchangeMuItemKindToItKind__6muMenuFl
+exchangeMuItemKindToItKind__6muMenuFl:
 /* 800AFA1C 000A579C  3C 80 80 45 */	lis r4, lbl_80455AA8@ha
 /* 800AFA20 000A57A0  54 60 18 38 */	slwi r0, r3, 3
 /* 800AFA24 000A57A4  38 84 5A A8 */	addi r4, r4, lbl_80455AA8@l

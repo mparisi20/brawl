@@ -2361,8 +2361,8 @@ lbl_800B5340:
 /* 800B5344 000AB0C4  A0 63 00 1C */	lhz r3, 0x1c(r3)
 /* 800B5348 000AB0C8  4E 80 00 20 */	blr 
 
-.global MuObject$7changeAnimN
-MuObject$7changeAnimN:
+.global changeAnimN__8MuObjectFPCc
+changeAnimN__8MuObjectFPCc:
 /* 800B534C 000AB0CC  94 21 FF 90 */	stwu r1, -0x70(r1)
 /* 800B5350 000AB0D0  7C 08 02 A6 */	mflr r0
 /* 800B5354 000AB0D4  90 01 00 74 */	stw r0, 0x74(r1)
@@ -2711,8 +2711,8 @@ lbl_800B583C:
 /* 800B584C 000AB5CC  38 21 00 70 */	addi r1, r1, 0x70
 /* 800B5850 000AB5D0  4E 80 00 20 */	blr 
 
-.global MuObject$7setActionNo
-MuObject$7setActionNo:
+.global setActionNo__8MuObjectFllll
+setActionNo__8MuObjectFllll:
 /* 800B5854 000AB5D4  94 21 FF 40 */	stwu r1, -0xc0(r1)
 /* 800B5858 000AB5D8  7C 08 02 A6 */	mflr r0
 /* 800B585C 000AB5DC  90 01 00 C4 */	stw r0, 0xc4(r1)
@@ -3381,8 +3381,8 @@ lbl_800B61B8:
 /* 800B61B8 000ABF38  38 60 00 00 */	li r3, 0
 /* 800B61BC 000ABF3C  4E 80 00 20 */	blr 
 
-.global MuObject$7isNodeAnimFinished
-MuObject$7isNodeAnimFinished:
+.global isNodeAnimFinished__8MuObjectFv
+isNodeAnimFinished__8MuObjectFv:
 /* 800B61C0 000ABF40  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800B61C4 000ABF44  7C 08 02 A6 */	mflr r0
 /* 800B61C8 000ABF48  90 01 00 24 */	stw r0, 0x24(r1)
@@ -4751,8 +4751,8 @@ MuObject$7changeMaterialTex_2434:
 /* 800B74C4 000AD244  38 21 00 50 */	addi r1, r1, 0x50
 /* 800B74C8 000AD248  4E 80 00 20 */	blr 
 
-.global MuObject$7createNoAnim
-MuObject$7createNoAnim:
+.global create__8MuObjectFUlPCcUlUlUlNoAnim
+create__8MuObjectFUlPCcUlUlUlNoAnim:
 /* 800B74CC 000AD24C  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800B74D0 000AD250  7C 08 02 A6 */	mflr r0
 /* 800B74D4 000AD254  90 01 00 24 */	stw r0, 0x24(r1)
@@ -4996,8 +4996,8 @@ lbl_800B7814:
 /* 800B7844 000AD5C4  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B7848 000AD5C8  4E 80 00 20 */	blr 
 
-.global MuObject$7setFrameVisible
-MuObject$7setFrameVisible:
+.global setFrameVisible__8MuObjectFf
+setFrameVisible__8MuObjectFf:
 /* 800B784C 000AD5CC  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800B7850 000AD5D0  7C 08 02 A6 */	mflr r0
 /* 800B7854 000AD5D4  90 01 00 24 */	stw r0, 0x24(r1)
@@ -5492,7 +5492,7 @@ MuObject$7setUpdateRateFlg:
 /* 800B7F5C 000ADCDC  7C 7E 1B 78 */	mr r30, r3
 /* 800B7F60 000ADCE0  40 82 00 10 */	bne lbl_800B7F70
 /* 800B7F64 000ADCE4  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800B7F68 000ADCE8  4B F7 06 E9 */	bl gfModelAnimation$7setUpdateRate
+/* 800B7F68 000ADCE8  4B F7 06 E9 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800B7F6C 000ADCEC  48 00 00 B4 */	b lbl_800B8020
 lbl_800B7F70:
 /* 800B7F70 000ADCF0  54 80 07 FF */	clrlwi. r0, r4, 0x1f

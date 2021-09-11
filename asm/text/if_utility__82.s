@@ -755,10 +755,10 @@ utility12StandardMenuFPCcUc$7__ct:
 /* 800FB51C 000F129C  38 A5 C3 74 */	addi r5, r5, lbl_8045C374@l
 /* 800FB520 000F12A0  38 80 00 FF */	li r4, 0xff
 /* 800FB524 000F12A4  90 BA 00 3C */	stw r5, 0x3c(r26)
-/* 800FB528 000F12A8  4B FB E1 C1 */	bl muMenuController$7init
+/* 800FB528 000F12A8  4B FB E1 C1 */	bl init__16muMenuControllerFUc
 /* 800FB52C 000F12AC  7F 64 DB 78 */	mr r4, r27
 /* 800FB530 000F12B0  38 7A 01 00 */	addi r3, r26, 0x100
-/* 800FB534 000F12B4  4B FB E1 B5 */	bl muMenuController$7init
+/* 800FB534 000F12B4  4B FB E1 B5 */	bl init__16muMenuControllerFUc
 /* 800FB538 000F12B8  39 61 00 20 */	addi r11, r1, 0x20
 /* 800FB53C 000F12BC  7F 43 D3 78 */	mr r3, r26
 /* 800FB540 000F12C0  48 2F 5E 29 */	bl _restgpr_26
@@ -775,7 +775,7 @@ utility12StandardMenuFv$7processDefault:
 /* 800FB560 000F12E0  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 800FB564 000F12E4  7C 7F 1B 78 */	mr r31, r3
 /* 800FB568 000F12E8  38 63 01 00 */	addi r3, r3, 0x100
-/* 800FB56C 000F12EC  4B FB E4 19 */	bl muMenuController$7main
+/* 800FB56C 000F12EC  4B FB E4 19 */	bl main__16muMenuControllerFv
 /* 800FB570 000F12F0  38 7F 01 00 */	addi r3, r31, 0x100
 /* 800FB574 000F12F4  4B FF F8 19 */	bl utility$7getMenuKey
 /* 800FB578 000F12F8  90 7F 01 A8 */	stw r3, 0x1a8(r31)

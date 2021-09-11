@@ -77,11 +77,11 @@ muClearGetDataManager$7setData:
 /* 800BA588 000B0308  93 E1 00 4C */	stw r31, 0x4c(r1)
 /* 800BA58C 000B030C  7C 7F 1B 78 */	mr r31, r3
 /* 800BA590 000B0310  38 61 00 08 */	addi r3, r1, 8
-/* 800BA594 000B0314  4B F8 98 89 */	bl utRelocate$7__ct
+/* 800BA594 000B0314  4B F8 98 89 */	bl __ct__10utRelocateFUlUl
 /* 800BA598 000B0318  3C 80 80 45 */	lis r4, lbl_80456688@ha
 /* 800BA59C 000B031C  38 61 00 08 */	addi r3, r1, 8
 /* 800BA5A0 000B0320  38 84 66 88 */	addi r4, r4, lbl_80456688@l
-/* 800BA5A4 000B0324  4B F8 9A 09 */	bl utRelocate$7getPublicAddress
+/* 800BA5A4 000B0324  4B F8 9A 09 */	bl getPublicAddress__10utRelocateFPCc
 /* 800BA5A8 000B0328  38 00 00 00 */	li r0, 0
 /* 800BA5AC 000B032C  90 7F 00 00 */	stw r3, 0(r31)
 /* 800BA5B0 000B0330  90 1F 00 04 */	stw r0, 4(r31)
@@ -149,7 +149,7 @@ lbl_800BA604:
 /* 800BA698 000B0418  42 00 FF 6C */	bdnz lbl_800BA604
 /* 800BA69C 000B041C  38 61 00 08 */	addi r3, r1, 8
 /* 800BA6A0 000B0420  38 80 FF FF */	li r4, -1
-/* 800BA6A4 000B0424  4B F8 98 C9 */	bl utRelocate$7__dt
+/* 800BA6A4 000B0424  4B F8 98 C9 */	bl __dt__10utRelocateFv
 /* 800BA6A8 000B0428  80 01 00 54 */	lwz r0, 0x54(r1)
 /* 800BA6AC 000B042C  83 E1 00 4C */	lwz r31, 0x4c(r1)
 /* 800BA6B0 000B0430  7C 08 03 A6 */	mtlr r0

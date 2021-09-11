@@ -49,7 +49,7 @@ lbl_800F7824:
 lbl_800F7830:
 /* 800F7830 000ED5B0  80 7F 00 9C */	lwz r3, 0x9c(r31)
 /* 800F7834 000ED5B4  38 81 00 08 */	addi r4, r1, 8
-/* 800F7838 000ED5B8  4B FB DB 15 */	bl MuObject$7changeAnimN
+/* 800F7838 000ED5B8  4B FB DB 15 */	bl changeAnimN__8MuObjectFPCc
 /* 800F783C 000ED5BC  80 7F 00 9C */	lwz r3, 0x9c(r31)
 /* 800F7840 000ED5C0  38 80 00 01 */	li r4, 1
 /* 800F7844 000ED5C4  80 63 00 14 */	lwz r3, 0x14(r3)
@@ -61,7 +61,7 @@ lbl_800F7830:
 /* 800F785C 000ED5DC  4E 80 04 21 */	bctrl 
 /* 800F7860 000ED5E0  80 7F 00 9C */	lwz r3, 0x9c(r31)
 /* 800F7864 000ED5E4  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800F7868 000ED5E8  4B F3 0D E9 */	bl gfModelAnimation$7setUpdateRate
+/* 800F7868 000ED5E8  4B F3 0D E9 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800F786C 000ED5EC  80 01 00 54 */	lwz r0, 0x54(r1)
 /* 800F7870 000ED5F0  83 E1 00 4C */	lwz r31, 0x4c(r1)
 /* 800F7874 000ED5F4  7C 08 03 A6 */	mtlr r0
