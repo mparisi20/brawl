@@ -1783,7 +1783,7 @@ msTagProcessor$7saveEnv:
 /* 8006E7B8 00064538  90 03 00 8C */	stw r0, 0x8c(r3)
 /* 8006E7BC 0006453C  54 05 20 36 */	slwi r5, r0, 4
 /* 8006E7C0 00064540  38 63 00 90 */	addi r3, r3, 0x90
-/* 8006E7C4 00064544  4B F9 5B 74 */	b func_80004338
+/* 8006E7C4 00064544  4B F9 5B 74 */	b memcpy
 
 .global msTagProcessor$7restoreEnv
 msTagProcessor$7restoreEnv:
@@ -1792,7 +1792,7 @@ msTagProcessor$7restoreEnv:
 /* 8006E7D0 00064550  90 03 00 08 */	stw r0, 8(r3)
 /* 8006E7D4 00064554  54 05 20 36 */	slwi r5, r0, 4
 /* 8006E7D8 00064558  38 63 00 0C */	addi r3, r3, 0xc
-/* 8006E7DC 0006455C  4B F9 5B 5C */	b func_80004338
+/* 8006E7DC 0006455C  4B F9 5B 5C */	b memcpy
 
 .global ms19TagProcessorBase$0c$7__ct
 ms19TagProcessorBase$0c$7__ct:

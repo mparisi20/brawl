@@ -247,14 +247,14 @@ lbl_800F7BAC:
 /* 800F7BDC 000ED95C  80 A1 00 08 */	lwz r5, 8(r1)
 /* 800F7BE0 000ED960  7C 64 1B 78 */	mr r4, r3
 /* 800F7BE4 000ED964  38 61 00 0C */	addi r3, r1, 0xc
-/* 800F7BE8 000ED968  4B F4 C2 35 */	bl utRelocate$7__ct
+/* 800F7BE8 000ED968  4B F4 C2 35 */	bl __ct__10utRelocateFPvUl
 /* 800F7BEC 000ED96C  7F E4 FB 78 */	mr r4, r31
 /* 800F7BF0 000ED970  38 61 00 0C */	addi r3, r1, 0xc
-/* 800F7BF4 000ED974  4B F4 C3 B9 */	bl utRelocate$7getPublicAddress
+/* 800F7BF4 000ED974  4B F4 C3 B9 */	bl getPublicAddress__10utRelocateFPCc
 /* 800F7BF8 000ED978  7C 7F 1B 78 */	mr r31, r3
 /* 800F7BFC 000ED97C  38 61 00 0C */	addi r3, r1, 0xc
 /* 800F7C00 000ED980  38 80 FF FF */	li r4, -1
-/* 800F7C04 000ED984  4B F4 C3 69 */	bl utRelocate$7__dt
+/* 800F7C04 000ED984  4B F4 C3 69 */	bl __dt__10utRelocateFv
 /* 800F7C08 000ED988  48 00 00 08 */	b lbl_800F7C10
 lbl_800F7C0C:
 /* 800F7C0C 000ED98C  3B E0 00 00 */	li r31, 0
@@ -316,4 +316,3 @@ IfSmashAppearTask$7isPlaying:
 /* 800F7CC0 000EDA40  4D 82 00 20 */	beqlr 
 /* 800F7CC4 000EDA44  38 60 00 01 */	li r3, 1
 /* 800F7CC8 000EDA48  4E 80 00 20 */	blr 
-

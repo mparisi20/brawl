@@ -98,11 +98,11 @@ sndSystem$7isExist:
 /* 8007878C 0006E50C  38 06 35 8C */	addi r0, r6, 0x358c
 /* 80078790 0006E510  90 03 00 00 */	stw r0, 0(r3)
 /* 80078794 0006E514  38 61 00 08 */	addi r3, r1, 8
-/* 80078798 0006E518  4B FC B6 85 */	bl utRelocate$7__ct
+/* 80078798 0006E518  4B FC B6 85 */	bl __ct__10utRelocateFPvUl
 /* 8007879C 0006E51C  3C 80 80 45 */	lis r4, lbl_80454488@ha
 /* 800787A0 0006E520  38 61 00 08 */	addi r3, r1, 8
 /* 800787A4 0006E524  38 84 44 88 */	addi r4, r4, lbl_80454488@l
-/* 800787A8 0006E528  4B FC B8 05 */	bl utRelocate$7getPublicAddress
+/* 800787A8 0006E528  4B FC B8 05 */	bl getPublicAddress__10utRelocateFPCc
 /* 800787AC 0006E52C  38 E0 00 00 */	li r7, 0
 /* 800787B0 0006E530  38 C0 00 00 */	li r6, 0
 /* 800787B4 0006E534  48 00 00 48 */	b lbl_800787FC
@@ -135,7 +135,7 @@ lbl_800787FC:
 /* 80078818 0006E598  7C A4 02 14 */	add r5, r4, r0
 /* 8007881C 0006E59C  38 80 FF FF */	li r4, -1
 /* 80078820 0006E5A0  98 C5 00 06 */	stb r6, 6(r5)
-/* 80078824 0006E5A4  4B FC B7 49 */	bl utRelocate$7__dt
+/* 80078824 0006E5A4  4B FC B7 49 */	bl __dt__10utRelocateFv
 /* 80078828 0006E5A8  80 7F 00 00 */	lwz r3, 0(r31)
 /* 8007882C 0006E5AC  38 00 00 02 */	li r0, 2
 /* 80078830 0006E5B0  7F E4 FB 78 */	mr r4, r31
@@ -230,4 +230,3 @@ lbl_80078968:
 /* 80078984 0006E704  7C 08 03 A6 */	mtlr r0
 /* 80078988 0006E708  38 21 00 50 */	addi r1, r1, 0x50
 /* 8007898C 0006E70C  4E 80 00 20 */	blr 
-

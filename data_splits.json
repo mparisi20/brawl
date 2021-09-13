@@ -94,6 +94,10 @@
         {
             "file": "build/brawl/src/text/mt_trig.o",
             ".sdata2": ["0x805a1770", "0x2C"]
+        },
+        {
+            "file": "build/brawl/src/text/ut_relocate.o",
+            ".data": ["0x8042b598", "0x68"],
         }
     ]
 }

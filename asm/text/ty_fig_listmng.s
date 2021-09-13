@@ -176,11 +176,11 @@ tyFigListDataManager$7setData:
 /* 800ACC30 000A29B0  93 E1 00 4C */	stw r31, 0x4c(r1)
 /* 800ACC34 000A29B4  7C 7F 1B 78 */	mr r31, r3
 /* 800ACC38 000A29B8  38 61 00 08 */	addi r3, r1, 8
-/* 800ACC3C 000A29BC  4B F9 71 E1 */	bl utRelocate$7__ct
+/* 800ACC3C 000A29BC  4B F9 71 E1 */	bl __ct__10utRelocateFPvUl
 /* 800ACC40 000A29C0  3C 80 80 45 */	lis r4, lbl_8045513C@ha
 /* 800ACC44 000A29C4  38 61 00 08 */	addi r3, r1, 8
 /* 800ACC48 000A29C8  38 84 51 3C */	addi r4, r4, lbl_8045513C@l
-/* 800ACC4C 000A29CC  4B F9 73 61 */	bl utRelocate$7getPublicAddress
+/* 800ACC4C 000A29CC  4B F9 73 61 */	bl getPublicAddress__10utRelocateFPCc
 /* 800ACC50 000A29D0  38 00 00 00 */	li r0, 0
 /* 800ACC54 000A29D4  90 7F 00 00 */	stw r3, 0(r31)
 /* 800ACC58 000A29D8  90 1F 00 04 */	stw r0, 4(r31)
@@ -288,7 +288,7 @@ lbl_800ACD98:
 /* 800ACDB0 000A2B30  38 61 00 08 */	addi r3, r1, 8
 /* 800ACDB4 000A2B34  98 1F 14 5C */	stb r0, 0x145c(r31)
 /* 800ACDB8 000A2B38  38 80 FF FF */	li r4, -1
-/* 800ACDBC 000A2B3C  4B F9 71 B1 */	bl utRelocate$7__dt
+/* 800ACDBC 000A2B3C  4B F9 71 B1 */	bl __dt__10utRelocateFv
 /* 800ACDC0 000A2B40  80 01 00 54 */	lwz r0, 0x54(r1)
 /* 800ACDC4 000A2B44  83 E1 00 4C */	lwz r31, 0x4c(r1)
 /* 800ACDC8 000A2B48  7C 08 03 A6 */	mtlr r0
@@ -303,4 +303,3 @@ tyFigListDataManager$7getFigListSeries:
 /* 800ACDE0 000A2B60  39 61 00 30 */	addi r11, r1, 0x30
 /* 800ACDE4 000A2B64  48 34 45 31 */	bl _savegpr_24
 /* 800ACDE8 000A2B68  88 03 14 5C */	lbz r0, 0x145c(r3)
-

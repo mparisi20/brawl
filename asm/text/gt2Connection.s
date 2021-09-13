@@ -80,7 +80,7 @@ gti2StartConnectionAttempt:
 lbl_803742A0:
 /* 803742A0 0036A020  80 81 00 08 */	lwz r4, 8(r1)
 /* 803742A4 0036A024  80 A1 00 0C */	lwz r5, 0xc(r1)
-/* 803742A8 0036A028  4B C9 00 91 */	bl func_80004338
+/* 803742A8 0036A028  4B C9 00 91 */	bl memcpy
 /* 803742AC 0036A02C  80 01 00 0C */	lwz r0, 0xc(r1)
 /* 803742B0 0036A030  90 1E 00 3C */	stw r0, 0x3c(r30)
 lbl_803742B4:

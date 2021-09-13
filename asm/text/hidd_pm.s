@@ -200,7 +200,7 @@ lbl_80247474:
 /* 8024747C 0023D1FC  38 7E 00 70 */	addi r3, r30, 0x70
 /* 80247480 0023D200  38 9E 00 4C */	addi r4, r30, 0x4c
 /* 80247484 0023D204  38 A0 00 0A */	li r5, 0xa
-/* 80247488 0023D208  4B DB CE B1 */	bl func_80004338
+/* 80247488 0023D208  4B DB CE B1 */	bl memcpy
 /* 8024748C 0023D20C  38 7E 00 4C */	addi r3, r30, 0x4c
 /* 80247490 0023D210  4B FF FD 39 */	bl hidd_pm_set_now
 /* 80247494 0023D214  3C 60 80 24 */	lis r3, hidd_pm_inact_timeout@ha
@@ -242,7 +242,7 @@ hidd_pm_inact_timeout:
 /* 80247510 0023D290  3B FF C8 70 */	addi r31, r31, lbl_8052C870@l
 /* 80247514 0023D294  38 7F 00 70 */	addi r3, r31, 0x70
 /* 80247518 0023D298  38 9F 00 56 */	addi r4, r31, 0x56
-/* 8024751C 0023D29C  4B DB CE 1D */	bl func_80004338
+/* 8024751C 0023D29C  4B DB CE 1D */	bl memcpy
 /* 80247520 0023D2A0  38 7F 00 56 */	addi r3, r31, 0x56
 /* 80247524 0023D2A4  4B FF FC A5 */	bl hidd_pm_set_now
 /* 80247528 0023D2A8  38 00 00 01 */	li r0, 1

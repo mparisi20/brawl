@@ -113,7 +113,7 @@ l2c_link_hci_conn_comp:
 /* 8024C52C 002422AC  7C 7C 1B 78 */	mr r28, r3
 /* 8024C530 002422B0  98 61 00 0E */	stb r3, 0xe(r1)
 /* 8024C534 002422B4  38 61 00 08 */	addi r3, r1, 8
-/* 8024C538 002422B8  4B DB 7E 01 */	bl func_80004338
+/* 8024C538 002422B8  4B DB 7E 01 */	bl memcpy
 /* 8024C53C 002422BC  38 61 00 08 */	addi r3, r1, 8
 /* 8024C540 002422C0  48 00 21 FD */	bl l2cu_find_lcb_by_bd_addr
 /* 8024C544 002422C4  2C 03 00 00 */	cmpwi r3, 0
@@ -271,7 +271,7 @@ l2c_link_sec_comp:
 /* 8024C758 002424D8  7F E4 FB 78 */	mr r4, r31
 /* 8024C75C 002424DC  98 A1 00 0E */	stb r5, 0xe(r1)
 /* 8024C760 002424E0  38 A0 00 06 */	li r5, 6
-/* 8024C764 002424E4  4B DB 7B D5 */	bl func_80004338
+/* 8024C764 002424E4  4B DB 7B D5 */	bl memcpy
 /* 8024C768 002424E8  7F E3 FB 78 */	mr r3, r31
 /* 8024C76C 002424EC  48 00 1F D1 */	bl l2cu_find_lcb_by_bd_addr
 /* 8024C770 002424F0  2C 03 00 00 */	cmpwi r3, 0
@@ -1056,7 +1056,7 @@ lbl_8024D1BC:
 /* 8024D218 00242F98  7C 66 1A 14 */	add r3, r6, r3
 /* 8024D21C 00242F9C  38 63 00 08 */	addi r3, r3, 8
 /* 8024D220 00242FA0  38 84 00 0C */	addi r4, r4, 0xc
-/* 8024D224 00242FA4  4B DB 71 15 */	bl func_80004338
+/* 8024D224 00242FA4  4B DB 71 15 */	bl memcpy
 /* 8024D228 00242FA8  A0 7E 00 02 */	lhz r3, 2(r30)
 /* 8024D22C 00242FAC  A0 1C 00 02 */	lhz r0, 2(r28)
 /* 8024D230 00242FB0  7C 60 1A 14 */	add r3, r0, r3

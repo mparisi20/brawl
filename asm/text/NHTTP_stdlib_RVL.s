@@ -4,7 +4,7 @@
 
 .global NHTTPi_memcpy
 NHTTPi_memcpy:
-/* 8039272C 003884AC  4B C7 1C 0C */	b func_80004338
+/* 8039272C 003884AC  4B C7 1C 0C */	b memcpy
 
 .global NHTTPi_strlen
 NHTTPi_strlen:

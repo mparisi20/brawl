@@ -151,18 +151,18 @@ tySealListDataManager$7setData:
 /* 800AD9F8 000A3778  7C 7A 1B 78 */	mr r26, r3
 /* 800AD9FC 000A377C  3B 7B 51 80 */	addi r27, r27, lbl_80455180@l
 /* 800ADA00 000A3780  38 61 00 08 */	addi r3, r1, 8
-/* 800ADA04 000A3784  4B F9 64 19 */	bl utRelocate$7__ct
+/* 800ADA04 000A3784  4B F9 64 19 */	bl __ct__10utRelocateFPvUl
 /* 800ADA08 000A3788  38 61 00 08 */	addi r3, r1, 8
 /* 800ADA0C 000A378C  38 9B 00 1C */	addi r4, r27, 0x1c
-/* 800ADA10 000A3790  4B F9 65 9D */	bl utRelocate$7getPublicAddress
+/* 800ADA10 000A3790  4B F9 65 9D */	bl getPublicAddress__10utRelocateFPCc
 /* 800ADA14 000A3794  90 7A 00 00 */	stw r3, 0(r26)
 /* 800ADA18 000A3798  38 61 00 08 */	addi r3, r1, 8
 /* 800ADA1C 000A379C  38 9B 00 28 */	addi r4, r27, 0x28
-/* 800ADA20 000A37A0  4B F9 65 8D */	bl utRelocate$7getPublicAddress
+/* 800ADA20 000A37A0  4B F9 65 8D */	bl getPublicAddress__10utRelocateFPCc
 /* 800ADA24 000A37A4  90 7A 00 04 */	stw r3, 4(r26)
 /* 800ADA28 000A37A8  38 61 00 08 */	addi r3, r1, 8
 /* 800ADA2C 000A37AC  38 9B 00 38 */	addi r4, r27, 0x38
-/* 800ADA30 000A37B0  4B F9 65 7D */	bl utRelocate$7getPublicAddress
+/* 800ADA30 000A37B0  4B F9 65 7D */	bl getPublicAddress__10utRelocateFPCc
 /* 800ADA34 000A37B4  90 7A 00 08 */	stw r3, 8(r26)
 /* 800ADA38 000A37B8  38 7A 27 24 */	addi r3, r26, 0x2724
 /* 800ADA3C 000A37BC  38 80 00 00 */	li r4, 0
@@ -347,7 +347,7 @@ lbl_800ADCC0:
 /* 800ADCC8 000A3A48  41 80 FF E8 */	blt lbl_800ADCB0
 /* 800ADCCC 000A3A4C  38 61 00 08 */	addi r3, r1, 8
 /* 800ADCD0 000A3A50  38 80 FF FF */	li r4, -1
-/* 800ADCD4 000A3A54  4B F9 62 99 */	bl utRelocate$7__dt
+/* 800ADCD4 000A3A54  4B F9 62 99 */	bl __dt__10utRelocateFv
 /* 800ADCD8 000A3A58  39 61 00 60 */	addi r11, r1, 0x60
 /* 800ADCDC 000A3A5C  48 34 36 89 */	bl _restgpr_25
 /* 800ADCE0 000A3A60  80 01 00 64 */	lwz r0, 0x64(r1)
@@ -936,4 +936,3 @@ lbl_800AE480:
 /* 800AE494 000A4214  88 03 2B 0C */	lbz r0, 0x2b0c(r3)
 /* 800AE498 000A4218  28 00 00 01 */	cmplwi r0, 1
 /* 800AE49C 000A421C  40 82 00 2C */	bne lbl_800AE4C8
-

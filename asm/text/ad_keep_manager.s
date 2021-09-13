@@ -139,7 +139,7 @@ adKeepManager$7resetGlobalFlag:
 /* 80158D6C 0014EAEC  80 63 00 04 */	lwz r3, 4(r3)
 /* 80158D70 0014EAF0  80 84 00 30 */	lwz r4, 0x30(r4)
 /* 80158D74 0014EAF4  38 84 06 50 */	addi r4, r4, 0x650
-/* 80158D78 0014EAF8  4B EA B5 C0 */	b func_80004338
+/* 80158D78 0014EAF8  4B EA B5 C0 */	b memcpy
 
 .global adKeepManager$7setMapPointClearPercent
 adKeepManager$7setMapPointClearPercent:
@@ -470,7 +470,7 @@ lbl_801591DC:
 /* 801591FC 0014EF7C  80 8D BC C0 */	lwz r4, lbl_805A00E0-_SDA_BASE_(r13)
 /* 80159200 0014EF80  80 84 00 30 */	lwz r4, 0x30(r4)
 /* 80159204 0014EF84  38 84 06 50 */	addi r4, r4, 0x650
-/* 80159208 0014EF88  4B EA B1 31 */	bl func_80004338
+/* 80159208 0014EF88  4B EA B1 31 */	bl memcpy
 lbl_8015920C:
 /* 8015920C 0014EF8C  80 1E 00 0C */	lwz r0, 0xc(r30)
 /* 80159210 0014EF90  2C 00 00 00 */	cmpwi r0, 0
@@ -576,7 +576,7 @@ adKeepManager$7useStageSelectTiming:
 /* 80159364 0014F0E4  80 7F 00 04 */	lwz r3, 4(r31)
 /* 80159368 0014F0E8  80 84 00 30 */	lwz r4, 0x30(r4)
 /* 8015936C 0014F0EC  38 84 06 50 */	addi r4, r4, 0x650
-/* 80159370 0014F0F0  4B EA AF C9 */	bl func_80004338
+/* 80159370 0014F0F0  4B EA AF C9 */	bl memcpy
 /* 80159374 0014F0F4  38 00 00 00 */	li r0, 0
 /* 80159378 0014F0F8  80 7F 00 0C */	lwz r3, 0xc(r31)
 /* 8015937C 0014F0FC  90 1F 00 10 */	stw r0, 0x10(r31)
@@ -2391,7 +2391,7 @@ lbl_8015AC84:
 /* 8015ACDC 00150A5C  54 00 10 3A */	slwi r0, r0, 2
 /* 8015ACE0 00150A60  7E A5 AB 78 */	mr r5, r21
 /* 8015ACE4 00150A64  7C 77 02 14 */	add r3, r23, r0
-/* 8015ACE8 00150A68  4B EA 96 51 */	bl func_80004338
+/* 8015ACE8 00150A68  4B EA 96 51 */	bl memcpy
 /* 8015ACEC 00150A6C  7E 83 A3 78 */	mr r3, r20
 /* 8015ACF0 00150A70  7E A5 AB 78 */	mr r5, r21
 /* 8015ACF4 00150A74  38 80 00 00 */	li r4, 0

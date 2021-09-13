@@ -109,6 +109,7 @@ O_FILES := \
     $(BUILD_DIR)/asm/text/ut_nw.o \
     $(BUILD_DIR)/asm/text/gf_now_loading__23.o \
     $(BUILD_DIR)/asm/text/ut_nw__24.o \
+    $(BUILD_DIR)/src/text/ut_relocate.o \
     $(BUILD_DIR)/asm/text/ut_relocate.o \
     $(BUILD_DIR)/asm/text/ut_bitarray.o \
     $(BUILD_DIR)/asm/text/ut_list.o \

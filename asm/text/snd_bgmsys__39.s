@@ -130,11 +130,11 @@ lbl_800789C8:
 /* 80078B78 0006E8F8  93 C3 14 BC */	stw r30, 0x14bc(r3)
 /* 80078B7C 0006E8FC  38 61 00 08 */	addi r3, r1, 8
 /* 80078B80 0006E900  80 BF 14 D4 */	lwz r5, 0x14d4(r31)
-/* 80078B84 0006E904  4B FC B2 99 */	bl utRelocate$7__ct
+/* 80078B84 0006E904  4B FC B2 99 */	bl __ct__10utRelocateFPvUl
 /* 80078B88 0006E908  3C 80 80 45 */	lis r4, lbl_80454498@ha
 /* 80078B8C 0006E90C  38 61 00 08 */	addi r3, r1, 8
 /* 80078B90 0006E910  38 84 44 98 */	addi r4, r4, lbl_80454498@l
-/* 80078B94 0006E914  4B FC B4 19 */	bl utRelocate$7getPublicAddress
+/* 80078B94 0006E914  4B FC B4 19 */	bl getPublicAddress__10utRelocateFPCc
 /* 80078B98 0006E918  90 7F 01 94 */	stw r3, 0x194(r31)
 /* 80078B9C 0006E91C  93 DF 01 98 */	stw r30, 0x198(r31)
 /* 80078BA0 0006E920  48 00 00 10 */	b lbl_80078BB0
@@ -197,7 +197,7 @@ lbl_80078C60:
 /* 80078C68 0006E9E8  41 80 FF 74 */	blt lbl_80078BDC
 /* 80078C6C 0006E9EC  38 61 00 08 */	addi r3, r1, 8
 /* 80078C70 0006E9F0  38 80 FF FF */	li r4, -1
-/* 80078C74 0006E9F4  4B FC B2 F9 */	bl utRelocate$7__dt
+/* 80078C74 0006E9F4  4B FC B2 F9 */	bl __dt__10utRelocateFv
 /* 80078C78 0006E9F8  80 01 00 54 */	lwz r0, 0x54(r1)
 /* 80078C7C 0006E9FC  83 E1 00 4C */	lwz r31, 0x4c(r1)
 /* 80078C80 0006EA00  83 C1 00 48 */	lwz r30, 0x48(r1)
@@ -294,4 +294,3 @@ sndBgmRateSystem$7getBgmId:
 /* 80078DA0 0006EB20  54 00 18 38 */	slwi r0, r0, 3
 /* 80078DA4 0006EB24  7C 64 00 2E */	lwzx r3, r4, r0
 /* 80078DA8 0006EB28  4E 80 00 20 */	blr 
-

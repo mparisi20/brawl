@@ -83,11 +83,11 @@ IfMinigameTraining$7createModel:
 /* 80104AF8 000FA878  7F C4 F3 78 */	mr r4, r30
 /* 80104AFC 000FA87C  38 61 00 08 */	addi r3, r1, 8
 /* 80104B00 000FA880  3B E0 00 00 */	li r31, 0
-/* 80104B04 000FA884  4B F3 F3 19 */	bl utRelocate$7__ct
+/* 80104B04 000FA884  4B F3 F3 19 */	bl __ct__10utRelocateFPvUl
 /* 80104B08 000FA888  3C 80 80 46 */	lis r4, lbl_8045D008@ha
 /* 80104B0C 000FA88C  38 61 00 08 */	addi r3, r1, 8
 /* 80104B10 000FA890  38 84 D0 08 */	addi r4, r4, lbl_8045D008@l
-/* 80104B14 000FA894  4B F3 F4 99 */	bl utRelocate$7getPublicAddress
+/* 80104B14 000FA894  4B F3 F4 99 */	bl getPublicAddress__10utRelocateFPCc
 /* 80104B18 000FA898  7F 64 DB 78 */	mr r4, r27
 /* 80104B1C 000FA89C  48 00 00 18 */	b lbl_80104B34
 lbl_80104B20:
@@ -102,7 +102,7 @@ lbl_80104B34:
 /* 80104B3C 000FA8BC  40 80 FF E4 */	bge lbl_80104B20
 /* 80104B40 000FA8C0  38 61 00 08 */	addi r3, r1, 8
 /* 80104B44 000FA8C4  38 80 FF FF */	li r4, -1
-/* 80104B48 000FA8C8  4B F3 F4 25 */	bl utRelocate$7__dt
+/* 80104B48 000FA8C8  4B F3 F4 25 */	bl __dt__10utRelocateFv
 /* 80104B4C 000FA8CC  93 FB 02 EC */	stw r31, 0x2ec(r27)
 /* 80104B50 000FA8D0  39 61 00 60 */	addi r11, r1, 0x60
 /* 80104B54 000FA8D4  93 BB 00 10 */	stw r29, 0x10(r27)
@@ -111,4 +111,3 @@ lbl_80104B34:
 /* 80104B60 000FA8E0  7C 08 03 A6 */	mtlr r0
 /* 80104B64 000FA8E4  38 21 00 60 */	addi r1, r1, 0x60
 /* 80104B68 000FA8E8  4E 80 00 20 */	blr 
-

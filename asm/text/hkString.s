@@ -193,7 +193,7 @@ hkString$7strLen:
 
 .global hkString$7memCpy
 hkString$7memCpy:
-/* 80281BBC 0027793C  4B D8 27 7C */	b func_80004338
+/* 80281BBC 0027793C  4B D8 27 7C */	b memcpy
 
 .global hkString$7memCpy16
 hkString$7memCpy16:
