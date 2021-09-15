@@ -97,7 +97,7 @@
         },
         {
             "file": "build/brawl/src/text/ut_relocate.o",
-            ".data": ["0x8042b598", "0x68"],
+            ".data": ["0x8042b598", "0x63"]
         }
     ]
 }

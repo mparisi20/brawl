@@ -109,8 +109,10 @@ O_FILES := \
     $(BUILD_DIR)/asm/text/ut_nw.o \
     $(BUILD_DIR)/asm/text/gf_now_loading__23.o \
     $(BUILD_DIR)/asm/text/ut_nw__24.o \
+    \
+    $(BUILD_DIR)/asm/data/2_data.o \
+    \
     $(BUILD_DIR)/src/text/ut_relocate.o \
-    $(BUILD_DIR)/asm/text/ut_relocate.o \
     $(BUILD_DIR)/asm/text/ut_bitarray.o \
     $(BUILD_DIR)/asm/text/ut_list.o \
     $(BUILD_DIR)/asm/text/ut_archive_manager.o \
@@ -1353,7 +1355,7 @@ O_FILES := \
     $(BUILD_DIR)/asm/data/2_ctors.o \
     $(BUILD_DIR)/asm/data/dtors.o \
     $(BUILD_DIR)/asm/data/rodata.o \
-    $(BUILD_DIR)/asm/data/2_data.o \
+    $(BUILD_DIR)/asm/data/3_data.o \
     $(BUILD_DIR)/asm/data/bss.o \
     $(BUILD_DIR)/asm/data/sdata.o \
     $(BUILD_DIR)/asm/data/2_sbss.o \
