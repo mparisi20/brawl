@@ -223,12 +223,6 @@ O_FILES := \
     $(BUILD_DIR)/asm/text/cm_controller_demo.o \
     $(BUILD_DIR)/asm/text/cm_stage_param.o \
     $(BUILD_DIR)/asm/text/ty_fig_listmng.o \
-    $(BUILD_DIR)/asm/text/menu.o \
-    $(BUILD_DIR)/asm/text/ty_fig_listmng__56.o \
-    $(BUILD_DIR)/asm/text/menu__57.o \
-    $(BUILD_DIR)/asm/text/ty_fig_listmng__58.o \
-    $(BUILD_DIR)/asm/text/menu__59.o \
-    $(BUILD_DIR)/asm/text/ty_fig_listmng__60.o \
     $(BUILD_DIR)/asm/text/ty_seal_listmng.o \
     $(BUILD_DIR)/asm/text/menu__61.o \
     $(BUILD_DIR)/asm/text/ty_seal_listmng__62.o \
