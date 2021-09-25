@@ -2,6 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
+.global __dt__14gfFileIOHandleFv
+__dt__14gfFileIOHandleFv:
 .global gfFileIOHandle$7__dt
 gfFileIOHandle$7__dt:
 /* 80020B38 000168B8  94 21 FF F0 */	stwu r1, -0x10(r1)
@@ -1079,6 +1081,8 @@ lbl_800219C8:
 /* 800219D8 00017758  38 21 00 20 */	addi r1, r1, 0x20
 /* 800219DC 0001775C  4E 80 00 20 */	blr 
 
+.global read__14gfFileIOHandleFPCclUl
+read__14gfFileIOHandleFPCclUl:
 .global gfFileIOHandle$7read
 gfFileIOHandle$7read:
 /* 800219E0 00017760  94 21 FF E0 */	stwu r1, -0x20(r1)
@@ -1469,6 +1473,8 @@ gfFileIOHandle$7isCanceled:
 /* 80021F30 00017CB0  38 60 00 01 */	li r3, 1
 /* 80021F34 00017CB4  4E 80 00 20 */	blr 
 
+.global isReady__14gfFileIOHandleFv
+isReady__14gfFileIOHandleFv:
 .global gfFileIOHandle$7isReady
 gfFileIOHandle$7isReady:
 /* 80021F38 00017CB8  80 63 00 00 */	lwz r3, 0(r3)
@@ -1497,12 +1503,16 @@ lbl_80021F7C:
 /* 80021F80 00017D00  7C 03 C6 70 */	srawi r3, r0, 0x18
 /* 80021F84 00017D04  4E 80 00 20 */	blr 
 
+.global getSize__14gfFileIOHandleFv
+getSize__14gfFileIOHandleFv:
 .global gfFileIOHandle$7getSize
 gfFileIOHandle$7getSize:
 /* 80021F88 00017D08  80 63 00 00 */	lwz r3, 0(r3)
 /* 80021F8C 00017D0C  80 63 00 08 */	lwz r3, 8(r3)
 /* 80021F90 00017D10  4E 80 00 20 */	blr 
 
+.global getBuffer__14gfFileIOHandleFv
+getBuffer__14gfFileIOHandleFv:
 .global gfFileIOHandle$7getBuffer
 gfFileIOHandle$7getBuffer:
 /* 80021F94 00017D14  80 63 00 00 */	lwz r3, 0(r3)
@@ -1515,6 +1525,8 @@ gfFileIOHandle$7getPool:
 /* 80021FA4 00017D24  80 63 00 10 */	lwz r3, 0x10(r3)
 /* 80021FA8 00017D28  4E 80 00 20 */	blr 
 
+.global release__14gfFileIOHandleFv
+release__14gfFileIOHandleFv:
 .global gfFileIOHandle$7release
 gfFileIOHandle$7release:
 /* 80021FAC 00017D2C  94 21 FF F0 */	stwu r1, -0x10(r1)
@@ -1563,4 +1575,3 @@ lbl_8002203C:
 /* 80022048 00017DC8  7C 08 03 A6 */	mtlr r0
 /* 8002204C 00017DCC  38 21 00 10 */	addi r1, r1, 0x10
 /* 80022050 00017DD0  4E 80 00 20 */	blr 
-

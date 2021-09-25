@@ -238,7 +238,7 @@ muPrizeWndTask$7__dt:
 /* 800C0370 000B60F0  2C 03 00 00 */	cmpwi r3, 0
 /* 800C0374 000B60F4  41 82 00 0C */	beq lbl_800C0380
 /* 800C0378 000B60F8  38 80 00 01 */	li r4, 1
-/* 800C037C 000B60FC  4B FE C7 09 */	bl tyFigListDataManager$7__dt
+/* 800C037C 000B60FC  4B FE C7 09 */	bl __dt__20tyFigListDataManagerFv
 lbl_800C0380:
 /* 800C0380 000B6100  38 7B 02 2C */	addi r3, r27, 0x22c
 /* 800C0384 000B6104  4B F6 1A 61 */	bl gfFileIOHandle$7cancelRequest
@@ -579,10 +579,10 @@ lbl_800C0824:
 /* 800C0844 000B65C4  2C 03 00 00 */	cmpwi r3, 0
 /* 800C0848 000B65C8  41 82 00 0C */	beq lbl_800C0854
 /* 800C084C 000B65CC  38 80 00 00 */	li r4, 0
-/* 800C0850 000B65D0  4B FE C1 8D */	bl tyFigListDataManager$7__ct
+/* 800C0850 000B65D0  4B FE C1 8D */	bl __ct__20tyFigListDataManagerFi
 lbl_800C0854:
 /* 800C0854 000B65D4  90 7E 02 28 */	stw r3, 0x228(r30)
-/* 800C0858 000B65D8  4B FE C2 A9 */	bl tyFigListDataManager$7loadRequest
+/* 800C0858 000B65D8  4B FE C2 A9 */	bl loadRequest__20tyFigListDataManagerFv
 lbl_800C085C:
 /* 800C085C 000B65DC  38 7E 02 2C */	addi r3, r30, 0x22c
 /* 800C0860 000B65E0  38 9F 00 88 */	addi r4, r31, 0x88
@@ -897,7 +897,7 @@ muPrizeWndTask$7setWndFigurePrize:
 /* 800C0CA8 000B6A28  83 A3 00 54 */	lwz r29, 0x54(r3)
 /* 800C0CAC 000B6A2C  7F 64 DB 78 */	mr r4, r27
 /* 800C0CB0 000B6A30  80 63 02 28 */	lwz r3, 0x228(r3)
-/* 800C0CB4 000B6A34  4B FE CA 85 */	bl tyFigListDataManager$7getBilTexNameFigId
+/* 800C0CB4 000B6A34  4B FE CA 85 */	bl getBilTexNameFigId__20tyFigListDataManagerFUlPc
 /* 800C0CB8 000B6A38  3C 80 80 45 */	lis r4, lbl_80456F38@ha
 /* 800C0CBC 000B6A3C  38 7C 00 08 */	addi r3, r28, 8
 /* 800C0CC0 000B6A40  38 84 6F 38 */	addi r4, r4, lbl_80456F38@l
@@ -939,7 +939,7 @@ muPrizeWndTask$7setWndFigurePrize:
 /* 800C0D50 000B6AD0  D0 21 00 28 */	stfs f1, 0x28(r1)
 /* 800C0D54 000B6AD4  EC 02 00 32 */	fmuls f0, f2, f0
 /* 800C0D58 000B6AD8  D0 01 00 2C */	stfs f0, 0x2c(r1)
-/* 800C0D5C 000B6ADC  4B FE CA 51 */	bl tyFigListDataManager$7getFigDataId
+/* 800C0D5C 000B6ADC  4B FE CA 51 */	bl getFigDataId__20tyFigListDataManagerFUl
 /* 800C0D60 000B6AE0  C0 83 00 5C */	lfs f4, 0x5c(r3)
 /* 800C0D64 000B6AE4  7C 7E 1B 78 */	mr r30, r3
 /* 800C0D68 000B6AE8  C0 63 00 58 */	lfs f3, 0x58(r3)
@@ -1255,7 +1255,7 @@ lbl_800C11B8:
 /* 800C1210 000B6F90  2C 00 00 00 */	cmpwi r0, 0
 /* 800C1214 000B6F94  41 82 00 1C */	beq lbl_800C1230
 /* 800C1218 000B6F98  7C 03 03 78 */	mr r3, r0
-/* 800C121C 000B6F9C  4B FE B9 7D */	bl tyFigListDataManager$7isLoadFinish
+/* 800C121C 000B6F9C  4B FE B9 7D */	bl isLoadFinish__20tyFigListDataManagerFv
 /* 800C1220 000B6FA0  2C 03 00 00 */	cmpwi r3, 0
 /* 800C1224 000B6FA4  40 82 00 0C */	bne lbl_800C1230
 /* 800C1228 000B6FA8  80 78 01 0C */	lwz r3, 0x10c(r24)
@@ -1295,7 +1295,7 @@ lbl_800C129C:
 /* 800C129C 000B701C  80 78 02 28 */	lwz r3, 0x228(r24)
 /* 800C12A0 000B7020  38 A1 00 08 */	addi r5, r1, 8
 /* 800C12A4 000B7024  A0 9C 00 08 */	lhz r4, 8(r28)
-/* 800C12A8 000B7028  4B FE C3 C1 */	bl tyFigListDataManager$7getBilTexFileNameFigId
+/* 800C12A8 000B7028  4B FE C3 C1 */	bl getBilTexFileNameFigId__20tyFigListDataManagerFUsPc
 /* 800C12AC 000B702C  7F 63 DB 78 */	mr r3, r27
 /* 800C12B0 000B7030  38 81 00 08 */	addi r4, r1, 8
 /* 800C12B4 000B7034  38 A0 00 2B */	li r5, 0x2b
@@ -1940,4 +1940,3 @@ muPrizeWndTask$7setIconID:
 /* 800C1B30 000B78B0  7C 03 00 2E */	lwzx r0, r3, r0
 /* 800C1B34 000B78B4  90 04 00 0C */	stw r0, 0xc(r4)
 /* 800C1B38 000B78B8  4E 80 00 20 */	blr 
-

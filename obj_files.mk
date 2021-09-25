@@ -222,7 +222,10 @@ O_FILES := \
     $(BUILD_DIR)/asm/text/cm_controller_melee_fixed.o \
     $(BUILD_DIR)/asm/text/cm_controller_demo.o \
     $(BUILD_DIR)/asm/text/cm_stage_param.o \
-    $(BUILD_DIR)/asm/text/ty_fig_listmng.o \
+    \
+    $(BUILD_DIR)/asm/data/3_data.o \
+    \
+    $(BUILD_DIR)/src/text/ty_fig_listmng.o \
     $(BUILD_DIR)/asm/text/ty_seal_listmng.o \
     $(BUILD_DIR)/asm/text/menu__61.o \
     $(BUILD_DIR)/asm/text/ty_seal_listmng__62.o \
@@ -1349,7 +1352,7 @@ O_FILES := \
     $(BUILD_DIR)/asm/data/2_ctors.o \
     $(BUILD_DIR)/asm/data/dtors.o \
     $(BUILD_DIR)/asm/data/rodata.o \
-    $(BUILD_DIR)/asm/data/3_data.o \
+    $(BUILD_DIR)/asm/data/4_data.o \
     $(BUILD_DIR)/asm/data/bss.o \
     $(BUILD_DIR)/asm/data/sdata.o \
     $(BUILD_DIR)/asm/data/2_sbss.o \

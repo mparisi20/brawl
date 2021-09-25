@@ -76,7 +76,7 @@ PRAGMAPROC := tools/pragma/pragma.py
 INCLUDES := -i . -I- -i include
 ASFLAGS := -mgekko -I include
 LDFLAGS := -map $(MAP) -fp hard -nodefaults
-CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -nodefaults -msgstyle gcc $(INCLUDES) -W all -w nopragmas
+CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -inline auto -O4,p -ipa file -nodefaults -msgstyle gcc $(INCLUDES) -W all -w nopragmas
 
 # for postprocess.py
 PROCFLAGS := -fsymbol-fixup

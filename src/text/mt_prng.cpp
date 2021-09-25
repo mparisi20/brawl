@@ -38,7 +38,7 @@ s32 randseed() {
 
 // Note: This function is meant to be deadstripped - it's only here
 // to correct the order in which the compiler emits floating-point constants.
-static float unused(u32 n) {
+inline float unused(u32 n) {
     return n;
 }
 

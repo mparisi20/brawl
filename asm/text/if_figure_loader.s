@@ -44,7 +44,7 @@ lbl_801060A0:
 /* 801060A8 000FBE28  93 DF 00 04 */	stw r30, 4(r31)
 /* 801060AC 000FBE2C  80 6D BE F8 */	lwz r3, lbl_805A0318-_SDA_BASE_(r13)
 /* 801060B0 000FBE30  80 63 00 00 */	lwz r3, 0(r3)
-/* 801060B4 000FBE34  4B FA 76 F9 */	bl tyFigListDataManager$7getFigDataId
+/* 801060B4 000FBE34  4B FA 76 F9 */	bl getFigDataId__20tyFigListDataManagerFUl
 /* 801060B8 000FBE38  3C 80 80 46 */	lis r4, lbl_8045D060@ha
 /* 801060BC 000FBE3C  9B C1 01 10 */	stb r30, 0x110(r1)
 /* 801060C0 000FBE40  7C 7E 1B 78 */	mr r30, r3
@@ -274,7 +274,7 @@ IfFigureLoader$7getInstance:
 .global IfFigureLoader$7isLoadFinish
 IfFigureLoader$7isLoadFinish:
 /* 801063C4 000FC144  80 63 00 00 */	lwz r3, 0(r3)
-/* 801063C8 000FC148  4B FA 67 D0 */	b tyFigListDataManager$7isLoadFinish
+/* 801063C8 000FC148  4B FA 67 D0 */	b isLoadFinish__20tyFigListDataManagerFv
 
 .global IfFigureLoader$7readRequest
 IfFigureLoader$7readRequest:
@@ -290,7 +290,7 @@ IfFigureLoader$7readRequest:
 /* 801063F0 000FC170  93 81 00 10 */	stw r28, 0x10(r1)
 /* 801063F4 000FC174  80 64 00 00 */	lwz r3, 0(r4)
 /* 801063F8 000FC178  7F E4 FB 78 */	mr r4, r31
-/* 801063FC 000FC17C  4B FA 73 B1 */	bl tyFigListDataManager$7getFigDataId
+/* 801063FC 000FC17C  4B FA 73 B1 */	bl getFigDataId__20tyFigListDataManagerFUl
 /* 80106400 000FC180  2C 03 00 00 */	cmpwi r3, 0
 /* 80106404 000FC184  40 82 00 10 */	bne lbl_80106414
 /* 80106408 000FC188  38 00 00 00 */	li r0, 0
@@ -440,7 +440,7 @@ IfFigureLoader$7adjustModel:
 /* 801065F8 000FC378  93 A1 00 64 */	stw r29, 0x64(r1)
 /* 801065FC 000FC37C  7C BD 2B 78 */	mr r29, r5
 /* 80106600 000FC380  80 63 00 00 */	lwz r3, 0(r3)
-/* 80106604 000FC384  4B FA 71 A9 */	bl tyFigListDataManager$7getFigDataId
+/* 80106604 000FC384  4B FA 71 A9 */	bl getFigDataId__20tyFigListDataManagerFUl
 /* 80106608 000FC388  7C 7F 1B 78 */	mr r31, r3
 /* 8010660C 000FC38C  7F A3 EB 78 */	mr r3, r29
 /* 80106610 000FC390  38 81 00 2C */	addi r4, r1, 0x2c
@@ -523,4 +523,3 @@ lbl_80106718:
 /* 80106740 000FC4C0  7C 08 03 A6 */	mtlr r0
 /* 80106744 000FC4C4  38 21 00 70 */	addi r1, r1, 0x70
 /* 80106748 000FC4C8  4E 80 00 20 */	blr 
-

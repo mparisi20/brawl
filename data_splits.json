@@ -98,6 +98,10 @@
         {
             "file": "build/brawl/src/text/ut_relocate.o",
             ".data": ["0x8042b598", "0x63"]
+        },
+        {
+            "file": "build/brawl/src/text/ty_fig_listmng.o",
+            ".data": ["0x80455120", "0x5D"]
         }
     ]
 }
