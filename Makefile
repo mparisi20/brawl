@@ -93,6 +93,13 @@ TOOLBASE = $(TOOLDIRS:$(TOOLS_DIR)/%=%)
 TOOLS = $(foreach tool,$(TOOLBASE),$(TOOLS_DIR)/$(tool)/$(tool)$(EXE))
 
 #-------------------------------------------------------------------------------
+# Per-file Compiler Flag Overrides
+#-------------------------------------------------------------------------------
+
+# Removing -ipa file / -inline auto since they change the emit order of floating point constants 
+$(BUILD_DIR)/src/text/mt_prng.o: CFLAGS := -Cpp_exceptions off -proc gekko -fp hard -O4,p -nodefaults -msgstyle gcc $(INCLUDES) -W all -w nopragmas
+
+#-------------------------------------------------------------------------------
 # Recipes
 #-------------------------------------------------------------------------------
 

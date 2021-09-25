@@ -23,7 +23,7 @@ s32 mtRand::randi() {
 static mtRand lbl_805A00B8(0);
 extern mtPrngLogManager lbl_804977B4;
 
-// [-1, 1] random float
+// [0, 1] random float
 float mtRand::randf() {
     return randi() / 2.147483647e9;
 }
@@ -38,7 +38,7 @@ s32 randseed() {
 
 // Note: This function is meant to be deadstripped - it's only here
 // to correct the order in which the compiler emits floating-point constants.
-inline float unused(u32 n) {
+static float unused(u32 n) {
     return n;
 }
 
