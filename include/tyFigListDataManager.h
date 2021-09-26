@@ -7,8 +7,9 @@
 struct tyFigListData {
     s32 id;
     u8 unk4[0x4];
-    u32 unk8;
-    u8 unkC[0x14];
+    const char* name; // relocated pointer to a string at data section start
+    u32 unkC;
+    u8 unk10[0x10];
     s32 series;
     s32 kind;
     u8 unk28[0x24];

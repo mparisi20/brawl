@@ -81,8 +81,8 @@ IfCoinShooterLabel$7create:
 /* 8010147C 000F71FC  4B FF 92 C5 */	bl IfRewardListTask$7isLoadFinish
 /* 80101480 000F7200  2C 03 00 00 */	cmpwi r3, 0
 /* 80101484 000F7204  41 82 00 18 */	beq lbl_8010149C
-/* 80101488 000F7208  48 00 4F 35 */	bl IfFigureLoader$7getInstance
-/* 8010148C 000F720C  48 00 4F 39 */	bl IfFigureLoader$7isLoadFinish
+/* 80101488 000F7208  48 00 4F 35 */	bl getInstance__14IfFigureLoaderFv
+/* 8010148C 000F720C  48 00 4F 39 */	bl isLoadFinish__14IfFigureLoaderFv
 /* 80101490 000F7210  2C 03 00 00 */	cmpwi r3, 0
 /* 80101494 000F7214  41 82 00 08 */	beq lbl_8010149C
 /* 80101498 000F7218  3B C0 00 01 */	li r30, 1
@@ -920,7 +920,7 @@ lbl_80102080:
 /* 80102088 000F7E08  80 7E 03 24 */	lwz r3, 0x324(r30)
 /* 8010208C 000F7E0C  2C 03 00 00 */	cmpwi r3, 0
 /* 80102090 000F7E10  41 82 00 08 */	beq lbl_80102098
-/* 80102094 000F7E14  48 00 41 75 */	bl IfFigureLoader5EntryFv$7destroy
+/* 80102094 000F7E14  48 00 41 75 */	bl destroy__Q214IfFigureLoader5EntryFv
 lbl_80102098:
 /* 80102098 000F7E18  38 00 00 00 */	li r0, 0
 /* 8010209C 000F7E1C  90 1E 03 24 */	stw r0, 0x324(r30)
@@ -2627,7 +2627,7 @@ lbl_80103838:
 /* 8010393C 000F96BC  80 7F 01 BC */	lwz r3, 0x1bc(r31)
 /* 80103940 000F96C0  38 03 00 14 */	addi r0, r3, 0x14
 /* 80103944 000F96C4  90 01 00 5C */	stw r0, 0x5c(r1)
-/* 80103948 000F96C8  48 00 2A 75 */	bl IfFigureLoader$7getInstance
+/* 80103948 000F96C8  48 00 2A 75 */	bl getInstance__14IfFigureLoaderFv
 /* 8010394C 000F96CC  80 03 00 00 */	lwz r0, 0(r3)
 /* 80103950 000F96D0  38 61 00 50 */	addi r3, r1, 0x50
 /* 80103954 000F96D4  38 80 00 2B */	li r4, 0x2b
@@ -2696,7 +2696,7 @@ lbl_80103A38:
 /* 80103A38 000F97B8  38 60 00 00 */	li r3, 0
 /* 80103A3C 000F97BC  48 00 00 0C */	b lbl_80103A48
 lbl_80103A40:
-/* 80103A40 000F97C0  48 00 29 7D */	bl IfFigureLoader$7getInstance
+/* 80103A40 000F97C0  48 00 29 7D */	bl getInstance__14IfFigureLoaderFv
 /* 80103A44 000F97C4  48 00 2B 05 */	bl IfFigureLoader$7waitForIdle
 lbl_80103A48:
 /* 80103A48 000F97C8  2C 03 00 00 */	cmpwi r3, 0
@@ -2827,7 +2827,7 @@ lbl_80103BFC:
 /* 80103BFC 000F997C  38 60 00 00 */	li r3, 0
 /* 80103C00 000F9980  48 00 00 0C */	b lbl_80103C0C
 lbl_80103C04:
-/* 80103C04 000F9984  48 00 27 B9 */	bl IfFigureLoader$7getInstance
+/* 80103C04 000F9984  48 00 27 B9 */	bl getInstance__14IfFigureLoaderFv
 /* 80103C08 000F9988  48 00 29 41 */	bl IfFigureLoader$7waitForIdle
 lbl_80103C0C:
 /* 80103C0C 000F998C  2C 03 00 00 */	cmpwi r3, 0
@@ -2863,8 +2863,8 @@ IfCoinShooter$7isLoadFinish:
 /* 80103C68 000F99E8  4B FF 6A D9 */	bl IfRewardListTask$7isLoadFinish
 /* 80103C6C 000F99EC  2C 03 00 00 */	cmpwi r3, 0
 /* 80103C70 000F99F0  41 82 00 18 */	beq lbl_80103C88
-/* 80103C74 000F99F4  48 00 27 49 */	bl IfFigureLoader$7getInstance
-/* 80103C78 000F99F8  48 00 27 4D */	bl IfFigureLoader$7isLoadFinish
+/* 80103C74 000F99F4  48 00 27 49 */	bl getInstance__14IfFigureLoaderFv
+/* 80103C78 000F99F8  48 00 27 4D */	bl isLoadFinish__14IfFigureLoaderFv
 /* 80103C7C 000F99FC  2C 03 00 00 */	cmpwi r3, 0
 /* 80103C80 000F9A00  41 82 00 08 */	beq lbl_80103C88
 /* 80103C84 000F9A04  3B E0 00 01 */	li r31, 1
@@ -2899,7 +2899,7 @@ lbl_80103CD8:
 /* 80103CD8 000F9A58  38 60 00 00 */	li r3, 0
 /* 80103CDC 000F9A5C  48 00 00 0C */	b lbl_80103CE8
 lbl_80103CE0:
-/* 80103CE0 000F9A60  48 00 26 DD */	bl IfFigureLoader$7getInstance
+/* 80103CE0 000F9A60  48 00 26 DD */	bl getInstance__14IfFigureLoaderFv
 /* 80103CE4 000F9A64  48 00 28 65 */	bl IfFigureLoader$7waitForIdle
 lbl_80103CE8:
 /* 80103CE8 000F9A68  80 01 00 14 */	lwz r0, 0x14(r1)
@@ -2932,8 +2932,8 @@ IfCoinShooter$7setCoinCount:
 /* 80103D48 000F9AC8  4B FF 69 F9 */	bl IfRewardListTask$7isLoadFinish
 /* 80103D4C 000F9ACC  2C 03 00 00 */	cmpwi r3, 0
 /* 80103D50 000F9AD0  41 82 00 18 */	beq lbl_80103D68
-/* 80103D54 000F9AD4  48 00 26 69 */	bl IfFigureLoader$7getInstance
-/* 80103D58 000F9AD8  48 00 26 6D */	bl IfFigureLoader$7isLoadFinish
+/* 80103D54 000F9AD4  48 00 26 69 */	bl getInstance__14IfFigureLoaderFv
+/* 80103D58 000F9AD8  48 00 26 6D */	bl isLoadFinish__14IfFigureLoaderFv
 /* 80103D5C 000F9ADC  2C 03 00 00 */	cmpwi r3, 0
 /* 80103D60 000F9AE0  41 82 00 08 */	beq lbl_80103D68
 /* 80103D64 000F9AE4  3B C0 00 01 */	li r30, 1
@@ -3117,8 +3117,8 @@ IfCoinShooter$7updateBonusPoint:
 /* 80103FE0 000F9D60  4B FF 67 61 */	bl IfRewardListTask$7isLoadFinish
 /* 80103FE4 000F9D64  2C 03 00 00 */	cmpwi r3, 0
 /* 80103FE8 000F9D68  41 82 00 18 */	beq lbl_80104000
-/* 80103FEC 000F9D6C  48 00 23 D1 */	bl IfFigureLoader$7getInstance
-/* 80103FF0 000F9D70  48 00 23 D5 */	bl IfFigureLoader$7isLoadFinish
+/* 80103FEC 000F9D6C  48 00 23 D1 */	bl getInstance__14IfFigureLoaderFv
+/* 80103FF0 000F9D70  48 00 23 D5 */	bl isLoadFinish__14IfFigureLoaderFv
 /* 80103FF4 000F9D74  2C 03 00 00 */	cmpwi r3, 0
 /* 80103FF8 000F9D78  41 82 00 08 */	beq lbl_80104000
 /* 80103FFC 000F9D7C  3B C0 00 01 */	li r30, 1
@@ -3330,8 +3330,8 @@ IfCoinShooter$7showFigure:
 /* 801042EC 000FA06C  4B FF 64 55 */	bl IfRewardListTask$7isLoadFinish
 /* 801042F0 000FA070  2C 03 00 00 */	cmpwi r3, 0
 /* 801042F4 000FA074  41 82 00 18 */	beq lbl_8010430C
-/* 801042F8 000FA078  48 00 20 C5 */	bl IfFigureLoader$7getInstance
-/* 801042FC 000FA07C  48 00 20 C9 */	bl IfFigureLoader$7isLoadFinish
+/* 801042F8 000FA078  48 00 20 C5 */	bl getInstance__14IfFigureLoaderFv
+/* 801042FC 000FA07C  48 00 20 C9 */	bl isLoadFinish__14IfFigureLoaderFv
 /* 80104300 000FA080  2C 03 00 00 */	cmpwi r3, 0
 /* 80104304 000FA084  41 82 00 08 */	beq lbl_8010430C
 /* 80104308 000FA088  3B E0 00 01 */	li r31, 1
@@ -3368,7 +3368,7 @@ lbl_8010433C:
 /* 80104378 000FA0F8  80 7D 03 24 */	lwz r3, 0x324(r29)
 /* 8010437C 000FA0FC  2C 03 00 00 */	cmpwi r3, 0
 /* 80104380 000FA100  41 82 00 08 */	beq lbl_80104388
-/* 80104384 000FA104  48 00 1E 85 */	bl IfFigureLoader5EntryFv$7destroy
+/* 80104384 000FA104  48 00 1E 85 */	bl destroy__Q214IfFigureLoader5EntryFv
 lbl_80104388:
 /* 80104388 000FA108  80 7D 02 D4 */	lwz r3, 0x2d4(r29)
 /* 8010438C 000FA10C  93 FD 03 24 */	stw r31, 0x324(r29)
@@ -3574,7 +3574,7 @@ lbl_80104634:
 /* 8010465C 000FA3DC  80 7E 03 18 */	lwz r3, 0x318(r30)
 /* 80104660 000FA3E0  80 84 00 10 */	lwz r4, 0x10(r4)
 /* 80104664 000FA3E4  48 0B 07 31 */	bl nw4r3g3d12ScnMdlExpandFPQ34nw4r3g3$7PushBack_5854
-/* 80104668 000FA3E8  48 00 1D 55 */	bl IfFigureLoader$7getInstance
+/* 80104668 000FA3E8  48 00 1D 55 */	bl getInstance__14IfFigureLoaderFv
 /* 8010466C 000FA3EC  80 9E 03 24 */	lwz r4, 0x324(r30)
 /* 80104670 000FA3F0  80 BE 03 08 */	lwz r5, 0x308(r30)
 /* 80104674 000FA3F4  80 84 00 08 */	lwz r4, 8(r4)
@@ -3795,4 +3795,3 @@ IfCoinShooter$7__ct:
 /* 8010492C 000FA6AC  7C 08 03 A6 */	mtlr r0
 /* 80104930 000FA6B0  38 21 00 10 */	addi r1, r1, 0x10
 /* 80104934 000FA6B4  4E 80 00 20 */	blr 
-

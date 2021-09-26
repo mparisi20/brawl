@@ -430,8 +430,8 @@ $2unnamed$2if_minigame_coin_shooter_cpp$223IfCoinShooterLabelLightFv$7__dt:
 /* 80100370 000F60F0  4B FF A3 D1 */	bl IfRewardListTask$7isLoadFinish
 /* 80100374 000F60F4  2C 03 00 00 */	cmpwi r3, 0
 /* 80100378 000F60F8  41 82 00 18 */	beq lbl_80100390
-/* 8010037C 000F60FC  48 00 60 41 */	bl IfFigureLoader$7getInstance
-/* 80100380 000F6100  48 00 60 45 */	bl IfFigureLoader$7isLoadFinish
+/* 8010037C 000F60FC  48 00 60 41 */	bl getInstance__14IfFigureLoaderFv
+/* 80100380 000F6100  48 00 60 45 */	bl isLoadFinish__14IfFigureLoaderFv
 /* 80100384 000F6104  2C 03 00 00 */	cmpwi r3, 0
 /* 80100388 000F6108  41 82 00 08 */	beq lbl_80100390
 /* 8010038C 000F610C  3B C0 00 01 */	li r30, 1
@@ -808,4 +808,3 @@ lbl_80100808:
 /* 801008F4 000F6674  7C 08 03 A6 */	mtlr r0
 /* 801008F8 000F6678  38 21 00 A0 */	addi r1, r1, 0xa0
 /* 801008FC 000F667C  4E 80 00 20 */	blr 
-

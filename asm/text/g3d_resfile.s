@@ -1895,6 +1895,8 @@ lbl_8018E9E0:
 /* 8018EA00 00184780  38 21 00 40 */	addi r1, r1, 0x40
 /* 8018EA04 00184784  4E 80 00 20 */	blr 
 
+.global Init__Q34nw4r3g3d7ResFileFv
+Init__Q34nw4r3g3d7ResFileFv:
 .global nw4r3g3d7ResFileFv$7Init
 nw4r3g3d7ResFileFv$7Init:
 /* 8018EA08 00184788  94 21 FF A0 */	stwu r1, -0x60(r1)
@@ -2101,4 +2103,3 @@ lbl_8018ECAC:
 /* 8018ECC0 00184A40  7C 08 03 A6 */	mtlr r0
 /* 8018ECC4 00184A44  38 21 00 60 */	addi r1, r1, 0x60
 /* 8018ECC8 00184A48  4E 80 00 20 */	blr 
-

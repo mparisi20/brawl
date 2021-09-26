@@ -535,6 +535,8 @@ gfHeapManager$7calloc:
 /* 80024A2C 0001A7AC  80 63 00 04 */	lwz r3, 4(r3)
 /* 80024A30 0001A7B0  48 00 14 AC */	b gfMemoryPool$7calloc
 
+.global getMaxFreeSize__13gfHeapManagerFUl
+getMaxFreeSize__13gfHeapManagerFUl:
 .global gfHeapManager$7getMaxFreeSize
 gfHeapManager$7getMaxFreeSize:
 /* 80024A34 0001A7B4  3C 80 80 49 */	lis r4, lbl_80494958@ha
@@ -760,4 +762,3 @@ lbl_80024D04:
 /* 80024D60 0001AAE0  7C 08 03 A6 */	mtlr r0
 /* 80024D64 0001AAE4  38 21 00 C0 */	addi r1, r1, 0xc0
 /* 80024D68 0001AAE8  4E 80 00 20 */	blr 
-

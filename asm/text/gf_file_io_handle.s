@@ -789,6 +789,8 @@ lbl_800215C8:
 /* 800215D8 00017358  38 21 00 20 */	addi r1, r1, 0x20
 /* 800215DC 0001735C  4E 80 00 20 */	blr 
 
+.global readRequest__14gfFileIOHandleFPCcPvUlUl
+readRequest__14gfFileIOHandleFPCcPvUlUl:
 .global gfFileIOHandle$7readRequest_312
 gfFileIOHandle$7readRequest_312:
 /* 800215E0 00017360  94 21 FF E0 */	stwu r1, -0x20(r1)
@@ -1374,6 +1376,8 @@ lbl_80021D94:
 /* 80021DDC 00017B5C  38 21 00 20 */	addi r1, r1, 0x20
 /* 80021DE0 00017B60  4E 80 00 20 */	blr 
 
+.global cancelRequest__14gfFileIOHandleFv
+cancelRequest__14gfFileIOHandleFv:
 .global gfFileIOHandle$7cancelRequest
 gfFileIOHandle$7cancelRequest:
 /* 80021DE4 00017B64  94 21 FF F0 */	stwu r1, -0x10(r1)
@@ -1463,6 +1467,8 @@ gfFileIOHandle$7isCancelRequested:
 /* 80021F14 00017C94  38 60 00 01 */	li r3, 1
 /* 80021F18 00017C98  4E 80 00 20 */	blr 
 
+.global isCanceled__14gfFileIOHandleFv
+isCanceled__14gfFileIOHandleFv:
 .global gfFileIOHandle$7isCanceled
 gfFileIOHandle$7isCanceled:
 /* 80021F1C 00017C9C  80 83 00 00 */	lwz r4, 0(r3)
@@ -1491,6 +1497,8 @@ lbl_80021F4C:
 /* 80021F60 00017CE0  54 03 D9 7E */	srwi r3, r0, 5
 /* 80021F64 00017CE4  4E 80 00 20 */	blr 
 
+.global getReturnStatus__14gfFileIOHandleFv
+getReturnStatus__14gfFileIOHandleFv:
 .global gfFileIOHandle$7getReturnStatus
 gfFileIOHandle$7getReturnStatus:
 /* 80021F68 00017CE8  80 63 00 00 */	lwz r3, 0(r3)

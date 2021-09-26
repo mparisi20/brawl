@@ -1,6 +1,8 @@
 #ifndef SR_COMMON_H
 #define SR_COMMON_H
 
+#include "global.h"
+
 struct srHeapType
 {
     static void* operator new(size_t sz, size_t heap);

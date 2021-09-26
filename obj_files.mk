@@ -296,6 +296,7 @@ O_FILES := \
     $(BUILD_DIR)/asm/text/if_minigame_training__96.o \
     $(BUILD_DIR)/asm/text/if_wifipr_mngr__97.o \
     $(BUILD_DIR)/asm/text/if_minigame_training__98.o \
+    $(BUILD_DIR)/src/text/if_figure_loader.o \
     $(BUILD_DIR)/asm/text/if_figure_loader.o \
     $(BUILD_DIR)/asm/text/if_adv_mngr.o \
     $(BUILD_DIR)/asm/text/if_adv_task.o \
