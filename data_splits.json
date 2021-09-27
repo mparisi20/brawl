@@ -102,6 +102,13 @@
         {
             "file": "build/brawl/src/text/ty_fig_listmng.o",
             ".data": ["0x80455120", "0x5D"]
+        },
+        {
+            "file": "build/brawl/src/text/if_figure_loader.o",
+            ".data": ["0x8045d060", "0xa"],
+            ".sdata": ["0x8059e5d8", "0x11"],
+            ".sbss": ["0x805a0318", "0x4"],
+            ".sdata2": ["0x805a27e0", "0xc"]
         }
     ]
 }

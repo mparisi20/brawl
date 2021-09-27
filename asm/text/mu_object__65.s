@@ -3783,6 +3783,8 @@ MuObject$7getPos:
 /* 800B6724 000AC4A4  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B6728 000AC4A8  4E 80 00 20 */	blr 
 
+.global getPos__8MuObjectFRQ34nw4r4math4VEC3PCc
+getPos__8MuObjectFRQ34nw4r4math4VEC3PCc:
 .global MuObject$7getPos_2410
 MuObject$7getPos_2410:
 /* 800B672C 000AC4AC  94 21 FF E0 */	stwu r1, -0x20(r1)
@@ -3834,6 +3836,8 @@ MuObject$7setPos:
 /* 800B67D8 000AC558  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B67DC 000AC55C  4E 80 00 20 */	blr 
 
+.global setPos__8MuObjectFRCQ34nw4r4math4VEC3PCc
+setPos__8MuObjectFRCQ34nw4r4math4VEC3PCc:
 .global MuObject$7setPos_2412
 MuObject$7setPos_2412:
 /* 800B67E0 000AC560  94 21 FF E0 */	stwu r1, -0x20(r1)
@@ -4206,6 +4210,8 @@ lbl_800B6CF4:
 /* 800B6D08 000ACA88  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B6D0C 000ACA8C  4E 80 00 20 */	blr 
 
+.global getScale__8MuObjectFRQ34nw4r4math4VEC3PCc
+getScale__8MuObjectFRQ34nw4r4math4VEC3PCc:
 .global MuObject$7getScale
 MuObject$7getScale:
 /* 800B6D10 000ACA90  94 21 FF E0 */	stwu r1, -0x20(r1)
@@ -4276,6 +4282,8 @@ lbl_800B6DBC:
 /* 800B6E00 000ACB80  38 21 00 70 */	addi r1, r1, 0x70
 /* 800B6E04 000ACB84  4E 80 00 20 */	blr 
 
+.global setObjScale__8MuObjectFRCQ34nw4r4math4VEC3
+setObjScale__8MuObjectFRCQ34nw4r4math4VEC3:
 .global MuObject$7setObjScale
 MuObject$7setObjScale:
 /* 800B6E08 000ACB88  94 21 FF F0 */	stwu r1, -0x10(r1)
@@ -4428,6 +4436,8 @@ MuObject$7setObjRotate:
 /* 800B701C 000ACD9C  38 21 00 50 */	addi r1, r1, 0x50
 /* 800B7020 000ACDA0  4E 80 00 20 */	blr 
 
+.global getRotate__8MuObjectFRQ34nw4r4math4VEC3PCc
+getRotate__8MuObjectFRQ34nw4r4math4VEC3PCc:
 .global MuObject$7getRotate
 MuObject$7getRotate:
 /* 800B7024 000ACDA4  94 21 FF E0 */	stwu r1, -0x20(r1)
@@ -4453,6 +4463,8 @@ MuObject$7getRotate:
 /* 800B7074 000ACDF4  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B7078 000ACDF8  4E 80 00 20 */	blr 
 
+.global setRotate__8MuObjectFPCcRCQ34nw4r4math4VEC3
+setRotate__8MuObjectFPCcRCQ34nw4r4math4VEC3:
 .global MuObject$7setRotate
 MuObject$7setRotate:
 /* 800B707C 000ACDFC  94 21 FF E0 */	stwu r1, -0x20(r1)
@@ -5729,4 +5741,3 @@ lbl_800B8284:
 /* 800B82A0 000AE020  7D 89 03 A6 */	mtctr r12
 /* 800B82A4 000AE024  4E 80 04 21 */	bctrl 
 /* 800B82A8 000AE028  38 7D FF FF */	addi r3, r29, -1
-

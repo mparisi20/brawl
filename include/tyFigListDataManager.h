@@ -3,6 +3,7 @@
 
 #include "global.h"
 #include "gfFileIOHandle.h"
+#include "nw4r/math.h"
 
 struct tyFigListData {
     s32 id;
@@ -12,7 +13,11 @@ struct tyFigListData {
     u8 unk10[0x10];
     s32 series;
     s32 kind;
-    u8 unk28[0x24];
+    nw4r::math::VEC3 unk28;
+    float unk34;
+    float unk38;
+    float unk3C;
+    u8 unk40[0xC];
     s32 bilTexIdx; 
     u8 unk50[0x10];
 };

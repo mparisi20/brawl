@@ -1,127 +1,16 @@
-#if 0
-80106020 isReady/[IfFigureLoader5EntryFv]/(if_figure_loader.o)
-80106208 destroy/[IfFigureLoader5EntryFv]/(if_figure_loader.o)
-80106218 create/[IfFigureLoader]/(if_figure_loader.o)
-80106314 destroy/[IfFigureLoader]/(if_figure_loader.o)
-801063bc getInstance/[IfFigureLoader]/(if_figure_loader.o)
-801063c4 isLoadFinish/[IfFigureLoader]/(if_figure_loader.o)
-801063cc readRequest/[IfFigureLoader]/(if_figure_loader.o)
-80106548 waitForIdle/[IfFigureLoader]/(if_figure_loader.o)
-801065e0 adjustModel/[IfFigureLoader]/(if_figure_loader.o)
-#endif
-
 #include "global.h"
 #include <string.h>
 #include "gfHeapManager.h"
 #include "gfFileIOHandle.h"
 #include "sr_common.h"
 #include "tyFigListDataManager.h"
+#include "nw4r/math.h"
+#include "nw4r/g3d.h"
+#include "MuObject.h"
+#include "IfFigureLoader.h"
 
-namespace nw4r {
-namespace g3d {
-    class ResFile {        
-    public:
-        void* fileBuf;
+using nw4r::math::VEC3;
 
-        void Init();
-    };
-} // g3d
-} // nw4r
-
-class IfFigureLoader {
-public:
-    class Entry {
-        friend class IfFigureLoader;
-
-        static const size_t MAXLEN = 128;
-
-        u16 unk0;
-        u16 unk2;
-        s32 unk4;
-        u32 unk8;
-        tyFigListData* unkC;
-        nw4r::g3d::ResFile unk10;
-        gfFileIOHandle unk14;
-        char unk18[MAXLEN+1];
-        void* unk9C;
-    public:
-        Entry() {
-            this->unk0 = 0;
-            this->unk2 = 0;
-            this->unk4 = 0;
-            this->unk8 = -1;
-            this->unkC = 0;
-            this->unk10.fileBuf = 0;
-            this->unk14.unk0 = 0;
-            this->unk18[0] = '\0';
-            strcat(this->unk18, "");
-            u32 heap = 41;
-            if (gfHeapManager::getMaxFreeSize(heap) < 0x400000) {
-                heap = 43;
-            }
-            this->unk9C = gfHeapManager::alloc(heap, 0x400000);
-        }
-
-        ~Entry() {
-            gfHeapManager::free(this->unk9C);
-        }
-
-        BOOL isReady();
-        void destroy();
-
-        static void* operator new(size_t, void* p) {
-            return p;
-        }
-    };
-
-private:
-    tyFigListDataManager* unk0;
-    s32 unk4;
-    Entry* unk8;
-    u32 unkC;
-
-    static IfFigureLoader* instance;
-
-public:
-
-    static void* operator new(size_t sz, u32 heap) {
-        return srHeapType::operator new(sz, heap);
-    }
-
-    static void* operator new(size_t, void* p) {
-        return p;
-    }
-
-    IfFigureLoader(tyFigListDataManager* mgr, size_t nEntries) {
-        this->unk0 = mgr;
-        this->unk4 = nEntries;
-        this->unk8 = static_cast<Entry*>(gfHeapManager::alloc(42, nEntries * sizeof(Entry)));
-        this->unkC = 0;
-
-        for (s32 i = 0; i < this->unk4; i++) {
-            new (this->unk8 + i) Entry;
-        }
-    }
-
-    ~IfFigureLoader() {
-        for (s32 i = 0; i < this->unk4; i++) {
-            Entry* ent = this->unk8 + i;
-            ent->~Entry();
-        }
-
-        if (this->unk8)
-            gfHeapManager::free(this->unk8);
-    }
-
-    BOOL isLoadFinish();
-    static void readRequest(Entry** p1, IfFigureLoader* p2, u32 p3);
-
-    static IfFigureLoader* create(tyFigListDataManager* mgr, size_t nEntries);
-    static void destroy();
-    static IfFigureLoader* getInstance();
-};
-
-// 805a0318
 IfFigureLoader* IfFigureLoader::instance;
 
 #pragma force_active on
@@ -205,14 +94,14 @@ void IfFigureLoader::readRequest(Entry** res, IfFigureLoader* p1, u32 p2) {
         }
     }
 
-    s32 r7 = p1->unkC + 1;
+    s32 r7 = s32(p1->unkC + 1);
     for (s32 i = 0; i < p1->unk4 + 1; i++) {
-        u32 idx = (r7 + i) % p1->unk4;
+        u32 idx = u32((r7 + i) % p1->unk4);
         p1->unkC = idx;
-        Entry* ent = &p1->unk8[idx]; // r28
+        Entry* ent = &p1->unk8[idx];
         u16 r4 = ent->unk0;
         if (!r4) {
-            ent->unk0 = r4 + 1;
+            ent->unk0 = u16(r4 + 1);
             ent->unk8 = p2;
             ent->unkC = r3;
             ent->unk2 = 3;
@@ -232,3 +121,54 @@ void IfFigureLoader::readRequest(Entry** res, IfFigureLoader* p1, u32 p2) {
 }
 
 #pragma force_active reset
+
+BOOL IfFigureLoader::waitForIdle() {
+    for (s32 i = 0; i < this->unk4; i++) {
+        Entry* ent = this->unk8 + this->unkC;
+        if (ent->unk14.unk0 && !ent->unk14.isReady() && !ent->unk14.isCanceled())
+            return FALSE;
+    }
+    return TRUE;
+}
+
+#ifndef NONMATCHING
+// NOTE: see PSVEC3Add() in include/nw4r/math.h
+#pragma regswap 80106664 801066c4 f0 f1 80106020
+#endif
+void IfFigureLoader::adjustModel(u32 id, MuObject* p2, MuObject* p3) {
+    VEC3 sp50;
+    VEC3 sp44;
+    VEC3 sp38;
+    VEC3 sp2C;
+    VEC3 sp20;
+    VEC3 sp14;
+    
+    tyFigListData* r31 = this->unk0->getFigDataId(id);
+    p2->getPos(sp2C, "transN");
+    p2->getRotate(sp20, "transN");
+    p2->getScale(sp14, "transN");
+
+    sp50.z = r31->unk28.z;
+    sp50.y = r31->unk28.y;
+    sp50.x = r31->unk28.x;
+    sp2C += sp50;
+    p2->setPos(sp2C, "transN");
+
+    sp44.z = 0.0f;
+    sp44.x = 0.0f;
+    sp44.y = r31->unk3C;
+    sp20 += sp44;
+    p2->setRotate("transN", sp20);
+
+    sp38.x = r31->unk34;
+    sp38.y = r31->unk34;
+    sp38.z = r31->unk34;
+    sp14 *= sp38;
+    p2->setObjScale(sp14);
+
+    float f1 = r31->unk38;
+    if (f1 < 1.1920929e-7f)
+        f1 = 1.0f;
+    VEC3 sp8(f1, f1, f1);
+    p3->setObjScale(sp8);
+}
