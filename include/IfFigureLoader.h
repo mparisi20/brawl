@@ -60,9 +60,9 @@ public:
     };
 
 private:
-    tyFigListDataManager* unk0;
-    s32 unk4;
-    Entry* unk8;
+    tyFigListDataManager* dataMgr;
+    s32 nEntries;
+    Entry* entryPool;
     u32 unkC;
     static IfFigureLoader* instance;
 
@@ -71,29 +71,25 @@ public:
         return srHeapType::operator new(sz, heap);
     }
 
-    static void* operator new(size_t, void* p) {
-        return p;
-    }
-
     IfFigureLoader(tyFigListDataManager* mgr, size_t nEntries) {
-        this->unk0 = mgr;
-        this->unk4 = (s32)nEntries;
-        this->unk8 = static_cast<Entry*>(gfHeapManager::alloc(42, nEntries * sizeof(Entry)));
+        this->dataMgr = mgr;
+        this->nEntries = (s32)nEntries;
+        this->entryPool = static_cast<Entry*>(gfHeapManager::alloc(42, nEntries * sizeof(Entry)));
         this->unkC = 0;
 
-        for (s32 i = 0; i < this->unk4; i++) {
-            new (this->unk8 + i) Entry;
+        for (s32 i = 0; i < this->nEntries; i++) {
+            new (this->entryPool + i) Entry;
         }
     }
 
     ~IfFigureLoader() {
-        for (s32 i = 0; i < this->unk4; i++) {
-            Entry* ent = this->unk8 + i;
+        for (s32 i = 0; i < this->nEntries; i++) {
+            Entry* ent = this->entryPool + i;
             ent->~Entry();
         }
 
-        if (this->unk8)
-            gfHeapManager::free(this->unk8);
+        if (this->entryPool)
+            gfHeapManager::free(this->entryPool);
     }
 
     BOOL isLoadFinish();

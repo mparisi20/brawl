@@ -31,7 +31,7 @@ BOOL IfFigureLoader::Entry::isReady() {
         if (--this->unk2)
             return FALSE;
         this->unk4 = 0;
-        tyFigListData* trophy = instance->unk0->getFigDataId(this->unk8);
+        tyFigListData* trophy = instance->dataMgr->getFigDataId(this->unk8);
         const char* ext = ".brres";
         sp110[0] = '\0';
         strcat(sp110, "/toy/fig/");
@@ -75,30 +75,30 @@ IfFigureLoader* IfFigureLoader::getInstance() {
 }
 
 BOOL IfFigureLoader::isLoadFinish() {
-    return this->unk0->isLoadFinish();
+    return this->dataMgr->isLoadFinish();
 }
 
 void IfFigureLoader::readRequest(Entry** res, IfFigureLoader* p1, u32 p2) {
-    tyFigListData* r3 = p1->unk0->getFigDataId(p2);
+    tyFigListData* r3 = p1->dataMgr->getFigDataId(p2);
     if (!r3) {
         *res = 0;
         return;
     }
 
-    for (s32 i = 0; i < p1->unk4; i++) {
-        Entry* ent = p1->unk8 + i;
+    for (s32 i = 0; i < p1->nEntries; i++) {
+        Entry* ent = p1->entryPool + i;
         if (ent->unkC == r3) {
-            p1->unk8[i].unk0++;
-            *res = p1->unk8 + i;
+            p1->entryPool[i].unk0++;
+            *res = p1->entryPool + i;
             return;
         }
     }
 
     s32 r7 = s32(p1->unkC + 1);
-    for (s32 i = 0; i < p1->unk4 + 1; i++) {
-        u32 idx = u32((r7 + i) % p1->unk4);
+    for (s32 i = 0; i < p1->nEntries + 1; i++) {
+        u32 idx = u32((r7 + i) % p1->nEntries);
         p1->unkC = idx;
-        Entry* ent = &p1->unk8[idx];
+        Entry* ent = &p1->entryPool[idx];
         u16 r4 = ent->unk0;
         if (!r4) {
             ent->unk0 = u16(r4 + 1);
@@ -123,8 +123,8 @@ void IfFigureLoader::readRequest(Entry** res, IfFigureLoader* p1, u32 p2) {
 #pragma force_active reset
 
 BOOL IfFigureLoader::waitForIdle() {
-    for (s32 i = 0; i < this->unk4; i++) {
-        Entry* ent = this->unk8 + this->unkC;
+    for (s32 i = 0; i < this->nEntries; i++) {
+        Entry* ent = this->entryPool + this->unkC;
         if (ent->unk14.unk0 && !ent->unk14.isReady() && !ent->unk14.isCanceled())
             return FALSE;
     }
@@ -139,34 +139,34 @@ void IfFigureLoader::adjustModel(u32 id, MuObject* p2, MuObject* p3) {
     VEC3 sp50;
     VEC3 sp44;
     VEC3 sp38;
-    VEC3 sp2C;
-    VEC3 sp20;
-    VEC3 sp14;
+    VEC3 pos;
+    VEC3 rotate;
+    VEC3 scale;
     
-    tyFigListData* r31 = this->unk0->getFigDataId(id);
-    p2->getPos(sp2C, "transN");
-    p2->getRotate(sp20, "transN");
-    p2->getScale(sp14, "transN");
+    tyFigListData* figData = this->dataMgr->getFigDataId(id);
+    p2->getPos(pos, "transN");
+    p2->getRotate(rotate, "transN");
+    p2->getScale(scale, "transN");
 
-    sp50.z = r31->unk28.z;
-    sp50.y = r31->unk28.y;
-    sp50.x = r31->unk28.x;
-    sp2C += sp50;
-    p2->setPos(sp2C, "transN");
+    sp50.z = figData->unk28.z;
+    sp50.y = figData->unk28.y;
+    sp50.x = figData->unk28.x;
+    pos += sp50;
+    p2->setPos(pos, "transN");
 
     sp44.z = 0.0f;
     sp44.x = 0.0f;
-    sp44.y = r31->unk3C;
-    sp20 += sp44;
-    p2->setRotate("transN", sp20);
+    sp44.y = figData->unk3C;
+    rotate += sp44;
+    p2->setRotate("transN", rotate);
 
-    sp38.x = r31->unk34;
-    sp38.y = r31->unk34;
-    sp38.z = r31->unk34;
-    sp14 *= sp38;
-    p2->setObjScale(sp14);
+    sp38.x = figData->unk34;
+    sp38.y = figData->unk34;
+    sp38.z = figData->unk34;
+    scale *= sp38;
+    p2->setObjScale(scale);
 
-    float f1 = r31->unk38;
+    float f1 = figData->unk38;
     if (f1 < 1.1920929e-7f)
         f1 = 1.0f;
     VEC3 sp8(f1, f1, f1);
