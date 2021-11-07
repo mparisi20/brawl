@@ -1,130 +1,17 @@
 #include "global.h"
+#include "nw4r/g3d.h"
+#include "gf.h"
+#include "IfMinigameTraining.h"
+#include "muMenu.h"
+#include "MuObject.h"
+#include "cmDemoController.h"
+#include "CameraController.h"
 
 extern "C" {
     void* memset(void* s, int c, size_t n);
     char *strcpy(char *dest, const char *src);
     char *strcat(char *dest, const char *src);
 }
-
-// Insert__Q34nw4r3g3d8ScnGroupFUlPQ34nw4r3g3d6ScnObj
-// Remove__Q34nw4r3g3d8ScnGroupFPQ34nw4r3g3d6ScnObj
-namespace nw4r {
-namespace math {
-    struct MTX34 {
-
-    };
-} // math
-
-
-namespace g3d {
-
-struct G3dObj {
-    struct TypeObj {
-        u32 unk0; // type code?
-        char* name;
-    };
-};
-
-struct ScnObj {
-    struct ForEachResult {
-
-    };
-    virtual BOOL IsDerivedFrom(G3dObj::TypeObj p1);
-    virtual void G3dProc(u32 p1, u32 p2, void* p3);
-    virtual ~ScnObj();
-    virtual G3dObj::TypeObj* GetTypeObj() const;
-    virtual char* GetTypeName();
-    virtual void ForEach(ScnObj::ForEachResult (*p1)(ScnObj*, void*), void*, s8);
-    virtual void SetScnObjOption(u32 p1, u32 p2);
-    virtual void GetScnObjOption(u32 p1, u32* p2) const;
-    virtual void GetValueForSortOpa() const;
-    virtual void GetValueForSortXlu() const;
-    virtual void CalcWorldMtx(const nw4r::math::MTX34* p1, u32* p2);
-};
-
-// ScnGroup vtable: 80466270
-struct ScnGroup : public ScnObj {
-    u8 unk4[0xE0];
-    u32 unkE4;
-
-    BOOL IsDerivedFrom(G3dObj::TypeObj p1);
-    void G3dProc(u32 p1, u32 p2, void* p3);
-    ~ScnGroup();
-    G3dObj::TypeObj* GetTypeObj() const;
-    void ForEach(ScnObj::ForEachResult (*p1)(ScnObj*, void*), void*, s8);
-    virtual void Insert(u32 p1, ScnObj* p2);
-    virtual void Remove(u32 p1);
-    virtual void Remove(ScnObj* p1);
-};
-
-} // g3d
-} // nw4r
-
-// Possibly muMenu::getItemNameID() ?
-// Mapfile labels are incorrect
-struct muMenu {
-    static s32 getItemNameID(s32 p1); // 800AFA04
-    static s32 exchangeMuItemKindToItKind(s32);
-};
-
-struct muMenuController {
-    u8 unk0[0xC];
-    u32 unkC;
-    u32 unk10; // TODO: controller input bitfield
-    u8 unk14[0x94];
-
-    void init(u8 p1);
-    void setControllerID(u8 id);
-    void main();
-};
-
-struct gfModelAnimation {
-    void setUpdateRate(float p1);
-};
-
-struct MuObject {
-    u8 unk0[0x10];
-    nw4r::g3d::ScnObj* unk10;
-    gfModelAnimation* unk14;
-    u8 unk18[0x44];
-
-    virtual ~MuObject();
-    void setActionNo(s32 p1, s32 p2, s32 p3, s32 p4);
-    s32 isNodeAnimFinished();
-    void setFrameVisible(float p1);
-    static MuObject* create(u32, const char*, u32, u32, u32);
-    void changeAnimN(const char* p1);
-};
-
-struct Message {
-    void setObjZcompare(u32, u32);
-};
-
-// TODO: size
-struct MuMsg {
-    u8 unk0[0x8];
-    Message* unk8;
-
-    ~MuMsg();
-    void printf(u32 p1, const char* fmt, ...);
-    void printIndex(u32, u32, u32);
-    static MuMsg* create(u32, u32, u32);
-    void attachScnMdlSimple(float, u32, nw4r::g3d::ScnObj*, u8);
-    void setFontColor(u32, u32, u32, u32, u32);
-    void getWScale(u32, float); // TODO: mapfile label may be incorrect
-    void func_800B9488(u32, u32);
-    void allocMsgBuf(u32, u32);
-    void setMsgData(u32);
-};
-
-// NOTE: res file related
-struct UnkResFile {
-    char* name;
-    u8 unk4;
-    u8 unk5;
-    u8 unk6;
-    u8 unk7;
-};
 
 struct utRelocate {
     u8 unk0[0x40];
@@ -138,92 +25,6 @@ struct InitMsgStruct {
     u8 unk0;
     u8 unk1;
     u8 unk2;
-};
-
-struct UnkCameraType {
-    float unk0[4];
-    UnkCameraType& operator=(const UnkCameraType& rhs) {
-        unk0[0] = rhs.unk0[0];
-        unk0[1] = rhs.unk0[1];
-        unk0[2] = rhs.unk0[2];
-        unk0[3] = rhs.unk0[3];
-        return *this;
-    }
-};
-
-struct cmDemoController {
-    u8 unk0[0x20];
-    UnkCameraType unk20;
-    void setTargetType(u32 p1);
-};
-
-struct CameraController {
-    u8 unk0[0x80];
-    cmDemoController* unk80;
-
-    void changeInput(u32 p1);
-    static CameraController* getInstance();
-};
-
-struct sndSystem {
-    s32 playSE(s32 p1, s32 p2, s32 p3, s32 p4, s32 p5);
-};
-
-extern sndSystem* lbl_805A01D0;
-
-struct IfMinigameTraining {
-    nw4r::g3d::ScnGroup* unk0;
-    MuObject* unk4[2];
-    MuMsg* unkC;
-    u32 unk10;
-    s32 unk14;
-    s32 unk18;
-    s32 unk1C;
-    s32 unk20;
-    s32 unk24;
-    s32 unk28;
-    s32 unk2C;
-    u8 unk30;
-    muMenuController unk34;
-    s32 unkDC;
-    s32 unkE0;
-    s32 unkE4;
-    s32 unkE8;
-    s32 unkEC[0x80];
-    s32 unk2EC;
-    u32 unk2F0; // ItKind
-    u8 unk2F4; // hide menu?
-    u32 unk2F8;
-    u8 unk2FC;
-
-    IfMinigameTraining();
-    void init();
-    virtual ~IfMinigameTraining();
-    void createModel(u32 p1, u32 p2, u32 p3, u32 p4, u32 p5);
-    void createObjResFile(const UnkResFile* p1, s32 p2, u32 p3, u32 p4);
-    void initMsg(u32 p1);
-    void startMelee(nw4r::g3d::ScnGroup* p1);
-    void printStatusDamage(s32 dmg);
-    void printStatusCombo(s32 combo);
-    void printStatusTotalDamage(s32 totalDmg);
-    void openMenu(u32 id, u32 p2);
-    void setCameraType(u32 p1);
-    void closeMenu();
-    void main();
-    static s32 initStepAppear(IfMinigameTraining* p1);
-    static s32 mainStepAppear(IfMinigameTraining* p1);
-    static s32 initStepMenu(IfMinigameTraining* p1);
-    static s32 mainStepMenu(IfMinigameTraining* p1);
-    static s32 initStepLeave(IfMinigameTraining* p1);
-    static s32 mainStepLeave(IfMinigameTraining* p1);
-    static void curPosProcSpeed(IfMinigameTraining* p1);
-    static void curPosProcItem(IfMinigameTraining* p1);
-    static void curPosProcNumCP(IfMinigameTraining* p1);
-    static void curPosProcCPAI(IfMinigameTraining* p1);
-    static void curPosProcCPDamage(IfMinigameTraining* p1);
-    static void curPosProcCamera(IfMinigameTraining* p1);
-    static void curPosProcStatusVisible(IfMinigameTraining* p1);
-    static void curPosProcQuit(IfMinigameTraining* p1);
 };
 
 static const UnkCameraType lbl_80409208 = {-1.0f, 1.0f, 1.0f, -1.0f};
@@ -251,13 +52,11 @@ static const InitMsgStruct lbl_80409228[] = {
     { 1, 4, 1 }
 };
 
-// 801048ec
 IfMinigameTraining::IfMinigameTraining() {
-    this->unk34.init(0xff);
+    this->menuCtrl.init(0xff);
     this->init();
 }
 
-// 80104938
 void IfMinigameTraining::init() {
     this->unk0 = 0;
     this->unk4[0] = 0;
@@ -274,7 +73,7 @@ void IfMinigameTraining::init() {
     this->unk30 = 0;
     this->unkDC = 0;
 
-    this->unk34.init(0);
+    this->menuCtrl.init(0);
 
     this->unkE0 = 0;
     this->unkE4 = 0;
@@ -282,12 +81,11 @@ void IfMinigameTraining::init() {
     memset(this->unkEC, 0, 0x200);
 
     this->unk2EC = 0;
-    this->unk2F0 = -1;
+    this->itKind = 0xFFFFFFFF;
     this->unk2F8 = 0;
     this->unk2FC = 0;
 }
 
-// 801049e8
 IfMinigameTraining::~IfMinigameTraining() {
     s32 i = 0;
     MuObject** ptr = (MuObject**) this; // FIXME: match w/o aliasing
@@ -299,17 +97,16 @@ IfMinigameTraining::~IfMinigameTraining() {
     }
 
     if (this->unkC) {
-        delete this->unkC; // MuMsg
+        delete this->unkC;
         this->unkC = 0;
     }
 }
 
-// 80104aa4
 void IfMinigameTraining::createModel(u32 p1, u32 p2, 
         u32 p3, u32 p4, u32 p5) {
     createObjResFile(&lbl_80409218, 2, p1, 0xC0);
     initMsg(p2);
-    u32 count = 0;
+    s32 count = 0;
     {
         utRelocate rel(p4, p5);
         s32* addr = rel.getPublicAddress("ifTrainingItemTbl");
@@ -324,7 +121,7 @@ void IfMinigameTraining::createModel(u32 p1, u32 p2,
 }
 
 typedef void (*ProcFuncPtr)(IfMinigameTraining*);
-ProcFuncPtr lbl_8045D020[] = {
+ProcFuncPtr MenuProcesses[] = {
     IfMinigameTraining::curPosProcSpeed,
     IfMinigameTraining::curPosProcItem,
     IfMinigameTraining::curPosProcNumCP,
@@ -362,7 +159,6 @@ void IfMinigameTraining::createObjResFile(const UnkResFile* p1, s32 p2, u32 p3, 
     }
 }
 
-// 80104c60 2c8
 void IfMinigameTraining::initMsg(u32 p1) {
     InitMsgStruct spC[13];
     u32 sp34[15];
@@ -373,33 +169,33 @@ void IfMinigameTraining::initMsg(u32 p1) {
     }
     spC[7].unk0 = lbl_80409228[7].unk0;
     spC[7].unk1 = lbl_80409228[7].unk1;
-    spC[7].unk2 = sp34[14] = lbl_80409228[7].unk2;
+    sp34[14] = spC[7].unk2 = lbl_80409228[7].unk2;
 
-    spC[8].unk0 = sp34[0] = lbl_80409228[8].unk0;
-    spC[8].unk1 = sp34[1] = lbl_80409228[8].unk1;
-    spC[8].unk2 = sp34[2] = lbl_80409228[8].unk2;
+    sp34[0] = spC[8].unk0 = lbl_80409228[8].unk0;
+    sp34[1] = spC[8].unk1 = lbl_80409228[8].unk1;
+    sp34[2] = spC[8].unk2 = lbl_80409228[8].unk2;
 
-    spC[9].unk0 = sp34[3] = lbl_80409228[9].unk0;
-    spC[9].unk1 = sp34[4] = lbl_80409228[9].unk1;
-    spC[9].unk2 = sp34[5] = lbl_80409228[9].unk2;
+    sp34[3] = spC[9].unk0 = lbl_80409228[9].unk0;
+    sp34[4] = spC[9].unk1 = lbl_80409228[9].unk1;
+    sp34[5] = spC[9].unk2 = lbl_80409228[9].unk2;
 
-    spC[10].unk0 = sp34[6] = lbl_80409228[10].unk0;
-    spC[10].unk1 = sp34[7] = lbl_80409228[10].unk1;
-    spC[10].unk2 = sp34[8] = lbl_80409228[10].unk2;
+    sp34[6] = spC[10].unk0 = lbl_80409228[10].unk0;
+    sp34[7] = spC[10].unk1 = lbl_80409228[10].unk1;
+    sp34[8] = spC[10].unk2 = lbl_80409228[10].unk2;
 
-    spC[11].unk0 = sp34[9] = lbl_80409228[11].unk0;
-    spC[11].unk1 = sp34[10] = lbl_80409228[11].unk1;
-    spC[11].unk2 = sp34[11] = lbl_80409228[11].unk2;
+    sp34[9] = spC[11].unk0 = lbl_80409228[11].unk0;
+    sp34[10] = spC[11].unk1 = lbl_80409228[11].unk1;
+    sp34[11] = spC[11].unk2 = lbl_80409228[11].unk2;
 
-    spC[12].unk0 = sp34[12] = lbl_80409228[12].unk0;
-    spC[12].unk1 = sp34[13] = lbl_80409228[12].unk1;
+    sp34[12] = spC[12].unk0 = lbl_80409228[12].unk0;
+    sp34[13] = spC[12].unk1 = lbl_80409228[12].unk1;
     spC[12].unk2 = lbl_80409228[12].unk2;
 
     this->unkC = MuMsg::create(8, 0x28, 0x2a);
     this->unkC->allocMsgBuf(0x100, 13);
     this->unkC->setMsgData(p1);
 
-    for (s32 i = 0; i < 13; i++) {
+    for (u32 i = 0; (s32) i < 13; i++) {
         float f1 = (spC[i].unk2) ? 1/24f : 1/16f;
         this->unkC->attachScnMdlSimple(f1, i, 
                 this->unk4[spC[i].unk0]->unk10, spC[i].unk1);
@@ -418,7 +214,6 @@ extern const u32 lbl_80409268[];
 __declspec(section ".sdata2") extern const u32 lbl_805A27D0[];
 extern const u32 lbl_80409280[];
 
-// 80104f28 218
 #ifndef NONMATCHING
 #pragma iswap 801051c8 801051dc 801048ec
 #pragma iswap 801051cc 801051d8 801048ec
@@ -509,9 +304,9 @@ void IfMinigameTraining::printStatusTotalDamage(s32 totalDmg) {
 }
 
 void IfMinigameTraining::openMenu(u32 id, u32 p2) {
-    this->unk34.setControllerID(id);
+    this->menuCtrl.setControllerID((u8) id);
     this->unk2F8 = p2;
-    setCameraType(1);
+    setCameraType(type1);
     this->unk2FC = 0;
     this->unkDC = 1;
 
@@ -521,27 +316,27 @@ void IfMinigameTraining::openMenu(u32 id, u32 p2) {
     }
 }
 
-// TODO: use CameraType enum
-void IfMinigameTraining::setCameraType(u32 p1) {    
+void IfMinigameTraining::setCameraType(CameraType type) {    
     CameraController* cam = CameraController::getInstance();
     cmDemoController* r30 = cam->unk80;
     UnkCameraType sp18(lbl_804092C0);
     UnkCameraType sp28(lbl_804092D0);
-    if (p1 - 1 <= 1) {
+    u32 typeSub1 = u32(type - 1);
+    if (typeSub1 <= 1) {
         cam->changeInput(13);
         r30->setTargetType(this->unk2F8 + 5);
     } else {
         cam->changeInput(2);
     }
 
-    switch (p1) {
-        case 1:
+    switch (type) {
+        case type1:
             r30->unk20 = sp28;
             break;
-        case 2:
+        case type2:
             r30->unk20 = sp18;
             break;
-        case 0:
+        case type0:
             UnkCameraType sp8(lbl_80409208);
             r30->unk20 = sp8;
             break;
@@ -549,10 +344,6 @@ void IfMinigameTraining::setCameraType(u32 p1) {
             break;
     }
 }
-
-enum CameraType {
-    type0, type1, type2
-};
 
 void IfMinigameTraining::closeMenu() {
     if (this->unkDC) {
@@ -567,9 +358,9 @@ void IfMinigameTraining::closeMenu() {
 }
 
 void IfMinigameTraining::main() {
-    this->unk2F0 = -1;
+    this->itKind = 0xFFFFFFFF;
     this->unk2F4 = 0;
-    this->unk34.main();
+    this->menuCtrl.main();
 
     s32 r30 = this->unkDC;
     StepFuncPtr func = lbl_804092A0[r30 * 2 + 1];
@@ -607,16 +398,14 @@ s32 IfMinigameTraining::initStepMenu(IfMinigameTraining*) {
 }
 
 s32 IfMinigameTraining::mainStepMenu(IfMinigameTraining* p1) {
-    u32 r4 = p1->unk34.unk10;
+    u32 r4 = p1->menuCtrl.padInput2;
     s32 r31 = p1->unk14;
 
-    // Up
-    if ((r4 & 0x8) && --r31 < 0) {
+    if ((r4 & INPUT_UP) && --r31 < 0) {
         r31 = 7;
     }
 
-    // Down
-    if ((r4 & 0x4) && ++r31 >= 8) {
+    if ((r4 & INPUT_DOWN) && ++r31 >= 8) {
         r31 = 0;
     }
 
@@ -627,13 +416,13 @@ s32 IfMinigameTraining::mainStepMenu(IfMinigameTraining* p1) {
         p1->unkC->printIndex(7, lbl_80409280[r31], 0);
     }
 
-    lbl_8045D020[r31](p1);
+    MenuProcesses[r31](p1);
     return p1->unkDC;
 }
 
 s32 IfMinigameTraining::initStepLeave(IfMinigameTraining* p1) {
     p1->unk4[0]->setActionNo(1, 1, 1, 0);
-    lbl_805A01D0->playSE(6, -1, 0, 0, -1);
+    return lbl_805A01D0->playSE(6, -1, 0, 0, -1);
 }
 
 s32 IfMinigameTraining::mainStepLeave(IfMinigameTraining* p1) {
@@ -646,13 +435,13 @@ s32 IfMinigameTraining::mainStepLeave(IfMinigameTraining* p1) {
 }
 
 void IfMinigameTraining::curPosProcSpeed(IfMinigameTraining* p1) {
-    u32 r4 = p1->unk34.unk10;
+    u32 r4 = p1->menuCtrl.padInput2;
     s32 r30 = p1->unk18;
-    if ((r4 & 0x2) && ++r30 >= 5) {
+    if ((r4 & INPUT_RIGHT) && ++r30 >= 5) {
         r30 = 0;
     }
 
-    if ((r4 & 0x1) && --r30 < 0) {
+    if ((r4 & INPUT_LEFT) && --r30 < 0) {
         r30 = 4;
     }
 
@@ -670,15 +459,15 @@ void IfMinigameTraining::curPosProcSpeed(IfMinigameTraining* p1) {
 #pragma regswap 80105990 801059d4 r4 r5 801048ec
 #endif
 void IfMinigameTraining::curPosProcItem(IfMinigameTraining* p1) {
-    u32 r4 = p1->unk34.unk10;
+    u32 r4 = p1->menuCtrl.padInput2;
     s32 r31 = p1->unk1C;
-    u32 r30 = p1->unk34.unkC;
+    u32 r30 = p1->menuCtrl.padInput1;
     s32 r3 = p1->unk2EC;
-    if ((r4 & 0x2) && ++r31 >= r3) {
+    if ((r4 & INPUT_RIGHT) && ++r31 >= r3) {
         r31 = 0;
     }
 
-    if ((r4 & 0x1) && --r31 < 0) {
+    if ((r4 & INPUT_LEFT) && --r31 < 0) {
         r31 = r3 - 1;
     }
 
@@ -693,28 +482,25 @@ void IfMinigameTraining::curPosProcItem(IfMinigameTraining* p1) {
         p1->unkC->printIndex(1, muMenu::getItemNameID(r3), p1->unk10);
     }
 
-    // A button
-    if (r30 & 0x100) {
+    if (r30 & INPUT_A) {
         r3 = p1->unk1C;
         if (r3 < 0 || r3 >= p1->unk2EC) {
             r3 = 0x38;
         } else {
             r3 = p1->unkEC[r3];
         }
-        p1->unk2F0 = muMenu::exchangeMuItemKindToItKind(r3);
+        p1->itKind = muMenu::exchangeMuItemKindToItKind(r3);
     }
 }
 
 void IfMinigameTraining::curPosProcNumCP(IfMinigameTraining* p1) {
-    u32 r4 = p1->unk34.unk10;
+    u32 r4 = p1->menuCtrl.padInput2;
     s32 r31 = p1->unk20;
-    // Right
-    if ((r4 & 0x2) && ++r31 >= 4) {
+    if ((r4 & INPUT_RIGHT) && ++r31 >= 4) {
         r31 = 1;
     }
 
-    // Left
-    if ((r4 & 0x1) && --r31 < 1) {
+    if ((r4 & INPUT_LEFT) && --r31 < 1) {
         r31 = 3;
     }
 
@@ -726,15 +512,13 @@ void IfMinigameTraining::curPosProcNumCP(IfMinigameTraining* p1) {
 }
 
 void IfMinigameTraining::curPosProcCPAI(IfMinigameTraining* p1) {
-    u32 r4 = p1->unk34.unk10;
+    u32 r4 = p1->menuCtrl.padInput2;
     s32 r30 = p1->unk24;
-    // Right
-    if ((r4 & 0x2) && ++r30 >= 6) {
+    if ((r4 & INPUT_RIGHT) && ++r30 >= 6) {
         r30 = 0;
     }
 
-    // Left
-    if ((r4 & 0x1) && --r30 < 0) {
+    if ((r4 & INPUT_LEFT) && --r30 < 0) {
         r30 = 5;
     }
 
@@ -750,15 +534,13 @@ void IfMinigameTraining::curPosProcCPAI(IfMinigameTraining* p1) {
 }
 
 void IfMinigameTraining::curPosProcCPDamage(IfMinigameTraining* p1) {
-    u32 r4 = p1->unk34.unk10;
+    u32 r4 = p1->menuCtrl.padInput2;
     s32 r31 = p1->unk28;
-    // Right
-    if ((r4 & 0x2) && ++r31 >= 1000) {
+    if ((r4 & INPUT_RIGHT) && ++r31 >= 1000) {
         r31 = 0;
     }
 
-    // Left
-    if ((r4 & 0x1) && --r31 < 0) {
+    if ((r4 & INPUT_LEFT) && --r31 < 0) {
         r31 = 999;
     }
 
@@ -770,15 +552,13 @@ void IfMinigameTraining::curPosProcCPDamage(IfMinigameTraining* p1) {
 }
 
 void IfMinigameTraining::curPosProcCamera(IfMinigameTraining* p1) {
-    u32 r4 = p1->unk34.unk10;
+    u32 r4 = p1->menuCtrl.padInput2;
     s32 r31 = p1->unk2C;
-    // Right
-    if ((r4 & 0x2) && ++r31 >= 2) {
+    if ((r4 & INPUT_RIGHT) && ++r31 >= 2) {
         r31 = 0;
     }
 
-    // Left
-    if ((r4 & 0x1) && --r31 < 0) {
+    if ((r4 & INPUT_LEFT) && --r31 < 0) {
         r31 = 1;
     }
 
@@ -790,8 +570,8 @@ void IfMinigameTraining::curPosProcCamera(IfMinigameTraining* p1) {
     }
 }
 
-// Issues with reg assignment for p1 and r30, and instruction ordering
-// before msg->printIndex() call
+// Issues with swapped reg assignment for p1 and r30,
+// and instruction ordering before msg->printIndex() call
 #ifndef NONMATCHING
 #pragma iswap 80105d9c 80105da0 801048ec
 #pragma regswap 80105d9c 80105da0 r30 r31 801048ec
@@ -802,15 +582,13 @@ void IfMinigameTraining::curPosProcCamera(IfMinigameTraining* p1) {
 #pragma iswap 80105e14 80105e18 801048ec
 #endif
 void IfMinigameTraining::curPosProcStatusVisible(IfMinigameTraining* p1) {
-    u32 r4 = p1->unk34.unk10;
+    u32 r4 = p1->menuCtrl.padInput2;
     s32 r30 = p1->unk30;
-    // Right
-    if ((r4 & 0x2) && ++r30 >= 2) {
+    if ((r4 & INPUT_RIGHT) && ++r30 >= 2) {
         r30 = 0;
     }
 
-    // Left
-    if ((r4 & 0x1) && --r30 < 0) {
+    if ((r4 & INPUT_LEFT) && --r30 < 0) {
         r30 = 1;
     }
 
@@ -819,8 +597,8 @@ void IfMinigameTraining::curPosProcStatusVisible(IfMinigameTraining* p1) {
 
         MuMsg* msg = p1->unkC;
         BOOL test = !(r30 - 1);
-        p1->unk30 = test;
-        s32 idx = 16;
+        p1->unk30 = (u8) test;
+        u32 idx = 16;
         if (test) {
             idx = 15;
         }
@@ -845,13 +623,12 @@ void IfMinigameTraining::curPosProcStatusVisible(IfMinigameTraining* p1) {
             p1->unkC->printf(11, "");
             p1->unkC->printf(12, "");
         }
-        p1->unk30 = r30;
+        p1->unk30 = (u8) r30;
     }
 }
 
 void IfMinigameTraining::curPosProcQuit(IfMinigameTraining* p1) {
-    // A button
-    if (p1->unk34.unkC & 0x100) {
+    if (p1->menuCtrl.padInput1 & INPUT_A) {
         lbl_805A01D0->playSE(1, -1, 0, 0, -1);
         p1->unk2F4 = 1;
     }
