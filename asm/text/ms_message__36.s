@@ -2,8 +2,8 @@
 
 .section .text, "ax"  # 0x8000C860 - 0x804064E0
 
-.global setObjZCompare__7MessageFUlUl
-setObjZCompare__7MessageFUlUl:
+.global __ct__7MessageFv
+__ct__7MessageFv:
 /* 800696B4 0005F434  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800696B8 0005F438  7C 08 02 A6 */	mflr r0
 /* 800696BC 0005F43C  90 01 00 24 */	stw r0, 0x24(r1)
@@ -2215,6 +2215,8 @@ Message$7detachMsgBuf:
 /* 8006B658 000613D8  38 21 00 10 */	addi r1, r1, 0x10
 /* 8006B65C 000613DC  4E 80 00 20 */	blr 
 
+.global setObjZcompare__7MessageFUlUl
+setObjZcompare__7MessageFUlUl:
 .global Message$7setObjZcompare
 Message$7setObjZcompare:
 /* 8006B660 000613E0  80 63 01 D8 */	lwz r3, 0x1d8(r3)
@@ -3367,4 +3369,3 @@ lbl_8006C584:
 /* 8006C594 00062314  7C 08 03 A6 */	mtlr r0
 /* 8006C598 00062318  38 21 00 A0 */	addi r1, r1, 0xa0
 /* 8006C59C 0006231C  4E 80 00 20 */	blr 
-

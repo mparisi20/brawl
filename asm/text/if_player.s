@@ -1772,7 +1772,7 @@ IfPlayer$7makeStringTex:
 /* 800E10F4 000D6E74  38 61 00 08 */	addi r3, r1, 8
 /* 800E10F8 000D6E78  38 80 00 80 */	li r4, 0x80
 /* 800E10FC 000D6E7C  38 A0 00 2A */	li r5, 0x2a
-/* 800E1100 000D6E80  4B F8 85 B5 */	bl setObjZCompare__7MessageFUlUl
+/* 800E1100 000D6E80  4B F8 85 B5 */	bl __ct__7MessageFv
 /* 800E1104 000D6E84  38 61 01 E8 */	addi r3, r1, 0x1e8
 /* 800E1108 000D6E88  4B F3 75 09 */	bl gfCamera$7init
 /* 800E110C 000D6E8C  C0 62 90 90 */	lfs f3, lbl_805A23B0-_SDA2_BASE_(r2)
@@ -6820,4 +6820,3 @@ lbl_800E5834:
 /* 800E584C 000DB5CC  D0 23 05 44 */	stfs f1, 0x544(r3)
 /* 800E5850 000DB5D0  D0 03 05 48 */	stfs f0, 0x548(r3)
 /* 800E5854 000DB5D4  4E 80 00 20 */	blr 
-

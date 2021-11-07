@@ -97,7 +97,7 @@ struct MuObject {
 };
 
 struct Message {
-    void setObjZCompare(u32, u32);
+    void setObjZcompare(u32, u32);
 };
 
 // TODO: size
@@ -142,8 +142,6 @@ struct InitMsgStruct {
 
 struct UnkCameraType {
     float unk0[4];
-    // NOTE: this operator helps to match setCameraType by causing
-    // a lfs/stfs copy rather than a lwz/stw copy
     UnkCameraType& operator=(const UnkCameraType& rhs) {
         unk0[0] = rhs.unk0[0];
         unk0[1] = rhs.unk0[1];
@@ -230,10 +228,10 @@ struct IfMinigameTraining {
 
 static const UnkCameraType lbl_80409208 = {-1.0f, 1.0f, 1.0f, -1.0f};
 
-__declspec(section ".rodata") static const UnkResFile lbl_80409218 = { 
+__declspec(section ".rodata") static const UnkResFile lbl_80409218 = {
     "InfTraining0000_TopN", 0, 0, 2, 0 
 };
-__declspec(section ".rodata") static const UnkResFile lbl_80409220 = { 
+__declspec(section ".rodata") static const UnkResFile lbl_80409220 = {
     "InfTraining0001_TopN", 1, 1, 1, 0 
 };
 
@@ -253,32 +251,13 @@ static const InitMsgStruct lbl_80409228[] = {
     { 1, 4, 1 }
 };
 
-// indices passed to MuMsg.printIndex?
-static const u32 lbl_80409250[] = { 1, 2, 3, 4, 5, 0 };
-static const u32 lbl_80409268[] = { 6, 7, 8, 9, 10, 11 };
-static const u32 lbl_805A27D0[] = { 12, 13 }; // .sdata2
-static const u32 lbl_80409280[] = { 17, 18, 19, 20, 21, 22, 23, 24 };
-
-typedef s32 (*StepFuncPtr)(IfMinigameTraining*);
-static const StepFuncPtr lbl_804092A0[] = {
-    0,
-    0,
-    IfMinigameTraining::initStepAppear,
-    IfMinigameTraining::mainStepAppear,
-    IfMinigameTraining::initStepMenu,
-    IfMinigameTraining::mainStepMenu,
-    IfMinigameTraining::initStepLeave,
-    IfMinigameTraining::mainStepLeave
-};
-
-static const UnkCameraType lbl_804092C0 = { -0.8f, 0.8f, 0.8f, -0.8f };
-static const UnkCameraType lbl_804092D0 = { -0.5f, 1.0f, 1.0f, -1.0f };
-
+// 801048ec
 IfMinigameTraining::IfMinigameTraining() {
     this->unk34.init(0xff);
     this->init();
 }
 
+// 80104938
 void IfMinigameTraining::init() {
     this->unk0 = 0;
     this->unk4[0] = 0;
@@ -308,13 +287,14 @@ void IfMinigameTraining::init() {
     this->unk2FC = 0;
 }
 
-// NONMATCHING
-#pragma regswap 80104a10 80104a58 r29 r30 801048ec
+// 801049e8
 IfMinigameTraining::~IfMinigameTraining() {
-    for (s32 i = 0; i < 2; i++) {
-        if (this->unk4[i]) {
-            delete this->unk4[i];
-            this->unk4[i] = 0;
+    s32 i = 0;
+    MuObject** ptr = (MuObject**) this; // FIXME: match w/o aliasing
+    for (i = 0; i < 2; i++, ptr++) {
+        if (ptr[1]) {
+            delete ptr[1];
+            ptr[1] = 0;
         }
     }
 
@@ -324,6 +304,7 @@ IfMinigameTraining::~IfMinigameTraining() {
     }
 }
 
+// 80104aa4
 void IfMinigameTraining::createModel(u32 p1, u32 p2, 
         u32 p3, u32 p4, u32 p5) {
     createObjResFile(&lbl_80409218, 2, p1, 0xC0);
@@ -354,9 +335,10 @@ ProcFuncPtr lbl_8045D020[] = {
     IfMinigameTraining::curPosProcQuit
 };
 
-// NONMATCHING
+#ifndef NONMATCHING
 #pragma regswap 80104b84 80104c44 r28 r30 801048ec
 #pragma iswap 80104c38 80104c3c 801048ec
+#endif
 void IfMinigameTraining::createObjResFile(const UnkResFile* p1, s32 p2, u32 p3, u32 p4) {
     s32 j, i;
     char sp8[64];
@@ -418,11 +400,10 @@ void IfMinigameTraining::initMsg(u32 p1) {
     this->unkC->setMsgData(p1);
 
     for (s32 i = 0; i < 13; i++) {
-        // TODO: try 1/24f and 1/16f
-        float f1 = (spC[i].unk2) ? 0.041666668f : 0.0625f;
+        float f1 = (spC[i].unk2) ? 1/24f : 1/16f;
         this->unkC->attachScnMdlSimple(f1, i, 
                 this->unk4[spC[i].unk0]->unk10, spC[i].unk1);
-        this->unkC->unk8->setObjZCompare(i, 7);
+        this->unkC->unk8->setObjZcompare(i, 7);
         if (spC[i].unk2) {
             this->unkC->setFontColor(i, 0, 0, 0, 0xff);
         } else {
@@ -432,13 +413,19 @@ void IfMinigameTraining::initMsg(u32 p1) {
     }
 }
 
+extern const u32 lbl_80409250[];
+extern const u32 lbl_80409268[];
+__declspec(section ".sdata2") extern const u32 lbl_805A27D0[];
+extern const u32 lbl_80409280[];
+
 // 80104f28 218
-// NONMATCHING due to instruction re-ordering
+#ifndef NONMATCHING
 #pragma iswap 801051c8 801051dc 801048ec
 #pragma iswap 801051cc 801051d8 801048ec
 #pragma iswap 801051d0 801051dc 801048ec
 #pragma iswap 801051d4 801051d8 801048ec
 #pragma iswap 801051d8 801051dc 801048ec
+#endif
 void IfMinigameTraining::startMelee(nw4r::g3d::ScnGroup* p1) {
     this->unk0 = p1;
     p1->Insert(p1->unkE4, this->unk4[1]->unk10);
@@ -486,6 +473,26 @@ void IfMinigameTraining::startMelee(nw4r::g3d::ScnGroup* p1) {
     this->unkC->printIndex(7, 17, 0);
 }
 
+const u32 lbl_80409250[] = { 1, 2, 3, 4, 5, 0 };
+const u32 lbl_80409268[] = { 6, 7, 8, 9, 10, 11 };
+const u32 lbl_805A27D0[] = { 12, 13 };
+const u32 lbl_80409280[] = { 17, 18, 19, 20, 21, 22, 23, 24 };
+
+typedef s32 (*StepFuncPtr)(IfMinigameTraining*);
+static const StepFuncPtr lbl_804092A0[] = {
+    0,
+    0,
+    IfMinigameTraining::initStepAppear,
+    IfMinigameTraining::mainStepAppear,
+    IfMinigameTraining::initStepMenu,
+    IfMinigameTraining::mainStepMenu,
+    IfMinigameTraining::initStepLeave,
+    IfMinigameTraining::mainStepLeave
+};
+
+static const UnkCameraType lbl_804092C0 = { -0.8f, 0.8f, 0.8f, -0.8f };
+static const UnkCameraType lbl_804092D0 = { -0.5f, 1.0f, 1.0f, -1.0f };
+
 void IfMinigameTraining::printStatusDamage(s32 dmg) {
     dmg = (dmg > 0) ? dmg : 0;
     this->unkC->printf(10, "%d", dmg < 999 ? dmg : 999);
@@ -514,6 +521,7 @@ void IfMinigameTraining::openMenu(u32 id, u32 p2) {
     }
 }
 
+// TODO: use CameraType enum
 void IfMinigameTraining::setCameraType(u32 p1) {    
     CameraController* cam = CameraController::getInstance();
     cmDemoController* r30 = cam->unk80;
@@ -542,16 +550,14 @@ void IfMinigameTraining::setCameraType(u32 p1) {
     }
 }
 
-#define NONMATCHING
-#ifdef NONMATCHING
-// Due to needless extra instruction, mr r3, r31
+enum CameraType {
+    type0, type1, type2
+};
+
 void IfMinigameTraining::closeMenu() {
     if (this->unkDC) {
-        if (!this->unk2FC) {
-            u32 camType = 2;
-            if (!this->unk2C) camType = 0;
-            setCameraType(camType);
-        }
+        if (!this->unk2FC)
+            setCameraType((!this->unk2C) ? type0 : type2);
         this->unkDC = 3;
         StepFuncPtr func = lbl_804092A0[6];
         if (func) {
@@ -559,48 +565,6 @@ void IfMinigameTraining::closeMenu() {
         }
     }
 }
-#else
-extern "C" void setCameraType__18IfMinigameTrainingFUl(u32);
-asm void IfMinigameTraining::closeMenu() {
-nofralloc
-/* 801054D8 000FB258  94 21 FF F0 */	stwu r1, -0x10(r1)
-/* 801054DC 000FB25C  7C 08 02 A6 */	mflr r0
-/* 801054E0 000FB260  90 01 00 14 */	stw r0, 0x14(r1)
-/* 801054E4 000FB264  93 E1 00 0C */	stw r31, 0xc(r1)
-/* 801054E8 000FB268  7C 7F 1B 78 */	mr r31, r3
-/* 801054EC 000FB26C  80 03 00 DC */	lwz r0, 0xdc(r3)
-/* 801054F0 000FB270  2C 00 00 00 */	cmpwi r0, 0
-/* 801054F4 000FB274  41 82 00 50 */	beq lbl_80105544
-/* 801054F8 000FB278  88 03 02 FC */	lbz r0, 0x2fc(r3)
-/* 801054FC 000FB27C  2C 00 00 00 */	cmpwi r0, 0
-/* 80105500 000FB280  40 82 00 1C */	bne lbl_8010551C
-/* 80105504 000FB284  80 03 00 2C */	lwz r0, 0x2c(r3)
-/* 80105508 000FB288  38 80 00 02 */	li r4, 2
-/* 8010550C 000FB28C  2C 00 00 00 */	cmpwi r0, 0
-/* 80105510 000FB290  40 82 00 08 */	bne lbl_80105518
-/* 80105514 000FB294  38 80 00 00 */	li r4, 0
-lbl_80105518:
-/* 80105518 000FB298  4B FF FE 45 */	bl setCameraType__18IfMinigameTrainingFUl
-lbl_8010551C:
-/* 8010551C 000FB29C  3C 60 80 41 */	lis r3, lbl_804092A0@ha
-/* 80105520 000FB2A0  38 00 00 03 */	li r0, 3
-/* 80105524 000FB2A4  38 63 92 A0 */	addi r3, r3, lbl_804092A0@l
-/* 80105528 000FB2A8  90 1F 00 DC */	stw r0, 0xdc(r31)
-/* 8010552C 000FB2AC  81 83 00 18 */	lwz r12, 0x18(r3)
-/* 80105530 000FB2B0  2C 0C 00 00 */	cmpwi r12, 0
-/* 80105534 000FB2B4  41 82 00 10 */	beq lbl_80105544
-/* 80105538 000FB2B8  7F E3 FB 78 */	mr r3, r31
-/* 8010553C 000FB2BC  7D 89 03 A6 */	mtctr r12
-/* 80105540 000FB2C0  4E 80 04 21 */	bctrl 
-lbl_80105544:
-/* 80105544 000FB2C4  80 01 00 14 */	lwz r0, 0x14(r1)
-/* 80105548 000FB2C8  83 E1 00 0C */	lwz r31, 0xc(r1)
-/* 8010554C 000FB2CC  7C 08 03 A6 */	mtlr r0
-/* 80105550 000FB2D0  38 21 00 10 */	addi r1, r1, 0x10
-/* 80105554 000FB2D4  4E 80 00 20 */	blr 
-}
-#pragma peephole on
-#endif
 
 void IfMinigameTraining::main() {
     this->unk2F0 = -1;
@@ -637,6 +601,7 @@ s32 IfMinigameTraining::mainStepAppear(IfMinigameTraining* p1) {
     return 2;
 }
 
+// FIXME: Match without missing return value
 s32 IfMinigameTraining::initStepMenu(IfMinigameTraining*) {
     
 }
@@ -701,8 +666,9 @@ void IfMinigameTraining::curPosProcSpeed(IfMinigameTraining* p1) {
     }
 }
 
-// NONMATCHING
+#ifndef NONMATCHING
 #pragma regswap 80105990 801059d4 r4 r5 801048ec
+#endif
 void IfMinigameTraining::curPosProcItem(IfMinigameTraining* p1) {
     u32 r4 = p1->unk34.unk10;
     s32 r31 = p1->unk1C;
@@ -803,8 +769,6 @@ void IfMinigameTraining::curPosProcCPDamage(IfMinigameTraining* p1) {
     }
 }
 
-// NONMATCHING due to instruction order in call to setCameraType
-// (recurring issue)
 void IfMinigameTraining::curPosProcCamera(IfMinigameTraining* p1) {
     u32 r4 = p1->unk34.unk10;
     s32 r31 = p1->unk2C;
@@ -822,15 +786,21 @@ void IfMinigameTraining::curPosProcCamera(IfMinigameTraining* p1) {
         lbl_805A01D0->playSE(0, -1, 0, 0, -1);
         p1->unk2C = r31;
         p1->unkC->printIndex(5, lbl_805A27D0[r31], 0);
-        u32 c = 2;
-        if (p1->unk2C == 0) {
-            c = 0;
-        }
-        p1->setCameraType(c);
+        p1->setCameraType((!p1->unk2C) ? type0 : type2);
     }
 }
 
-// NONMATCHING
+// Issues with reg assignment for p1 and r30, and instruction ordering
+// before msg->printIndex() call
+#ifndef NONMATCHING
+#pragma iswap 80105d9c 80105da0 801048ec
+#pragma regswap 80105d9c 80105da0 r30 r31 801048ec
+#pragma regswap 80105db0 80105fb0 r30 r31 801048ec
+#pragma iswap 80105e0c 80105e20 801048ec
+#pragma iswap 80105e1c 80105e20 801048ec
+#pragma iswap 80105e18 80105e1c 801048ec
+#pragma iswap 80105e14 80105e18 801048ec
+#endif
 void IfMinigameTraining::curPosProcStatusVisible(IfMinigameTraining* p1) {
     u32 r4 = p1->unk34.unk10;
     s32 r30 = p1->unk30;
@@ -846,14 +816,18 @@ void IfMinigameTraining::curPosProcStatusVisible(IfMinigameTraining* p1) {
 
     if (r30 != p1->unk30) {
         lbl_805A01D0->playSE(0, -1, 0, 0, -1);
-        p1->unk30 = !(r30 - 1);
-        u32 idx = 16;
-        if (p1->unk30) {
+
+        MuMsg* msg = p1->unkC;
+        BOOL test = !(r30 - 1);
+        p1->unk30 = test;
+        s32 idx = 16;
+        if (test) {
             idx = 15;
         }
-        p1->unkC->printIndex(6, idx, 0);
+        msg->printIndex(6, idx, 0);
         r30 = p1->unk30;
-        p1->unk4[1]->setFrameVisible((r30) ? 1.0f : 0.0f);
+        float frame = (r30) ? 1.0f : 0.0f;
+        p1->unk4[1]->setFrameVisible(frame);
 
         if (r30) {
             p1->unkC->printIndex(8, lbl_80409250[p1->unk18], 0);

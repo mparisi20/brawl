@@ -247,8 +247,7 @@ class IswapTask:
         self.src = src # .text section byte offset
         self.dst = dst # .text section byte offset
 
-regswap_tasks = []
-iswap_tasks = []
+tasks = []
 with open(args.source, "r") as src:
     regswap_pattern = re.compile("[ \t]*#pragma[ \t]+regswap[ \t]+")
     iswap_pattern = re.compile("[ \t]*#pragma[ \t]+iswap[ \t]+")
@@ -266,7 +265,7 @@ with open(args.source, "r") as src:
                 raise ValueError("Invalid start, end, or start_file arguments (should have 4 byte aligment)")
             if not (start >= start_file and end > start):
                 raise ValueError("Invalid start, end, or start_file arguments (end must be > start, and start >= start_file)")
-            regswap_tasks.append(RegswapTask(start-start_file, end-start_file, regA, regB))
+            tasks.append(RegswapTask(start-start_file, end-start_file, regA, regB))
         elif iswap_pattern.match(line):
             params = line.split()[2:]
             if len(params) != 3:
@@ -278,7 +277,7 @@ with open(args.source, "r") as src:
                 raise ValueError("Invalid src, dst, or start_file arguments (should have 4 byte aligment)")
             if not (src >= start_file and dst > src):
                 raise ValueError("Invalid src, dst, or start_file arguments (dst must be > src, and src >= start_file)")
-            iswap_tasks.append(IswapTask(src-start_file, dst-start_file))
+            tasks.append(IswapTask(src-start_file, dst-start_file))
             
     subprocess.run([*args.cc.strip().split(' '), *args.cflags.split(' '), "-o", args.output, args.source])
 
@@ -286,7 +285,7 @@ instrs = []
 TEXT_INDEX = 1 # NOTE: assumes that mwcceppc always places the .text section header at index 1
 SHDR_32_SIZE = 40 # size of an Elf32_Shdr object
 
-if regswap_tasks or iswap_tasks:
+if tasks:
     with open(args.output, "rb") as f:
         if f.read(7) != b'\x7FELF\x01\x02\x01':
             raise ValueError("compiler output is not an current version ELF file for a 32-bit big endian architecture")
@@ -307,20 +306,19 @@ if regswap_tasks or iswap_tasks:
         for i in range(text_size // 4):
             instrs.append(PPCInstr(int.from_bytes(f.read(4), byteorder='big')))
         
-        # perform regswap tasks
-        for task in regswap_tasks:
-            if task.end > text_size:
-                raise ValueError("End address " + (task.end + start_file) + " is past the end of the ELF file's .text section")
-            for i in range(task.start // 4, task.end // 4):
-                instrs[i].swap_registers(task.regA, task.regB)
-        
-        # perform iswap tasks
-        for task in iswap_tasks:
-            if task.dst > text_size:
-                raise ValueError("End address " + (task.dst + start_file) + " is past the end of the ELF file's .text section")
-            a = task.src // 4
-            b = task.dst // 4
-            instrs[a], instrs[b] = instrs[b], instrs[a]
+        # perform tasks in the order that the pragmas appear in the source file
+        for task in tasks:
+            if isinstance(task, RegswapTask):
+                if task.end > text_size:
+                    raise ValueError("End address " + (task.end + start_file) + " is past the end of the ELF file's .text section")
+                for i in range(task.start // 4, task.end // 4):
+                    instrs[i].swap_registers(task.regA, task.regB)
+            else:
+                if task.dst > text_size:
+                    raise ValueError("End address " + (task.dst + start_file) + " is past the end of the ELF file's .text section")
+                a = task.src // 4
+                b = task.dst // 4
+                instrs[a], instrs[b] = instrs[b], instrs[a]
     
     # write patched .text section back to the ELF
     with open(args.output, "rb+") as f:
