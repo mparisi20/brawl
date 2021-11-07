@@ -594,7 +594,7 @@ lbl_800B1140:
 /* 800B1144 000A6EC4  C0 22 8E E0 */	lfs f1, lbl_805A2200-_SDA2_BASE_(r2)
 /* 800B1148 000A6EC8  7C 63 F8 2E */	lwzx r3, r3, r31
 /* 800B114C 000A6ECC  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800B1150 000A6ED0  4B F7 75 01 */	bl gfModelAnimation$7setUpdateRate
+/* 800B1150 000A6ED0  4B F7 75 01 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800B1154 000A6ED4  48 00 0F 20 */	b lbl_800B2074
 lbl_800B1158:
 /* 800B1158 000A6ED8  83 C3 00 1C */	lwz r30, 0x1c(r3)
@@ -1829,8 +1829,8 @@ lbl_800B2374:
 /* 800B238C 000A810C  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B2390 000A8110  4E 80 00 20 */	blr 
 
-.global MuObject$7create
-MuObject$7create:
+.global create__8MuObjectFUlPCcUlUlUl
+create__8MuObjectFUlPCcUlUlUl:
 /* 800B2394 000A8114  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800B2398 000A8118  7C 08 02 A6 */	mflr r0
 /* 800B239C 000A811C  90 01 00 24 */	stw r0, 0x24(r1)
@@ -1861,8 +1861,8 @@ lbl_800B23EC:
 /* 800B23FC 000A817C  38 21 00 20 */	addi r1, r1, 0x20
 /* 800B2400 000A8180  4E 80 00 20 */	blr 
 
-.global MuObject$7create_2375
-MuObject$7create_2375:
+.global create__8MuObjectFUlPCcUlUlUl_2375
+create__8MuObjectFUlPCcUlUlUl_2375:
 /* 800B2404 000A8184  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 800B2408 000A8188  7C 08 02 A6 */	mflr r0
 /* 800B240C 000A818C  90 01 00 24 */	stw r0, 0x24(r1)

@@ -104,6 +104,13 @@
             ".data": ["0x80455120", "0x5D"]
         },
         {
+            "file": "build/brawl/src/text/if_minigame_training.o",
+            ".rodata": ["0x80409208", "0xd8"],
+            ".data": ["0x8045cfd8", "0x87"],
+            ".sdata": ["0x8059e5c0", "0x18"],
+            ".sdata2": ["0x805a27b8", "0x28"]
+        },
+        {
             "file": "build/brawl/src/text/if_figure_loader.o",
             ".data": ["0x8045d060", "0xa"],
             ".sdata": ["0x8059e5d8", "0x11"],

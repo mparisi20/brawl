@@ -27,7 +27,7 @@ nw4r4math5MTX34PUlPCUcPCQ34nw4r4ma$7CalcWorldPartial:
 /* 80046A68 0003C7E8  7C 08 02 A6 */	mflr r0
 /* 80046A6C 0003C7EC  90 01 00 E4 */	stw r0, 0xe4(r1)
 /* 80046A70 0003C7F0  39 61 00 E0 */	addi r11, r1, 0xe0
-/* 80046A74 0003C7F4  48 3A A8 79 */	bl __save_gpr
+/* 80046A74 0003C7F4  48 3A A8 79 */	bl _savegpr_14
 /* 80046A78 0003C7F8  2C 05 00 00 */	cmpwi r5, 0
 /* 80046A7C 0003C7FC  81 C1 00 E8 */	lwz r14, 0xe8(r1)
 /* 80046A80 0003C800  82 E1 00 EC */	lwz r23, 0xec(r1)
@@ -450,7 +450,7 @@ lbl_80047054:
 /* 8004708C 0003CE0C  4E 80 04 21 */	bctrl 
 lbl_80047090:
 /* 80047090 0003CE10  39 61 00 E0 */	addi r11, r1, 0xe0
-/* 80047094 0003CE14  48 3A A2 A5 */	bl __restore_gpr
+/* 80047094 0003CE14  48 3A A2 A5 */	bl _restgpr_14
 /* 80047098 0003CE18  80 01 00 E4 */	lwz r0, 0xe4(r1)
 /* 8004709C 0003CE1C  7C 08 03 A6 */	mtlr r0
 /* 800470A0 0003CE20  38 21 00 E0 */	addi r1, r1, 0xe0

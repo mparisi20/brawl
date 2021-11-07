@@ -110,8 +110,8 @@ _restfpr_29:
 /* 803F12E4 003E7064  CB EB FF F8 */	lfd f31, -8(r11)
 /* 803F12E8 003E7068  4E 80 00 20 */	blr 
 
-.global __save_gpr
-__save_gpr:
+.global _savegpr_14
+_savegpr_14:
 /* 803F12EC 003E706C  91 CB FF B8 */	stw r14, -0x48(r11)
 
 .global _savegpr_15
@@ -177,8 +177,8 @@ _savegpr_29:
 /* 803F1330 003E70B0  93 EB FF FC */	stw r31, -4(r11)
 /* 803F1334 003E70B4  4E 80 00 20 */	blr 
 
-.global __restore_gpr
-__restore_gpr:
+.global _restgpr_14
+_restgpr_14:
 /* 803F1338 003E70B8  81 CB FF B8 */	lwz r14, -0x48(r11)
 
 .global _restgpr_15

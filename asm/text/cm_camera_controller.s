@@ -29,8 +29,8 @@ lbl_8009BE60:
 /* 8009BE6C 00091BEC  38 21 00 10 */	addi r1, r1, 0x10
 /* 8009BE70 00091BF0  4E 80 00 20 */	blr 
 
-.global CameraController$7getInstance
-CameraController$7getInstance:
+.global getInstance__16CameraControllerFv
+getInstance__16CameraControllerFv:
 /* 8009BE74 00091BF4  80 6D BE 58 */	lwz r3, lbl_805A0278-_SDA_BASE_(r13)
 /* 8009BE78 00091BF8  4E 80 00 20 */	blr 
 
@@ -598,15 +598,15 @@ CameraController$7reset:
 lbl_8009C67C:
 /* 8009C67C 000923FC  7F E3 FB 78 */	mr r3, r31
 /* 8009C680 00092400  38 80 00 0E */	li r4, 0xe
-/* 8009C684 00092404  48 00 00 19 */	bl func_8009C69C
+/* 8009C684 00092404  48 00 00 19 */	bl changeInput__16CameraControllerFUl
 /* 8009C688 00092408  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 8009C68C 0009240C  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 8009C690 00092410  7C 08 03 A6 */	mtlr r0
 /* 8009C694 00092414  38 21 00 10 */	addi r1, r1, 0x10
 /* 8009C698 00092418  4E 80 00 20 */	blr 
 
-.global func_8009C69C
-func_8009C69C:
+.global changeInput__16CameraControllerFUl
+changeInput__16CameraControllerFUl:
 /* 8009C69C 0009241C  94 21 FF D0 */	stwu r1, -0x30(r1)
 /* 8009C6A0 00092420  7C 08 02 A6 */	mflr r0
 /* 8009C6A4 00092424  90 01 00 34 */	stw r0, 0x34(r1)
@@ -1151,7 +1151,7 @@ CameraController$7startZoomIn:
 /* 8009CDC0 00092B40  7F C3 F3 78 */	mr r3, r30
 /* 8009CDC4 00092B44  38 80 00 0B */	li r4, 0xb
 /* 8009CDC8 00092B48  98 1F 00 10 */	stb r0, 0x10(r31)
-/* 8009CDCC 00092B4C  4B FF F8 D1 */	bl func_8009C69C
+/* 8009CDCC 00092B4C  4B FF F8 D1 */	bl changeInput__16CameraControllerFUl
 /* 8009CDD0 00092B50  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 8009CDD4 00092B54  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 8009CDD8 00092B58  83 C1 00 08 */	lwz r30, 8(r1)
@@ -1175,7 +1175,7 @@ CameraController$7startZoomIn_2100:
 /* 8009CE14 00092B94  7F C3 F3 78 */	mr r3, r30
 /* 8009CE18 00092B98  38 80 00 0B */	li r4, 0xb
 /* 8009CE1C 00092B9C  98 1F 00 10 */	stb r0, 0x10(r31)
-/* 8009CE20 00092BA0  4B FF F8 7D */	bl func_8009C69C
+/* 8009CE20 00092BA0  4B FF F8 7D */	bl changeInput__16CameraControllerFUl
 /* 8009CE24 00092BA4  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 8009CE28 00092BA8  83 E1 00 0C */	lwz r31, 0xc(r1)
 /* 8009CE2C 00092BAC  83 C1 00 08 */	lwz r30, 8(r1)
@@ -1183,8 +1183,8 @@ CameraController$7startZoomIn_2100:
 /* 8009CE34 00092BB4  38 21 00 10 */	addi r1, r1, 0x10
 /* 8009CE38 00092BB8  4E 80 00 20 */	blr 
 
-.global CameraController$7changeInput
-CameraController$7changeInput:
+.global CameraController$7cancelZoomIn
+CameraController$7cancelZoomIn:
 /* 8009CE3C 00092BBC  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8009CE40 00092BC0  7C 08 02 A6 */	mflr r0
 /* 8009CE44 00092BC4  90 01 00 14 */	stw r0, 0x14(r1)
@@ -1206,7 +1206,7 @@ lbl_8009CE7C:
 /* 8009CE80 00092C00  48 00 CF CD */	bl cmTechController$7resetTarget
 /* 8009CE84 00092C04  88 9F 00 10 */	lbz r4, 0x10(r31)
 /* 8009CE88 00092C08  7F C3 F3 78 */	mr r3, r30
-/* 8009CE8C 00092C0C  4B FF F8 11 */	bl func_8009C69C
+/* 8009CE8C 00092C0C  4B FF F8 11 */	bl changeInput__16CameraControllerFUl
 lbl_8009CE90:
 /* 8009CE90 00092C10  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 8009CE94 00092C14  83 E1 00 0C */	lwz r31, 0xc(r1)
@@ -1516,4 +1516,3 @@ CameraController$7isDisableZoom:
 /* 8009D2D0 00093050  7C 00 18 78 */	andc r0, r0, r3
 /* 8009D2D4 00093054  54 03 0F FE */	srwi r3, r0, 0x1f
 /* 8009D2D8 00093058  4E 80 00 20 */	blr 
-

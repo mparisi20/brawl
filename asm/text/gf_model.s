@@ -1178,8 +1178,8 @@ lbl_80028630:
 /* 80028648 0001E3C8  4E 80 04 20 */	bctr 
 /* 8002864C 0001E3CC  4E 80 00 20 */	blr 
 
-.global gfModelAnimation$7setUpdateRate
-gfModelAnimation$7setUpdateRate:
+.global setUpdateRate__16gfModelAnimationFf
+setUpdateRate__16gfModelAnimationFf:
 /* 80028650 0001E3D0  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80028654 0001E3D4  7C 08 02 A6 */	mflr r0
 /* 80028658 0001E3D8  90 01 00 24 */	stw r0, 0x24(r1)

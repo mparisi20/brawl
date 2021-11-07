@@ -140,7 +140,7 @@ $2unnamed$2if_minigame_coin_shooter_cpp$223IfCoinShooterLabelLightFQ218IfCoinSho
 /* 800FFF44 000F5CC4  7C 83 00 2E */	lwzx r4, r3, r0
 /* 800FFF48 000F5CC8  80 B9 01 BC */	lwz r5, 0x1bc(r25)
 /* 800FFF4C 000F5CCC  38 79 01 C8 */	addi r3, r25, 0x1c8
-/* 800FFF50 000F5CD0  4B FB 24 45 */	bl MuObject$7create
+/* 800FFF50 000F5CD0  4B FB 24 45 */	bl create__8MuObjectFUlPCcUlUlUl
 /* 800FFF54 000F5CD4  2C 03 00 00 */	cmpwi r3, 0
 /* 800FFF58 000F5CD8  7C 7C 1B 78 */	mr r28, r3
 /* 800FFF5C 000F5CDC  41 82 00 20 */	beq lbl_800FFF7C
@@ -380,7 +380,7 @@ lbl_80100258:
 /* 801002B8 000F6038  80 7A 00 18 */	lwz r3, 0x18(r26)
 /* 801002BC 000F603C  C8 01 03 38 */	lfd f0, 0x338(r1)
 /* 801002C0 000F6040  EC 20 08 28 */	fsubs f1, f0, f1
-/* 801002C4 000F6044  4B FB 75 89 */	bl MuObject$7setFrameVisible
+/* 801002C4 000F6044  4B FB 75 89 */	bl setFrameVisible__8MuObjectFf
 lbl_801002C8:
 /* 801002C8 000F6048  80 7A 00 18 */	lwz r3, 0x18(r26)
 /* 801002CC 000F604C  4B FB 63 D5 */	bl MuObject$7isNodeAnimLoop

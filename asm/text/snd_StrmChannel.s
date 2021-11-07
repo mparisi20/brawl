@@ -27,7 +27,7 @@ nw4r3snd6detail14StrmBufferPoolFPvUli$7Setup:
 /* 801CCA28 001C27A8  38 A0 00 04 */	li r5, 4
 /* 801CCA2C 001C27AC  93 DB 00 0C */	stw r30, 0xc(r27)
 /* 801CCA30 001C27B0  90 1B 00 10 */	stw r0, 0x10(r27)
-/* 801CCA34 001C27B4  4B E3 7A 09 */	bl func_8000443C
+/* 801CCA34 001C27B4  4B E3 7A 09 */	bl memset
 /* 801CCA38 001C27B8  7F E3 FB 78 */	mr r3, r31
 /* 801CCA3C 001C27BC  48 01 04 FD */	bl OSRestoreInterrupts
 lbl_801CCA40:

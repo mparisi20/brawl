@@ -758,7 +758,7 @@ rfc_process_rpn:
 /* 80253EA8 00249C28  38 61 00 08 */	addi r3, r1, 8
 /* 80253EAC 00249C2C  38 80 00 00 */	li r4, 0
 /* 80253EB0 00249C30  38 A0 00 09 */	li r5, 9
-/* 80253EB4 00249C34  4B DB 05 89 */	bl func_8000443C
+/* 80253EB4 00249C34  4B DB 05 89 */	bl memset
 /* 80253EB8 00249C38  7F C4 F3 78 */	mr r4, r30
 /* 80253EBC 00249C3C  38 61 00 08 */	addi r3, r1, 8
 /* 80253EC0 00249C40  48 00 06 05 */	bl rfc_set_port_state

@@ -104,11 +104,11 @@ IfMngr$7__ct:
 /* 800DB908 000D1688  90 C3 00 3C */	stw r6, 0x3c(r3)
 /* 800DB90C 000D168C  90 C3 00 40 */	stw r6, 0x40(r3)
 /* 800DB910 000D1690  38 63 00 4C */	addi r3, r3, 0x4c
-/* 800DB914 000D1694  4B F2 8B 29 */	bl func_8000443C
+/* 800DB914 000D1694  4B F2 8B 29 */	bl memset
 /* 800DB918 000D1698  38 7F 00 68 */	addi r3, r31, 0x68
 /* 800DB91C 000D169C  38 80 00 00 */	li r4, 0
 /* 800DB920 000D16A0  38 A0 00 07 */	li r5, 7
-/* 800DB924 000D16A4  4B F2 8B 19 */	bl func_8000443C
+/* 800DB924 000D16A4  4B F2 8B 19 */	bl memset
 /* 800DB928 000D16A8  93 ED BE B0 */	stw r31, lbl_805A02D0-_SDA_BASE_(r13)
 /* 800DB92C 000D16AC  7F E3 FB 78 */	mr r3, r31
 /* 800DB930 000D16B0  83 E1 00 0C */	lwz r31, 0xc(r1)
@@ -742,7 +742,7 @@ lbl_800DC1C8:
 /* 800DC1DC 000D1F5C  4B F3 06 DD */	bl __nw__10srHeapTypeFUlUl
 /* 800DC1E0 000D1F60  2C 03 00 00 */	cmpwi r3, 0
 /* 800DC1E4 000D1F64  41 82 00 08 */	beq lbl_800DC1EC
-/* 800DC1E8 000D1F68  48 02 87 05 */	bl IfCoinShooter$7__ct
+/* 800DC1E8 000D1F68  48 02 87 05 */	bl __ct__18IfMinigameTrainingFv
 lbl_800DC1EC:
 /* 800DC1EC 000D1F6C  90 7E 00 78 */	stw r3, 0x78(r30)
 /* 800DC1F0 000D1F70  38 9E 00 38 */	addi r4, r30, 0x38
@@ -750,7 +750,7 @@ lbl_800DC1EC:
 /* 800DC1F8 000D1F78  80 DE 00 80 */	lwz r6, 0x80(r30)
 /* 800DC1FC 000D1F7C  80 FE 00 84 */	lwz r7, 0x84(r30)
 /* 800DC200 000D1F80  81 1E 00 88 */	lwz r8, 0x88(r30)
-/* 800DC204 000D1F84  48 02 88 A1 */	bl IfMinigameTraining$7createModel
+/* 800DC204 000D1F84  48 02 88 A1 */	bl createModel__18IfMinigameTrainingFUlUlUlPvUl
 lbl_800DC208:
 /* 800DC208 000D1F88  80 1E 00 40 */	lwz r0, 0x40(r30)
 /* 800DC20C 000D1F8C  2C 00 00 00 */	cmpwi r0, 0
@@ -1085,7 +1085,7 @@ lbl_800DC684:
 /* 800DC688 000D2408  2C 03 00 00 */	cmpwi r3, 0
 /* 800DC68C 000D240C  41 82 00 0C */	beq lbl_800DC698
 /* 800DC690 000D2410  80 9F 00 08 */	lwz r4, 8(r31)
-/* 800DC694 000D2414  48 02 88 95 */	bl IfMinigameTraining$7startMelee
+/* 800DC694 000D2414  48 02 88 95 */	bl startMelee__18IfMinigameTrainingFPQ34nw4r3g3d8ScnGroup
 lbl_800DC698:
 /* 800DC698 000D2418  80 1F 00 94 */	lwz r0, 0x94(r31)
 /* 800DC69C 000D241C  2C 00 00 00 */	cmpwi r0, 0
@@ -1246,7 +1246,7 @@ lbl_800DC8CC:
 /* 800DC8CC 000D264C  80 7D 00 78 */	lwz r3, 0x78(r29)
 /* 800DC8D0 000D2650  2C 03 00 00 */	cmpwi r3, 0
 /* 800DC8D4 000D2654  41 82 00 08 */	beq lbl_800DC8DC
-/* 800DC8D8 000D2658  48 02 8C 81 */	bl IfMinigameTraining$7main
+/* 800DC8D8 000D2658  48 02 8C 81 */	bl main__18IfMinigameTrainingFv
 lbl_800DC8DC:
 /* 800DC8DC 000D265C  80 7D 00 94 */	lwz r3, 0x94(r29)
 /* 800DC8E0 000D2660  2C 03 00 00 */	cmpwi r3, 0
@@ -1677,12 +1677,12 @@ IfMngr$7dispKumiteKills:
 .global IfMngr$7openTrainingMenu
 IfMngr$7openTrainingMenu:
 /* 800DCDFC 000D2B7C  80 63 00 78 */	lwz r3, 0x78(r3)
-/* 800DCE00 000D2B80  48 02 84 DC */	b IfMinigameTraining$7openMenu
+/* 800DCE00 000D2B80  48 02 84 DC */	b openMenu__18IfMinigameTrainingFUlUl
 
 .global IfMngr$7closeTrainingMenu
 IfMngr$7closeTrainingMenu:
 /* 800DCE04 000D2B84  80 63 00 78 */	lwz r3, 0x78(r3)
-/* 800DCE08 000D2B88  48 02 86 D0 */	b IfMinigameTraining$7closeMenu
+/* 800DCE08 000D2B88  48 02 86 D0 */	b closeMenu__18IfMinigameTrainingFv
 
 .global IfMngr$7getTrainingSpeed
 IfMngr$7getTrainingSpeed:
@@ -1727,7 +1727,7 @@ IfMngr$7setTrainingStatusDamage:
 /* 800DCE5C 000D2BDC  88 03 00 30 */	lbz r0, 0x30(r3)
 /* 800DCE60 000D2BE0  2C 00 00 00 */	cmpwi r0, 0
 /* 800DCE64 000D2BE4  4D 82 00 20 */	beqlr 
-/* 800DCE68 000D2BE8  48 02 83 D8 */	b IfMinigameTraining$7printStatusDamage
+/* 800DCE68 000D2BE8  48 02 83 D8 */	b printStatusDamage__18IfMinigameTrainingFl
 /* 800DCE6C 000D2BEC  4E 80 00 20 */	blr 
 
 .global IfMngr$7setTrainingStatusCombo
@@ -1737,7 +1737,7 @@ IfMngr$7setTrainingStatusCombo:
 /* 800DCE78 000D2BF8  88 03 00 30 */	lbz r0, 0x30(r3)
 /* 800DCE7C 000D2BFC  2C 00 00 00 */	cmpwi r0, 0
 /* 800DCE80 000D2C00  4D 82 00 20 */	beqlr 
-/* 800DCE84 000D2C04  48 02 83 F0 */	b IfMinigameTraining$7printStatusCombo
+/* 800DCE84 000D2C04  48 02 83 F0 */	b printStatusCombo__18IfMinigameTrainingFl
 /* 800DCE88 000D2C08  4E 80 00 20 */	blr 
 
 .global IfMngr$7setTrainingStatusTotalDamage
@@ -1747,7 +1747,7 @@ IfMngr$7setTrainingStatusTotalDamage:
 /* 800DCE94 000D2C14  88 03 00 30 */	lbz r0, 0x30(r3)
 /* 800DCE98 000D2C18  2C 00 00 00 */	cmpwi r0, 0
 /* 800DCE9C 000D2C1C  4D 82 00 20 */	beqlr 
-/* 800DCEA0 000D2C20  48 02 84 08 */	b IfMinigameTraining$7printStatusTotalDamage
+/* 800DCEA0 000D2C20  48 02 84 08 */	b printStatusTotalDamage__18IfMinigameTrainingFl
 /* 800DCEA4 000D2C24  4E 80 00 20 */	blr 
 
 .global IfMngr$7dispBoss
@@ -2227,4 +2227,3 @@ lbl_800DD50C:
 /* 800DD51C 000D329C  7C 08 03 A6 */	mtlr r0
 /* 800DD520 000D32A0  38 21 00 10 */	addi r1, r1, 0x10
 /* 800DD524 000D32A4  4E 80 00 20 */	blr 
-

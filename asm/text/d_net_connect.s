@@ -26,7 +26,7 @@ dNetConnect_Start:
 /* 8014CC74 001429F4  38 61 00 08 */	addi r3, r1, 8
 /* 8014CC78 001429F8  38 80 00 00 */	li r4, 0
 /* 8014CC7C 001429FC  38 A0 00 08 */	li r5, 8
-/* 8014CC80 00142A00  4B EB 77 BD */	bl func_8000443C
+/* 8014CC80 00142A00  4B EB 77 BD */	bl memset
 /* 8014CC84 00142A04  3C A0 80 15 */	lis r5, _Alloc@ha
 /* 8014CC88 00142A08  3C 80 80 15 */	lis r4, _Free@ha
 /* 8014CC8C 00142A0C  38 A5 CC 40 */	addi r5, r5, _Alloc@l

@@ -257,7 +257,7 @@ lbl_8010BAFC:
 /* 8010BB04 00101884  88 BC 00 06 */	lbz r5, 6(r28)
 /* 8010BB08 00101888  38 C0 00 00 */	li r6, 0
 /* 8010BB0C 0010188C  38 E0 00 28 */	li r7, 0x28
-/* 8010BB10 00101890  4B FA 68 85 */	bl MuObject$7create
+/* 8010BB10 00101890  4B FA 68 85 */	bl create__8MuObjectFUlPCcUlUlUl
 /* 8010BB14 00101894  88 1C 00 04 */	lbz r0, 4(r28)
 /* 8010BB18 00101898  7C 7B 1B 78 */	mr r27, r3
 /* 8010BB1C 0010189C  80 9C 00 00 */	lwz r4, 0(r28)
@@ -271,12 +271,12 @@ lbl_8010BAFC:
 /* 8010BB3C 001018BC  48 2E E8 49 */	bl strcat
 /* 8010BB40 001018C0  7F 63 DB 78 */	mr r3, r27
 /* 8010BB44 001018C4  38 81 00 08 */	addi r4, r1, 8
-/* 8010BB48 001018C8  4B FA 98 05 */	bl MuObject$7changeAnimN
+/* 8010BB48 001018C8  4B FA 98 05 */	bl changeAnimN__8MuObjectFPCc
 /* 8010BB4C 001018CC  80 7B 00 14 */	lwz r3, 0x14(r27)
 /* 8010BB50 001018D0  2C 03 00 00 */	cmpwi r3, 0
 /* 8010BB54 001018D4  41 82 00 0C */	beq lbl_8010BB60
 /* 8010BB58 001018D8  C0 22 95 50 */	lfs f1, lbl_805A2870-_SDA2_BASE_(r2)
-/* 8010BB5C 001018DC  4B F1 CA F5 */	bl gfModelAnimation$7setUpdateRate
+/* 8010BB5C 001018DC  4B F1 CA F5 */	bl setUpdateRate__16gfModelAnimationFf
 lbl_8010BB60:
 /* 8010BB60 001018E0  3B BD 00 01 */	addi r29, r29, 1
 lbl_8010BB64:
@@ -470,7 +470,7 @@ IfAdvGauge$7createLocator:
 /* 8010BDEC 00101B6C  3F E0 80 46 */	lis r31, lbl_8045D428@ha
 /* 8010BDF0 00101B70  3B FF D4 28 */	addi r31, r31, lbl_8045D428@l
 /* 8010BDF4 00101B74  7F E4 FB 78 */	mr r4, r31
-/* 8010BDF8 00101B78  4B FA 65 9D */	bl MuObject$7create
+/* 8010BDF8 00101B78  4B FA 65 9D */	bl create__8MuObjectFUlPCcUlUlUl
 /* 8010BDFC 00101B7C  90 6D BF 18 */	stw r3, lbl_805A0338-_SDA_BASE_(r13)
 /* 8010BE00 00101B80  7F E4 FB 78 */	mr r4, r31
 /* 8010BE04 00101B84  38 61 00 08 */	addi r3, r1, 8
@@ -480,11 +480,11 @@ IfAdvGauge$7createLocator:
 /* 8010BE14 00101B94  48 2E E5 71 */	bl strcat
 /* 8010BE18 00101B98  80 6D BF 18 */	lwz r3, lbl_805A0338-_SDA_BASE_(r13)
 /* 8010BE1C 00101B9C  38 81 00 08 */	addi r4, r1, 8
-/* 8010BE20 00101BA0  4B FA 95 2D */	bl MuObject$7changeAnimN
+/* 8010BE20 00101BA0  4B FA 95 2D */	bl changeAnimN__8MuObjectFPCc
 /* 8010BE24 00101BA4  80 6D BF 18 */	lwz r3, lbl_805A0338-_SDA_BASE_(r13)
 /* 8010BE28 00101BA8  C0 22 95 50 */	lfs f1, lbl_805A2870-_SDA2_BASE_(r2)
 /* 8010BE2C 00101BAC  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 8010BE30 00101BB0  4B F1 C8 21 */	bl gfModelAnimation$7setUpdateRate
+/* 8010BE30 00101BB0  4B F1 C8 21 */	bl setUpdateRate__16gfModelAnimationFf
 /* 8010BE34 00101BB4  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
 /* 8010BE38 00101BB8  4B F4 27 95 */	bl GameGlobal$7getGlobalRecordMenuDatap
 /* 8010BE3C 00101BBC  88 03 00 28 */	lbz r0, 0x28(r3)
@@ -575,7 +575,7 @@ IfAdvGauge$7createLocator2:
 /* 8010BF58 00101CD8  3F E0 80 46 */	lis r31, lbl_8045D438@ha
 /* 8010BF5C 00101CDC  3B FF D4 38 */	addi r31, r31, lbl_8045D438@l
 /* 8010BF60 00101CE0  7F E4 FB 78 */	mr r4, r31
-/* 8010BF64 00101CE4  4B FA 64 31 */	bl MuObject$7create
+/* 8010BF64 00101CE4  4B FA 64 31 */	bl create__8MuObjectFUlPCcUlUlUl
 /* 8010BF68 00101CE8  90 6D BF 20 */	stw r3, lbl_805A0340-_SDA_BASE_(r13)
 /* 8010BF6C 00101CEC  7F E4 FB 78 */	mr r4, r31
 /* 8010BF70 00101CF0  38 61 00 08 */	addi r3, r1, 8
@@ -585,11 +585,11 @@ IfAdvGauge$7createLocator2:
 /* 8010BF80 00101D00  48 2E E4 05 */	bl strcat
 /* 8010BF84 00101D04  80 6D BF 20 */	lwz r3, lbl_805A0340-_SDA_BASE_(r13)
 /* 8010BF88 00101D08  38 81 00 08 */	addi r4, r1, 8
-/* 8010BF8C 00101D0C  4B FA 93 C1 */	bl MuObject$7changeAnimN
+/* 8010BF8C 00101D0C  4B FA 93 C1 */	bl changeAnimN__8MuObjectFPCc
 /* 8010BF90 00101D10  80 6D BF 20 */	lwz r3, lbl_805A0340-_SDA_BASE_(r13)
 /* 8010BF94 00101D14  C0 22 95 50 */	lfs f1, lbl_805A2870-_SDA2_BASE_(r2)
 /* 8010BF98 00101D18  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 8010BF9C 00101D1C  4B F1 C6 B5 */	bl gfModelAnimation$7setUpdateRate
+/* 8010BF9C 00101D1C  4B F1 C6 B5 */	bl setUpdateRate__16gfModelAnimationFf
 /* 8010BFA0 00101D20  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
 /* 8010BFA4 00101D24  4B F4 26 29 */	bl GameGlobal$7getGlobalRecordMenuDatap
 /* 8010BFA8 00101D28  88 03 00 28 */	lbz r0, 0x28(r3)
@@ -814,7 +814,7 @@ lbl_8010C288:
 /* 8010C2B4 00102034  93 A1 00 58 */	stw r29, 0x58(r1)
 /* 8010C2B8 00102038  C8 01 00 58 */	lfd f0, 0x58(r1)
 /* 8010C2BC 0010203C  EC 20 08 28 */	fsubs f1, f0, f1
-/* 8010C2C0 00102040  4B FA B5 8D */	bl MuObject$7setFrameVisible
+/* 8010C2C0 00102040  4B FA B5 8D */	bl setFrameVisible__8MuObjectFf
 /* 8010C2C4 00102044  CB E2 95 78 */	lfd f31, lbl_805A2898-_SDA2_BASE_(r2)
 /* 8010C2C8 00102048  3B 9A 00 08 */	addi r28, r26, 8
 /* 8010C2CC 0010204C  3B 61 00 2C */	addi r27, r1, 0x2c
@@ -1119,17 +1119,17 @@ func_8010C6C8:
 /* 8010C70C 0010248C  80 63 01 2C */	lwz r3, 0x12c(r3)
 /* 8010C710 00102490  40 80 00 10 */	bge lbl_8010C720
 /* 8010C714 00102494  C0 22 95 70 */	lfs f1, lbl_805A2890-_SDA2_BASE_(r2)
-/* 8010C718 00102498  4B FA B1 35 */	bl MuObject$7setFrameVisible
+/* 8010C718 00102498  4B FA B1 35 */	bl setFrameVisible__8MuObjectFf
 /* 8010C71C 0010249C  48 00 00 20 */	b lbl_8010C73C
 lbl_8010C720:
 /* 8010C720 001024A0  28 04 0E 10 */	cmplwi r4, 0xe10
 /* 8010C724 001024A4  40 80 00 10 */	bge lbl_8010C734
 /* 8010C728 001024A8  C0 22 95 88 */	lfs f1, lbl_805A28A8-_SDA2_BASE_(r2)
-/* 8010C72C 001024AC  4B FA B1 21 */	bl MuObject$7setFrameVisible
+/* 8010C72C 001024AC  4B FA B1 21 */	bl setFrameVisible__8MuObjectFf
 /* 8010C730 001024B0  48 00 00 0C */	b lbl_8010C73C
 lbl_8010C734:
 /* 8010C734 001024B4  C0 22 95 8C */	lfs f1, lbl_805A28AC-_SDA2_BASE_(r2)
-/* 8010C738 001024B8  4B FA B1 15 */	bl MuObject$7setFrameVisible
+/* 8010C738 001024B8  4B FA B1 15 */	bl setFrameVisible__8MuObjectFf
 lbl_8010C73C:
 /* 8010C73C 001024BC  80 6D BF 1C */	lwz r3, lbl_805A033C-_SDA_BASE_(r13)
 /* 8010C740 001024C0  83 5C 01 68 */	lwz r26, 0x168(r28)
@@ -1289,7 +1289,7 @@ lbl_8010C774:
 /* 8010C9A4 00102724  80 7C 01 2C */	lwz r3, 0x12c(r28)
 /* 8010C9A8 00102728  C0 22 95 50 */	lfs f1, lbl_805A2870-_SDA2_BASE_(r2)
 /* 8010C9AC 0010272C  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 8010C9B0 00102730  4B F1 BC A1 */	bl gfModelAnimation$7setUpdateRate
+/* 8010C9B0 00102730  4B F1 BC A1 */	bl setUpdateRate__16gfModelAnimationFf
 /* 8010C9B4 00102734  80 7C 01 2C */	lwz r3, 0x12c(r28)
 /* 8010C9B8 00102738  C0 22 95 88 */	lfs f1, lbl_805A28A8-_SDA2_BASE_(r2)
 /* 8010C9BC 0010273C  4B FA AB 81 */	bl MuObject$7setFrame

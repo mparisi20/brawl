@@ -283,7 +283,7 @@ cmSubject$7updateDispStatus:
 /* 8009F018 00094D98  90 03 00 08 */	stw r0, 8(r3)
 /* 8009F01C 00094D9C  48 00 00 D8 */	b lbl_8009F0F4
 lbl_8009F020:
-/* 8009F020 00094DA0  4B FF CE 55 */	bl CameraController$7getInstance
+/* 8009F020 00094DA0  4B FF CE 55 */	bl getInstance__16CameraControllerFv
 /* 8009F024 00094DA4  C0 63 01 4C */	lfs f3, 0x14c(r3)
 /* 8009F028 00094DA8  C0 03 01 48 */	lfs f0, 0x148(r3)
 /* 8009F02C 00094DAC  C0 43 01 50 */	lfs f2, 0x150(r3)

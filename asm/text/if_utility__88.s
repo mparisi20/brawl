@@ -10,7 +10,7 @@ utility18AutoResourceLoader$7loading:
 /* 800FF388 000F5108  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 800FF38C 000F510C  7C 7F 1B 78 */	mr r31, r3
 /* 800FF390 000F5110  80 63 00 04 */	lwz r3, 4(r3)
-/* 800FF394 000F5114  4B FB 6E 2D */	bl MuObject$7isNodeAnimFinished
+/* 800FF394 000F5114  4B FB 6E 2D */	bl isNodeAnimFinished__8MuObjectFv
 /* 800FF398 000F5118  2C 03 00 00 */	cmpwi r3, 0
 /* 800FF39C 000F511C  41 82 00 0C */	beq lbl_800FF3A8
 /* 800FF3A0 000F5120  38 60 00 03 */	li r3, 3

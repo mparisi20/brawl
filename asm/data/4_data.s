@@ -529,13 +529,4 @@ lbl_8045CD90:
 	.incbin "baserom.dol", 0x458E90, 0x23C
 .global lbl_8045CFCC
 lbl_8045CFCC:
-	.incbin "baserom.dol", 0x4590CC, 0x3C
-.global lbl_8045D008
-lbl_8045D008:
-	.incbin "baserom.dol", 0x459108, 0x18
-.global lbl_8045D020
-lbl_8045D020:
-	.incbin "baserom.dol", 0x459120, 0x20
-.global lbl_8045D040
-lbl_8045D040:
-	.incbin "baserom.dol", 0x459140, 0x20
+	.incbin "baserom.dol", 0x4590CC, 0xC

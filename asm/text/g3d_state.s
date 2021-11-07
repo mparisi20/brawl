@@ -3350,7 +3350,7 @@ nw4r3g3d8G3DStateFRC16_GXRenderMod$7SetRenderModeObj:
 /* 801A10A4 00196E24  7C 08 02 A6 */	mflr r0
 /* 801A10A8 00196E28  90 01 00 94 */	stw r0, 0x94(r1)
 /* 801A10AC 00196E2C  39 61 00 90 */	addi r11, r1, 0x90
-/* 801A10B0 00196E30  48 25 02 3D */	bl __save_gpr
+/* 801A10B0 00196E30  48 25 02 3D */	bl _savegpr_14
 /* 801A10B4 00196E34  89 E3 00 29 */	lbz r15, 0x29(r3)
 /* 801A10B8 00196E38  3C 80 80 4B */	lis r4, lbl_804A9974@ha
 /* 801A10BC 00196E3C  3A 44 99 74 */	addi r18, r4, lbl_804A9974@l
@@ -3469,7 +3469,7 @@ nw4r3g3d8G3DStateFRC16_GXRenderMod$7SetRenderModeObj:
 /* 801A1280 00197000  98 12 00 37 */	stb r0, 0x37(r18)
 /* 801A1284 00197004  99 F2 00 38 */	stb r15, 0x38(r18)
 /* 801A1288 00197008  39 61 00 90 */	addi r11, r1, 0x90
-/* 801A128C 0019700C  48 25 00 AD */	bl __restore_gpr
+/* 801A128C 0019700C  48 25 00 AD */	bl _restgpr_14
 /* 801A1290 00197010  80 01 00 94 */	lwz r0, 0x94(r1)
 /* 801A1294 00197014  7C 08 03 A6 */	mtlr r0
 /* 801A1298 00197018  38 21 00 90 */	addi r1, r1, 0x90
@@ -3835,7 +3835,7 @@ __sinit_$3g3d_state_cpp:
 /* 801A179C 0019751C  9B C6 00 03 */	stb r30, 3(r6)
 /* 801A17A0 00197520  93 A6 00 04 */	stw r29, 4(r6)
 /* 801A17A4 00197524  93 C6 00 08 */	stw r30, 8(r6)
-/* 801A17A8 00197528  4B E6 2C 95 */	bl func_8000443C
+/* 801A17A8 00197528  4B E6 2C 95 */	bl memset
 /* 801A17AC 0019752C  3D 00 80 1A */	lis r8, nw4r3g3d6detail19ScnDependentMtxFuncFPQ34nw4$7DefaultMapping@ha
 /* 801A17B0 00197530  3C C0 80 1A */	lis r6, nw4r3g3d6detail19ScnDependentMtxFuncFPQ34nw4$7EnvironmentMapping@ha
 /* 801A17B4 00197534  39 5F 02 10 */	addi r10, r31, 0x210

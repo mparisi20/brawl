@@ -6,6 +6,10 @@
 namespace nw4r {
 namespace math {
 
+struct MTX34 {
+
+};
+
 struct VEC3 {
     float x, y, z;
 

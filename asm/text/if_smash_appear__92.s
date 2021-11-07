@@ -75,7 +75,7 @@ IfSnakeSmashAppearTask$7create:
 /* 80100A10 000F6790  38 75 01 C8 */	addi r3, r21, 0x1c8
 /* 80100A14 000F6794  38 C0 00 00 */	li r6, 0
 /* 80100A18 000F6798  38 E0 00 2A */	li r7, 0x2a
-/* 80100A1C 000F679C  4B FB 19 79 */	bl MuObject$7create
+/* 80100A1C 000F679C  4B FB 19 79 */	bl create__8MuObjectFUlPCcUlUlUl
 /* 80100A20 000F67A0  80 1E 00 34 */	lwz r0, 0x34(r30)
 /* 80100A24 000F67A4  7C 76 1B 78 */	mr r22, r3
 /* 80100A28 000F67A8  7C 00 18 40 */	cmplw r0, r3
@@ -116,7 +116,7 @@ lbl_80100A9C:
 /* 80100AA4 000F6824  38 B9 00 0A */	addi r5, r25, 0xa
 /* 80100AA8 000F6828  38 C0 00 00 */	li r6, 0
 /* 80100AAC 000F682C  38 E0 00 2A */	li r7, 0x2a
-/* 80100AB0 000F6830  4B FB 18 E5 */	bl MuObject$7create
+/* 80100AB0 000F6830  4B FB 18 E5 */	bl create__8MuObjectFUlPCcUlUlUl
 /* 80100AB4 000F6834  7C 9E B2 14 */	add r4, r30, r22
 /* 80100AB8 000F6838  84 04 00 24 */	lwzu r0, 0x24(r4)
 /* 80100ABC 000F683C  7C 78 1B 78 */	mr r24, r3
@@ -304,7 +304,7 @@ lbl_80100D08:
 /* 80100D60 000F6AE0  92 81 04 48 */	stw r20, 0x448(r1)
 /* 80100D64 000F6AE4  C8 01 04 48 */	lfd f0, 0x448(r1)
 /* 80100D68 000F6AE8  EC 20 F8 28 */	fsubs f1, f0, f31
-/* 80100D6C 000F6AEC  4B FB 6A E1 */	bl MuObject$7setFrameVisible
+/* 80100D6C 000F6AEC  4B FB 6A E1 */	bl setFrameVisible__8MuObjectFf
 /* 80100D70 000F6AF0  3B 39 00 04 */	addi r25, r25, 4
 /* 80100D74 000F6AF4  3A B5 00 01 */	addi r21, r21, 1
 lbl_80100D78:

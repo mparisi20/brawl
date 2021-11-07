@@ -10,7 +10,7 @@ MuMsgRegData$7getYesString:
 /* 800BFCB0 000B5A30  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 800BFCB4 000B5A34  7C 7F 1B 78 */	mr r31, r3
 /* 800BFCB8 000B5A38  80 63 00 40 */	lwz r3, 0x40(r3)
-/* 800BFCBC 000B5A3C  4B FF 65 05 */	bl MuObject$7isNodeAnimFinished
+/* 800BFCBC 000B5A3C  4B FF 65 05 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800BFCC0 000B5A40  2C 03 00 00 */	cmpwi r3, 0
 /* 800BFCC4 000B5A44  41 82 00 0C */	beq lbl_800BFCD0
 /* 800BFCC8 000B5A48  38 60 00 01 */	li r3, 1

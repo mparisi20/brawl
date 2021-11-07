@@ -628,7 +628,7 @@ $2unnamed$2gm_hide_lib_cpp$2$7gmCheckInfoCondition:
 /* 8005715C 0004CEDC  7C 08 02 A6 */	mflr r0
 /* 80057160 0004CEE0  90 01 00 64 */	stw r0, 0x64(r1)
 /* 80057164 0004CEE4  39 61 00 60 */	addi r11, r1, 0x60
-/* 80057168 0004CEE8  48 39 A1 85 */	bl __save_gpr
+/* 80057168 0004CEE8  48 39 A1 85 */	bl _savegpr_14
 /* 8005716C 0004CEEC  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
 /* 80057170 0004CEF0  4B FF 74 89 */	bl GameGlobal$7getInfoAppFlag
 /* 80057174 0004CEF4  7C 78 1B 78 */	mr r24, r3
@@ -1351,7 +1351,7 @@ lbl_80057C18:
 /* 80057C48 0004D9C8  41 80 F5 68 */	blt lbl_800571B0
 lbl_80057C4C:
 /* 80057C4C 0004D9CC  39 61 00 60 */	addi r11, r1, 0x60
-/* 80057C50 0004D9D0  48 39 96 E9 */	bl __restore_gpr
+/* 80057C50 0004D9D0  48 39 96 E9 */	bl _restgpr_14
 /* 80057C54 0004D9D4  80 01 00 64 */	lwz r0, 0x64(r1)
 /* 80057C58 0004D9D8  7C 08 03 A6 */	mtlr r0
 /* 80057C5C 0004D9DC  38 21 00 60 */	addi r1, r1, 0x60

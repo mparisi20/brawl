@@ -238,21 +238,21 @@ lbl_800DD878:
 /* 800DD878 000D35F8  38 60 00 08 */	li r3, 8
 /* 800DD87C 000D35FC  38 80 00 28 */	li r4, 0x28
 /* 800DD880 000D3600  38 A0 00 28 */	li r5, 0x28
-/* 800DD884 000D3604  4B FD B0 AD */	bl MuMsg$7create
+/* 800DD884 000D3604  4B FD B0 AD */	bl create__5MuMsgFUlUlUl
 /* 800DD888 000D3608  90 79 01 64 */	stw r3, 0x164(r25)
 /* 800DD88C 000D360C  38 80 01 00 */	li r4, 0x100
 /* 800DD890 000D3610  38 A0 00 01 */	li r5, 1
-/* 800DD894 000D3614  4B FD B2 75 */	bl MuMsg$7allocMsgBuf
+/* 800DD894 000D3614  4B FD B2 75 */	bl allocMsgBuf__5MuMsgFUlUl
 /* 800DD898 000D3618  80 79 01 64 */	lwz r3, 0x164(r25)
 /* 800DD89C 000D361C  7F 84 E3 78 */	mr r4, r28
-/* 800DD8A0 000D3620  4B FD B3 DD */	bl MuMsg$7setMsgData
+/* 800DD8A0 000D3620  4B FD B3 DD */	bl setMsgData__5MuMsgFUl
 /* 800DD8A4 000D3624  80 B9 00 40 */	lwz r5, 0x40(r25)
 /* 800DD8A8 000D3628  38 80 00 00 */	li r4, 0
 /* 800DD8AC 000D362C  80 79 01 64 */	lwz r3, 0x164(r25)
 /* 800DD8B0 000D3630  38 C0 00 00 */	li r6, 0
 /* 800DD8B4 000D3634  80 A5 00 10 */	lwz r5, 0x10(r5)
 /* 800DD8B8 000D3638  C0 22 90 4C */	lfs f1, lbl_805A236C-_SDA2_BASE_(r2)
-/* 800DD8BC 000D363C  4B FD B3 D5 */	bl MuMsg$7attachScnMdlSimple
+/* 800DD8BC 000D363C  4B FD B3 D5 */	bl attachScnMdlSimple__5MuMsgFfUlPQ34nw4r3g3d6ScnObjUc
 /* 800DD8C0 000D3640  80 79 01 64 */	lwz r3, 0x164(r25)
 /* 800DD8C4 000D3644  38 80 00 00 */	li r4, 0
 /* 800DD8C8 000D3648  38 A0 00 07 */	li r5, 7
@@ -264,7 +264,7 @@ lbl_800DD878:
 /* 800DD8E0 000D3660  38 C0 00 FF */	li r6, 0xff
 /* 800DD8E4 000D3664  38 E0 00 FF */	li r7, 0xff
 /* 800DD8E8 000D3668  39 00 00 FF */	li r8, 0xff
-/* 800DD8EC 000D366C  4B FD BA B9 */	bl MuMsg$7setFontColor
+/* 800DD8EC 000D366C  4B FD BA B9 */	bl setFontColor__5MuMsgFUlUlUlUlUl
 /* 800DD8F0 000D3670  80 79 01 64 */	lwz r3, 0x164(r25)
 /* 800DD8F4 000D3674  38 80 00 00 */	li r4, 0
 /* 800DD8F8 000D3678  38 A0 00 01 */	li r5, 1
@@ -272,7 +272,7 @@ lbl_800DD878:
 /* 800DD900 000D3680  80 79 01 64 */	lwz r3, 0x164(r25)
 /* 800DD904 000D3684  38 80 00 00 */	li r4, 0
 /* 800DD908 000D3688  38 A0 00 04 */	li r5, 4
-/* 800DD90C 000D368C  4B FD BB 7D */	bl func_800B9488
+/* 800DD90C 000D368C  4B FD BB 7D */	bl func_800B9488__5MuMsgFUlUl
 /* 800DD910 000D3690  3B C0 00 00 */	li r30, 0
 lbl_800DD914:
 /* 800DD914 000D3694  80 79 01 54 */	lwz r3, 0x154(r25)
@@ -335,7 +335,7 @@ lbl_800DD9C4:
 /* 800DD9DC 000D375C  54 00 10 3A */	slwi r0, r0, 2
 /* 800DD9E0 000D3760  38 E0 00 28 */	li r7, 0x28
 /* 800DD9E4 000D3764  7F B7 02 14 */	add r29, r23, r0
-/* 800DD9E8 000D3768  4B FD 49 AD */	bl MuObject$7create
+/* 800DD9E8 000D3768  4B FD 49 AD */	bl create__8MuObjectFUlPCcUlUlUl
 /* 800DD9EC 000D376C  90 7D 00 10 */	stw r3, 0x10(r29)
 /* 800DD9F0 000D3770  38 80 00 01 */	li r4, 1
 /* 800DD9F4 000D3774  4B FD 46 BD */	bl MuObject$7enableSkipMatrix
@@ -344,7 +344,7 @@ lbl_800DD9C4:
 /* 800DDA00 000D3780  4B FD 47 C5 */	bl MuObject$7enableSkipMaterial
 /* 800DDA04 000D3784  80 7D 00 10 */	lwz r3, 0x10(r29)
 /* 800DDA08 000D3788  38 81 00 08 */	addi r4, r1, 8
-/* 800DDA0C 000D378C  4B FD 79 41 */	bl MuObject$7changeAnimN
+/* 800DDA0C 000D378C  4B FD 79 41 */	bl changeAnimN__8MuObjectFPCc
 /* 800DDA10 000D3790  80 7D 00 10 */	lwz r3, 0x10(r29)
 /* 800DDA14 000D3794  3B 5A 00 01 */	addi r26, r26, 1
 /* 800DDA18 000D3798  80 63 00 10 */	lwz r3, 0x10(r3)
@@ -489,7 +489,7 @@ lbl_800DDBD4:
 /* 800DDC00 000D3980  80 7F 00 10 */	lwz r3, 0x10(r31)
 /* 800DDC04 000D3984  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DDC08 000D3988  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800DDC0C 000D398C  4B F4 AA 45 */	bl gfModelAnimation$7setUpdateRate
+/* 800DDC0C 000D398C  4B F4 AA 45 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DDC10 000D3990  80 7F 00 10 */	lwz r3, 0x10(r31)
 /* 800DDC14 000D3994  38 80 00 08 */	li r4, 8
 /* 800DDC18 000D3998  38 A0 00 01 */	li r5, 1
@@ -504,7 +504,7 @@ lbl_800DDC38:
 /* 800DDC38 000D39B8  80 7E 00 10 */	lwz r3, 0x10(r30)
 /* 800DDC3C 000D39BC  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DDC40 000D39C0  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800DDC44 000D39C4  4B F4 AA 0D */	bl gfModelAnimation$7setUpdateRate
+/* 800DDC44 000D39C4  4B F4 AA 0D */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DDC48 000D39C8  80 7E 00 10 */	lwz r3, 0x10(r30)
 /* 800DDC4C 000D39CC  38 80 00 08 */	li r4, 8
 /* 800DDC50 000D39D0  38 A0 00 01 */	li r5, 1
@@ -520,7 +520,7 @@ lbl_800DDC38:
 /* 800DDC78 000D39F8  80 7F 00 34 */	lwz r3, 0x34(r31)
 /* 800DDC7C 000D39FC  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DDC80 000D3A00  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800DDC84 000D3A04  4B F4 A9 CD */	bl gfModelAnimation$7setUpdateRate
+/* 800DDC84 000D3A04  4B F4 A9 CD */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DDC88 000D3A08  38 00 FF FF */	li r0, -1
 /* 800DDC8C 000D3A0C  90 1F 01 A0 */	stw r0, 0x1a0(r31)
 /* 800DDC90 000D3A10  90 1F 01 A4 */	stw r0, 0x1a4(r31)
@@ -562,7 +562,7 @@ IfCenter$7updateTimeFast:
 /* 800DDD04 000D3A84  DB E1 00 90 */	stfd f31, 0x90(r1)
 /* 800DDD08 000D3A88  F3 E1 00 98 */	psq_st f31, 152(r1), 0, qr0
 /* 800DDD0C 000D3A8C  39 61 00 90 */	addi r11, r1, 0x90
-/* 800DDD10 000D3A90  48 31 35 DD */	bl __save_gpr
+/* 800DDD10 000D3A90  48 31 35 DD */	bl _savegpr_14
 /* 800DDD14 000D3A94  88 A3 00 00 */	lbz r5, 0(r3)
 /* 800DDD18 000D3A98  3C C0 43 30 */	lis r6, 0x4330
 /* 800DDD1C 000D3A9C  90 C1 00 28 */	stw r6, 0x28(r1)
@@ -615,7 +615,7 @@ lbl_800DDDB0:
 /* 800DDDD0 000D3B50  4B FD 99 C9 */	bl MuObject$7setFrameNode
 /* 800DDDD4 000D3B54  FC 20 F8 90 */	fmr f1, f31
 /* 800DDDD8 000D3B58  7D C3 73 78 */	mr r3, r14
-/* 800DDDDC 000D3B5C  4B FD 9A 71 */	bl MuObject$7setFrameVisible
+/* 800DDDDC 000D3B5C  4B FD 9A 71 */	bl setFrameVisible__8MuObjectFf
 /* 800DDDE0 000D3B60  FC 20 F8 90 */	fmr f1, f31
 /* 800DDDE4 000D3B64  7D C3 73 78 */	mr r3, r14
 /* 800DDDE8 000D3B68  4B FD 9C 31 */	bl MuObject$7setFrameMatCol
@@ -939,7 +939,7 @@ lbl_800DE270:
 /* 800DE270 000D3FF0  E3 E1 00 98 */	psq_l f31, 152(r1), 0, qr0
 /* 800DE274 000D3FF4  39 61 00 90 */	addi r11, r1, 0x90
 /* 800DE278 000D3FF8  CB E1 00 90 */	lfd f31, 0x90(r1)
-/* 800DE27C 000D3FFC  48 31 30 BD */	bl __restore_gpr
+/* 800DE27C 000D3FFC  48 31 30 BD */	bl _restgpr_14
 /* 800DE280 000D4000  80 01 00 A4 */	lwz r0, 0xa4(r1)
 /* 800DE284 000D4004  7C 08 03 A6 */	mtlr r0
 /* 800DE288 000D4008  38 21 00 A0 */	addi r1, r1, 0xa0
@@ -993,7 +993,7 @@ lbl_800DE314:
 /* 800DE328 000D40A8  2C 03 00 00 */	cmpwi r3, 0
 /* 800DE32C 000D40AC  41 82 00 14 */	beq lbl_800DE340
 /* 800DE330 000D40B0  38 80 00 01 */	li r4, 1
-/* 800DE334 000D40B4  4B FD A6 D9 */	bl MuMsg$7__dt
+/* 800DE334 000D40B4  4B FD A6 D9 */	bl __dt__5MuMsgFv
 /* 800DE338 000D40B8  38 00 00 00 */	li r0, 0
 /* 800DE33C 000D40BC  90 1C 01 64 */	stw r0, 0x164(r28)
 lbl_800DE340:
@@ -1222,7 +1222,7 @@ IfCenter$7centerReadyInit:
 /* 800DE64C 000D43CC  83 E3 00 44 */	lwz r31, 0x44(r3)
 /* 800DE650 000D43D0  C0 23 01 70 */	lfs f1, 0x170(r3)
 /* 800DE654 000D43D4  80 7F 00 14 */	lwz r3, 0x14(r31)
-/* 800DE658 000D43D8  4B F4 9F F9 */	bl gfModelAnimation$7setUpdateRate
+/* 800DE658 000D43D8  4B F4 9F F9 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DE65C 000D43DC  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DE660 000D43E0  7F E3 FB 78 */	mr r3, r31
 /* 800DE664 000D43E4  4B FD 8E D9 */	bl MuObject$7setFrame
@@ -1255,7 +1255,7 @@ IfCenter$7centerReadyInit:
 /* 800DE6D0 000D4450  38 80 00 00 */	li r4, 0
 /* 800DE6D4 000D4454  80 A5 00 10 */	lwz r5, 0x10(r5)
 /* 800DE6D8 000D4458  38 C0 00 00 */	li r6, 0
-/* 800DE6DC 000D445C  4B FD AA DD */	bl MuMsg$7printIndex
+/* 800DE6DC 000D445C  4B FD AA DD */	bl printIndex__5MuMsgFUlUlUl
 lbl_800DE6E0:
 /* 800DE6E0 000D4460  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 800DE6E4 000D4464  83 E1 00 0C */	lwz r31, 0xc(r1)
@@ -1274,7 +1274,7 @@ IfCenter$7centerReadyMain:
 /* 800DE70C 000D448C  7C 7E 1B 78 */	mr r30, r3
 /* 800DE710 000D4490  83 E3 00 44 */	lwz r31, 0x44(r3)
 /* 800DE714 000D4494  7F E3 FB 78 */	mr r3, r31
-/* 800DE718 000D4498  4B FD 7A A9 */	bl MuObject$7isNodeAnimFinished
+/* 800DE718 000D4498  4B FD 7A A9 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800DE71C 000D449C  2C 03 00 00 */	cmpwi r3, 0
 /* 800DE720 000D44A0  40 82 00 0C */	bne lbl_800DE72C
 /* 800DE724 000D44A4  80 7E 00 04 */	lwz r3, 4(r30)
@@ -1317,7 +1317,7 @@ IfCenter$7centerCountReadyInit:
 /* 800DE7A4 000D4524  83 E3 00 6C */	lwz r31, 0x6c(r3)
 /* 800DE7A8 000D4528  C0 23 01 70 */	lfs f1, 0x170(r3)
 /* 800DE7AC 000D452C  80 7F 00 14 */	lwz r3, 0x14(r31)
-/* 800DE7B0 000D4530  4B F4 9E A1 */	bl gfModelAnimation$7setUpdateRate
+/* 800DE7B0 000D4530  4B F4 9E A1 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DE7B4 000D4534  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DE7B8 000D4538  7F E3 FB 78 */	mr r3, r31
 /* 800DE7BC 000D453C  4B FD 8D 81 */	bl MuObject$7setFrame
@@ -1350,7 +1350,7 @@ IfCenter$7centerCountReadyInit:
 /* 800DE828 000D45A8  38 80 00 00 */	li r4, 0
 /* 800DE82C 000D45AC  80 A5 00 10 */	lwz r5, 0x10(r5)
 /* 800DE830 000D45B0  38 C0 00 00 */	li r6, 0
-/* 800DE834 000D45B4  4B FD A9 85 */	bl MuMsg$7printIndex
+/* 800DE834 000D45B4  4B FD A9 85 */	bl printIndex__5MuMsgFUlUlUl
 lbl_800DE838:
 /* 800DE838 000D45B8  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 800DE83C 000D45BC  83 E1 00 0C */	lwz r31, 0xc(r1)
@@ -1369,7 +1369,7 @@ IfCenter$7centerCountReadyMain:
 /* 800DE864 000D45E4  7C 7E 1B 78 */	mr r30, r3
 /* 800DE868 000D45E8  83 E3 00 6C */	lwz r31, 0x6c(r3)
 /* 800DE86C 000D45EC  7F E3 FB 78 */	mr r3, r31
-/* 800DE870 000D45F0  4B FD 79 51 */	bl MuObject$7isNodeAnimFinished
+/* 800DE870 000D45F0  4B FD 79 51 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800DE874 000D45F4  2C 03 00 00 */	cmpwi r3, 0
 /* 800DE878 000D45F8  40 82 00 0C */	bne lbl_800DE884
 /* 800DE87C 000D45FC  80 7E 00 04 */	lwz r3, 4(r30)
@@ -1412,7 +1412,7 @@ IfCenter$7centerGoInit:
 /* 800DE8FC 000D467C  7C 7E 1B 78 */	mr r30, r3
 /* 800DE900 000D4680  83 E3 00 48 */	lwz r31, 0x48(r3)
 /* 800DE904 000D4684  80 7F 00 14 */	lwz r3, 0x14(r31)
-/* 800DE908 000D4688  4B F4 9D 49 */	bl gfModelAnimation$7setUpdateRate
+/* 800DE908 000D4688  4B F4 9D 49 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DE90C 000D468C  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DE910 000D4690  7F E3 FB 78 */	mr r3, r31
 /* 800DE914 000D4694  4B FD 8C 29 */	bl MuObject$7setFrame
@@ -1474,7 +1474,7 @@ IfCenter$7centerTimeUpInit:
 /* 800DE9D4 000D4754  7C 7C 1B 78 */	mr r28, r3
 /* 800DE9D8 000D4758  83 C3 00 4C */	lwz r30, 0x4c(r3)
 /* 800DE9DC 000D475C  80 7E 00 14 */	lwz r3, 0x14(r30)
-/* 800DE9E0 000D4760  4B F4 9C 71 */	bl gfModelAnimation$7setUpdateRate
+/* 800DE9E0 000D4760  4B F4 9C 71 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DE9E4 000D4764  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DE9E8 000D4768  7F C3 F3 78 */	mr r3, r30
 /* 800DE9EC 000D476C  4B FD 8B 51 */	bl MuObject$7setFrame
@@ -1562,7 +1562,7 @@ IfCenter$7centerCompleteInit:
 /* 800DEB04 000D4884  7C 7C 1B 78 */	mr r28, r3
 /* 800DEB08 000D4888  83 C3 00 50 */	lwz r30, 0x50(r3)
 /* 800DEB0C 000D488C  80 7E 00 14 */	lwz r3, 0x14(r30)
-/* 800DEB10 000D4890  4B F4 9B 41 */	bl gfModelAnimation$7setUpdateRate
+/* 800DEB10 000D4890  4B F4 9B 41 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DEB14 000D4894  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DEB18 000D4898  7F C3 F3 78 */	mr r3, r30
 /* 800DEB1C 000D489C  4B FD 8A 21 */	bl MuObject$7setFrame
@@ -1631,7 +1631,7 @@ IfCenter$7centerSuddenDeathInit:
 /* 800DEBF0 000D4970  7C 7C 1B 78 */	mr r28, r3
 /* 800DEBF4 000D4974  83 A3 00 54 */	lwz r29, 0x54(r3)
 /* 800DEBF8 000D4978  80 7D 00 14 */	lwz r3, 0x14(r29)
-/* 800DEBFC 000D497C  4B F4 9A 55 */	bl gfModelAnimation$7setUpdateRate
+/* 800DEBFC 000D497C  4B F4 9A 55 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DEC00 000D4980  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DEC04 000D4984  7F A3 EB 78 */	mr r3, r29
 /* 800DEC08 000D4988  4B FD 89 35 */	bl MuObject$7setFrame
@@ -1661,7 +1661,7 @@ lbl_800DEC38:
 /* 800DEC60 000D49E0  4E 80 04 21 */	bctrl 
 /* 800DEC64 000D49E4  C0 3C 01 70 */	lfs f1, 0x170(r28)
 /* 800DEC68 000D49E8  80 7D 00 14 */	lwz r3, 0x14(r29)
-/* 800DEC6C 000D49EC  4B F4 99 E5 */	bl gfModelAnimation$7setUpdateRate
+/* 800DEC6C 000D49EC  4B F4 99 E5 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DEC70 000D49F0  80 01 00 24 */	lwz r0, 0x24(r1)
 /* 800DEC74 000D49F4  83 E1 00 1C */	lwz r31, 0x1c(r1)
 /* 800DEC78 000D49F8  83 C1 00 18 */	lwz r30, 0x18(r1)
@@ -1722,7 +1722,7 @@ IfCenter$7centerGameSetInit:
 /* 800DED2C 000D4AAC  7C 7C 1B 78 */	mr r28, r3
 /* 800DED30 000D4AB0  83 C3 00 58 */	lwz r30, 0x58(r3)
 /* 800DED34 000D4AB4  80 7E 00 14 */	lwz r3, 0x14(r30)
-/* 800DED38 000D4AB8  4B F4 99 19 */	bl gfModelAnimation$7setUpdateRate
+/* 800DED38 000D4AB8  4B F4 99 19 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DED3C 000D4ABC  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DED40 000D4AC0  7F C3 F3 78 */	mr r3, r30
 /* 800DED44 000D4AC4  4B FD 87 F9 */	bl MuObject$7setFrame
@@ -1819,7 +1819,7 @@ IfCenter$7centerFailureInit:
 /* 800DEE80 000D4C00  7C 7C 1B 78 */	mr r28, r3
 /* 800DEE84 000D4C04  83 C3 00 5C */	lwz r30, 0x5c(r3)
 /* 800DEE88 000D4C08  80 7E 00 14 */	lwz r3, 0x14(r30)
-/* 800DEE8C 000D4C0C  4B F4 97 C5 */	bl gfModelAnimation$7setUpdateRate
+/* 800DEE8C 000D4C0C  4B F4 97 C5 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DEE90 000D4C10  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DEE94 000D4C14  7F C3 F3 78 */	mr r3, r30
 /* 800DEE98 000D4C18  4B FD 86 A5 */	bl MuObject$7setFrame
@@ -1888,7 +1888,7 @@ IfCenter$7centerSuccessInit:
 /* 800DEF6C 000D4CEC  7C 7C 1B 78 */	mr r28, r3
 /* 800DEF70 000D4CF0  83 C3 00 60 */	lwz r30, 0x60(r3)
 /* 800DEF74 000D4CF4  80 7E 00 14 */	lwz r3, 0x14(r30)
-/* 800DEF78 000D4CF8  4B F4 96 D9 */	bl gfModelAnimation$7setUpdateRate
+/* 800DEF78 000D4CF8  4B F4 96 D9 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DEF7C 000D4CFC  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DEF80 000D4D00  7F C3 F3 78 */	mr r3, r30
 /* 800DEF84 000D4D04  4B FD 85 B9 */	bl MuObject$7setFrame
@@ -1957,7 +1957,7 @@ IfCenter$7centerGameStartInit:
 /* 800DF058 000D4DD8  7C 7C 1B 78 */	mr r28, r3
 /* 800DF05C 000D4DDC  83 C3 00 64 */	lwz r30, 0x64(r3)
 /* 800DF060 000D4DE0  80 7E 00 14 */	lwz r3, 0x14(r30)
-/* 800DF064 000D4DE4  4B F4 95 ED */	bl gfModelAnimation$7setUpdateRate
+/* 800DF064 000D4DE4  4B F4 95 ED */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DF068 000D4DE8  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DF06C 000D4DEC  7F C3 F3 78 */	mr r3, r30
 /* 800DF070 000D4DF0  4B FD 84 CD */	bl MuObject$7setFrame
@@ -2045,7 +2045,7 @@ IfCenter$7centerGoalInit:
 /* 800DF188 000D4F08  7C 7C 1B 78 */	mr r28, r3
 /* 800DF18C 000D4F0C  83 C3 00 68 */	lwz r30, 0x68(r3)
 /* 800DF190 000D4F10  80 7E 00 14 */	lwz r3, 0x14(r30)
-/* 800DF194 000D4F14  4B F4 94 BD */	bl gfModelAnimation$7setUpdateRate
+/* 800DF194 000D4F14  4B F4 94 BD */	bl setUpdateRate__16gfModelAnimationFf
 /* 800DF198 000D4F18  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DF19C 000D4F1C  7F C3 F3 78 */	mr r3, r30
 /* 800DF1A0 000D4F20  4B FD 83 9D */	bl MuObject$7setFrame
@@ -2465,7 +2465,7 @@ lbl_800DF768:
 /* 800DF77C 000D54FC  90 01 00 48 */	stw r0, 0x48(r1)
 /* 800DF780 000D5500  C8 01 00 48 */	lfd f0, 0x48(r1)
 /* 800DF784 000D5504  EC 20 08 28 */	fsubs f1, f0, f1
-/* 800DF788 000D5508  4B FD 80 C5 */	bl MuObject$7setFrameVisible
+/* 800DF788 000D5508  4B FD 80 C5 */	bl setFrameVisible__8MuObjectFf
 /* 800DF78C 000D550C  80 7E 00 14 */	lwz r3, 0x14(r30)
 /* 800DF790 000D5510  C0 22 90 54 */	lfs f1, lbl_805A2374-_SDA2_BASE_(r2)
 /* 800DF794 000D5514  80 63 00 08 */	lwz r3, 8(r3)

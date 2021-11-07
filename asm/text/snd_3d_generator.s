@@ -153,7 +153,7 @@ lbl_80079748:
 /* 80079748 0006F4C8  80 6D BD B0 */	lwz r3, lbl_805A01D0-_SDA_BASE_(r13)
 /* 8007974C 0006F4CC  7D 28 4B 78 */	mr r8, r9
 /* 80079750 0006F4D0  38 E0 00 00 */	li r7, 0
-/* 80079754 0006F4D4  4B FF AB 5C */	b sndSystem$7playSE
+/* 80079754 0006F4D4  4B FF AB 5C */	b playSE__9sndSystemFlllll
 
 .global snd3DGenerator$7prepareSE
 snd3DGenerator$7prepareSE:

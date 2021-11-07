@@ -312,7 +312,7 @@ hkString$7memMove:
 
 .global hkString$7memSet
 hkString$7memSet:
-/* 80281D64 00277AE4  4B D8 26 D8 */	b func_8000443C
+/* 80281D64 00277AE4  4B D8 26 D8 */	b memset
 
 .global hkString3RepFv$7freeMemory
 hkString3RepFv$7freeMemory:

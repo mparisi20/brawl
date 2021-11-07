@@ -12,7 +12,7 @@ GAP_Init:
 /* 80243718 00239498  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 8024371C 0023949C  3F E0 80 53 */	lis r31, lbl_8052C4C0@ha
 /* 80243720 002394A0  38 7F C4 C0 */	addi r3, r31, lbl_8052C4C0@l
-/* 80243724 002394A4  4B DC 0D 19 */	bl func_8000443C
+/* 80243724 002394A4  4B DC 0D 19 */	bl memset
 /* 80243728 002394A8  3C A0 80 24 */	lis r5, gap_btm_cback0@ha
 /* 8024372C 002394AC  3C 60 80 24 */	lis r3, gap_btm_cback1@ha
 /* 80243730 002394B0  38 A5 44 78 */	addi r5, r5, gap_btm_cback0@l

@@ -1390,7 +1390,7 @@ lbl_8000DC70:
 /* 8000DC98 00003A18  88 1B 04 64 */	lbz r0, 0x464(r27)
 /* 8000DC9C 00003A1C  54 00 07 FF */	clrlwi. r0, r0, 0x1f
 /* 8000DCA0 00003A20  40 82 00 14 */	bne lbl_8000DCB4
-/* 8000DCA4 00003A24  48 08 E1 D1 */	bl CameraController$7getInstance
+/* 8000DCA4 00003A24  48 08 E1 D1 */	bl getInstance__16CameraControllerFv
 /* 8000DCA8 00003A28  48 08 EB 89 */	bl CameraController$7isForceEnableCamControll3D
 /* 8000DCAC 00003A2C  2C 03 00 00 */	cmpwi r3, 0
 /* 8000DCB0 00003A30  41 82 00 28 */	beq lbl_8000DCD8
@@ -3070,7 +3070,7 @@ gfSceneRoot$7renderShadow:
 /* 8000F4FC 0000527C  DB E1 00 C0 */	stfd f31, 0xc0(r1)
 /* 8000F500 00005280  F3 E1 00 C8 */	psq_st f31, 200(r1), 0, qr0
 /* 8000F504 00005284  39 61 00 C0 */	addi r11, r1, 0xc0
-/* 8000F508 00005288  48 3E 1D E5 */	bl __save_gpr
+/* 8000F508 00005288  48 3E 1D E5 */	bl _savegpr_14
 /* 8000F50C 0000528C  80 03 04 74 */	lwz r0, 0x474(r3)
 /* 8000F510 00005290  7C 7B 1B 78 */	mr r27, r3
 /* 8000F514 00005294  2C 00 00 00 */	cmpwi r0, 0
@@ -3555,7 +3555,7 @@ lbl_8000FBD8:
 /* 8000FC40 000059C0  7F A3 EB 78 */	mr r3, r29
 /* 8000FC44 000059C4  7D E5 7B 78 */	mr r5, r15
 /* 8000FC48 000059C8  38 80 00 00 */	li r4, 0
-/* 8000FC4C 000059CC  4B FF 47 F1 */	bl func_8000443C
+/* 8000FC4C 000059CC  4B FF 47 F1 */	bl memset
 /* 8000FC50 000059D0  80 81 00 2C */	lwz r4, 0x2c(r1)
 /* 8000FC54 000059D4  7E 00 83 78 */	mr r0, r16
 /* 8000FC58 000059D8  80 61 00 1C */	lwz r3, 0x1c(r1)
@@ -3614,7 +3614,7 @@ lbl_8000FD14:
 /* 8000FD14 00005A94  E3 E1 00 C8 */	psq_l f31, 200(r1), 0, qr0
 /* 8000FD18 00005A98  39 61 00 C0 */	addi r11, r1, 0xc0
 /* 8000FD1C 00005A9C  CB E1 00 C0 */	lfd f31, 0xc0(r1)
-/* 8000FD20 00005AA0  48 3E 16 19 */	bl __restore_gpr
+/* 8000FD20 00005AA0  48 3E 16 19 */	bl _restgpr_14
 /* 8000FD24 00005AA4  80 01 00 D4 */	lwz r0, 0xd4(r1)
 /* 8000FD28 00005AA8  7C 08 03 A6 */	mtlr r0
 /* 8000FD2C 00005AAC  38 21 00 D0 */	addi r1, r1, 0xd0

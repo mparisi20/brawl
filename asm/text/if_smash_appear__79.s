@@ -115,7 +115,7 @@ lbl_800F79FC:
 lbl_800F7A04:
 /* 800F7A04 000ED784  80 7D 00 C4 */	lwz r3, 0xc4(r29)
 /* 800F7A08 000ED788  38 81 00 48 */	addi r4, r1, 0x48
-/* 800F7A0C 000ED78C  4B FB D9 41 */	bl MuObject$7changeAnimN
+/* 800F7A0C 000ED78C  4B FB D9 41 */	bl changeAnimN__8MuObjectFPCc
 /* 800F7A10 000ED790  80 7D 00 C4 */	lwz r3, 0xc4(r29)
 /* 800F7A14 000ED794  38 80 00 01 */	li r4, 1
 /* 800F7A18 000ED798  80 63 00 14 */	lwz r3, 0x14(r3)
@@ -127,7 +127,7 @@ lbl_800F7A04:
 /* 800F7A30 000ED7B0  4E 80 04 21 */	bctrl 
 /* 800F7A34 000ED7B4  80 7D 00 C4 */	lwz r3, 0xc4(r29)
 /* 800F7A38 000ED7B8  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800F7A3C 000ED7BC  4B F3 0C 15 */	bl gfModelAnimation$7setUpdateRate
+/* 800F7A3C 000ED7BC  4B F3 0C 15 */	bl setUpdateRate__16gfModelAnimationFf
 lbl_800F7A40:
 /* 800F7A40 000ED7C0  80 7D 04 2C */	lwz r3, 0x42c(r29)
 /* 800F7A44 000ED7C4  2C 03 00 00 */	cmpwi r3, 0
@@ -192,7 +192,7 @@ lbl_800F7B14:
 /* 800F7B14 000ED894  7F DD FA 14 */	add r30, r29, r31
 /* 800F7B18 000ED898  38 81 00 08 */	addi r4, r1, 8
 /* 800F7B1C 000ED89C  80 7E 00 9C */	lwz r3, 0x9c(r30)
-/* 800F7B20 000ED8A0  4B FB D8 2D */	bl MuObject$7changeAnimN
+/* 800F7B20 000ED8A0  4B FB D8 2D */	bl changeAnimN__8MuObjectFPCc
 /* 800F7B24 000ED8A4  80 7E 00 9C */	lwz r3, 0x9c(r30)
 /* 800F7B28 000ED8A8  38 80 00 01 */	li r4, 1
 /* 800F7B2C 000ED8AC  80 63 00 14 */	lwz r3, 0x14(r3)
@@ -204,7 +204,7 @@ lbl_800F7B14:
 /* 800F7B44 000ED8C4  4E 80 04 21 */	bctrl 
 /* 800F7B48 000ED8C8  80 7E 00 9C */	lwz r3, 0x9c(r30)
 /* 800F7B4C 000ED8CC  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800F7B50 000ED8D0  4B F3 0B 01 */	bl gfModelAnimation$7setUpdateRate
+/* 800F7B50 000ED8D0  4B F3 0B 01 */	bl setUpdateRate__16gfModelAnimationFf
 lbl_800F7B54:
 /* 800F7B54 000ED8D4  39 61 00 A0 */	addi r11, r1, 0xa0
 /* 800F7B58 000ED8D8  48 2F 98 15 */	bl _restgpr_27

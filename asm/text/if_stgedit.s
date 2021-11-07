@@ -96,7 +96,7 @@ lbl_8010F0EC:
 /* 8010F0FC 00104E7C  7C A5 02 14 */	add r5, r5, r0
 /* 8010F100 00104E80  38 C0 00 00 */	li r6, 0
 /* 8010F104 00104E84  38 E0 00 28 */	li r7, 0x28
-/* 8010F108 00104E88  4B FA 32 8D */	bl MuObject$7create
+/* 8010F108 00104E88  4B FA 32 8D */	bl create__8MuObjectFUlPCcUlUlUl
 /* 8010F10C 00104E8C  88 1C 00 04 */	lbz r0, 4(r28)
 /* 8010F110 00104E90  7C 7B 1B 78 */	mr r27, r3
 /* 8010F114 00104E94  80 9C 00 00 */	lwz r4, 0(r28)
@@ -111,12 +111,12 @@ lbl_8010F0EC:
 /* 8010F138 00104EB8  48 2E B2 4D */	bl strcat
 /* 8010F13C 00104EBC  7F 63 DB 78 */	mr r3, r27
 /* 8010F140 00104EC0  38 81 00 08 */	addi r4, r1, 8
-/* 8010F144 00104EC4  4B FA 62 09 */	bl MuObject$7changeAnimN
+/* 8010F144 00104EC4  4B FA 62 09 */	bl changeAnimN__8MuObjectFPCc
 /* 8010F148 00104EC8  80 7B 00 14 */	lwz r3, 0x14(r27)
 /* 8010F14C 00104ECC  2C 03 00 00 */	cmpwi r3, 0
 /* 8010F150 00104ED0  41 82 00 0C */	beq lbl_8010F15C
 /* 8010F154 00104ED4  C0 22 95 B0 */	lfs f1, lbl_805A28D0-_SDA2_BASE_(r2)
-/* 8010F158 00104ED8  4B F1 94 F9 */	bl gfModelAnimation$7setUpdateRate
+/* 8010F158 00104ED8  4B F1 94 F9 */	bl setUpdateRate__16gfModelAnimationFf
 lbl_8010F15C:
 /* 8010F15C 00104EDC  3B BD 00 01 */	addi r29, r29, 1
 lbl_8010F160:
@@ -163,7 +163,7 @@ IfStgedit$7main:
 /* 8010F1E4 00104F64  90 81 00 4C */	stw r4, 0x4c(r1)
 /* 8010F1E8 00104F68  C8 01 00 48 */	lfd f0, 0x48(r1)
 /* 8010F1EC 00104F6C  EC 20 08 28 */	fsubs f1, f0, f1
-/* 8010F1F0 00104F70  4B FA 86 5D */	bl MuObject$7setFrameVisible
+/* 8010F1F0 00104F70  4B FA 86 5D */	bl setFrameVisible__8MuObjectFf
 lbl_8010F1F4:
 /* 8010F1F4 00104F74  80 01 00 64 */	lwz r0, 0x64(r1)
 /* 8010F1F8 00104F78  83 E1 00 5C */	lwz r31, 0x5c(r1)
@@ -230,7 +230,7 @@ IfStgedit$7setHelpControllerNo:
 /* 8010F2D0 00105050  90 81 00 4C */	stw r4, 0x4c(r1)
 /* 8010F2D4 00105054  C8 01 00 48 */	lfd f0, 0x48(r1)
 /* 8010F2D8 00105058  EC 20 08 28 */	fsubs f1, f0, f1
-/* 8010F2DC 0010505C  4B FA 85 71 */	bl MuObject$7setFrameVisible
+/* 8010F2DC 0010505C  4B FA 85 71 */	bl setFrameVisible__8MuObjectFf
 lbl_8010F2E0:
 /* 8010F2E0 00105060  80 01 00 64 */	lwz r0, 0x64(r1)
 /* 8010F2E4 00105064  83 E1 00 5C */	lwz r31, 0x5c(r1)

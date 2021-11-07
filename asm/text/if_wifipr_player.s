@@ -14,7 +14,7 @@ IfWifiprPlayer$7createPlayerLocator:
 /* 800FD52C 000F32AC  3F E0 80 46 */	lis r31, lbl_8045C750@ha
 /* 800FD530 000F32B0  3B FF C7 50 */	addi r31, r31, lbl_8045C750@l
 /* 800FD534 000F32B4  7F E4 FB 78 */	mr r4, r31
-/* 800FD538 000F32B8  4B FB 4E 5D */	bl MuObject$7create
+/* 800FD538 000F32B8  4B FB 4E 5D */	bl create__8MuObjectFUlPCcUlUlUl
 /* 800FD53C 000F32BC  90 6D BE E8 */	stw r3, lbl_805A0308-_SDA_BASE_(r13)
 /* 800FD540 000F32C0  7F E4 FB 78 */	mr r4, r31
 /* 800FD544 000F32C4  38 61 00 08 */	addi r3, r1, 8
@@ -24,11 +24,11 @@ IfWifiprPlayer$7createPlayerLocator:
 /* 800FD554 000F32D4  48 2F CE 31 */	bl strcat
 /* 800FD558 000F32D8  80 6D BE E8 */	lwz r3, lbl_805A0308-_SDA_BASE_(r13)
 /* 800FD55C 000F32DC  38 81 00 08 */	addi r4, r1, 8
-/* 800FD560 000F32E0  4B FB 7D ED */	bl MuObject$7changeAnimN
+/* 800FD560 000F32E0  4B FB 7D ED */	bl changeAnimN__8MuObjectFPCc
 /* 800FD564 000F32E4  80 6D BE E8 */	lwz r3, lbl_805A0308-_SDA_BASE_(r13)
 /* 800FD568 000F32E8  C0 22 94 08 */	lfs f1, lbl_805A2728-_SDA2_BASE_(r2)
 /* 800FD56C 000F32EC  80 63 00 14 */	lwz r3, 0x14(r3)
-/* 800FD570 000F32F0  4B F2 B0 E1 */	bl gfModelAnimation$7setUpdateRate
+/* 800FD570 000F32F0  4B F2 B0 E1 */	bl setUpdateRate__16gfModelAnimationFf
 /* 800FD574 000F32F4  80 6D BC C0 */	lwz r3, lbl_805A00E0-_SDA_BASE_(r13)
 /* 800FD578 000F32F8  4B F5 10 55 */	bl GameGlobal$7getGlobalRecordMenuDatap
 /* 800FD57C 000F32FC  88 03 00 28 */	lbz r0, 0x28(r3)
@@ -211,7 +211,7 @@ lbl_800FD7C0:
 /* 800FD7CC 000F354C  38 81 00 48 */	addi r4, r1, 0x48
 /* 800FD7D0 000F3550  7C A0 F2 14 */	add r5, r0, r30
 /* 800FD7D4 000F3554  38 C0 00 00 */	li r6, 0
-/* 800FD7D8 000F3558  4B FB 4B BD */	bl MuObject$7create
+/* 800FD7D8 000F3558  4B FB 4B BD */	bl create__8MuObjectFUlPCcUlUlUl
 /* 800FD7DC 000F355C  88 1F 00 04 */	lbz r0, 4(r31)
 /* 800FD7E0 000F3560  38 81 00 08 */	addi r4, r1, 8
 /* 800FD7E4 000F3564  7C 00 D2 14 */	add r0, r0, r26
@@ -223,7 +223,7 @@ lbl_800FD7C0:
 /* 800FD7FC 000F357C  54 00 10 3A */	slwi r0, r0, 2
 /* 800FD800 000F3580  7C 7C 02 14 */	add r3, r28, r0
 /* 800FD804 000F3584  80 63 00 0C */	lwz r3, 0xc(r3)
-/* 800FD808 000F3588  4B FB 7B 45 */	bl MuObject$7changeAnimN
+/* 800FD808 000F3588  4B FB 7B 45 */	bl changeAnimN__8MuObjectFPCc
 /* 800FD80C 000F358C  3B 5A 00 01 */	addi r26, r26, 1
 lbl_800FD810:
 /* 800FD810 000F3590  7C 1A D8 00 */	cmpw r26, r27
@@ -423,7 +423,7 @@ lbl_800FDAB4:
 /* 800FDABC 000F383C  38 A0 00 03 */	li r5, 3
 /* 800FDAC0 000F3840  38 C0 00 01 */	li r6, 1
 /* 800FDAC4 000F3844  38 E0 00 00 */	li r7, 0
-/* 800FDAC8 000F3848  4B FB 7D 8D */	bl MuObject$7setActionNo
+/* 800FDAC8 000F3848  4B FB 7D 8D */	bl setActionNo__8MuObjectFllll
 /* 800FDACC 000F384C  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FDAD0 000F3850  3C 00 43 30 */	lis r0, 0x4330
 /* 800FDAD4 000F3854  90 01 00 10 */	stw r0, 0x10(r1)
@@ -466,7 +466,7 @@ IfWifiprPlayer$7wifiDispStateAcceptMain:
 /* 800FDB5C 000F38DC  2C 00 00 00 */	cmpwi r0, 0
 /* 800FDB60 000F38E0  40 82 01 18 */	bne lbl_800FDC78
 /* 800FDB64 000F38E4  80 63 00 0C */	lwz r3, 0xc(r3)
-/* 800FDB68 000F38E8  4B FB 86 59 */	bl MuObject$7isNodeAnimFinished
+/* 800FDB68 000F38E8  4B FB 86 59 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800FDB6C 000F38EC  2C 03 00 00 */	cmpwi r3, 0
 /* 800FDB70 000F38F0  41 82 01 08 */	beq lbl_800FDC78
 /* 800FDB74 000F38F4  80 1D 00 00 */	lwz r0, 0(r29)
@@ -516,7 +516,7 @@ lbl_800FDC0C:
 /* 800FDC14 000F3994  38 A0 00 03 */	li r5, 3
 /* 800FDC18 000F3998  38 C0 00 01 */	li r6, 1
 /* 800FDC1C 000F399C  38 E0 00 00 */	li r7, 0
-/* 800FDC20 000F39A0  4B FB 7C 35 */	bl MuObject$7setActionNo
+/* 800FDC20 000F39A0  4B FB 7C 35 */	bl setActionNo__8MuObjectFllll
 /* 800FDC24 000F39A4  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FDC28 000F39A8  3C 00 43 30 */	lis r0, 0x4330
 /* 800FDC2C 000F39AC  90 01 00 10 */	stw r0, 0x10(r1)
@@ -604,7 +604,7 @@ lbl_800FDD4C:
 /* 800FDD54 000F3AD4  38 A0 00 03 */	li r5, 3
 /* 800FDD58 000F3AD8  38 C0 00 01 */	li r6, 1
 /* 800FDD5C 000F3ADC  38 E0 00 00 */	li r7, 0
-/* 800FDD60 000F3AE0  4B FB 7A F5 */	bl MuObject$7setActionNo
+/* 800FDD60 000F3AE0  4B FB 7A F5 */	bl setActionNo__8MuObjectFllll
 /* 800FDD64 000F3AE4  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FDD68 000F3AE8  3C 00 43 30 */	lis r0, 0x4330
 /* 800FDD6C 000F3AEC  90 01 00 10 */	stw r0, 0x10(r1)
@@ -652,7 +652,7 @@ IfWifiprPlayer$7wifiDispStateSelCharMain:
 /* 800FDE08 000F3B88  48 00 02 30 */	b lbl_800FE038
 lbl_800FDE0C:
 /* 800FDE0C 000F3B8C  80 63 00 0C */	lwz r3, 0xc(r3)
-/* 800FDE10 000F3B90  4B FB 83 B1 */	bl MuObject$7isNodeAnimFinished
+/* 800FDE10 000F3B90  4B FB 83 B1 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800FDE14 000F3B94  2C 03 00 00 */	cmpwi r3, 0
 /* 800FDE18 000F3B98  41 82 02 20 */	beq lbl_800FE038
 /* 800FDE1C 000F3B9C  80 1F 00 00 */	lwz r0, 0(r31)
@@ -702,7 +702,7 @@ lbl_800FDEB4:
 /* 800FDEBC 000F3C3C  38 A0 00 03 */	li r5, 3
 /* 800FDEC0 000F3C40  38 C0 00 01 */	li r6, 1
 /* 800FDEC4 000F3C44  38 E0 00 00 */	li r7, 0
-/* 800FDEC8 000F3C48  4B FB 79 8D */	bl MuObject$7setActionNo
+/* 800FDEC8 000F3C48  4B FB 79 8D */	bl setActionNo__8MuObjectFllll
 /* 800FDECC 000F3C4C  88 9F 00 04 */	lbz r4, 4(r31)
 /* 800FDED0 000F3C50  3C 00 43 30 */	lis r0, 0x4330
 /* 800FDED4 000F3C54  90 01 00 18 */	stw r0, 0x18(r1)
@@ -727,7 +727,7 @@ lbl_800FDEB4:
 /* 800FDF20 000F3CA0  48 00 01 18 */	b lbl_800FE038
 lbl_800FDF24:
 /* 800FDF24 000F3CA4  80 63 00 0C */	lwz r3, 0xc(r3)
-/* 800FDF28 000F3CA8  4B FB 82 99 */	bl MuObject$7isNodeAnimFinished
+/* 800FDF28 000F3CA8  4B FB 82 99 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800FDF2C 000F3CAC  2C 03 00 00 */	cmpwi r3, 0
 /* 800FDF30 000F3CB0  41 82 01 08 */	beq lbl_800FE038
 /* 800FDF34 000F3CB4  80 1F 00 00 */	lwz r0, 0(r31)
@@ -777,7 +777,7 @@ lbl_800FDFCC:
 /* 800FDFD4 000F3D54  38 A0 00 03 */	li r5, 3
 /* 800FDFD8 000F3D58  38 C0 00 01 */	li r6, 1
 /* 800FDFDC 000F3D5C  38 E0 00 00 */	li r7, 0
-/* 800FDFE0 000F3D60  4B FB 78 75 */	bl MuObject$7setActionNo
+/* 800FDFE0 000F3D60  4B FB 78 75 */	bl setActionNo__8MuObjectFllll
 /* 800FDFE4 000F3D64  88 9F 00 04 */	lbz r4, 4(r31)
 /* 800FDFE8 000F3D68  3C 00 43 30 */	lis r0, 0x4330
 /* 800FDFEC 000F3D6C  90 01 00 18 */	stw r0, 0x18(r1)
@@ -865,7 +865,7 @@ lbl_800FE10C:
 /* 800FE114 000F3E94  38 A0 00 03 */	li r5, 3
 /* 800FE118 000F3E98  38 C0 00 01 */	li r6, 1
 /* 800FE11C 000F3E9C  38 E0 00 00 */	li r7, 0
-/* 800FE120 000F3EA0  4B FB 77 35 */	bl MuObject$7setActionNo
+/* 800FE120 000F3EA0  4B FB 77 35 */	bl setActionNo__8MuObjectFllll
 /* 800FE124 000F3EA4  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FE128 000F3EA8  3C 00 43 30 */	lis r0, 0x4330
 /* 800FE12C 000F3EAC  90 01 00 10 */	stw r0, 0x10(r1)
@@ -908,7 +908,7 @@ IfWifiprPlayer$7wifiDispStateSelStageMain:
 /* 800FE1B4 000F3F34  2C 00 00 05 */	cmpwi r0, 5
 /* 800FE1B8 000F3F38  40 82 01 18 */	bne lbl_800FE2D0
 /* 800FE1BC 000F3F3C  80 63 00 0C */	lwz r3, 0xc(r3)
-/* 800FE1C0 000F3F40  4B FB 80 01 */	bl MuObject$7isNodeAnimFinished
+/* 800FE1C0 000F3F40  4B FB 80 01 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800FE1C4 000F3F44  2C 03 00 00 */	cmpwi r3, 0
 /* 800FE1C8 000F3F48  41 82 01 08 */	beq lbl_800FE2D0
 /* 800FE1CC 000F3F4C  80 1D 00 00 */	lwz r0, 0(r29)
@@ -958,7 +958,7 @@ lbl_800FE264:
 /* 800FE26C 000F3FEC  38 A0 00 03 */	li r5, 3
 /* 800FE270 000F3FF0  38 C0 00 01 */	li r6, 1
 /* 800FE274 000F3FF4  38 E0 00 00 */	li r7, 0
-/* 800FE278 000F3FF8  4B FB 75 DD */	bl MuObject$7setActionNo
+/* 800FE278 000F3FF8  4B FB 75 DD */	bl setActionNo__8MuObjectFllll
 /* 800FE27C 000F3FFC  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FE280 000F4000  3C 00 43 30 */	lis r0, 0x4330
 /* 800FE284 000F4004  90 01 00 10 */	stw r0, 0x10(r1)
@@ -1046,7 +1046,7 @@ lbl_800FE3A4:
 /* 800FE3AC 000F412C  38 A0 00 03 */	li r5, 3
 /* 800FE3B0 000F4130  38 C0 00 01 */	li r6, 1
 /* 800FE3B4 000F4134  38 E0 00 00 */	li r7, 0
-/* 800FE3B8 000F4138  4B FB 74 9D */	bl MuObject$7setActionNo
+/* 800FE3B8 000F4138  4B FB 74 9D */	bl setActionNo__8MuObjectFllll
 /* 800FE3BC 000F413C  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FE3C0 000F4140  3C 00 43 30 */	lis r0, 0x4330
 /* 800FE3C4 000F4144  90 01 00 10 */	stw r0, 0x10(r1)
@@ -1089,7 +1089,7 @@ IfWifiprPlayer$7wifiDispStatePracticeMain:
 /* 800FE44C 000F41CC  2C 00 00 07 */	cmpwi r0, 7
 /* 800FE450 000F41D0  40 82 01 18 */	bne lbl_800FE568
 /* 800FE454 000F41D4  80 63 00 0C */	lwz r3, 0xc(r3)
-/* 800FE458 000F41D8  4B FB 7D 69 */	bl MuObject$7isNodeAnimFinished
+/* 800FE458 000F41D8  4B FB 7D 69 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800FE45C 000F41DC  2C 03 00 00 */	cmpwi r3, 0
 /* 800FE460 000F41E0  41 82 01 08 */	beq lbl_800FE568
 /* 800FE464 000F41E4  80 1D 00 00 */	lwz r0, 0(r29)
@@ -1139,7 +1139,7 @@ lbl_800FE4FC:
 /* 800FE504 000F4284  38 A0 00 03 */	li r5, 3
 /* 800FE508 000F4288  38 C0 00 01 */	li r6, 1
 /* 800FE50C 000F428C  38 E0 00 00 */	li r7, 0
-/* 800FE510 000F4290  4B FB 73 45 */	bl MuObject$7setActionNo
+/* 800FE510 000F4290  4B FB 73 45 */	bl setActionNo__8MuObjectFllll
 /* 800FE514 000F4294  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FE518 000F4298  3C 00 43 30 */	lis r0, 0x4330
 /* 800FE51C 000F429C  90 01 00 10 */	stw r0, 0x10(r1)
@@ -1227,7 +1227,7 @@ lbl_800FE63C:
 /* 800FE644 000F43C4  38 A0 00 03 */	li r5, 3
 /* 800FE648 000F43C8  38 C0 00 01 */	li r6, 1
 /* 800FE64C 000F43CC  38 E0 00 00 */	li r7, 0
-/* 800FE650 000F43D0  4B FB 72 05 */	bl MuObject$7setActionNo
+/* 800FE650 000F43D0  4B FB 72 05 */	bl setActionNo__8MuObjectFllll
 /* 800FE654 000F43D4  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FE658 000F43D8  3C 00 43 30 */	lis r0, 0x4330
 /* 800FE65C 000F43DC  90 01 00 10 */	stw r0, 0x10(r1)
@@ -1268,7 +1268,7 @@ IfWifiprPlayer$7wifiDispStateEscapeMain:
 /* 800FE6DC 000F445C  2C 00 00 09 */	cmpwi r0, 9
 /* 800FE6E0 000F4460  40 82 00 1C */	bne lbl_800FE6FC
 /* 800FE6E4 000F4464  80 63 00 0C */	lwz r3, 0xc(r3)
-/* 800FE6E8 000F4468  4B FB 7A D9 */	bl MuObject$7isNodeAnimFinished
+/* 800FE6E8 000F4468  4B FB 7A D9 */	bl isNodeAnimFinished__8MuObjectFv
 /* 800FE6EC 000F446C  2C 03 00 00 */	cmpwi r3, 0
 /* 800FE6F0 000F4470  41 82 00 0C */	beq lbl_800FE6FC
 /* 800FE6F4 000F4474  38 60 00 01 */	li r3, 1
@@ -1338,7 +1338,7 @@ lbl_800FE7C8:
 /* 800FE7D0 000F4550  38 A0 00 03 */	li r5, 3
 /* 800FE7D4 000F4554  38 C0 00 01 */	li r6, 1
 /* 800FE7D8 000F4558  38 E0 00 00 */	li r7, 0
-/* 800FE7DC 000F455C  4B FB 70 79 */	bl MuObject$7setActionNo
+/* 800FE7DC 000F455C  4B FB 70 79 */	bl setActionNo__8MuObjectFllll
 /* 800FE7E0 000F4560  88 9D 00 04 */	lbz r4, 4(r29)
 /* 800FE7E4 000F4564  3C 00 43 30 */	lis r0, 0x4330
 /* 800FE7E8 000F4568  90 01 00 10 */	stw r0, 0x10(r1)

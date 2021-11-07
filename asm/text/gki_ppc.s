@@ -14,7 +14,7 @@ GKI_init:
 /* 80230330 002260B0  93 C1 00 08 */	stw r30, 8(r1)
 /* 80230334 002260B4  3F C0 80 50 */	lis r30, lbl_804FD448@ha
 /* 80230338 002260B8  38 7E D4 48 */	addi r3, r30, lbl_804FD448@l
-/* 8023033C 002260BC  4B DD 41 01 */	bl func_8000443C
+/* 8023033C 002260BC  4B DD 41 01 */	bl memset
 /* 80230340 002260C0  4B FF E8 59 */	bl gki_buffer_init
 /* 80230344 002260C4  4B FF FA 79 */	bl gki_timers_init
 /* 80230348 002260C8  3B FE D4 48 */	addi r31, r30, -11192

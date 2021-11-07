@@ -933,12 +933,3 @@ lbl_8059E5B0:
 .global lbl_8059E5B4
 lbl_8059E5B4:
 	.incbin "baserom.dol", 0x492AD4, 0xC
-.global lbl_8059E5C0
-lbl_8059E5C0:
-	.incbin "baserom.dol", 0x492AE0, 0x4
-.global lbl_8059E5C4
-lbl_8059E5C4:
-	.incbin "baserom.dol", 0x492AE4, 0x4
-.global lbl_8059E5C8
-lbl_8059E5C8:
-	.incbin "baserom.dol", 0x492AE8, 0x10

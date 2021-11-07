@@ -2711,24 +2711,3 @@ lbl_805A27AC:
 .global lbl_805A27B0
 lbl_805A27B0:
 	.incbin "baserom.dol", 0x495930, 0x8
-.global lbl_805A27B8
-lbl_805A27B8:
-	.incbin "baserom.dol", 0x495938, 0x4
-.global lbl_805A27BC
-lbl_805A27BC:
-	.incbin "baserom.dol", 0x49593C, 0x4
-.global lbl_805A27C0
-lbl_805A27C0:
-	.incbin "baserom.dol", 0x495940, 0x4
-.global lbl_805A27C4
-lbl_805A27C4:
-	.incbin "baserom.dol", 0x495944, 0x4
-.global lbl_805A27C8
-lbl_805A27C8:
-	.incbin "baserom.dol", 0x495948, 0x8
-.global lbl_805A27D0
-lbl_805A27D0:
-	.incbin "baserom.dol", 0x495950, 0x8
-.global lbl_805A27D8
-lbl_805A27D8:
-	.incbin "baserom.dol", 0x495958, 0x8

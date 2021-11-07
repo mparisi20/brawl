@@ -192,7 +192,7 @@ cmAdventureController$7setTargetInsteadFighterPosition:
 /* 800A4220 00099FA0  D0 43 01 1C */	stfs f2, 0x11c(r3)
 /* 800A4224 00099FA4  D0 23 01 20 */	stfs f1, 0x120(r3)
 /* 800A4228 00099FA8  D0 03 01 24 */	stfs f0, 0x124(r3)
-/* 800A422C 00099FAC  4B FF 7C 49 */	bl CameraController$7getInstance
+/* 800A422C 00099FAC  4B FF 7C 49 */	bl getInstance__16CameraControllerFv
 /* 800A4230 00099FB0  80 03 00 40 */	lwz r0, 0x40(r3)
 /* 800A4234 00099FB4  2C 00 00 03 */	cmpwi r0, 3
 /* 800A4238 00099FB8  40 82 00 2C */	bne lbl_800A4264
@@ -1019,7 +1019,7 @@ cmAdventureController$7correct_lockzone:
 /* 800A4E00 0009AB80  D0 41 00 5C */	stfs f2, 0x5c(r1)
 /* 800A4E04 0009AB84  D0 21 00 60 */	stfs f1, 0x60(r1)
 /* 800A4E08 0009AB88  D0 81 00 64 */	stfs f4, 0x64(r1)
-/* 800A4E0C 0009AB8C  4B FF 70 69 */	bl CameraController$7getInstance
+/* 800A4E0C 0009AB8C  4B FF 70 69 */	bl getInstance__16CameraControllerFv
 /* 800A4E10 0009AB90  C0 23 01 48 */	lfs f1, 0x148(r3)
 /* 800A4E14 0009AB94  7C 7F 1B 78 */	mr r31, r3
 /* 800A4E18 0009AB98  C0 43 01 54 */	lfs f2, 0x154(r3)

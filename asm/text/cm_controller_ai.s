@@ -248,11 +248,11 @@ cmAIController$7resetInternalCameraParam:
 /* 8009F8E0 00095660  93 E1 00 5C */	stw r31, 0x5c(r1)
 /* 8009F8E4 00095664  93 C1 00 58 */	stw r30, 0x58(r1)
 /* 8009F8E8 00095668  7C 7E 1B 78 */	mr r30, r3
-/* 8009F8EC 0009566C  4B FF C5 89 */	bl CameraController$7getInstance
+/* 8009F8EC 0009566C  4B FF C5 89 */	bl getInstance__16CameraControllerFv
 /* 8009F8F0 00095670  7C 7F 1B 78 */	mr r31, r3
 /* 8009F8F4 00095674  38 7E 00 48 */	addi r3, r30, 0x48
 /* 8009F8F8 00095678  48 00 33 E9 */	bl cmCameraParam$7clear
-/* 8009F8FC 0009567C  4B FF C5 79 */	bl CameraController$7getInstance
+/* 8009F8FC 0009567C  4B FF C5 79 */	bl getInstance__16CameraControllerFv
 /* 8009F900 00095680  80 03 00 40 */	lwz r0, 0x40(r3)
 /* 8009F904 00095684  2C 00 00 0C */	cmpwi r0, 0xc
 /* 8009F908 00095688  40 82 00 FC */	bne lbl_8009FA04
@@ -560,7 +560,7 @@ lbl_8009FD54:
 /* 8009FD80 00095B00  88 1D 00 94 */	lbz r0, 0x94(r29)
 /* 8009FD84 00095B04  54 00 07 FF */	clrlwi. r0, r0, 0x1f
 /* 8009FD88 00095B08  41 82 00 98 */	beq lbl_8009FE20
-/* 8009FD8C 00095B0C  4B FF C0 E9 */	bl CameraController$7getInstance
+/* 8009FD8C 00095B0C  4B FF C0 E9 */	bl getInstance__16CameraControllerFv
 /* 8009FD90 00095B10  80 83 01 58 */	lwz r4, 0x158(r3)
 /* 8009FD94 00095B14  80 03 01 5C */	lwz r0, 0x15c(r3)
 /* 8009FD98 00095B18  90 81 00 08 */	stw r4, 8(r1)
@@ -632,7 +632,7 @@ cmAIController$7update:
 /* 8009FE8C 00095C0C  48 35 14 95 */	bl _savegpr_27
 /* 8009FE90 00095C10  FF A0 08 90 */	fmr f29, f1
 /* 8009FE94 00095C14  7C 7E 1B 78 */	mr r30, r3
-/* 8009FE98 00095C18  4B FF BF DD */	bl CameraController$7getInstance
+/* 8009FE98 00095C18  4B FF BF DD */	bl getInstance__16CameraControllerFv
 /* 8009FE9C 00095C1C  88 1E 00 94 */	lbz r0, 0x94(r30)
 /* 8009FEA0 00095C20  38 C3 00 84 */	addi r6, r3, 0x84
 /* 8009FEA4 00095C24  38 A3 00 C4 */	addi r5, r3, 0xc4
@@ -711,7 +711,7 @@ lbl_8009FFA4:
 /* 8009FFB4 00095D34  C0 5E 00 F8 */	lfs f2, 0xf8(r30)
 /* 8009FFB8 00095D38  3B A1 00 F0 */	addi r29, r1, 0xf0
 /* 8009FFBC 00095D3C  48 00 32 65 */	bl cmCameraParam$7updateFovyNormal
-/* 8009FFC0 00095D40  4B FF BE B5 */	bl CameraController$7getInstance
+/* 8009FFC0 00095D40  4B FF BE B5 */	bl getInstance__16CameraControllerFv
 /* 8009FFC4 00095D44  88 1E 00 94 */	lbz r0, 0x94(r30)
 /* 8009FFC8 00095D48  54 00 FF FF */	rlwinm. r0, r0, 0x1f, 0x1f, 0x1f
 /* 8009FFCC 00095D4C  41 82 00 58 */	beq lbl_800A0024
@@ -800,7 +800,7 @@ lbl_800A00C8:
 /* 800A010C 00095E8C  C0 3E 00 F4 */	lfs f1, 0xf4(r30)
 /* 800A0110 00095E90  C0 5E 00 F8 */	lfs f2, 0xf8(r30)
 /* 800A0114 00095E94  48 00 31 0D */	bl cmCameraParam$7updateFovyNormal
-/* 800A0118 00095E98  4B FF BD 5D */	bl CameraController$7getInstance
+/* 800A0118 00095E98  4B FF BD 5D */	bl getInstance__16CameraControllerFv
 /* 800A011C 00095E9C  88 1E 00 94 */	lbz r0, 0x94(r30)
 /* 800A0120 00095EA0  54 00 FF FF */	rlwinm. r0, r0, 0x1f, 0x1f, 0x1f
 /* 800A0124 00095EA4  41 82 00 58 */	beq lbl_800A017C
@@ -1279,7 +1279,7 @@ cmAIController$7updateInternal:
 /* 800A0838 000965B8  7C 7F 1B 78 */	mr r31, r3
 /* 800A083C 000965BC  93 C1 00 C8 */	stw r30, 0xc8(r1)
 /* 800A0840 000965C0  93 A1 00 C4 */	stw r29, 0xc4(r1)
-/* 800A0844 000965C4  4B FF B6 31 */	bl CameraController$7getInstance
+/* 800A0844 000965C4  4B FF B6 31 */	bl getInstance__16CameraControllerFv
 /* 800A0848 000965C8  88 1F 00 94 */	lbz r0, 0x94(r31)
 /* 800A084C 000965CC  38 C3 00 84 */	addi r6, r3, 0x84
 /* 800A0850 000965D0  38 A3 00 C4 */	addi r5, r3, 0xc4
@@ -1325,7 +1325,7 @@ lbl_800A08B8:
 /* 800A08E0 00096660  C3 C2 8B 80 */	lfs f30, lbl_805A1EA0-_SDA2_BASE_(r2)
 /* 800A08E4 00096664  C0 5F 00 F8 */	lfs f2, 0xf8(r31)
 /* 800A08E8 00096668  48 00 29 39 */	bl cmCameraParam$7updateFovyNormal
-/* 800A08EC 0009666C  4B FF B5 89 */	bl CameraController$7getInstance
+/* 800A08EC 0009666C  4B FF B5 89 */	bl getInstance__16CameraControllerFv
 /* 800A08F0 00096670  88 1F 00 94 */	lbz r0, 0x94(r31)
 /* 800A08F4 00096674  54 00 FF FF */	rlwinm. r0, r0, 0x1f, 0x1f, 0x1f
 /* 800A08F8 00096678  41 82 00 58 */	beq lbl_800A0950
@@ -1678,7 +1678,7 @@ cmAIController$7updateMeleeFix:
 /* 800A0E24 00096BA4  7C 7E 1B 78 */	mr r30, r3
 /* 800A0E28 00096BA8  93 A1 00 E4 */	stw r29, 0xe4(r1)
 /* 800A0E2C 00096BAC  93 81 00 E0 */	stw r28, 0xe0(r1)
-/* 800A0E30 00096BB0  4B FF B0 45 */	bl CameraController$7getInstance
+/* 800A0E30 00096BB0  4B FF B0 45 */	bl getInstance__16CameraControllerFv
 /* 800A0E34 00096BB4  88 1E 00 94 */	lbz r0, 0x94(r30)
 /* 800A0E38 00096BB8  38 C3 00 84 */	addi r6, r3, 0x84
 /* 800A0E3C 00096BBC  38 A3 00 C4 */	addi r5, r3, 0xc4
@@ -2515,7 +2515,7 @@ cmAIController$7getAtShiftNormal:
 /* 800A1A38 000977B8  D0 01 00 24 */	stfs f0, 0x24(r1)
 /* 800A1A3C 000977BC  13 DE 00 6E */	ps_sel f30, f30, f1, f0
 /* 800A1A40 000977C0  41 82 00 3C */	beq lbl_800A1A7C
-/* 800A1A44 000977C4  4B FF A4 31 */	bl CameraController$7getInstance
+/* 800A1A44 000977C4  4B FF A4 31 */	bl getInstance__16CameraControllerFv
 /* 800A1A48 000977C8  C0 63 01 4C */	lfs f3, 0x14c(r3)
 /* 800A1A4C 000977CC  C0 43 01 48 */	lfs f2, 0x148(r3)
 /* 800A1A50 000977D0  C0 23 01 50 */	lfs f1, 0x150(r3)
@@ -2622,7 +2622,7 @@ cmAIController$7getEyeAtTargetNormal:
 /* 800A1BC4 00097944  7C 9D 23 78 */	mr r29, r4
 /* 800A1BC8 00097948  93 81 00 10 */	stw r28, 0x10(r1)
 /* 800A1BCC 0009794C  7C 7C 1B 78 */	mr r28, r3
-/* 800A1BD0 00097950  4B FF A2 A5 */	bl CameraController$7getInstance
+/* 800A1BD0 00097950  4B FF A2 A5 */	bl getInstance__16CameraControllerFv
 /* 800A1BD4 00097954  7C 64 1B 78 */	mr r4, r3
 /* 800A1BD8 00097958  7F 83 E3 78 */	mr r3, r28
 /* 800A1BDC 0009795C  88 04 00 44 */	lbz r0, 0x44(r4)
@@ -3503,7 +3503,7 @@ cmAIController$7calcStageStartCamPosTarget:
 /* 800A2860 000985E0  7C F9 3B 78 */	mr r25, r7
 /* 800A2864 000985E4  7D 1A 43 78 */	mr r26, r8
 /* 800A2868 000985E8  7D 3B 4B 78 */	mr r27, r9
-/* 800A286C 000985EC  4B FF 96 09 */	bl CameraController$7getInstance
+/* 800A286C 000985EC  4B FF 96 09 */	bl getInstance__16CameraControllerFv
 /* 800A2870 000985F0  80 03 00 40 */	lwz r0, 0x40(r3)
 /* 800A2874 000985F4  2C 00 00 0C */	cmpwi r0, 0xc
 /* 800A2878 000985F8  40 82 01 54 */	bne lbl_800A29CC
@@ -3679,7 +3679,7 @@ lbl_800A2ABC:
 /* 800A2B08 00098888  41 82 01 64 */	beq lbl_800A2C6C
 /* 800A2B0C 0009888C  2C 1B 00 00 */	cmpwi r27, 0
 /* 800A2B10 00098890  41 82 01 5C */	beq lbl_800A2C6C
-/* 800A2B14 00098894  4B FF 93 61 */	bl CameraController$7getInstance
+/* 800A2B14 00098894  4B FF 93 61 */	bl getInstance__16CameraControllerFv
 /* 800A2B18 00098898  88 1C 00 94 */	lbz r0, 0x94(r28)
 /* 800A2B1C 0009889C  54 00 FF FF */	rlwinm. r0, r0, 0x1f, 0x1f, 0x1f
 /* 800A2B20 000988A0  41 82 00 58 */	beq lbl_800A2B78

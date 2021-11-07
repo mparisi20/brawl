@@ -196,7 +196,7 @@ pdm_part_get_start_sector:
 /* 803D836C 003CE0EC  7C 08 02 A6 */	mflr r0
 /* 803D8370 003CE0F0  7D 8B 63 78 */	mr r11, r12
 /* 803D8374 003CE0F4  90 0C 00 04 */	stw r0, 4(r12)
-/* 803D8378 003CE0F8  48 01 8F 75 */	bl __save_gpr
+/* 803D8378 003CE0F8  48 01 8F 75 */	bl _savegpr_14
 /* 803D837C 003CE0FC  39 C0 00 00 */	li r14, 0
 /* 803D8380 003CE100  80 A3 00 04 */	lwz r5, 4(r3)
 /* 803D8384 003CE104  91 C3 00 0C */	stw r14, 0xc(r3)
@@ -479,7 +479,7 @@ lbl_803D878C:
 lbl_803D8790:
 /* 803D8790 003CE510  81 41 00 00 */	lwz r10, 0(r1)
 /* 803D8794 003CE514  7D 4B 53 78 */	mr r11, r10
-/* 803D8798 003CE518  48 01 8B A1 */	bl __restore_gpr
+/* 803D8798 003CE518  48 01 8B A1 */	bl _restgpr_14
 /* 803D879C 003CE51C  80 0A 00 04 */	lwz r0, 4(r10)
 /* 803D87A0 003CE520  7C 08 03 A6 */	mtlr r0
 /* 803D87A4 003CE524  7D 41 53 78 */	mr r1, r10
