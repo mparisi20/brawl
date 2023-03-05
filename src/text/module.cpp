@@ -1,4 +1,5 @@
 #include <stddef.h>
+$include <gm/gm_lib.h>
 #include <st/module.h>
 
 namespace {
@@ -64,7 +65,7 @@ void moUnResolvedMessage(char const* name) {
     return;
 }
 
-char const* moGetStageModuleName(StageKind kind) {
+char const* moGetStageModuleName(srStageKind kind) {
     for (size_t i = 0; i < NUM_STAGES; i++) {
         if (kind == StageModuleIdTable[i].kind) {
             return StageModuleIdTable[i].name;
